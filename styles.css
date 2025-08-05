@@ -245,54 +245,71 @@ nav a:hover::after {
 /* Product Showcase Section in Hero */
 .product-showcase {
     margin-top: 3rem;
-    padding: 2rem;
-    background-color: rgba(13, 38, 78, 0.5); /* var(--dark-navy-alpha) */
-    border-radius: 15px;
-    border: 1px solid var(--navy-shadow);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem;
 }
 
 .showcase-title {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--white);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     font-weight: 600;
+    letter-spacing: 0.5px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    justify-content: center;
 }
 
 .showcase-item {
-    background-color: transparent;
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid var(--navy-shadow);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
 }
 
 .showcase-item:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 245, 255, 0.5); /* var(--cyan-alpha) */
-    background-color: rgba(13, 38, 78, 0.7); /* var(--dark-navy-alpha-heavy) */
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 245, 255, 0.15);
+    border-color: rgba(0, 245, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .showcase-item h4 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--lightest-slate);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     line-height: 1.4;
-    min-height: 3.5em; /* Ensures consistent starting height for p tags */
+    font-style: italic;
+    color: rgba(0, 245, 255, 0.9);
 }
 
 .showcase-item p {
-    font-size: 1rem;
-    color: var(--slate);
+    font-size: 1.05rem;
+    color: var(--light-slate);
     line-height: 1.6;
 }
 
@@ -303,11 +320,29 @@ nav a:hover::after {
 
 .showcase-summary {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--light-slate);
     max-width: 700px;
     margin: 1rem auto 0;
     line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .showcase-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .showcase-item {
+        max-width: 100%;
+        min-width: auto;
+    }
+    
+    .showcase-title {
+        font-size: 1.6rem;
+    }
 }
 
 /* Workflow Ideas (Under Hero CTA) */
