@@ -22,11 +22,10 @@
                 </button>
                 <nav>
                     <ul>
-                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#about">About</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="team.html">Team</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="team.html">Team</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -35,21 +34,44 @@
     </header>
 
     <!-- PORTFOLIO SECTION -->
-    <section class="services" style="padding-top: 150px;" id="portfolio">
+    <section class="page-hero">
         <div class="container">
-            <h2 class="section-title">What We’ve Built</h2>
+            <h2 class="section-title">Our Portfolio</h2>
+            <p class="subtitle">AI-powered applications we've built and launched across health, faith, and hospitality</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
             <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🏥</div>
+                        <img src="images/logo.png" alt="Cortivus Logo" class="service-logo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Journey2Health</h3>
+                        <p><strong>Digital Health Assistant for Chronic Disease Management</strong></p>
+                        <p>AI-powered platform that consolidates patient medical records and provides personalized health insights for chronic disease self-management.</p>
+                        <p><strong>Status:</strong> MVP in development, pilot testing Q4 2025</p>
+                        <p><strong>Impact:</strong> Simplifies complex medical data into actionable insights for patients</p>
+                    </div>
+                    <a href="index.html#contact" class="btn secondary">Learn More</a>
+                </div>
+
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-icon">📖</div>
                         <img src="images/logo.png" alt="Cortivus Logo" class="service-logo">
                     </div>
                     <div class="card-content">
-                        <h3>Faith-Based AI Assistant</h3>
-                        <p>Custom RAG system trained on scripture and sermon notes to help pastors prep faster and deliver deeper insights.</p>
-                        <p><strong>Use Case:</strong> Fast, faithful content generation for sermon planning.</p>
+                        <h3>Sermon Generator</h3>
+                        <p><strong>AI-Powered Content Creation for Faith Leaders</strong></p>
+                        <p>Intelligent assistant that helps pastors create sermons and study guides from Scripture with theological accuracy and practical application.</p>
+                        <p><strong>Status:</strong> Beta testing with select churches</p>
+                        <p><strong>Impact:</strong> Reduces sermon prep time while maintaining theological depth</p>
                     </div>
-                    <a href="index.html#contact" class="btn secondary request-tool" data-message="I'm interested in a similar tool.">Request Similar Tool</a>
+                    <a href="sermongenerator.html" class="btn secondary">View Demo</a>
                 </div>
     
                 <div class="service-card">
@@ -58,24 +80,13 @@
                         <img src="images/logo.png" alt="Cortivus Logo" class="service-logo">
                     </div>
                     <div class="card-content">
-                        <h3>AI Bar Chooser App</h3>
-                        <p>Interactive app that recommends cocktails based on mood, taste preferences, and available ingredients using AI logic.</p>
-                        <p><strong>Use Case:</strong> Personalized drink selection for events or casual use.</p>
+                        <h3>MakeItADouble</h3>
+                        <p><strong>Smart Bar Assistant for Event Venues</strong></p>
+                        <p>AI-powered bar management system that automates drink ordering and provides intelligent cocktail recommendations based on preferences and inventory.</p>
+                        <p><strong>Status:</strong> Prototype complete, seeking pilot partners</p>
+                        <p><strong>Impact:</strong> Streamlines bar operations and enhances customer experience</p>
                     </div>
-                    <a href="index.html#contact" class="btn secondary request-tool" data-message="I'm interested in a similar tool.">Request Similar Tool</a>
-                </div>
-    
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">🎵</div>
-                        <img src="images/logo.png" alt="Cortivus Logo" class="service-logo">
-                    </div>
-                    <div class="card-content">
-                        <h3>Music Generator</h3>
-                        <p>End-to-end pipeline from lyrics to vocals, thumbnail, metadata, and YouTube upload.</p>
-                        <p><strong>Use Case:</strong> Created 20+ songs with zero manual post-production.</p>
-                    </div>
-                    <a href="index.html#contact" class="btn secondary request-tool" data-message="I'm interested in a similar tool.">Request Similar Tool</a>
+                    <a href="index.html#contact" class="btn secondary">Learn More</a>
                 </div>
             </div>
         </div>
