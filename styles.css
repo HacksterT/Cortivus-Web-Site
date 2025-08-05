@@ -276,6 +276,12 @@ footer {
 }
 
 /* Team Card Enhancements */
+.service-card .card-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 .role-title {
     color: var(--text-secondary);
     font-size: 1.1rem;
@@ -334,7 +340,7 @@ footer {
 .contact-info {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 1rem;
-    margin-top: 1.5rem;
+    margin-top: auto; /* This pushes contact section to bottom */
 }
 
 .contact-info p {
