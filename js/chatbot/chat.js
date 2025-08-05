@@ -12,10 +12,10 @@
 
     // --- Configuration ---
     const CONFIG = {
-        apiEndpoint: window.location.hostname === 'localhost' 
+        apiEndpoint: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
             ? 'http://localhost:7071/api/chat'  // Local
-            : 'https://cortivus-chatbot-api-a7athug0ggcybrec.eastus-01.azurewebsites.net/api/chat', // Azure
-        demoMode: window.location.hostname === 'localhost',
+            : 'https://cortivus-chatbot.azurewebsites.net/api/chat', // Production
+        demoMode: (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'),
         maxHistoryItems: 50,
         typingDelay: { min: 300, max: 1500 }
     };
@@ -46,12 +46,10 @@
     function init() {
         log('CortivusChat: Initializing controller.', 'info');
 
-        if (window.location.hostname === 'cortivus.github.io') {
-            CONFIG.apiEndpoint = 'https://cortivus-chatbot.azurewebsites.net/api/chat';
-            CONFIG.demoMode = false;
-            log(`Production environment detected. API endpoint: ${CONFIG.apiEndpoint}`, 'config');
-        } else {
+        if (CONFIG.demoMode) {
             log(`Development environment detected. API endpoint: ${CONFIG.apiEndpoint}`, 'config');
+        } else {
+            log(`Production environment detected. API endpoint: ${CONFIG.apiEndpoint}`, 'config');
         }
 
         if (!window.CortivusChatUI) {
