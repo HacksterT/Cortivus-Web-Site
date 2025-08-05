@@ -363,6 +363,15 @@ footer {
     }
 }
 
+/* Team Page Spacing Adjustments */
+.page-hero {
+    padding-bottom: 2rem; /* Reduced from default */
+}
+
+.page-hero + .services {
+    padding-top: 1rem; /* Reduced spacing between hero and team cards */
+}
+
 /* Hero Section */
 .hero {
     padding-top: 4rem; /* adjust as needed to clear the header */
