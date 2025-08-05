@@ -246,6 +246,7 @@ nav a:hover::after {
 .product-showcase {
     margin-top: 3rem;
     padding: 1rem;
+    background: transparent;
 }
 
 .showcase-title {
@@ -275,6 +276,11 @@ nav a:hover::after {
     gap: 2rem;
     margin-bottom: 2.5rem;
     justify-content: center;
+}
+
+/* Center the 3rd card when it wraps to its own row */
+.showcase-grid .showcase-item:nth-child(3):nth-last-child(1) {
+    margin: 0 auto;
 }
 
 .showcase-item {
@@ -314,7 +320,7 @@ nav a:hover::after {
 }
 
 .showcase-item p strong {
-    color: var(--cyan);
+    color: var(--primary-color); /* Turquoise color matching About section highlights */
     font-weight: 600;
 }
 
