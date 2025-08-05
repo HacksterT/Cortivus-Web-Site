@@ -397,9 +397,22 @@ nav a:hover::after {
     overflow: hidden;
     width: 100%;
     padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    background: var(--card-bg);
     border-radius: 20px;
     border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.about-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tech-visual:hover .about-image {
+    transform: scale(1.05);
 }
 
 .tech-visual iframe {
