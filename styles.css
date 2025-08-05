@@ -112,6 +112,21 @@ nav a:hover::after {
     width: 100%;
 }
 
+.tech-roadmap-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.tech-roadmap-note strong {
+    color: var(--primary-color);
+}
+
 /* Hero Section */
 .hero {
     padding-top: 4rem; /* adjust as needed to clear the header */
@@ -226,6 +241,75 @@ nav a:hover::after {
 .hero .btn + .btn {
     margin-top: 0; /* Remove since we're using flexbox gap now */
 }
+
+/* Product Showcase Section in Hero */
+.product-showcase {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: rgba(13, 38, 78, 0.5); /* var(--dark-navy-alpha) */
+    border-radius: 15px;
+    border: 1px solid var(--navy-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.showcase-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.showcase-item {
+    background-color: transparent;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--navy-shadow);
+    transition: all 0.3s ease;
+}
+
+.showcase-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 245, 255, 0.5); /* var(--cyan-alpha) */
+    background-color: rgba(13, 38, 78, 0.7); /* var(--dark-navy-alpha-heavy) */
+}
+
+.showcase-item h4 {
+    font-size: 1.2rem;
+    color: var(--lightest-slate);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    min-height: 3.5em; /* Ensures consistent starting height for p tags */
+}
+
+.showcase-item p {
+    font-size: 1rem;
+    color: var(--slate);
+    line-height: 1.6;
+}
+
+.showcase-item p strong {
+    color: var(--cyan);
+    font-weight: 600;
+}
+
+.showcase-summary {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--light-slate);
+    max-width: 700px;
+    margin: 1rem auto 0;
+    line-height: 1.6;
+}
+
 /* Workflow Ideas (Under Hero CTA) */
 .workflow-ideas {
     margin-top: 5rem;
