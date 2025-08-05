@@ -215,8 +215,16 @@ nav a:hover::after {
     color: var(--dark-bg);
 }
 
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
 .hero .btn + .btn {
-    margin-top: 3rem; /* adds spacing between the first and second buttons */
+    margin-top: 0; /* Remove since we're using flexbox gap now */
 }
 /* Workflow Ideas (Under Hero CTA) */
 .workflow-ideas {
