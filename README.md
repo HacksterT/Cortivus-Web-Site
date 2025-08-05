@@ -4,7 +4,7 @@ This repository contains the source code for the Cortivus company website, a sta
 
 ## Overview
 
-Cortivus is a technology company specializing in AI solutions, custom RAG (Retrieval-Augmented Generation) systems, and data analytics. This website serves as the company's online presence, showcasing services and providing a contact form for potential clients. The site features a modern, responsive design with interactive elements and will soon include an AI chatbot demonstration.
+Cortivus is a product studio developing AI-powered applications that solve real-world problems across health, lifestyle, and learning. This website showcases our three core products: Journey2Health (digital health assistant), Sermon Generator (faith-based content creation), and MakeItADouble (smart bar assistant). The site features a modern, responsive design with interactive elements and includes an AI chatbot demonstration.
 
 Comprehensive project paperwork is included in the Cortivus_Complete_Project Jupyter notebook in the repository.
 
@@ -12,8 +12,8 @@ Comprehensive project paperwork is included in the Cortivus_Complete_Project Jup
 
 - Responsive design that works on mobile, tablet, and desktop devices
 - Modern UI with animated elements and gradients
-- Interactive workflow list with custom icons and hover effects
-- Two-column layout with optimized container sizing
+- Product showcase with detailed information pages
+- Interactive AI chatbot with multiple demo modes
 - Contact form integration using Formspree
 - Smooth scrolling navigation
 - CSS Grid and Flexbox layout
