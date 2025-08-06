@@ -974,7 +974,7 @@ footer {
     width: 100%;
     margin: 2rem auto 0;
     height: 85vh; /* Increased from 80vh to 90vh for taller display */
-    min-height: 670px; /* Increased from 600px to 700px */
+    min-height: 667px; /* Increased from 600px to 700px */
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
     background: var(--card-bg);
