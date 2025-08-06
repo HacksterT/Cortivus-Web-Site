@@ -974,7 +974,7 @@ footer {
     width: 100%;
     margin: 2rem auto 0;
     height: 85vh; /* Increased from 80vh to 90vh for taller display */
-    min-height: 700px; /* Increased from 600px to 700px */
+    min-height: 650px; /* Increased from 600px to 700px */
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
     background: var(--card-bg);
@@ -988,6 +988,14 @@ footer {
     height: 100%;
     border: none;
     border-radius: 15px;
+    overflow: hidden;
+    /* Hide scrollbars */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.pdf-container iframe::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
 }
 
 /* Contact Section */
