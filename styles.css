@@ -1125,6 +1125,11 @@ footer {
     }
 }
 
+/* Team page contact info spacing */
+.contact-info {
+    margin-top: 2rem;
+}
+
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
