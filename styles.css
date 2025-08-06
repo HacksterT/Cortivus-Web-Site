@@ -967,6 +967,29 @@ footer {
     border: none;
 }
 
+/* PDF Container for Pitch Page */
+.pdf-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 2rem auto 0;
+    height: 80vh; /* Use viewport height for better full-screen experience */
+    min-height: 600px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
+    background: var(--card-bg);
+}
+
+.pdf-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+}
+
 /* Contact Section */
 .contact {
     padding: 100px 0;
