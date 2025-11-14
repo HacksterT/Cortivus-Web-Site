@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Generator - Cortivus Education</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #bdc3c7;
+            opacity: 1;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        .help-text {
+            font-size: 14px;
+            color: #95a5a6;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        #chat-container {
+            margin-top: 30px;
+            display: none;
+        }
+
+        #chat-container h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Curriculum Generator</h1>
+        <p class="subtitle">Generate a structured self-learning curriculum with AI-powered prompts tailored to your topic and expertise level</p>
+
+        <form id="curriculumForm">
+            <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                <div class="help-text">We'll use this to personalize your curriculum package</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="yourname@va.gov" pattern=".*@va\.gov$">
+                <div class="help-text">Must be a @va.gov email address. We'll send your completed curriculum package here.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Curriculum Title <span class="required">*</span></label>
+                <input type="text" id="title" name="title" required maxlength="100" placeholder="e.g., Learning Google Cloud Infrastructure as Code">
+                <div class="help-text">A descriptive title for your curriculum (max 100 characters)</div>
+            </div>
+
+            <div class="form-group">
+                <label for="slug">URL Slug <span class="required">*</span></label>
+                <input type="text" id="slug" name="slug" required placeholder="e.g., gcp-iac-fundamentals" pattern="[a-z0-9-]+" title="Only lowercase letters, numbers, and hyphens allowed">
+                <div class="help-text">Kebab-case identifier (lowercase, hyphens only) for file/folder naming</div>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Course Description <span class="required">*</span></label>
+                <textarea id="description" name="description" required maxlength="500" placeholder="Describe what learners will achieve and the main topics covered..." rows="4"></textarea>
+                <div class="help-text">Detailed description of the curriculum content and learning objectives (max 500 characters)</div>
+            </div>
+
+            <div class="form-group">
+                <label for="expertise">Target Expertise Level</label>
+                <select id="expertise" name="expertise">
+                    <option value="beginner">Beginner - No prior knowledge required</option>
+                    <option value="intermediate">Intermediate - Some background knowledge helpful</option>
+                    <option value="advanced">Advanced - Deep technical expertise expected</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                🚀 Start Chat
+            </button>
+        </form>
+
+        <div id="chat-container">
+            <h2>Chat with AI Assistant</h2>
+            <!-- Chat widget will be embedded here -->
+        </div>
+
+        <div class="footer">
+            <p>Powered by Cortivus Education & MiniMax AI</p>
+            <p>Questions? Contact support@cortivus.com</p>
+        </div>
+    </div>
+
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	let chat;
+
+	window.initializeChat = function(webhookUrl) {
+		chat = createChat({
+			webhookUrl: webhookUrl,
+			mode: 'window',
+			target: '#chat-container'
+		});
+	};
+</script>
+<script>
+    document.getElementById('curriculumForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = encodeURIComponent(document.getElementById('name').value);
+        const email = encodeURIComponent(document.getElementById('email').value);
+        const title = encodeURIComponent(document.getElementById('title').value);
+        const slug = encodeURIComponent(document.getElementById('slug').value);
+        const description = encodeURIComponent(document.getElementById('description').value);
+        const expertise = encodeURIComponent(document.getElementById('expertise').value);
+
+        // Build webhook URL with form data as query params
+        const webhookUrl = `https://your-n8n-instance.com/webhook/your-chat-webhook?user_name=${name}&user_email=${email}&curriculum_title=${title}&curriculum_slug=${slug}&curriculum_description=${description}&expertise_level=${expertise}`;
+
+        // Hide form and show chat
+        document.getElementById('curriculumForm').style.display = 'none';
+        document.getElementById('chat-container').style.display = 'block';
+
+        // Initialize chat with the customized webhook URL
+        window.initializeChat(webhookUrl);
+    });
+
+    // Auto-generate slug from title
+    document.getElementById('title').addEventListener('input', function() {
+        const title = this.value;
+        const slug = title.toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+            .replace(/\s+/g, '-') // Replace spaces with hyphens
+            .replace(/-+/g, '-') // Replace multiple hyphens with single
+            .trim('-'); // Trim hyphens from start/end
+
+        document.getElementById('slug').value = slug;
+    });
+</script>
+</body>
+</html>
