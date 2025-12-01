@@ -6,14 +6,14 @@
    ============================================ */
 
 /* Import order is important - load base styles first */
-@import url('css/core.css');          /* Variables, resets, base styles */
-@import url('css/navigation.css');    /* Header, nav, dropdown menu */
-@import url('css/hero.css');          /* Hero sections & showcases */
-@import url('css/sections.css');      /* About, services, contact sections */
-@import url('css/components.css');    /* Buttons, cards, badges, forms */
-@import url('css/platform.css');      /* Platform modules, roadmap, execution page */
-@import url('css/footer.css');        /* Footer styles */
-@import url('css/responsive.css');    /* Mobile & tablet breakpoints */
+@import 'css/core.css';          /* Variables, resets, base styles */
+@import 'css/navigation.css';    /* Header, nav, dropdown menu */
+@import 'css/hero.css';          /* Hero sections & showcases */
+@import 'css/sections.css';      /* About, services, contact sections */
+@import 'css/components.css';    /* Buttons, cards, badges, forms */
+@import 'css/platform.css';      /* Platform modules, roadmap, execution page */
+@import 'css/footer.css';        /* Footer styles */
+@import 'css/responsive.css';    /* Mobile & tablet breakpoints */
 
 /* ============================================
    CUSTOM PAGE-SPECIFIC OVERRIDES
