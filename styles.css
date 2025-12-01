@@ -6,16 +6,84 @@
    ============================================ */
 
 /* Import order is important - load base styles first */
-@import 'css/core.css';          /* Variables, resets, base styles */
-@import 'css/navigation.css';    /* Header, nav, dropdown menu */
-@import 'css/hero.css';          /* Hero sections & showcases */
-@import 'css/sections.css';      /* About, services, contact sections */
-@import 'css/components.css';    /* Buttons, cards, badges, forms */
-@import 'css/platform.css';      /* Platform modules, roadmap, execution page */
-@import 'css/footer.css';        /* Footer styles */
-@import 'css/responsive.css';    /* Mobile & tablet breakpoints */
+@import url("css/core.css");          /* Variables, resets, base styles */
+@import url("css/navigation.css");    /* Header, nav, dropdown menu */
+@import url("css/hero.css");          /* Hero sections & showcases */
+@import url("css/sections.css");      /* About, services, contact sections */
+@import url("css/components.css");    /* Buttons, cards, badges, forms */
+@import url("css/platform.css");      /* Platform modules, roadmap, execution page */
+@import url("css/footer.css");        /* Footer styles */
+@import url("css/responsive.css");    /* Mobile & tablet breakpoints */
 
 /* ============================================
-   CUSTOM PAGE-SPECIFIC OVERRIDES
-   Add any page-specific styles below
+   CRITICAL DROPDOWN STYLES
+   Inlined here for GitHub Pages compatibility
    ============================================ */
+
+/* Dropdown Navigation */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-toggle i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(17, 17, 17, 0.98);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    border-radius: 10px;
+    min-width: 280px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.dropdown-menu a::after {
+    display: none;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(0, 245, 255, 0.1);
+    color: var(--primary-color);
+    padding-left: 2rem;
+}
