@@ -1,0 +1,253 @@
+/* ============================================
+   SECTIONS - About, Services, Contact
+   ============================================ */
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background: var(--darker-bg);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.about-section {
+    margin-bottom: 2.5rem;
+}
+
+.about-section:last-child {
+    margin-bottom: 0;
+}
+
+.about-subheading {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.tech-visual {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: 20px;
+    border: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.about-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tech-visual:hover .about-image {
+    transform: scale(1.05);
+}
+
+.tech-visual iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.tech-visual::before {
+    content: '';
+    width: 200px;
+    height: 200px;
+    background: url('images/logo.png') no-repeat center;
+    background-size: contain;
+    filter: drop-shadow(0 0 30px rgba(0, 245, 255, 0.5));
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+.tech-roadmap-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.tech-roadmap-note strong {
+    color: var(--primary-color);
+}
+
+/* Services Section */
+.services {
+    padding: 100px 0;
+    background: var(--dark-bg);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+    background: var(--darker-bg);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.info-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Video Container */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* PDF Container */
+.pdf-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 2rem auto 0;
+    height: 85vh;
+    min-height: 667px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
+    background: var(--card-bg);
+}
+
+.pdf-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.pdf-container iframe::-webkit-scrollbar {
+    display: none;
+}
+
+/* Pitch page specific spacing */
+#pitch .section-title {
+    margin-bottom: 1rem;
+}
+
+#pitch .subtitle {
+    margin-bottom: 2.5rem;
+}

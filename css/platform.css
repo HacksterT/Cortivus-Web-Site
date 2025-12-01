@@ -1,0 +1,196 @@
+/* ============================================
+   PLATFORM - Execution Page Components
+   ============================================ */
+
+/* Platform Modules Grid */
+.platform-modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.module-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.module-card.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+}
+
+.module-card.roadmap {
+    opacity: 0.85;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 245, 255, 0.15);
+}
+
+.module-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--gradient-1);
+    color: var(--dark-bg);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.module-card.roadmap .module-status {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.module-card .service-icon {
+    margin: 0 auto 1.5rem;
+}
+
+.module-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.module-card p {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.module-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.module-features li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.module-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Problem Cards Grid */
+.problem-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Roadmap Timeline */
+.roadmap-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.roadmap-phase {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.roadmap-phase::before {
+    content: '';
+    position: absolute;
+    left: 1.5rem;
+    top: 3rem;
+    bottom: -3rem;
+    width: 2px;
+    background: rgba(0, 245, 255, 0.2);
+}
+
+.roadmap-phase:last-child::before {
+    display: none;
+}
+
+.phase-marker {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    background: var(--card-bg);
+    border: 2px solid rgba(0, 245, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.roadmap-phase.active .phase-marker {
+    background: var(--gradient-1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+}
+
+.roadmap-phase.active .phase-marker::after {
+    content: '✓';
+    color: var(--dark-bg);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.phase-content {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.roadmap-phase.active .phase-content {
+    border-color: var(--primary-color);
+    background: rgba(0, 245, 255, 0.05);
+}
+
+.phase-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.phase-status {
+    display: inline-block;
+    background: rgba(0, 245, 255, 0.1);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.phase-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}

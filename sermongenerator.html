@@ -24,6 +24,13 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#about">About</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="execution.html">Execution Accelerant</a></li>
+                                <li><a href="portfolio.html">Consumer Applications</a></li>
+                            </ul>
+                        </li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="team.html">Team</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
@@ -36,10 +43,25 @@
     <section id="sermon-generator" class="page-hero">
         <div class="container">
             <h2 class="section-title">AI-Powered Sermon Generator</h2>
-            <p class="subtitle">Watch the demo below to see how it works.</p>
+            <p class="subtitle">AI-powered content creation for faith leaders.</p>
             <a href="index.html#contact" class="btn">Contact for Pilot</a>
+
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/mnPvl8U4uI4" title="Cortivus AI Solutions Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/mnPvl8U4uI4?rel=0&modestbranding=1&controls=1&showinfo=0"
+                    title="Sermon Generator Demo"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Fallback link if embedding still doesn't work -->
+            <div style="margin-top: 1rem; text-align: center;">
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                    Can't see the video? <a href="https://www.youtube.com/watch?v=mnPvl8U4uI4" target="_blank" style="color: var(--primary-color);">Watch on YouTube</a>
+                </p>
             </div>
         </div>
     </section>

@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const nav = document.querySelector('nav');
-    
+
     if (mobileNavToggle) {
         mobileNavToggle.addEventListener('click', function() {
             nav.classList.toggle('mobile-active');
-            
+
             // Change icon based on state
             const icon = mobileNavToggle.querySelector('i');
             if (nav.classList.contains('mobile-active')) {
@@ -23,33 +23,58 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Close mobile menu when clicking a nav link
-    const navLinks = document.querySelectorAll('nav a');
+
+    // Dropdown functionality for mobile
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            // Only handle click on mobile
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const dropdown = this.closest('.dropdown');
+                dropdown.classList.toggle('mobile-active');
+            }
+        });
+    });
+
+    // Close mobile menu when clicking a nav link (except dropdown toggles)
+    const navLinks = document.querySelectorAll('nav a:not(.dropdown-toggle)');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             if (nav.classList.contains('mobile-active')) {
                 nav.classList.remove('mobile-active');
-                
+
                 // Reset icon
                 const icon = mobileNavToggle.querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+
+                // Close any open dropdowns
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('mobile-active');
+                });
             }
         });
     });
-    
+
     // Handle window resize - reset mobile nav if window size changes
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && nav.classList.contains('mobile-active')) {
-            nav.classList.remove('mobile-active');
-            
-            // Reset icon
-            const icon = mobileNavToggle.querySelector('i');
-            if (icon) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+        if (window.innerWidth > 768) {
+            if (nav.classList.contains('mobile-active')) {
+                nav.classList.remove('mobile-active');
+
+                // Reset icon
+                const icon = mobileNavToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             }
+
+            // Close any open mobile dropdowns
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.classList.remove('mobile-active');
+            });
         }
     });
 });

@@ -1,0 +1,285 @@
+/* ============================================
+   HERO SECTIONS
+   ============================================ */
+
+.hero {
+    padding-top: 4rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(ellipse at center, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,245,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+.hero-logo {
+    margin-bottom: 2rem;
+}
+
+.hero-logo img {
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.5));
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px rgba(0, 245, 255, 0.5)); }
+    to { filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.8)); }
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero .tagline {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.hero .btn + .btn {
+    margin-top: 0;
+}
+
+/* Product Showcase Section in Hero */
+.product-showcase {
+    margin-top: 3rem;
+    padding: 1rem;
+    background: transparent;
+}
+
+.showcase-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.showcase-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+}
+
+.showcase-grid .showcase-item:nth-child(3):nth-last-child(1) {
+    margin: 0 auto;
+}
+
+.showcase-item {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.showcase-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 245, 255, 0.15);
+    border-color: rgba(0, 245, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.showcase-item h4 {
+    font-size: 1.3rem;
+    color: var(--lightest-slate);
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+    font-style: italic;
+    color: rgba(0, 245, 255, 0.9);
+}
+
+.showcase-item p {
+    font-size: 1.05rem;
+    color: var(--light-slate);
+    line-height: 1.6;
+}
+
+.showcase-item p strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.showcase-summary {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--light-slate);
+    max-width: 700px;
+    margin: 1rem auto 0;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Workflow Ideas (Under Hero CTA) */
+.workflow-ideas {
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 1.5rem;
+    color: var(--text-primary);
+}
+
+.workflow-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    align-items: stretch;
+    width: 100%;
+}
+
+.workflow-intro {
+    flex: 0 0 35%;
+    font-size: 1.9rem;
+    font-style: italic;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 10px rgba(0, 245, 255, 0.2);
+}
+
+.workflow-list {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.workflow-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    flex: 1;
+}
+
+.workflow-list li {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text-primary);
+    font-style: italic;
+    width: 100%;
+    white-space: normal;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.workflow-list li::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.workflow-list li:hover {
+    transform: translateX(5px);
+    color: var(--primary-color);
+}
+
+.workflow-list li:hover::before {
+    transform: scale(1.2);
+}
+
+/* Specific icons for workflow list items */
+.workflow-list li.icon-document::before {
+    content: "\f15c";
+}
+
+.workflow-list li.icon-sermon::before {
+    content: "\f02d";
+}
+
+.workflow-list li.icon-recruiting::before {
+    content: "\f500";
+}
+
+.workflow-list li.icon-qa::before {
+    content: "\f059";
+}
+
+/* Page Hero (for internal pages) */
+.page-hero {
+    padding: 120px 0 60px;
+    text-align: center;
+}

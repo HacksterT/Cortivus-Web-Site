@@ -4,29 +4,30 @@ This repository contains the source code for the Cortivus company website, a sta
 
 ## Overview
 
-Cortivus is a product studio developing AI-powered applications that solve real-world problems across health, lifestyle, and learning. This website showcases our three core products: Journey2Health (digital health assistant), Sermon Generator (faith-based content creation), and MakeItADouble (smart bar assistant). The site features a modern, responsive design with interactive elements and includes an AI chatbot demonstration.
-
-Comprehensive project paperwork is included in the Cortivus_Complete_Project Jupyter notebook in the repository.
+Cortivus is a product studio developing AI-powered applications that solve real-world problems across health, lifestyle, and learning. This website showcases our core products including Journey2Health (digital health assistant), Sermon Generator (faith-based content creation), and MakeItADouble (smart bar assistant), plus our enterprise platform for healthcare execution. The site features a modern, responsive design with dropdown navigation and modular CSS architecture.
 
 ## Features
 
 - Responsive design that works on mobile, tablet, and desktop devices
 - Modern UI with animated elements and gradients
 - Product showcase with detailed information pages
-- Interactive AI chatbot with multiple demo modes
+- Dropdown navigation menu for enterprise and consumer solutions
+- Dedicated execution platform page for healthcare leaders
 - Contact form integration using Formspree
 - Smooth scrolling navigation
 - CSS Grid and Flexbox layout
-- External stylesheet architecture for maintainability
+- Modular CSS architecture for easy maintenance
 
 ## Technology Stack
 
 - HTML5
-- CSS3 (with custom variables, animations, and responsive design)
-- Vanilla JavaScript
-- Font Awesome for custom icons
-- GitHub Pages for hosting
+- CSS3 (modular architecture with @import, custom variables, animations, and responsive design)
+- Vanilla JavaScript (ES6+)
+- Font Awesome for icons
+- GitHub Pages (static site hosting)
 - Formspree for form handling
+
+**Hosting:** This site is deployed as a static website on GitHub Pages at `https://cortivus.com`, with automatic deployment from the main branch.
 
 ## Development
 
@@ -96,155 +97,70 @@ If you need to change the domain in the future:
 2. Update DNS settings with your domain registrar
 3. Configure GitHub Pages settings in the repository
 
-## Chatbot Implementation Plan
+## CSS Architecture
 
-### Purpose & Functionality
+The website uses a modular CSS structure for maintainability and scalability:
 
-1. **Showcase Expertise**: Demonstrate RAG and AI assistant capabilities directly on the website
-2. **Lead Generation**: Capture visitor information and qualify leads
-3. **Answer FAQs**: Handle common questions about services
-4. **Provide Examples**: Show how solutions work in real-time through interactive demos
-
-### Technical Implementation
-
-#### LLM Selection
-
-- **Primary Choice**: MiniMax M1
-  - Cost-effective: $0.40/million tokens for input, $2.20/million tokens for output
-  - 1 million token context window (ideal for document demos)
-  - Strong reasoning capabilities for complex tasks
-
-#### Architecture
-
-```ascii
-GitHub Pages Site (Static Frontend)
-    │
-    ├── HTML/CSS/JS
-    │   └── Chatbot UI Component
-    │
-    └── API Requests ───────┐
-                           │
-                           ▼
-                    Azure Function
-                           │
-                           ▼
-                      MiniMax API
+```
+css/
+├── core.css          # Variables, resets, base styles
+├── navigation.css    # Header, nav, dropdown menu
+├── hero.css          # Hero sections & showcases
+├── sections.css      # About, services, contact
+├── components.css    # Buttons, cards, badges
+├── platform.css      # Platform modules, roadmap
+├── footer.css        # Footer styles
+└── responsive.css    # Mobile/tablet breakpoints
 ```
 
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-  - Custom chat interface with site-matching design
-  - Responsive layout for all devices
-  - Local storage for conversation history
-
-- **Backend**: Azure Functions (Python)
-  - Seamless integration with existing Python RAG system
-  - Serverless architecture on existing Azure business account
-  - Secure API key management via Azure Key Vault
-  - CORS configuration for GitHub Pages integration
-
-- **Integration**: REST API
-  - JSON message format
-  - Asynchronous communication
-  - Error handling and retry logic
-
-#### Demo Scenarios
-
-1. **Policy Retrieval Demo**
-   - Pre-loaded sample policies in JSON format
-   - Interactive Q&A about policy contents
-   - Visual demonstration of retrieval process with highlighting
-
-2. **Sermon Prep Assistant Demo**
-   - Scripture database with commentary (JSON/XML format)
-   - Thematic analysis and connections
-   - Sermon outline generation with exportable format
-
-#### Python Implementation Details
-
-- **Libraries & Frameworks**:
-  - FastAPI for API endpoint structure within Azure Functions
-  - Langchain for RAG pipeline integration
-  - Azure SDK for Python for cloud service integration
-  - Requests for API communication with MiniMax
-
-- **Error Handling & Logging**:
-  - Comprehensive try/except blocks with detailed error messages
-  - Azure Application Insights integration for monitoring
-  - Proper HTTP status codes and error responses
-
-- **RAG Integration**:
-  - Direct import of existing Python RAG components
-  - Shared utility functions between local development and Azure
-  - Optimized document chunking for context window management
-
-#### Cost Management
-
-- Context window optimization (60-80% token reduction)
-- Caching common responses in browser localStorage
-- Selective document retrieval with Azure Functions
-- Leveraging Azure Functions free tier (1M executions/month)
-- Efficient Python implementation to minimize execution time
-
-### Implementation Timeline
-
-1. Frontend UI development (HTML/CSS/JS) - 1 week
-2. Azure Function setup and API integration - 1 week
-3. Demo content creation and formatting - 3 days
-4. Testing and optimization - 2 days
-5. Production deployment - 1 day
+The main `styles.css` imports these modules in the correct order. Original monolithic CSS backed up as `styles.old.css`.
 
 ### Project Structure
 
 ```plaintext
 cortivus_website/
-├── index.html                  # Main website page
-├── portfolio.html              # Portfolio page
-├── styles.css                  # Main stylesheet
+├── index.html                  # Main homepage
+├── execution.html              # Healthcare execution platform page
+├── portfolio.html              # Product portfolio page
+├── team.html                   # Team page
+├── styles.css                  # Main stylesheet (imports modules)
+├── styles.old.css              # Backup of original monolithic CSS
 ├── README.md                   # Project documentation
-├── bot_plan.md                 # Chatbot implementation plan
 │
-├── assets/                     # All static assets
-│   ├── images/                 # Website images
-│   └── fonts/                  # Custom fonts (if any)
+├── css/                        # Modular CSS architecture
+│   ├── core.css                # Variables, resets, base styles
+│   ├── navigation.css          # Header, nav, dropdown
+│   ├── hero.css                # Hero sections
+│   ├── sections.css            # About, services, contact
+│   ├── components.css          # Buttons, cards, badges
+│   ├── platform.css            # Platform modules, roadmap
+│   ├── footer.css              # Footer styles
+│   └── responsive.css          # Mobile/tablet breakpoints
+│
+├── images/                     # Website images and assets
 │
 ├── js/                         # JavaScript files
-│   ├── main.js                 # Main website functionality
-│   └── chatbot/                # Chatbot-specific code
-│       ├── chat.js             # Core chatbot functionality
-│       ├── ui.js               # Chat UI components
-│       └── demo-data/          # Demo scenario data
-│           ├── policies.json   # Sample policy documents
-│           └── sermons.json    # Scripture and sermon data
+│   └── main.js                 # Navigation and UI interactions
 │
-└── azure/                      # Azure Function code (separate deployment)
-    ├── ChatFunction/           # Main function app
-    │   ├── __init__.py         # Function entry point
-    │   ├── function.json       # Function configuration
-    │   └── requirements.txt    # Python dependencies
-    │
-    ├── shared/                 # Shared code between functions
-    │   ├── rag_utils.py        # RAG integration utilities
-    │   └── minimax_client.py   # MiniMax API client
-    │
-    └── local.settings.json     # Local settings (gitignored)
+└── archive/                    # Archived/deprecated code
+    ├── chatbot/                # Removed chatbot implementation
+    └── chatbot-loader.js       # Chatbot loader script
 ```
 
 This structure provides:
 
-- **Clean separation** between website and chatbot code
-- **Minimal impact** on existing site files
-- **Efficient organization** with modular components
-- **Easy maintenance** with clear file organization
-- **GitHub Pages compatibility** with static frontend assets
-- **Separate deployment** for Azure Functions backend
+- **Modular CSS** for easy maintenance and feature additions
+- **Clear separation** between page types (consumer vs enterprise)
+- **Scalable architecture** ready for future growth
+- **GitHub Pages compatibility** with static assets
 
 ## Recent Updates
 
-- Extracted inline CSS to external stylesheet
-- Fixed layout issues with workflow list
-- Added Font Awesome icons to workflow items
-- Enhanced color scheme with gradient text and hover effects
-- Optimized container sizing for different screen sizes
+- **CSS Modularization**: Reorganized 1445-line CSS into 8 focused modules for better maintainability
+- **New Execution Platform Page**: Added dedicated page for healthcare execution accelerant with roadmap timeline
+- **Dropdown Navigation**: Implemented hover/mobile-friendly dropdown menu separating enterprise and consumer solutions
+- **Platform Components**: Created module cards, roadmap timeline, and phase markers for execution page
+- **Responsive Design**: Enhanced mobile navigation with accordion-style dropdowns
 
 ## License
 
