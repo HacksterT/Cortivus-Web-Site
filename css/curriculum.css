@@ -1,0 +1,184 @@
+/* ============================================
+   CURRICULUM UTILITY STYLES
+   Theme: "The Machine" (Blueprint / Dark / Precision)
+   ============================================ */
+/* 
+   NOTE: Inheriting core background and hero styles from css/core.css and css/hero.css 
+   to match Main Landing Page exactly.
+*/
+
+/* Section overrides for Dark Mode */
+.services,
+.about,
+.contact,
+.workflow-section {
+    background: transparent;
+    /* Let body background show through */
+}
+
+/* Glassmorphism Cards */
+.service-card,
+.module-card,
+.problem-card,
+.feature-card {
+    background: rgba(17, 24, 39, 0.7);
+    /* translucent dark */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 245, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    color: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover,
+.module-card:hover,
+.feature-card:hover,
+.problem-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.15);
+    transform: translateY(-4px);
+}
+
+.service-card h3,
+.module-card h3,
+.feature-card h3,
+.problem-card h3 {
+    color: var(--primary-color);
+    /* Cyan */
+}
+
+.service-card p,
+.module-card p,
+.feature-card p,
+.problem-card p {
+    color: #94a3b8;
+    /* Slate-400 */
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4 {
+    color: #f8fafc;
+    /* Slate-50 */
+}
+
+p.subtitle {
+    color: #cbd5e1;
+    /* Slate-300 */
+}
+
+/* Feature Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card,
+.problem-card {
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.problem-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Workflow Steps (Horizontal) */
+.workflow-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 4rem;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.workflow-step {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-number {
+    width: 3rem;
+    height: 3rem;
+    background: var(--gradient-1);
+    color: #000;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
+}
+
+.workflow-step h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.workflow-step p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Connector Line */
+.workflow-steps::before {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: rgba(0, 245, 255, 0.2);
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .workflow-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .workflow-steps::before {
+        display: none;
+    }
+}
+
+/* Cross-Sell Section (Education) */
+.cross-sell {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: linear-gradient(90deg, rgba(0, 245, 255, 0.05) 0%, transparent 100%);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 12px 12px 0;
+}
+
+.cross-sell h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.cross-sell .btn {
+    margin-top: 1.5rem;
+}

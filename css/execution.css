@@ -1,0 +1,116 @@
+/* ============================================
+   EXECUTION ACCELERANT STYLES
+   Theme: "The Machine" (Blueprint / Dark / Precision)
+   ============================================ */
+/*
+   NOTE: Inheriting core background and hero styles from css/core.css and css/hero.css
+   to match Main Landing Page exactly.
+*/
+
+/* Ensure content sits above grid */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Section overrides for Dark Mode */
+.services,
+.about,
+.contact {
+    background: transparent;
+    /* Let body background show through */
+}
+
+/* Glassmorphism Cards */
+.service-card,
+.module-card,
+.problem-card {
+    background: rgba(17, 24, 39, 0.7);
+    /* translucent dark */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 245, 255, 0.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    color: #e2e8f0;
+}
+
+.service-card:hover,
+.module-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.15);
+    transform: translateY(-4px);
+}
+
+.service-card h3,
+.module-card h3 {
+    color: var(--primary-color);
+    /* Cyan */
+}
+
+.service-card p,
+.module-card p {
+    color: #94a3b8;
+    /* Slate-400 */
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4 {
+    color: #f8fafc;
+    /* Slate-50 */
+}
+
+p.subtitle {
+    color: #cbd5e1;
+    /* Slate-300 */
+}
+
+/* Module Status Tags (Cyberpunk Style) */
+.module-status {
+    background: rgba(0, 245, 255, 0.1);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+}
+
+.module-card.roadmap .module-status {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+}
+
+/* Timeline / Roadmap */
+.roadmap-phase::before {
+    background: rgba(0, 245, 255, 0.2);
+    /* Cyan track */
+}
+
+.phase-marker {
+    background: #0f172a;
+    border-color: var(--primary-color);
+}
+
+.phase-content {
+    background: rgba(30, 41, 59, 0.5);
+    border-color: rgba(0, 245, 255, 0.1);
+}
+
+/* Cross-Sell Section (Education) */
+.cross-sell {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: linear-gradient(90deg, rgba(0, 245, 255, 0.05) 0%, transparent 100%);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 12px 12px 0;
+}
+
+.cross-sell h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.cross-sell .btn {
+    margin-top: 1.5rem;
+}

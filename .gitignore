@@ -31,6 +31,7 @@ Thumbs.db
 node_modules/
 .env
 .env.local
+data/
 
 # Azure Functions
 local.settings.json
@@ -58,3 +59,4 @@ todo.txt
 setup_scripts/
 docs/
 onboarding/
+# tasks/

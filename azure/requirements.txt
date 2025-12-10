@@ -1,4 +1,0 @@
-azure-functions
-azure-keyvault-secrets
-azure-identity
-requests
