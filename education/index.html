@@ -55,26 +55,26 @@
     <!-- OFFERINGS SECTION -->
     <section id="offerings" class="edu-offerings">
         <div class="container">
-            <h2 class="section-title">The Executive Suite</h2>
-            <div class="radial-layout">
-                <!-- Central Hub -->
-                <div class="hub-node">
-                    <div class="hub-icon">
-                        <img src="/images/career-profile.png" alt="Comprehensive Career Profile Hub Icon">
-                    </div>
-                    <div class="hub-content">
-                        <h3>Comprehensive Career Profile</h3>
-                        <p>Your strategic roadmap, documented and ready for the next level.</p>
-                    </div>
-                </div>
+            <h2 class="section-title">The Career Intelligence Platform</h2>
+            <div class="split-layout">
+                <!-- SVG Connections Layer -->
+                <svg class="layout-spokes" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid meet">
+                    <!-- Lines will be styled in CSS to connect hub to node anchors -->
+                    <line class="spoke" x1="600" y1="400" x2="300" y2="200" />
+                    <line class="spoke" x1="600" y1="400" x2="300" y2="600" />
+                    <line class="spoke" x1="600" y1="400" x2="900" y2="200" />
+                    <line class="spoke" x1="600" y1="400" x2="900" y2="600" />
+                </svg>
 
-                <div class="orbital-nodes">
+                <!-- Left Column Nodes -->
+                <div class="side-nodes left">
                     <!-- Offering 1: Mentoring -->
-                    <div class="orbital-node offering-card" style="--index: 0;">
+                    <div class="offering-card" id="node-0">
                         <div class="offering-icon"><i class="fas fa-chess-king"></i></div>
                         <h3>Strategic Mentoring</h3>
                         <p>1-on-1 guidance to navigate the complex intersection of healthcare, leadership, and
-                            technology.</p>
+                            technology.
+                        </p>
                         <ul>
                             <li><i class="fas fa-check"></i> Board & Staff Strategy</li>
                             <li><i class="fas fa-check"></i> Physician Engagement</li>
@@ -83,7 +83,7 @@
                     </div>
 
                     <!-- Offering 2: Curriculum Utility -->
-                    <div class="orbital-node offering-card" style="--index: 1;">
+                    <div class="offering-card" id="node-1">
                         <div class="offering-icon">
                             <img src="/images/curr-util.png" alt="Curriculum Utility Icon"
                                 style="width: 48px; height: auto;">
@@ -93,9 +93,25 @@
                             unprecedented speed.</p>
                         <span class="premium-badge">App Access</span>
                     </div>
+                </div>
 
+                <!-- Central Hub -->
+                <div class="hub-container">
+                    <div class="hub-node">
+                        <div class="hub-icon">
+                            <img src="/images/career-profile.png" alt="Comprehensive Career Profile Hub Icon">
+                        </div>
+                        <div class="hub-content">
+                            <h3>Comprehensive Career Profile</h3>
+                            <p>Your strategic roadmap, documented and ready for the next level.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column Nodes -->
+                <div class="side-nodes right">
                     <!-- Offering 3: Project Writer -->
-                    <div class="orbital-node offering-card" style="--index: 2;">
+                    <div class="offering-card" id="node-2">
                         <div class="offering-icon">
                             <img src="/images/project-manage.png" alt="Project Writer Icon"
                                 style="width: 48px; height: auto;">
@@ -107,7 +123,7 @@
                     </div>
 
                     <!-- Offering 4: Personal Automations -->
-                    <div class="orbital-node offering-card" style="--index: 3;">
+                    <div class="offering-card" id="node-3">
                         <div class="offering-icon"><i class="fas fa-robot"></i></div>
                         <h3>Custom Automation</h3>
                         <p>Custom-built workflows to handle your specific administrative burdens. If you do it twice, we

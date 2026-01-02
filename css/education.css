@@ -104,19 +104,44 @@
     position: relative;
 }
 
-/* Radial Layout */
-.radial-layout {
-    position: relative;
-    max-width: 1200px;
-    margin: 80px auto;
-    min-height: 850px;
-    display: flex;
+/* Split Side Layout */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px 1fr;
     align-items: center;
+    gap: 2rem;
+    position: relative;
+    max-width: 1400px;
+    margin: 100px auto;
+    min-height: 800px;
+}
+
+.side-nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    /* Spacing between the two boxes */
+    z-index: 5;
+}
+
+.side-nodes.left {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.side-nodes.right {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.hub-container {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
 
 .hub-node {
-    z-index: 10;
     text-align: center;
     width: 400px;
     height: 400px;
@@ -138,7 +163,6 @@
     transform: scale(1.05);
     box-shadow: 0 0 80px rgba(0, 245, 255, 0.4), inset 0 0 40px rgba(0, 245, 255, 0.2);
     border-color: #ff006e;
-    /* Using accent color from badge if not in vars */
 }
 
 .hub-icon img {
@@ -160,52 +184,37 @@
     color: var(--text-secondary);
     max-width: 250px;
     line-height: 1.4;
+    margin: 0 auto;
 }
 
-.orbital-nodes {
+/* Connecting Lines (SVG) */
+.layout-spokes {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.orbital-node {
-    position: absolute;
-    width: 320px;
-    z-index: 5;
-    transition: all 0.5s ease;
-}
-
-.orbital-node[style*="--index: 0"] {
-    top: 0;
-    left: 0;
-}
-
-.orbital-node[style*="--index: 1"] {
-    top: 0;
-    right: 0;
-}
-
-.orbital-node[style*="--index: 2"] {
-    bottom: 0;
-    left: 0;
-}
-
-.orbital-node[style*="--index: 3"] {
-    bottom: 0;
-    right: 0;
+.spoke {
+    stroke: var(--primary-color);
+    stroke-width: 2;
+    stroke-opacity: 0.15;
+    stroke-dasharray: 4;
 }
 
 .offering-card {
     background: rgba(17, 17, 17, 0.6);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 3rem;
+    padding: 2.5rem;
     border-radius: 16px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    max-width: 400px;
 }
 
 .offering-card:hover {
@@ -413,25 +422,28 @@
         grid-template-columns: 1fr;
     }
 
-    .radial-layout {
+    .split-layout {
+        display: flex;
+        flex-direction: column;
         height: auto;
         min-height: auto;
-        flex-direction: column;
         gap: 3rem;
         margin: 40px auto;
     }
 
-    .orbital-nodes {
-        position: static;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        width: 100%;
+    .layout-spokes {
+        display: none;
     }
 
-    .orbital-node {
-        position: static;
+    .side-nodes {
         width: 100%;
+        gap: 2rem;
+    }
+
+    .side-nodes.left,
+    .side-nodes.right {
+        text-align: left;
+        align-items: stretch;
     }
 
     .hub-node {
