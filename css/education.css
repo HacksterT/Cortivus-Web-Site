@@ -107,13 +107,14 @@
 /* Split Side Layout */
 .split-layout {
     display: grid;
-    grid-template-columns: 1fr 400px 1fr;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
     position: relative;
-    max-width: 1400px;
-    margin: 100px auto;
-    min-height: 800px;
+    max-width: 1200px;
+    /* Match container */
+    margin: 20px auto;
+    padding: 20px 0;
 }
 
 .side-nodes {
@@ -143,20 +144,21 @@
 
 .hub-node {
     text-align: center;
-    width: 400px;
-    height: 400px;
-    background: rgba(10, 15, 30, 0.85);
+    width: 360px;
+    height: 360px;
+    background: rgba(10, 15, 30, 0.95);
     backdrop-filter: blur(20px);
     border: 2px solid var(--primary-color);
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 60px rgba(0, 245, 255, 0.2), inset 0 0 30px rgba(0, 245, 255, 0.1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 50px rgba(0, 245, 255, 0.2);
+    transition: all 0.4s ease;
     cursor: default;
+    flex-shrink: 0;
 }
 
 .hub-node:hover {
@@ -200,8 +202,8 @@
 
 .spoke {
     stroke: var(--primary-color);
-    stroke-width: 2;
-    stroke-opacity: 0.15;
+    stroke-width: 1.5;
+    stroke-opacity: 0.1;
     stroke-dasharray: 4;
 }
 
@@ -209,12 +211,13 @@
     background: rgba(17, 17, 17, 0.6);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 16px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    max-width: 400px;
+    width: 100%;
+    max-width: 360px;
 }
 
 .offering-card:hover {
@@ -436,22 +439,25 @@
     }
 
     .side-nodes {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         gap: 2rem;
     }
 
-    .side-nodes.left,
-    .side-nodes.right {
-        text-align: left;
-        align-items: stretch;
+    .hub-container {
+        order: -1;
+        width: 100%;
     }
 
     .hub-node {
         width: 100%;
+        max-width: 360px;
         height: auto;
-        border-radius: 20px;
-        aspect-ratio: auto;
-        padding: 3rem 2rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        padding: 2rem;
+        margin: 0 auto;
     }
 
     .mentor-container {
