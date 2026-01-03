@@ -280,6 +280,14 @@
 
 /* Page Hero (for internal pages) */
 .page-hero {
-    padding: 120px 0 60px;
+    padding: 100px 0 40px;
     text-align: center;
+}
+
+.page-hero .section-title {
+    margin-bottom: 0.5rem;
+}
+
+.page-hero .subtitle {
+    margin-top: 0;
 }

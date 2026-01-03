@@ -31,6 +31,13 @@
     line-height: 1.8;
 }
 
+.about-text h3 {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .about-text p {
     margin-bottom: 1.5rem;
 }

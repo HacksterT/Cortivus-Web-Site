@@ -1,29 +1,31 @@
-# Cortivus - Intelligence in Action
+# Cortivus - Career Intelligence Platform
 
 **Lead with Precision. Scale with AI.**
 
-Cortivus is a hybrid capabilities firm: part **Executive Education** provider, part **Product Studio**. We help healthcare leaders and organizations bridge the gap between human wisdom and machine speed.
+Cortivus helps healthcare executives accelerate their career development through AI-powered tools and structured mentoring. The Career Intelligence Platform combines personalized learning, job transition support, and executive mentoring—all powered by a comprehensive professional profile.
 
-## 🚀 Project Overview
+## Project Overview
 
-This website serves as the digital headquarters for Cortivus, showcasing our dual mission:
+This website serves as the marketing site for the **Cortivus Career Intelligence Platform**, featuring four integrated modules:
 
-1. **Executive Education**: Mentoring CMOs and Hospital Leaders to navigate the AI era.
-2. **Product Portfolio**: Building and shipping AI tools that solve real problems in Health, Faith, and Hospitality.
+1. **Career Profile**: AI-enriched professional profile that powers all other modules
+2. **The Tutor**: Skills gap analysis and personalized curriculum generation
+3. **The Job AId**: Resume writer, interview coach, and onboarding assistant
+4. **The Mentor**: Structured 13-week mentoring cycles with PI Planning and sprint sessions
 
-### Key Pillars
+### Target Audience
 
-* **Executive Education (`/education`)**: High-touch mentorship and strategy.
-* **Execution Accelerant (`/portfolio/execution`)**: Tools like *The Architect* to operationalize strategy.
-* **Innovation Lab (`/portfolio`)**: Our incubator for *Journey2Health*, *Sermon Generator*, and *MakeItADouble*.
+- Chief Medical Officers (CMOs)
+- VPs of Medical Affairs
+- Healthcare Executives
 
-## 🛠️ Development
+## Development
 
-This project is built with **Vanilla HTML, CSS, and JavaScript** to ensure speed, simplicity, and ease of deployment (GitHub Pages).
+This project is built with **Vanilla HTML, CSS, and JavaScript** for speed, simplicity, and easy deployment to GitHub Pages.
 
 ### Prerequisites
 
-* Python 3.x (standard on most machines)
+- Python 3.x (for local server)
 
 ### Branch Workflow
 
@@ -47,27 +49,53 @@ Use the included batch script to start a local server on port 4000:
 
 Then open [http://localhost:4000](http://localhost:4000)
 
-**Note:** Port 4000 is registered in the project port registry to avoid conflicts with other local services.
-
-## 📂 Project Structure
+## Project Structure
 
 ```
 Cortivus-Web-Site/
-├── education/          # Executive Education Landing Page
-├── portfolio/          # New Product Portfolio Hub
-│   ├── execution/      # Execution Accelerant Product Page
-│   ├── journey2health/ 
-│   └── sermon-generator/
-├── company/            # Team and About links
-├── css/                # centralized styles (navigation.css, education.css, etc.)
-├── js/                 # centralized scripts (components.js used for header/footer injection)
-└── index.html          # Main Home Page
+├── index.html              # Homepage - problem-first approach with platform overview
+├── platform/               # Module pages
+│   ├── career-profile/     # Career Profile module
+│   ├── tutor/              # The Tutor module
+│   ├── job-aid/            # The Job AId module
+│   └── mentor/             # The Mentor module
+├── company/
+│   └── team.html           # About page with team and mission
+├── css/                    # Modular stylesheets
+│   ├── core.css            # Variables, resets, base styles
+│   ├── navigation.css      # Header, nav, dropdown
+│   ├── hero.css            # Hero sections
+│   ├── sections.css        # About, services, contact
+│   ├── components.css      # Buttons, cards, forms
+│   ├── platform.css        # Platform overview styles
+│   ├── platform-modules.css # Module page styles
+│   ├── homepage.css        # Homepage-specific styles
+│   ├── footer.css          # Footer styles
+│   └── responsive.css      # Mobile & tablet breakpoints
+├── js/
+│   ├── components.js       # Header/footer injection, navigation
+│   └── main.js             # Mobile nav, interactions
+├── images/                 # Optimized images and icons
+├── archive/                # Archived legacy pages (portfolio, education)
+└── tasks/                  # PRDs and planning documents
 ```
 
-## 🎨 Design Philosophy
+## Design Philosophy
 
-* **Aesthetic**: "Executive Premium" – Dark modes, Cyan/Aqua accents, clean typography.
-* **UX**: "Smart Navigation" – Dropdowns and active states handled via `components.js`.
+* **Aesthetic**: "Executive Premium" – Dark theme with cyan/aqua accents, clean typography
+* **Approach**: Problem-first messaging – Lead with challenges executives face, then present solutions
+* **UX**: Consistent navigation with dropdown for platform modules
+
+## Navigation Structure
+
+- Home (`/`)
+- Platform (dropdown)
+  - Career Profile (`/platform/career-profile/`)
+  - The Tutor (`/platform/tutor/`)
+  - The Job AId (`/platform/job-aid/`)
+  - The Mentor (`/platform/mentor/`)
+- About (`/company/team.html`)
+- Contact (`/#contact`)
 
 ---
 *© 2026 Cortivus*
