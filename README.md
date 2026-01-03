@@ -14,7 +14,7 @@ This website serves as the digital headquarters for Cortivus, showcasing our dua
 ### Key Pillars
 
 * **Executive Education (`/education`)**: High-touch mentorship and strategy.
-* **Execution Accelerant (`/portfolio/execution`)**: Tools like *Project Writer* to operationalize strategy.
+* **Execution Accelerant (`/portfolio/execution`)**: Tools like *The Architect* to operationalize strategy.
 * **Innovation Lab (`/portfolio`)**: Our incubator for *Journey2Health*, *Sermon Generator*, and *MakeItADouble*.
 
 ## 🛠️ Development

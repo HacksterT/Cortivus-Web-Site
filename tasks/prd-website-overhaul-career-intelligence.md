@@ -38,49 +38,49 @@ The current website presents Cortivus as a hybrid "Executive Education + Product
 
 #### User Stories
 
-- [ ] **STORY-01**: As a healthcare executive, I want to immediately understand the problems Cortivus solves so that I can determine if the platform is relevant to my challenges
+- [x] **STORY-01**: As a healthcare executive, I want to immediately understand the problems Cortivus solves so that I can determine if the platform is relevant to my challenges
 
   - Priority: Must-Have
   - See: FR-1, FR-2, FR-3
   - Tasks:
-    - [ ] Frontend: Redesign homepage hero to lead with "The Executive's Paradox" problem statement
-    - [ ] Frontend: Create compelling problem cards (People, Data, Performance challenges)
-    - [ ] Frontend: Add transition section from problems to solution (Career Intelligence Platform intro)
-    - [ ] Frontend: Move radial/graph background images from education page to homepage, overlay on existing hero grid
-    - [ ] Content: Refine problem statement copy to resonate with target audience
+    - [x] Frontend: Redesign homepage hero to lead with "The Executive's Paradox" problem statement
+    - [x] Frontend: Create compelling problem cards (People, Data, Performance challenges)
+    - [x] Frontend: Add transition section from problems to solution (Career Intelligence Platform intro)
+    - [x] Frontend: Move radial/graph background images from education page to homepage, overlay on existing hero grid
+    - [x] Content: Refine problem statement copy to resonate with target audience
   - Design Notes:
     - Retain existing homepage grid pattern in hero section
     - Layer the radial/graph visuals from `/education/` page over the grid for added depth
     - Maintain current "Executive Premium" dark theme with cyan/aqua accents
-- [ ] **STORY-02**: As a visitor, I want to understand the Career Intelligence Platform and its four modules so that I can see the full scope of the solution
+- [x] **STORY-02**: As a visitor, I want to understand the Career Intelligence Platform and its four modules so that I can see the full scope of the solution
 
   - Priority: Must-Have
   - See: FR-4, FR-5, FR-6
   - Tasks:
-    - [ ] Frontend: Create platform overview section on homepage with 4-module summary cards
-    - [ ] Frontend: Design module card layout (Career Profile, Tutor, Job Aid, Mentor)
-    - [ ] Frontend: Add "Learn More" links from each module card to detailed module pages
-    - [ ] Content: Write concise module descriptions for homepage cards
-- [ ] **STORY-03**: As a potential customer, I want to explore each module in detail so that I can understand specific features and benefits
+    - [x] Frontend: Create platform overview section on homepage with 4-module summary cards
+    - [x] Frontend: Design module card layout (Career Profile, Tutor, Job Aid, Mentor)
+    - [x] Frontend: Add "Learn More" links from each module card to detailed module pages
+    - [x] Content: Write concise module descriptions for homepage cards
+- [x] **STORY-03**: As a potential customer, I want to explore each module in detail so that I can understand specific features and benefits
 
   - Priority: Must-Have
   - See: FR-7, FR-8, FR-9, FR-10
   - Tasks:
-    - [ ] Frontend: Create `/platform/career-profile/index.html` module page
-    - [ ] Frontend: Create `/platform/tutor/index.html` module page
-    - [ ] Frontend: Create `/platform/job-aid/index.html` module page
-    - [ ] Frontend: Create `/platform/mentor/index.html` module page
-    - [ ] Frontend: Design consistent module page template (hero, features, benefits, CTA)
-    - [ ] Content: Write detailed feature descriptions for each module
-    - [ ] CSS: Create `css/platform-modules.css` for module page styling
-- [ ] **STORY-04**: As a visitor, I want clear calls-to-action so that I can easily sign up or contact Cortivus
+    - [x] Frontend: Create `/platform/career-profile/index.html` module page
+    - [x] Frontend: Create `/platform/tutor/index.html` module page
+    - [x] Frontend: Create `/platform/job-aid/index.html` module page
+    - [x] Frontend: Create `/platform/mentor/index.html` module page
+    - [x] Frontend: Design consistent module page template (hero, features, benefits, CTA)
+    - [x] Content: Write detailed feature descriptions for each module
+    - [x] CSS: Create `css/platform-modules.css` for module page styling
+- [x] **STORY-04**: As a visitor, I want clear calls-to-action so that I can easily sign up or contact Cortivus
 
   - Priority: Must-Have
   - See: FR-11, FR-12
   - Tasks:
-    - [ ] Frontend: Update all CTAs to lead to contact form (temporary)
-    - [ ] Frontend: Add CTA sections to each module page
-    - [ ] Frontend: Ensure contact form is accessible from all pages
+    - [x] Frontend: Update all CTAs to lead to contact form (temporary)
+    - [x] Frontend: Add CTA sections to each module page
+    - [x] Frontend: Ensure contact form is accessible from all pages
     - [ ] Docs: Document future CTA integration with Lemon Squeezy/Digital Ocean
 - [ ] **STORY-05**: As a site administrator, I want the portfolio pages archived (not accessible) so that I can focus marketing on Career Intelligence
 
@@ -91,23 +91,22 @@ The current website presents Cortivus as a hybrid "Executive Education + Product
     - [ ] Frontend: Remove portfolio from navigation in `components.js`
     - [ ] Docs: Move portfolio pages to `/archive/portfolio/` for preservation
     - [ ] Testing: Verify old portfolio links redirect properly
-- [ ] **STORY-06**: As a visitor, I want updated navigation that reflects the new site structure so that I can easily find information
+    - [ ] CSS: Clean up legacy portfolio CSS files (execution.css, education.css, etc.)
+- [x] **STORY-06**: As a visitor, I want updated navigation that reflects the new site structure so that I can easily find information
 
   - Priority: Must-Have
   - See: FR-15, FR-16
   - Tasks:
-    - [ ] Frontend: Update `js/components.js` navLinks array with new structure
-    - [ ] Frontend: Create "Platform" dropdown with 4 module links
-    - [ ] Frontend: Update footer links to match new navigation
-    - [ ] Testing: Verify navigation works on all pages
+    - [x] Frontend: Update `js/components.js` navLinks array with new structure
+    - [x] Frontend: Create "Platform" dropdown with 4 module links
+    - [x] Frontend: Update footer links to match new navigation
+    - [x] Testing: Verify navigation works on all pages
 - [ ] **STORY-07**: As a visitor, I want to learn about the founder/mentor so that I can trust the expertise behind the platform
 
   - Priority: Should-Have
   - See: FR-17
   - Tasks:
-    - [ ] Frontend: Keep/update Dr. Sybert bio section on homepage or about page
-    - [ ] Frontend: Update company/team page with refined positioning
-    - [ ] Content: Align bio with Career Intelligence Platform messaging
+    - [ ] Frontend: Update `/company/team.html` (About page) with revised Dr. Sybert bio card
     - [ ] Content: Revise Dr. Sybert bio card to emphasize healthcare leadership and mentoring
     - [ ] Content: Highlight physician engagement program development experience
     - [ ] Content: Consolidate tech expertise into fewer, more focused points (AI strategy, not granular tech skills)
@@ -116,6 +115,7 @@ The current website presents Cortivus as a hybrid "Executive Education + Product
     - Emphasize mentoring and physician engagement program development
     - Keep AI/tech as supporting competency, not primary focus
     - Combine multiple tech items (e.g., "AI Innovation, Clinical Informatics" instead of listing separately)
+  - Note: Premium Advisory section on The Mentor page already has updated founder bio with credentials
 - [ ] **STORY-08**: As a visitor, I want the site to load fast and look professional so that I trust Cortivus as a premium service
 
   - Priority: Should-Have
@@ -125,6 +125,16 @@ The current website presents Cortivus as a hybrid "Executive Education + Product
     - [ ] Frontend: Ensure consistent styling across new pages
     - [ ] Testing: Test on mobile devices
     - [ ] CSS: Verify dark theme consistency
+- [ ] **STORY-09**: As a visitor, I want consistent, professional iconography across the site so that the platform feels cohesive and polished
+
+  - Priority: Should-Have
+  - Tasks:
+    - [ ] Design: Define icon strategy (Font Awesome vs custom SVGs vs image-based icons)
+    - [ ] Design: Create icon style guide (size, color, stroke weight consistency)
+    - [ ] Design: Audit current icons across all pages for inconsistencies
+    - [ ] Frontend: Implement chosen icon system across homepage
+    - [ ] Frontend: Implement chosen icon system across module pages
+    - [ ] Frontend: Ensure icons work properly in dark theme
 
 #### Technical Tasks
 
@@ -135,31 +145,33 @@ The current website presents Cortivus as a hybrid "Executive Education + Product
     - [ ] Move `/portfolio/` contents to `/archive/portfolio/`
     - [ ] Update `.gitignore` if needed to exclude archive from deployments (optional)
     - [ ] Document archive location in README
-- [ ] **TECH-02**: Create new folder structure for platform module pages
+- [x] **TECH-02**: Create new folder structure for platform module pages
 
   - Reason: Organize new content logically
   - Tasks:
-    - [ ] Create `/platform/` directory
-    - [ ] Create subdirectories for each module
-    - [ ] Create shared module page template
-- [ ] **TECH-03**: Update CSS architecture for new pages
+    - [x] Create `/platform/` directory
+    - [x] Create subdirectories for each module
+    - [x] Create shared module page template
+- [x] **TECH-03**: Update CSS architecture for new pages
 
   - Reason: Maintain modular CSS approach
   - Tasks:
-    - [ ] Create `css/platform-modules.css`
-    - [ ] Update `styles.css` imports
-    - [ ] Ensure responsive design on new pages
+    - [x] Create `css/platform-modules.css`
+    - [x] Update `styles.css` imports
+    - [x] Ensure responsive design on new pages
 
 #### Blockers
 
-- [ ] **BLOCK-01**: Final copy for module pages not yet written
+- [x] **BLOCK-01**: Final copy for module pages not yet written
 
   - Blocking: STORY-03
   - Mitigation: Use content from Career Intelligence PRD as starting point, refine later
-- [ ] **BLOCK-02**: No screenshots/mockups of the app available yet
+  - Resolution: Copy written and refined for all four module pages
+- [x] **BLOCK-02**: No screenshots/mockups of the app available yet
 
   - Blocking: STORY-03 (partially)
   - Mitigation: Use placeholder images or abstract graphics initially
+  - Resolution: Using existing icon images and abstract graphics
 
 ---
 
@@ -173,10 +185,10 @@ The current website presents Cortivus as a hybrid "Executive Education + Product
 
 **Acceptance Criteria**:
 
-- [ ] Homepage hero leads with problem statement, not product pitch
-- [ ] "The Executive's Paradox" concept is prominently featured
-- [ ] Three problem areas are clearly articulated (People, Data/AI, Performance)
-- [ ] Visitor understands "this is for me" within 5 seconds
+- [x] Homepage hero leads with problem statement, not product pitch
+- [x] "The Executive's Paradox" concept is prominently featured
+- [x] Three problem areas are clearly articulated (People, Data/AI, Performance)
+- [x] Visitor understands "this is for me" within 5 seconds
 
 **Related Requirements**: FR-1, FR-2, FR-3
 
@@ -192,10 +204,10 @@ The current website presents Cortivus as a hybrid "Executive Education + Product
 
 **Acceptance Criteria**:
 
-- [ ] Platform section appears after problem statement section
-- [ ] All four modules are represented with cards/tiles
-- [ ] Each module card has: icon/image, name, 1-2 sentence description, "Learn More" link
-- [ ] Visual hierarchy makes Career Profile appear as the central "hub"
+- [x] Platform section appears after problem statement section
+- [x] All four modules are represented with cards/tiles
+- [x] Each module card has: icon/image, name, 1-2 sentence description, "Learn More" link
+- [x] Visual hierarchy makes Career Profile appear as the central "hub"
 
 **Related Requirements**: FR-4, FR-5, FR-6
 
@@ -211,11 +223,11 @@ The current website presents Cortivus as a hybrid "Executive Education + Product
 
 **Acceptance Criteria**:
 
-- [ ] Four separate module pages exist at `/platform/[module-name]/`
-- [ ] Each page has consistent structure: Hero, Features, Benefits, CTA
-- [ ] Features are specific and derived from Career Intelligence PRD
-- [ ] Pages load correctly with header/footer injection
-- [ ] Mobile responsive
+- [x] Four separate module pages exist at `/platform/[module-name]/`
+- [x] Each page has consistent structure: Hero, Features, Benefits, CTA
+- [x] Features are specific and derived from Career Intelligence PRD
+- [x] Pages load correctly with header/footer injection
+- [x] Mobile responsive
 
 **Related Requirements**: FR-7, FR-8, FR-9, FR-10
 
@@ -236,10 +248,10 @@ The current website presents Cortivus as a hybrid "Executive Education + Product
 
 **Acceptance Criteria**:
 
-- [ ] Primary CTA button appears in hero section
-- [ ] CTA appears at bottom of each module page
-- [ ] All CTAs currently link to contact form (`#contact` or `/index.html#contact`)
-- [ ] CTA copy is action-oriented ("Start Your Journey", "Get Started", etc.)
+- [x] Primary CTA button appears in hero section
+- [x] CTA appears at bottom of each module page
+- [x] All CTAs currently link to contact form (`#contact` or `/index.html#contact`)
+- [x] CTA copy is action-oriented ("Start Your Journey", "Get Started", etc.)
 
 **Related Requirements**: FR-11, FR-12
 
@@ -274,11 +286,11 @@ The current website presents Cortivus as a hybrid "Executive Education + Product
 
 **Acceptance Criteria**:
 
-- [ ] Navigation includes: Home, Platform (dropdown), About, Contact
-- [ ] Platform dropdown contains links to all 4 module pages
-- [ ] "Portfolio" link is removed from navigation
-- [ ] Active state highlights current page
-- [ ] Mobile menu works correctly
+- [x] Navigation includes: Home, Platform (dropdown), About, Contact
+- [x] Platform dropdown contains links to all 4 module pages
+- [x] "Portfolio" link is removed from navigation
+- [x] Active state highlights current page
+- [x] Mobile menu works correctly
 
 **Related Requirements**: FR-15, FR-16
 
