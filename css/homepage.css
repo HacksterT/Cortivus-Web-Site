@@ -1,0 +1,701 @@
+/* ============================================
+   HOMEPAGE STYLES
+   Premium Executive Design - Career Intelligence Platform
+   ============================================ */
+
+/* ============================================
+   HERO SECTION - PRIME
+   ============================================ */
+
+.hero-prime {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: radial-gradient(ellipse at 30% 20%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(0, 245, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at center, #0a0a12 0%, var(--dark-bg) 100%);
+    overflow: hidden;
+}
+
+/* Grid Pattern Layer */
+.hero-prime::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,245,255,0.08)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.6;
+    z-index: 1;
+}
+
+/* Executive Charts Overlay - Premium Data Visualization
+   Combines education page charts with enhanced elements */
+.hero-prime::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 900'%3E%3Cdefs%3E%3Cstyle%3E.chart%7Bfill:none;stroke:rgba(0,245,255,0.45);stroke-width:2%7D%3C/style%3E%3C/defs%3E%3C!-- TOP LEFT: Angled Bar Chart (-25 degrees from education page) --%3E%3Cg opacity='0.6' transform='rotate(-8 150 150)'%3E%3Cline class='chart' x1='60' y1='50' x2='60' y2='180'/%3E%3Cline class='chart' x1='60' y1='180' x2='200' y2='180'/%3E%3Cline class='chart' x1='60' y1='130' x2='200' y2='130' stroke-dasharray='3,3'/%3E%3Cline class='chart' x1='60' y1='100' x2='200' y2='100' stroke-dasharray='3,3'/%3E%3Crect class='chart' x='70' y='100' width='25' height='80'/%3E%3Crect class='chart' x='105' y='70' width='25' height='110'/%3E%3Crect class='chart' x='140' y='50' width='25' height='130'/%3E%3Crect class='chart' x='175' y='90' width='25' height='90'/%3E%3C/g%3E%3C!-- TOP RIGHT: Pie Chart with segments --%3E%3Cg opacity='0.5' transform='translate(1150,140)'%3E%3Ccircle class='chart' cx='0' cy='0' r='70'/%3E%3Cline class='chart' x1='0' y1='0' x2='70' y2='0'/%3E%3Cline class='chart' x1='0' y1='0' x2='35' y2='-60'/%3E%3Cline class='chart' x1='0' y1='0' x2='-50' y2='-50'/%3E%3Cline class='chart' x1='0' y1='0' x2='-60' y2='35'/%3E%3Cpath fill='rgba(0,245,255,0.15)' d='M 0 0 L 70 0 A 70 70 0 0 0 35 -60 Z'/%3E%3Cpath fill='rgba(0,102,255,0.12)' d='M 0 0 L -50 -50 A 70 70 0 0 0 -60 35 Z'/%3E%3C/g%3E%3C!-- TOP CENTER: Trend Lines (angled -12 degrees) --%3E%3Cg opacity='0.6' transform='rotate(-12 750 120)'%3E%3Cpolyline class='chart' points='650,150 680,130 710,140 740,110 770,120 800,90' /%3E%3Cpolyline class='chart' points='650,170 680,160 710,165 740,150 770,155 800,140' stroke-dasharray='3,3'/%3E%3Ccircle fill='rgba(0,245,255,0.5)' cx='800' cy='90' r='4'/%3E%3Ccircle fill='rgba(0,245,255,0.4)' cx='740' cy='110' r='3'/%3E%3C/g%3E%3C!-- TOP LEFT SECONDARY: Concentric Circles (radar style) --%3E%3Cg opacity='0.35' transform='translate(280,100)'%3E%3Ccircle class='chart' cx='0' cy='0' r='50'/%3E%3Ccircle class='chart' cx='0' cy='0' r='35'/%3E%3Ccircle class='chart' cx='0' cy='0' r='20'/%3E%3C/g%3E%3C!-- CENTER LEFT: Curved trend line (angled 5 degrees) --%3E%3Cg opacity='0.55' transform='rotate(5 200 350)'%3E%3Cpath class='chart' d='M 80 350 Q 140 320 200 340 T 320 350'/%3E%3Ccircle fill='rgba(0,245,255,0.45)' cx='80' cy='350' r='4'/%3E%3Ccircle fill='rgba(0,245,255,0.45)' cx='320' cy='350' r='4'/%3E%3C/g%3E%3C!-- RIGHT SIDE: Radar/Spider Chart with filled segments --%3E%3Cg opacity='0.5' transform='translate(1200,450)'%3E%3Ccircle class='chart' cx='0' cy='0' r='45'/%3E%3Cline class='chart' x1='0' y1='0' x2='45' y2='0'/%3E%3Cline class='chart' x1='0' y1='0' x2='32' y2='-32'/%3E%3Cline class='chart' x1='0' y1='0' x2='0' y2='-45'/%3E%3Cline class='chart' x1='0' y1='0' x2='-32' y2='-32'/%3E%3Cline class='chart' x1='0' y1='0' x2='-45' y2='0'/%3E%3Cline class='chart' x1='0' y1='0' x2='-32' y2='32'/%3E%3Cline class='chart' x1='0' y1='0' x2='0' y2='45'/%3E%3Cline class='chart' x1='0' y1='0' x2='32' y2='32'/%3E%3Cpath fill='rgba(0,245,255,0.2)' d='M 35 0 L 25 -25 L 0 -35 L -20 -20 L -30 10 L -15 25 L 10 35 L 28 20 Z'/%3E%3C/g%3E%3C!-- BOTTOM LEFT: Angled bar chart with trend (8 degrees, from education) --%3E%3Cg opacity='0.6' transform='rotate(8 400 700)'%3E%3Cpolyline class='chart' points='280,750 340,700 400,730 460,670 520,690 580,630'/%3E%3Ccircle fill='rgba(0,245,255,0.45)' cx='280' cy='750' r='4'/%3E%3Ccircle fill='rgba(0,245,255,0.45)' cx='460' cy='670' r='4'/%3E%3Ccircle fill='rgba(0,245,255,0.45)' cx='580' cy='630' r='4'/%3E%3C/g%3E%3C!-- BOTTOM RIGHT: Bar chart with ascending trend (5 degrees) --%3E%3Cg opacity='0.55' transform='rotate(5 1150 700)'%3E%3Cline class='chart' x1='1040' y1='620' x2='1040' y2='770'/%3E%3Cline class='chart' x1='1040' y1='770' x2='1200' y2='770'/%3E%3Cline class='chart' x1='1200' y1='620' x2='1200' y2='770' stroke-dasharray='2,2' opacity='0.5'/%3E%3Crect class='chart' x='1055' y='745' width='22' height='25'/%3E%3Crect class='chart' x='1085' y='725' width='22' height='45'/%3E%3Crect class='chart' x='1115' y='690' width='22' height='80'/%3E%3Crect class='chart' x='1145' y='645' width='22' height='125'/%3E%3Cpolyline class='chart' points='1066,740 1096,715 1126,680 1156,635' stroke-width='2'/%3E%3Ccircle fill='rgba(0,245,255,0.45)' cx='1066' cy='740' r='3'/%3E%3Ccircle fill='rgba(0,245,255,0.45)' cx='1096' cy='715' r='3'/%3E%3Ccircle fill='rgba(0,245,255,0.45)' cx='1126' cy='680' r='3'/%3E%3Ccircle fill='rgba(0,245,255,0.45)' cx='1156' cy='635' r='3'/%3E%3C/g%3E%3C!-- CENTER: Stacked bar chart (from education) --%3E%3Cg opacity='0.4' transform='translate(850,400)'%3E%3Cline class='chart' x1='0' y1='0' x2='0' y2='130'/%3E%3Cline class='chart' x1='0' y1='130' x2='120' y2='130'/%3E%3Cline class='chart' x1='0' y1='90' x2='120' y2='90' stroke-dasharray='3,3'/%3E%3Cline class='chart' x1='0' y1='60' x2='120' y2='60' stroke-dasharray='3,3'/%3E%3Crect class='chart' x='20' y='90' width='20' height='40'/%3E%3Crect class='chart' x='20' y='60' width='20' height='30'/%3E%3Crect class='chart' x='20' y='30' width='20' height='30'/%3E%3Crect class='chart' x='55' y='80' width='20' height='50'/%3E%3Crect class='chart' x='55' y='55' width='20' height='25'/%3E%3Crect class='chart' x='55' y='20' width='20' height='35'/%3E%3Crect class='chart' x='90' y='100' width='20' height='30'/%3E%3Crect class='chart' x='90' y='70' width='20' height='30'/%3E%3Crect class='chart' x='90' y='35' width='20' height='35'/%3E%3C/g%3E%3C!-- LEFT SIDE: Small donut chart --%3E%3Cg opacity='0.45' transform='translate(120,550)'%3E%3Ccircle class='chart' cx='0' cy='0' r='40'/%3E%3Ccircle class='chart' cx='0' cy='0' r='25'/%3E%3Cpath fill='rgba(0,245,255,0.2)' d='M 0,-40 A 40 40 0 0 1 40,0 L 25,0 A 25 25 0 0 0 0,-25 Z'/%3E%3Cpath fill='rgba(0,102,255,0.15)' d='M 40,0 A 40 40 0 0 1 -20,35 L -12,22 A 25 25 0 0 0 25,0 Z'/%3E%3C/g%3E%3C!-- Subtle center rings --%3E%3Cg opacity='0.12' transform='translate(700,450)'%3E%3Ccircle class='chart' cx='0' cy='0' r='220' stroke-dasharray='12,6'/%3E%3Ccircle class='chart' cx='0' cy='0' r='300' stroke-dasharray='18,12'/%3E%3Ccircle class='chart' cx='0' cy='0' r='380' stroke-dasharray='24,18'/%3E%3C/g%3E%3C!-- Scattered data points for depth --%3E%3Cg opacity='0.5'%3E%3Ccircle fill='rgba(0,245,255,0.4)' cx='450' cy='200' r='3'/%3E%3Ccircle fill='rgba(0,102,255,0.4)' cx='550' cy='150' r='2'/%3E%3Ccircle fill='rgba(0,245,255,0.3)' cx='950' cy='300' r='3'/%3E%3Ccircle fill='rgba(0,102,255,0.35)' cx='350' cy='600' r='2'/%3E%3Ccircle fill='rgba(0,245,255,0.4)' cx='750' cy='750' r='3'/%3E%3Ccircle fill='rgba(0,102,255,0.3)' cx='1050' cy='250' r='2'/%3E%3Ccircle fill='rgba(0,245,255,0.35)' cx='180' cy='400' r='2'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-prime-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.hero-prime h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #00f5ff 0%, #0066ff 50%, #00f5ff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite, fadeInUp 1s ease-out;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-prime .hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+/* Brand highlight with shimmer effect */
+.brand-highlight {
+    background: linear-gradient(135deg, #00f5ff 0%, #0066ff 50%, #00f5ff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+    font-weight: 600;
+}
+
+/* Hero CTA Group */
+.hero-cta-group {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.btn-primary-glow {
+    background: var(--gradient-1);
+    color: #000;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 25px rgba(0, 245, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary-glow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(0, 245, 255, 0.5);
+}
+
+.btn-secondary-outline {
+    background: transparent;
+    color: var(--text-primary);
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary-outline:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    opacity: 0.6;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ============================================
+   SECTION HEADERS - SHARED
+   ============================================ */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-eyebrow {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.section-title-large {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #b0b0b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   PROBLEM SECTION - THE EXECUTIVE'S PARADOX
+   ============================================ */
+
+.problem-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+    position: relative;
+}
+
+.problem-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.3), transparent);
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.problem-card {
+    background: linear-gradient(145deg, rgba(17, 17, 17, 0.8), rgba(10, 10, 10, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.problem-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 245, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(0, 245, 255, 0.05);
+}
+
+.problem-card:hover::before {
+    opacity: 1;
+}
+
+.problem-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(0, 102, 255, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.problem-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.problem-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.problem-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* ============================================
+   SOLUTION INTRODUCTION
+   ============================================ */
+
+.solution-intro {
+    padding: 80px 0;
+    background: var(--dark-bg);
+    text-align: center;
+    position: relative;
+}
+
+.solution-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(180deg, rgba(0, 245, 255, 0.5), transparent);
+}
+
+.solution-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(0, 245, 255, 0.08);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+}
+
+.solution-badge i {
+    color: var(--primary-color);
+}
+
+.solution-badge span {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.solution-headline {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.solution-headline .highlight {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.solution-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+}
+
+/* ============================================
+   PLATFORM MODULES PREVIEW
+   ============================================ */
+
+.platform-preview {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.module-card {
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.module-card.hub-module {
+    grid-column: span 3;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(0, 102, 255, 0.05));
+    border: 2px solid rgba(0, 245, 255, 0.2);
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 245, 255, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.module-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.15), rgba(0, 102, 255, 0.15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.hub-module .module-icon {
+    margin: 0;
+    width: 90px;
+    height: 90px;
+}
+
+.module-card:hover .module-icon {
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.3);
+}
+
+.module-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.module-icon img {
+    width: 40px;
+    height: auto;
+}
+
+.hub-module .module-icon img {
+    width: 55px;
+}
+
+.module-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.module-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.module-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.module-link:hover {
+    gap: 0.75rem;
+}
+
+.hub-module .module-link {
+    margin-left: auto;
+}
+
+/* ============================================
+   STATISTICS SECTION
+   ============================================ */
+
+.stats-section {
+    padding: 80px 0;
+    background: var(--darker-bg);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 700;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.stat-source {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.stat-description {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+
+.contact-section {
+    padding: 100px 0;
+    background: var(--dark-bg);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-form-wrapper {
+    background: rgba(17, 17, 17, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 2.5rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--gradient-1);
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 245, 255, 0.3);
+}
+
+.contact-info-wrapper h3 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.contact-info-wrapper > p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-item i {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 245, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.contact-info-item h4 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-prime {
+        min-height: auto;
+        padding: 120px 0 80px;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary-glow,
+    .btn-secondary-outline {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .modules-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .module-card.hub-module {
+        grid-column: span 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .module-card.hub-module {
+        grid-column: span 3;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        text-align: left;
+        gap: 2rem;
+    }
+}

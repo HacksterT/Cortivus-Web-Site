@@ -8,20 +8,17 @@ const CortivusComponents = {
     navLinks: [
         { text: 'Home', href: '/index.html' },
         {
-            text: 'Portfolio',
-            href: '/portfolio/',
+            text: 'Platform',
+            href: '/index.html#platform',
             dropdown: [
-                { text: 'All', href: '/portfolio/' },
-                { text: 'Lead with Precision', href: '/education/' },
-                { text: 'Project Writer', href: '/portfolio/execution/' },
-                { text: 'Curriculum Utility', href: '/portfolio/curriculum/' },
-                { text: 'Journey2Health', href: '/portfolio/journey2health/' },
-                { text: 'Sermon Generator', href: '/portfolio/sermon-generator/' },
-                { text: 'MakeItADouble', href: '/portfolio/#makeitadouble' }
+                { text: 'Platform Overview', href: '/index.html#platform' },
+                { text: 'Career Profile', href: '/platform/career-profile/' },
+                { text: 'The Tutor', href: '/platform/tutor/' },
+                { text: 'The Job Aid', href: '/platform/job-aid/' },
+                { text: 'The Mentor', href: '/platform/mentor/' }
             ]
         },
-        { text: 'Education', href: '/education/' },
-        { text: 'Company', href: '/company/team.html' },
+        { text: 'About', href: '/company/team.html' },
         { text: 'Contact', href: '/index.html#contact' }
     ],
 
@@ -73,16 +70,15 @@ const CortivusComponents = {
                             <img src="/images/logo.png" alt="Cortivus Logo">
                             <h3>Cortivus</h3>
                         </div>
-                        <p class="footer-motto">AI-powered tools that actually work—because every product starts with a real problem, not a buzzword.</p>
+                        <p class="footer-motto">You built your expertise over decades. Now build the career it deserves.</p>
                     </div>
                     
                     <div class="footer-section">
                         <h4>Quick Links</h4>
                         <nav class="footer-nav">
                             <a href="/index.html">Home</a>
-                            <a href="/portfolio/">Portfolio</a>
-                            <a href="/education/">Education</a>
-                            <a href="/company/team.html">Company</a>
+                            <a href="/index.html#platform">Platform</a>
+                            <a href="/company/team.html">About</a>
                             <a href="/index.html#contact">Contact</a>
                         </nav>
                     </div>
@@ -98,7 +94,7 @@ const CortivusComponents = {
                 </div>
                 
                 <div class="footer-bottom">
-                    <p>&copy; ${new Date().getFullYear()} Cortivus. Transforming businesses through intelligent AI solutions.</p>
+                    <p>&copy; ${new Date().getFullYear()} Cortivus. Transforming leaders through intelligent AI solutions.</p>
                 </div>
             </div>
         </footer>`;
@@ -127,11 +123,8 @@ const CortivusComponents = {
             else if (link.href.endsWith('/') && currentPath === link.href + 'index.html') {
                 isActive = true;
             }
-            // Highlight parent if child is active (specifically for Portfolio)
-            else if (link.text === 'Portfolio' && currentPath.includes('/portfolio/')) {
-                isActive = true;
-            }
-            else if (link.text === 'Education' && currentPath.includes('/education/')) {
+            // Highlight parent if child is active (specifically for Platform)
+            else if (link.text === 'Platform' && currentPath.includes('/platform/')) {
                 isActive = true;
             }
 
@@ -139,10 +132,10 @@ const CortivusComponents = {
 
             if (link.dropdown) {
                 // Check if any dropdown item is active to highlight parent
-                // FIX: Only highlight parent if the matching link actually belongs to this section (starts with same path prefix)
-                // or if it's strictly a proper child. For Portfolio, we exclude /education/ links to avoid double highlighting.
                 const isDropdownActive = link.dropdown.some(item => {
-                    return item.href === currentPath && (link.text !== 'Portfolio' || item.href.startsWith('/portfolio/'));
+                    // Check exact match or if current path starts with dropdown item path
+                    return item.href === currentPath ||
+                           (item.href.endsWith('/') && currentPath.startsWith(item.href));
                 });
                 const dropdownActiveClass = (isActive || isDropdownActive) ? ' active' : '';
 

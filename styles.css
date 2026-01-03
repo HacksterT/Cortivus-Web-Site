@@ -12,8 +12,10 @@
 @import url("css/sections.css");      /* About, services, contact sections */
 @import url("css/components.css");    /* Buttons, cards, badges, forms */
 @import url("css/platform.css");      /* Platform modules, roadmap, execution page */
+@import url("css/platform-modules.css"); /* Individual module page styles */
 @import url("css/footer.css");        /* Footer styles */
 @import url("css/responsive.css");    /* Mobile & tablet breakpoints */
+@import url("css/homepage.css");      /* Homepage-specific styles */
 
 /* ============================================
    CRITICAL DROPDOWN STYLES
