@@ -18,6 +18,7 @@ const CortivusComponents = {
                 { text: 'The Mentor', href: '/platform/mentor/' }
             ]
         },
+        { text: 'Pricing', href: '/pricing/' },
         { text: 'About', href: '/company/team.html' },
         { text: 'Contact', href: '/index.html#contact' }
     ],
@@ -78,6 +79,7 @@ const CortivusComponents = {
                         <nav class="footer-nav">
                             <a href="/index.html">Home</a>
                             <a href="/index.html#platform">Platform</a>
+                            <a href="/pricing/">Pricing</a>
                             <a href="/company/team.html">About</a>
                             <a href="/index.html#contact">Contact</a>
                         </nav>

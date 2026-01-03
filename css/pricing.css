@@ -1,0 +1,536 @@
+/* ============================================
+   PRICING PAGE STYLES
+   All pricing-specific components and sections
+   ============================================ */
+
+/* Pricing Section */
+.pricing-section {
+    padding: 100px 0;
+    background: var(--darker-bg);
+}
+
+.pricing-section .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.pricing-section .section-eyebrow {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.pricing-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.pricing-section .section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Launch Timing Banner */
+.launch-timing {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.launch-timing i {
+    font-size: 1rem;
+}
+
+.launch-timing a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.launch-timing a:hover {
+    color: #fff;
+}
+
+/* ============================================
+   PRICING CARDS
+   ============================================ */
+
+.pricing-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .pricing-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+}
+
+/* Pricing Card Base */
+.pricing-card {
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 245, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 245, 255, 0.1);
+}
+
+/* Founding Member Card - Special Styling */
+.pricing-card.founding-card {
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 245, 255, 0.05) 100%);
+    border: 2px solid rgba(0, 245, 255, 0.3);
+}
+
+.pricing-card.founding-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-1);
+    border-radius: 20px 20px 0 0;
+}
+
+.pricing-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gradient-1);
+    color: var(--dark-bg);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
+}
+
+.pricing-card-badge i {
+    font-size: 0.8rem;
+}
+
+.pricing-card-header {
+    margin-bottom: 1.5rem;
+}
+
+.pricing-card-header h3 {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.pricing-card-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ============================================
+   PRICING DISPLAY
+   ============================================ */
+
+.pricing-card-price {
+    margin-bottom: 2rem;
+}
+
+.price-main,
+.price-intro {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.price-amount {
+    font-size: 3rem;
+    font-weight: 700;
+    background: var(--gradient-1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.price-period {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.price-transition {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(0, 245, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 245, 255, 0.15);
+}
+
+.price-transition i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.price-transition span {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+/* ============================================
+   PRICING FEATURES LIST
+   ============================================ */
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    flex-grow: 1;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.pricing-features li i {
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   PRICING CTA
+   ============================================ */
+
+.pricing-card-cta {
+    margin-top: auto;
+}
+
+.pricing-card-cta .btn-primary-glow,
+.pricing-card-cta .btn-secondary-outline {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.pricing-card-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.pricing-card-note i {
+    color: var(--primary-color);
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   PREMIUM ADVISORY CARD
+   ============================================ */
+
+.premium-advisory-card {
+    margin-top: 2rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(0, 245, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-advisory-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+}
+
+.premium-advisory-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: var(--dark-bg);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.25rem;
+}
+
+.premium-advisory-badge i {
+    font-size: 0.8rem;
+}
+
+.premium-advisory-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.premium-advisory-text {
+    flex: 1;
+}
+
+.premium-advisory-text h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.premium-advisory-text p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.premium-advisory-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.75rem;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: var(--dark-bg);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.premium-advisory-note {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .premium-advisory-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .premium-advisory-cta {
+        width: 100%;
+    }
+
+    .btn-premium {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   WHAT'S INCLUDED SECTION
+   ============================================ */
+
+.pricing-included-section {
+    padding: 100px 0;
+    background: var(--dark-bg);
+}
+
+.pricing-included-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pricing-included-section .section-eyebrow {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.pricing-included-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.pricing-included-section .section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.included-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+    .included-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.included-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.included-item:hover {
+    border-color: rgba(0, 245, 255, 0.3);
+    background: rgba(0, 245, 255, 0.03);
+    transform: translateY(-3px);
+}
+
+.included-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 245, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.included-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.included-content h4 {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.included-content p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+
+.pricing-faq-section {
+    padding: 60px 0 100px;
+    background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+}
+
+.pricing-faq-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pricing-faq-section .section-eyebrow {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.pricing-faq-section .section-title {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.faq-item {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+.faq-item h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.faq-item p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
