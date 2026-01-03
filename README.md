@@ -25,24 +25,29 @@ This project is built with **Vanilla HTML, CSS, and JavaScript** to ensure speed
 
 * Python 3.x (standard on most machines)
 
+### Branch Workflow
+
+| Branch | Purpose |
+|--------|---------|
+| `main` | Production - deployed to GitHub Pages (cortivus.com) |
+| `dev` | Development - test changes here before merging to main |
+
+**Workflow:**
+1. Always work on `dev` branch
+2. Test locally before committing
+3. When ready to deploy, merge `dev` into `main` and push
+
 ### Running Locally
 
-To view the site locally, we use Python's built-in HTTP server to ensure absolute paths work correctly.
+Use the included batch script to start a local server on port 4000:
 
-1. Open your terminal in the project root:
+```bash
+.\serve.bat
+```
 
-    ```bash
-    cd c:\Projects\Cortivus-Web-Site
-    ```
+Then open [http://localhost:4000](http://localhost:4000)
 
-2. Start the server:
-
-    ```bash
-    python -m http.server
-    ```
-
-3. Open your browser to:
-    [http://localhost:8000](http://localhost:8000)
+**Note:** Port 4000 is registered in the project port registry to avoid conflicts with other local services.
 
 ## 📂 Project Structure
 
@@ -65,4 +70,4 @@ Cortivus-Web-Site/
 * **UX**: "Smart Navigation" – Dropdowns and active states handled via `components.js`.
 
 ---
-*© 2025 Cortivus*
+*© 2026 Cortivus*
