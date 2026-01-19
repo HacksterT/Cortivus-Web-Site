@@ -135,7 +135,10 @@ function initFeatureCarousel() {
             const visibleCards = getVisibleCards();
             const gap = 32; // 2rem gap
             const containerWidth = track.parentElement.offsetWidth;
-            const cardWidth = (containerWidth - gap) / visibleCards;
+            // Mobile (1 card): cards are 100% width. Desktop (2 cards): share space minus gap.
+            const cardWidth = visibleCards === 1
+                ? containerWidth
+                : (containerWidth - gap) / visibleCards;
             const offset = currentIndex * (cardWidth + gap);
 
             track.style.transform = `translateX(-${offset}px)`;
