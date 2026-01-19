@@ -1,6 +1,6 @@
 /* ============================================
    PLATFORM MODULE PAGES STYLES
-   Shared patterns for Career Profile, Tutor, Job Aid, Mentor
+   Shared patterns for Career Profile, Tutor, Recruiter, Mentor
 
    NOTE: Hero sections and SVG backgrounds are in module-heroes.css
    NOTE: Pricing page styles are in pricing.css
@@ -226,21 +226,21 @@
     gap: 2rem;
 }
 
-/* Job Aid Grid: 3 cards in a row */
-.feature-cards-grid.job-aid-grid {
+/* Recruiter Grid: 3 cards in a row */
+.feature-cards-grid.recruiter-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
 @media (max-width: 900px) {
-    .feature-cards-grid.job-aid-grid {
+    .feature-cards-grid.recruiter-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 600px) {
-    .feature-cards-grid.job-aid-grid {
+    .feature-cards-grid.recruiter-grid {
         grid-template-columns: 1fr;
     }
 }

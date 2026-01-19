@@ -14,7 +14,7 @@ const CortivusComponents = {
                 { text: 'Platform Overview', href: '/index.html#platform' },
                 { text: 'Career Profile', href: '/platform/career-profile/' },
                 { text: 'The Tutor', href: '/platform/tutor/' },
-                { text: 'The Job AId', href: '/platform/job-aid/' },
+                { text: 'The Recruiter', href: '/platform/recruiter/' },
                 { text: 'The Mentor', href: '/platform/mentor/' }
             ]
         },

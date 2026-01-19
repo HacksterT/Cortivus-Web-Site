@@ -8,7 +8,10 @@
       "Bash(git add:*)",
       "Bash(git rm:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nComplete module pages overhaul: Mentor, Job AId, problem/solution cards\n\n- Overhaul The Mentor page with 13-week cycles, 5-step planning process,\n  problem/solution cards, and Premium Advisory section with founder bio\n- Update The Job AId with Skills Gap Analysis featured card and consistent\n  problem/solution card design\n- Add CSS grid layout for problem/solution cards \\(equal height rows\\)\n- Add Premium Advisory section styling with gold/yellow gradient accents\n- Add founder LinkedIn and CV links to Mentor page\n- Update PRD: mark completed stories \\(01-04, 06\\), add STORY-09 for icons,\n  add CSS cleanup task to STORY-05, clarify STORY-07 scope\n- Replace \"Project Writer\" with \"The Architect\" across codebase\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)",
+      "Bash(git pull:*)"
     ]
   }
 }

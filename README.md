@@ -10,7 +10,7 @@ This website serves as the marketing site for the **Cortivus Career Intelligence
 
 1. **Career Profile**: AI-enriched professional profile that powers all other modules
 2. **The Tutor**: Skills gap analysis and personalized curriculum generation
-3. **The Job AId**: Resume writer, interview coach, and onboarding assistant
+3. **The Recruiter**: Resume writer, interview coach, and onboarding assistant
 4. **The Mentor**: Structured 13-week mentoring cycles with PI Planning and sprint sessions
 
 ### Target Audience
@@ -57,7 +57,7 @@ Cortivus-Web-Site/
 ├── platform/               # Module pages
 │   ├── career-profile/     # Career Profile module
 │   ├── tutor/              # The Tutor module
-│   ├── job-aid/            # The Job AId module
+│   ├── recruiter/          # The Recruiter module
 │   └── mentor/             # The Mentor module
 ├── company/
 │   └── team.html           # About page with team and mission
@@ -92,7 +92,7 @@ Cortivus-Web-Site/
 - Platform (dropdown)
   - Career Profile (`/platform/career-profile/`)
   - The Tutor (`/platform/tutor/`)
-  - The Job AId (`/platform/job-aid/`)
+  - The Recruiter (`/platform/recruiter/`)
   - The Mentor (`/platform/mentor/`)
 - About (`/company/team.html`)
 - Contact (`/#contact`)

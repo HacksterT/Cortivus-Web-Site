@@ -144,8 +144,8 @@
     pointer-events: none;
 }
 
-/* The Job AId Hero - Resume outlines, interview bubbles, checklists, career ladder */
-.module-hero.job-aid-hero::after {
+/* The Recruiter Hero - Resume outlines, interview bubbles, checklists, career ladder */
+.module-hero.recruiter-hero::after {
     content: '';
     position: absolute;
     top: 0;
