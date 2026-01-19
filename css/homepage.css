@@ -701,32 +701,6 @@
 }
 
 /* ============================================
-   TEXT LINK BUTTON (Hero CTA)
-   ============================================ */
-
-.btn-text-link {
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    padding: 0.75rem 1rem;
-    transition: color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.btn-text-link:hover {
-    color: var(--primary-color);
-}
-
-.btn-text-link i {
-    font-size: 0.9em;
-}
-
-/* ============================================
    CURRICULUM MODAL STYLES
    ============================================ */
 
