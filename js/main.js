@@ -96,7 +96,8 @@ function initCurriculumModal() {
     if (!modal || !trigger) return;
 
     // Open modal
-    trigger.addEventListener('click', function() {
+    trigger.addEventListener('click', function(e) {
+        e.preventDefault();
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
     });
