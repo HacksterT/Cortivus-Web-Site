@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const nav = document.querySelector('nav');
 
-    // Curriculum Modal
+    // Modals
     initCurriculumModal();
+    initFeedbackModal();
 
     if (mobileNavToggle) {
         mobileNavToggle.addEventListener('click', function() {
@@ -125,6 +126,52 @@ function initCurriculumModal() {
  */
 function closeCurriculumModal() {
     const modal = document.getElementById('curriculum-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+/**
+ * Initialize feedback modal functionality (Recruiter page)
+ */
+function initFeedbackModal() {
+    const modal = document.getElementById('feedback-modal');
+    const trigger = document.getElementById('feedback-modal-trigger');
+    const closeBtn = modal?.querySelector('.modal-close');
+
+    if (!modal || !trigger) return;
+
+    // Open modal
+    trigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal with button
+    closeBtn?.addEventListener('click', closeFeedbackModal);
+
+    // Close modal with overlay click
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeFeedbackModal();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeFeedbackModal();
+        }
+    });
+}
+
+/**
+ * Close the feedback modal (global function for inline onclick)
+ */
+function closeFeedbackModal() {
+    const modal = document.getElementById('feedback-modal');
     if (modal) {
         modal.classList.remove('active');
         document.body.style.overflow = '';
