@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const nav = document.querySelector('nav');
 
+    // Curriculum Modal
+    initCurriculumModal();
+
     if (mobileNavToggle) {
         mobileNavToggle.addEventListener('click', function() {
             nav.classList.toggle('mobile-active');
@@ -81,6 +84,51 @@ document.addEventListener('DOMContentLoaded', function() {
     // Feature Card Carousel
     initFeatureCarousel();
 });
+
+/**
+ * Initialize curriculum modal functionality
+ */
+function initCurriculumModal() {
+    const modal = document.getElementById('curriculum-modal');
+    const trigger = document.getElementById('curriculum-modal-trigger');
+    const closeBtn = modal?.querySelector('.modal-close');
+
+    if (!modal || !trigger) return;
+
+    // Open modal
+    trigger.addEventListener('click', function() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close modal with button
+    closeBtn?.addEventListener('click', closeCurriculumModal);
+
+    // Close modal with overlay click
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeCurriculumModal();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeCurriculumModal();
+        }
+    });
+}
+
+/**
+ * Close the curriculum modal (global function for inline onclick)
+ */
+function closeCurriculumModal() {
+    const modal = document.getElementById('curriculum-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
 
 /**
  * Initialize feature card carousels
