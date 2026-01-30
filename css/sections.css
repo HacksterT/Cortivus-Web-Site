@@ -297,7 +297,6 @@
 .ai-member-header {
     flex-shrink: 0;
     text-align: center;
-    width: 180px;
 }
 
 .ai-member-photo {
@@ -308,7 +307,11 @@
     margin-bottom: 1rem;
 }
 
-.ai-member-intro h3 {
+.ai-member-content {
+    flex-grow: 1;
+}
+
+.ai-member-content h3 {
     font-size: 1.5rem;
     margin-bottom: 0.3rem;
     color: var(--primary-color);
@@ -318,37 +321,6 @@
     color: var(--text-secondary);
     font-size: 1.1rem;
     margin-bottom: 1rem;
-}
-
-.ai-role-badges {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.role-badge {
-    background: rgba(0, 245, 255, 0.1);
-    color: var(--primary-color);
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border: 1px solid rgba(0, 245, 255, 0.3);
-    text-align: center;
-    transition: all 0.3s ease;
-    display: inline-block;
-    width: fit-content;
-    white-space: nowrap;
-}
-
-.role-badge:hover {
-    background: rgba(0, 245, 255, 0.2);
-    transform: translateY(-2px);
-}
-
-.ai-member-content {
-    flex-grow: 1;
 }
 
 .ai-bio-summary {
@@ -367,7 +339,7 @@
 
 .ai-capabilities-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -378,21 +350,12 @@
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
-    display: flex;
-    gap: 1rem;
 }
 
 .ai-capability-item:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(0, 245, 255, 0.3);
     transform: translateY(-2px);
-}
-
-.ai-capability-item i {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    margin-top: 0.2rem;
 }
 
 .ai-capability-item strong {
