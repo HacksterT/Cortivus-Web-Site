@@ -319,7 +319,7 @@
 
 .ai-bio-summary {
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     color: var(--text-secondary);
 }
 
@@ -378,6 +378,8 @@
 
 .ai-team-member-card .contact-info {
     clear: left;
+    padding-top: 0.5rem;
+    margin-top: 0.75rem;
 }
 
 .ai-impact-statement p {
