@@ -219,14 +219,10 @@
     }
 
     /* AI Team Member Card - Mobile */
-    .ai-team-member-card {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .ai-member-header {
-        width: 100%;
-        text-align: center;
+    .ai-member-photo {
+        float: none;
+        margin: 0 auto 1rem;
+        display: block;
     }
 
     .ai-capabilities-grid {
