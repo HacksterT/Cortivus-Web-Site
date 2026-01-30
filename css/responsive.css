@@ -220,39 +220,15 @@
 
     /* AI Team Member Card - Mobile */
     .ai-team-member-card {
-        padding: 1.5rem;
+        flex-direction: column;
+        align-items: center;
     }
 
     .ai-member-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .ai-member-photo {
-        width: 120px;
-        height: 120px;
-    }
-
-    .ai-member-intro h3 {
-        font-size: 1.5rem;
-    }
-
-    .ai-role-badges {
-        justify-content: center;
+        width: 100%;
     }
 
     .ai-capabilities-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .ai-capability-item {
-        padding: 1rem;
-    }
-
-    .ai-philosophy p {
-        font-size: 1rem;
     }
 }
