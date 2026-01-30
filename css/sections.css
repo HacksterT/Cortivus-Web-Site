@@ -261,7 +261,7 @@
 
 /* ============================================
    AI TEAM MEMBER CARD
-   Left-aligned horizontal layout matching service-card style
+   Photo and cards left-aligned, text wraps to right
    ============================================ */
 
 .ai-team-member-card {
@@ -301,7 +301,7 @@
 }
 
 .ai-member-content {
-    overflow: hidden;
+    /* Content wraps around photo */
 }
 
 .ai-member-content h3 {
@@ -328,7 +328,7 @@
     margin-bottom: 1.2rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    clear: both;
+    clear: left;
 }
 
 .ai-capabilities-grid {
@@ -336,7 +336,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     margin-bottom: 1.5rem;
-    clear: both;
+    clear: left;
 }
 
 .ai-capability-item {
@@ -372,7 +372,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 1rem;
     margin-top: 1.5rem;
-    clear: both;
+    clear: left;
 }
 
 .ai-impact-statement p {
