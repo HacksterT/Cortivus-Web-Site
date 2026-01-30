@@ -311,6 +311,13 @@
     color: var(--primary-color);
 }
 
+.ai-role-inline {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-left: 0.75rem;
+}
+
 .ai-role-title {
     color: var(--text-secondary);
     font-size: 1.1rem;
