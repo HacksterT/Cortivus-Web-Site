@@ -298,6 +298,7 @@
     float: left;
     margin-right: 2rem;
     margin-bottom: 1rem;
+    margin-top: 10px;
 }
 
 .ai-member-content {
@@ -329,6 +330,7 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     clear: left;
+    margin-left: -2rem;
 }
 
 .ai-capabilities-grid {
@@ -337,6 +339,8 @@
     gap: 1rem;
     margin-bottom: 1.5rem;
     clear: left;
+    margin-left: -2rem;
+    margin-right: -2rem;
 }
 
 .ai-capability-item {
@@ -372,6 +376,15 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 1rem;
     margin-top: 1.5rem;
+    clear: left;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 0;
+}
+
+.ai-team-member-card .contact-info {
+    margin-left: -2rem;
+    margin-right: -2rem;
     clear: left;
 }
 
