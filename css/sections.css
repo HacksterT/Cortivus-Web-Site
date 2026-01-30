@@ -258,3 +258,187 @@
 #pitch .subtitle {
     margin-bottom: 2.5rem;
 }
+
+/* ============================================
+   AI TEAM MEMBER CARD
+   ============================================ */
+
+.ai-team-member-card {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.05) 0%, rgba(17, 17, 17, 0.95) 100%);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 245, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-team-member-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        var(--primary-color) 0%, 
+        var(--secondary-color) 50%, 
+        var(--primary-color) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.ai-member-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.ai-member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 2px solid rgba(0, 245, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.ai-member-intro h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ai-role-title {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.ai-role-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.role-badge {
+    padding: 0.4rem 1rem;
+    background: rgba(0, 245, 255, 0.1);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.ai-member-content {
+    padding-left: 0;
+}
+
+.ai-bio-summary {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.ai-capabilities-title {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.ai-capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.ai-capability-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: rgba(0, 245, 255, 0.05);
+    border-radius: 12px;
+    border-left: 3px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.ai-capability-item:hover {
+    background: rgba(0, 245, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.ai-capability-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.ai-capability-item strong {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.ai-capability-item span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.ai-impact-statement {
+    padding: 1.5rem;
+    background: rgba(0, 245, 255, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.ai-impact-statement p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+}
+
+.ai-impact-statement strong {
+    color: var(--primary-color);
+}
+
+.ai-philosophy {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.ai-philosophy p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.ai-philosophy em {
+    color: var(--primary-color);
+}
