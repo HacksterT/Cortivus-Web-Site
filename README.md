@@ -21,7 +21,7 @@ This website serves as the marketing site for the **Cortivus Career Intelligence
 
 ## Development
 
-This project is built with **Vanilla HTML, CSS, and JavaScript** for speed, simplicity, and easy deployment to GitHub Pages.
+This project is built with **Vanilla HTML, CSS, and JavaScript** for speed, simplicity, and easy deployment to Cloudflare Pages.
 
 ### Prerequisites
 
@@ -31,12 +31,12 @@ This project is built with **Vanilla HTML, CSS, and JavaScript** for speed, simp
 
 | Branch | Purpose |
 |--------|---------|
-| `main` | Production - deployed to GitHub Pages (cortivus.com) |
-| `dev` | Development - test changes here before merging to main |
+| `main` | Production - auto-deploys to Cloudflare Pages (cortivus.com) |
+| `dev` | Development - auto-creates preview deployment on Cloudflare Pages |
 
 **Workflow:**
 1. Always work on `dev` branch
-2. Test locally before committing
+2. Push to `dev` to get a preview deployment URL for testing
 3. When ready to deploy, merge `dev` into `main` and push
 
 ### Running Locally
@@ -77,6 +77,7 @@ Cortivus-Web-Site/
 │   └── main.js             # Mobile nav, interactions
 ├── images/                 # Optimized images and icons
 ├── archive/                # Archived legacy pages (portfolio, education)
+├── pricing/                # Pricing page
 └── tasks/                  # PRDs and planning documents
 ```
 
