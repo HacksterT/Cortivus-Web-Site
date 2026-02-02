@@ -342,7 +342,15 @@
                 .then(function (result) {
                     status.style.display = 'block';
                     status.style.color = '#10b981';
-                    status.innerHTML = '<i class="fas fa-check-circle"></i> ' + result.message;
+                    if (data.request_type === 'dictionary-pdf') {
+                        status.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your download is ready.<br><br>' +
+                            '<a href="/dictionary/Translation_Dictionary.pdf" download ' +
+                            'style="display:inline-block;padding:0.75rem 1.5rem;background:var(--gradient-2);color:#fff;border-radius:10px;text-decoration:none;font-weight:700;">' +
+                            '<i class="fas fa-file-pdf"></i>&nbsp; Download Your PDF</a>' +
+                            '<br><br><span style="color:var(--text-secondary);font-size:0.9rem;">We also sent a welcome email to your inbox.</span>';
+                    } else {
+                        status.innerHTML = '<i class="fas fa-check-circle"></i> ' + result.message;
+                    }
                     form.reset();
                 })
                 .catch(function () {
