@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Executive Translation Map | Cortivus</title>
+    <style>
+        :root {
+            --executive-navy: #0f172a;
+            --executive-slate: #334155;
+            --executive-light-gray: #f8fafc;
+            --executive-border: #e2e8f0;
+            --clinical-coral: #be123c;
+            --business-blue: #2563eb;
+            --roi-emerald: #059669;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+
+            @bottom-right {
+                content: "Page " counter(page);
+                color: var(--text-muted);
+                font-size: 9px;
+            }
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: white;
+            color: var(--text-main);
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+
+        /* Hero / Header */
+        .header {
+            border-bottom: 4px solid var(--executive-navy);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .logo {
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--executive-navy);
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--business-blue);
+        }
+
+        h1 {
+            font-family: 'Georgia', serif;
+            font-size: 32px;
+            color: var(--executive-navy);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 10px;
+            max-width: 600px;
+        }
+
+        /* Category Section */
+        .category {
+            margin-bottom: 50px;
+            page-break-inside: auto;
+        }
+
+        .category-header {
+            background: var(--executive-light-gray);
+            border-left: 6px solid var(--executive-navy);
+            padding: 12px 20px;
+            margin-bottom: 25px;
+            page-break-after: avoid;
+        }
+
+        .category-header h2 {
+            font-family: 'Georgia', serif;
+            font-size: 20px;
+            color: var(--executive-navy);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* The Translation Map Entry */
+        .entry {
+            display: flex;
+            gap: 0;
+            margin-bottom: 20px;
+            border: 1px solid var(--executive-border);
+            border-radius: 4px;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+
+        .column {
+            flex: 1;
+            padding: 15px 20px;
+            position: relative;
+        }
+
+        .column:not(:last-child) {
+            border-right: 1px solid var(--executive-border);
+        }
+
+        /* Flow Arrow Styling */
+        .column:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: white;
+            color: var(--executive-border);
+            font-weight: bold;
+            font-size: 18px;
+            padding: 2px;
+        }
+
+        .col-label {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .clinical-col {
+            border-top: 4px solid var(--clinical-coral);
+        }
+
+        .business-col {
+            border-top: 4px solid var(--business-blue);
+            background: #f0f7ff;
+        }
+
+        .roi-col {
+            border-top: 4px solid var(--roi-emerald);
+        }
+
+        .clinical-col .col-label {
+            color: var(--clinical-coral);
+        }
+
+        .business-col .col-label {
+            color: var(--business-blue);
+        }
+
+        .roi-col .col-label {
+            color: var(--roi-emerald);
+        }
+
+        .entry-text {
+            font-size: 12px;
+            margin: 0;
+            color: var(--text-main);
+        }
+
+        .business-col .entry-text {
+            font-weight: 600;
+        }
+
+        .roi-col .entry-text {
+            color: var(--roi-emerald);
+            font-weight: 700;
+        }
+
+        /* Call to Action */
+        .cta {
+            background: var(--executive-navy);
+            color: white;
+            padding: 40px;
+            margin-top: 60px;
+            text-align: center;
+            border-radius: 4px;
+            page-break-inside: avoid;
+        }
+
+        .cta h3 {
+            font-family: 'Georgia', serif;
+            font-size: 24px;
+            margin: 0 0 15px;
+        }
+
+        .cta p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-bottom: 40px;
+            font-size: 10px;
+            color: var(--text-muted);
+            text-align: center;
+            border-top: 1px solid var(--executive-border);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">CORTI<span>VUS</span> | EXECUTIVE INTELLIGENCE</div>
+            <h1>The Translation Map</h1>
+            <p class="tagline">A strategic guide for clinical leaders to bridge the gap between operational achievements
+                and boardroom value.</p>
+        </header>
+
+        <!-- QUALITY -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Quality & Patient Safety</h2>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Led quality improvement initiative reducing surgical site infections</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Implemented an enterprise SSI prevention protocol achieving measurable harm
+                        reduction across service lines.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">$2.3M annual savings through readmission penalty avoidance and shortened LOS.
+                    </p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Reduced hospital-acquired infections through hand hygiene compliance program
+                    </p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Drove organization-wide infection prevention initiative with sustained
+                        behavioral change across 2,000+ staff.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">$1.8M in CMS penalty risk mitigation and improved public quality scores.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Implemented sepsis screening protocol in the emergency department</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Launched clinical decision support system reducing sepsis mortality through
+                        early identification.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">22% mortality reduction and $3.1M savings in ICU utilization.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Created a patient safety reporting system for near-miss events</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Built an enterprise safety surveillance platform fostering a culture of
+                        proactive risk mitigation.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">45% reduction in sentinel events and significantly reduced malpractice
+                        exposure.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Improved medication reconciliation process at discharge</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Redesigned care transition workflow to eliminate errors at high-risk patient
+                        handoff points.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">28% reduction in 30-day readmissions, protecting $1.4M in revenue.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Led peer review committee and credentialing process</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Directed physician performance oversight ensuring competency standards and
+                        organizational risk management.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">Zero adverse credentialing actions and maintained Joint Commission readiness.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- OPERATIONAL -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Operational Excellence</h2>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Reduced ED wait times and improved patient throughput</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Optimized emergency operations, eliminating bottlenecks and increasing
+                        capacity without capital expansion.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">$4.2M incremental revenue from reduced LWBS rate and increased volume.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Reduced average length of stay (LOS) through coordination</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Implemented multidisciplinary care model that accelerated patient progression
+                        and bed capacity.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">0.8-day LOS reduction, creating $2.8M annual value in bed utilization.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Improved OR scheduling and reduced cancellations</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Redesigned surgical services workflow maximizing premium asset utilization and
+                        surgeon satisfaction.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">18% increase in OR utilization, resulting in $5.1M incremental surgical
+                        revenue.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Standardized clinical protocols across departments</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Led enterprise standardization initiative reducing practice variation for
+                        scalable care delivery.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">25% reduction in unwarranted variation and strengthened value-based
+                        positioning.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Built a discharge planning program to reduce readmissions</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Architected a post-acute transition strategy that reduced returns and
+                        strengthened payer relationships.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">20% readmission reduction and $1.6M in avoided CMS penalties.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINANCIAL -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Financial & Strategic Impact</h2>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Managed department budget and reduced supply costs</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Directed $45M departmental P&L with strategic cost management achieving margin
+                        improvement.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">$3.5M savings through value analysis and vendor consolidation.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Helped transition from fee-for-service to value-based care</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Led organizational transformation to value-based reimbursement, restructuring
+                        incentives.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">Secured $8M in shared savings and top-decile quality scores.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Developed a new clinical service line for the hospital</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Identified market opportunity and launched service line from business case to
+                        operational go-live.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">$6.2M Year 2 revenue and captured 22% regional market share.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Participated in contract negotiations with insurance companies</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Clinical SME in payer negotiations, leveraging quality data to secure
+                        favorable reimbursement terms.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">8% rate increase across 3 major payers, netting $4.7M in annual revenue.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Reduced unnecessary lab tests and imaging orders</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Championed clinical stewardship aligning utilization patterns with
+                        evidence-based guidelines.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">18% reduction in low-value diagnostics and $1.2M in direct cost savings.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGY -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Technology & Innovation</h2>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Led EHR implementation and physician adoption</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Directed enterprise health IT transformation managing change for a $30M+
+                        technology investment.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">95% adoption rate, unlocking $4.2M in CMS incentive payments.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Implemented telehealth program for outpatient follow-ups</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Launched virtual care platform expanding access and creating new revenue
+                        channels.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">40% no-show reduction and $2.1M incremental revenue in Year 1.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Built clinical decision support tools in the EHR</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Developed workflow automation embedding evidence-based guidelines at the point
+                        of care.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">30% improvement in guideline adherence and improved CMS star ratings.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Used data analytics to identify high-risk patients</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Deployed predictive analytics for risk stratification enabling proactive,
+                        efficient care management.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">Avoided $3.4M in acute utilization through targeted intervention of top 5%
+                        utilizers.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Piloted AI tools for radiology and pathology diagnostics</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Led clinical AI innovation program evaluating and integrating diagnostic
+                        augmentation technology.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">20% improvement in turnaround time and reduced variability in reads.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEADERSHIP -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Leadership & Team Development</h2>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Managed a team of 50 physicians across specialties</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Led a 50-physician group with P&L accountability and engagement strategy
+                        oversight.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">Turnover decreased by 11%, saving $2.5M in recruitment and onboarding costs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Mentored residents and junior physicians</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Directed talent development pipeline building organizational bench strength.
+                    </p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">85% retention rate and $1.8M annual savings vs. external recruitment.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Resolved conflicts between clinical departments</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Facilitated cross-functional optimization aligning departmental priorities
+                        with organizational strategy.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">Unlocked $1.2M in shared services savings through collaborative governance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Led physician wellness and burnout initiatives</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Designed sustainability program addressing well-being as a strategic retention
+                        lever.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">$9 ROI for every $1 invested through significant turnover reduction.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Chaired the medical executive committee (MEC)</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Primary governance interface between medical staff and board, navigating
+                        complex stakeholder dynamics.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">Zero governance litigation and 95% bylaw compliance during survey.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Research & Education</h2>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Published research in peer-reviewed journals</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Generated intellectual property elevating organizational brand and clinical
+                        talent attraction.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">12 top-tier publications contributing to $2.5M in new research grants.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Directed the GME program and residency training</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Managed GME enterprise as a strategic workforce pipeline and revenue center.
+                    </p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">$12M annual GME revenue and 70% resident-to-staff conversion rate.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Led continuing medical education (CME) programs</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Directed professional development platform ensuring regulatory compliance and
+                        practice improvement.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">100% CME compliance and zero licensure-related operational disruptions.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Conducted clinical trials and outcomes research</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Built a research program generating revenue and early access to therapeutic
+                        innovations.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">$3.8M in industry-sponsored revenue across 15 active protocols.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGULATORY -->
+        <section class="category">
+            <div class="category-header">
+                <h2>Regulatory & Compliance</h2>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Led Joint Commission survey preparation</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Directed enterprise regulatory readiness program protecting the organization's
+                        license to operate.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">Zero Immediate Threat to Life findings, protecting $200M+ in Medicare
+                        eligibility.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Ensured HIPAA compliance and patient privacy</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Directed information governance mitigating risk in a data-driven care
+                        environment.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">Zero reportable breaches and avoided potential $2M+ in OCR penalties.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Managed CMS quality reporting compliance</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Owned quality reporting portfolio, translating performance into transparency
+                        scores.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">Top-quartile star ratings and maximum VBP incentive payments.</p>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="column clinical-col">
+                    <span class="col-label">Clinical Input</span>
+                    <p class="entry-text">Developed clinical documentation improvement (CDI)</p>
+                </div>
+                <div class="column business-col">
+                    <span class="col-label">Business Translation</span>
+                    <p class="entry-text">Launched CDI initiative aligning practices with accurate severity coding and
+                        reimbursement.</p>
+                </div>
+                <div class="column roi-col">
+                    <span class="col-label">Executive Impact</span>
+                    <p class="entry-text">$5.2M annual revenue impact from improved Case Mix Index accuracy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h3>Ready for your next move?</h3>
+            <p>The Cortivus Career Intelligence Platform analyzes your unique background and generates personalized
+                translations tailored to your specific achievements.</p>
+            <div style="font-weight: 800; font-size: 18px;">Vist cortivus.com</div>
+        </div>
+
+        <footer class="footer">
+            &copy; 2026 Cortivus. All rights reserved. | The Clinical-to-Boardroom Translation Map
+        </footer>
+    </div>
+</body>
+
+</html>
