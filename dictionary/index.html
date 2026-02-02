@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" href="/images/logo.png">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 
     <style>
         /* ============================================
@@ -1428,8 +1428,8 @@
                         <label for="downloadEmail">Email</label>
                         <input type="email" id="downloadEmail" name="email" required>
                     </div>
-                    <!-- Cloudflare Turnstile -->
-                    <div class="cf-turnstile" data-sitekey="0x4AAAAAACWlRzcZjl9XKepF" data-theme="dark"></div>
+                    <!-- Cloudflare Turnstile (rendered explicitly on modal open) -->
+                    <div id="turnstile-container"></div>
                     <button type="submit" class="btn-submit" id="submitBtn">
                         <i class="fas fa-file-pdf"></i>
                         Download PDF
@@ -1487,9 +1487,22 @@
         })();
 
         // Download Modal
+        var turnstileWidgetId = null;
+
         function openDownloadModal() {
             document.getElementById('downloadModal').classList.add('active');
             document.body.style.overflow = 'hidden';
+
+            // Render Turnstile explicitly — it can't render while the modal is hidden
+            var container = document.getElementById('turnstile-container');
+            if (turnstileWidgetId !== null) {
+                turnstile.reset(turnstileWidgetId);
+            } else if (typeof turnstile !== 'undefined') {
+                turnstileWidgetId = turnstile.render(container, {
+                    sitekey: '0x4AAAAAACWlRzcZjl9XKepF',
+                    theme: 'dark'
+                });
+            }
         }
 
         function closeDownloadModal() {
@@ -1503,6 +1516,10 @@
             document.getElementById('modalErrorState').classList.remove('active');
             document.getElementById('submitBtn').disabled = false;
             document.getElementById('downloadForm').reset();
+            // Re-render Turnstile for fresh token
+            if (turnstileWidgetId !== null && typeof turnstile !== 'undefined') {
+                turnstile.reset(turnstileWidgetId);
+            }
         }
 
         // Close modal: X button
