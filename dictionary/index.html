@@ -14,6 +14,7 @@
     <link rel="apple-touch-icon" href="/images/logo.png">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     <style>
         /* ============================================
@@ -1427,6 +1428,8 @@
                         <label for="downloadEmail">Email</label>
                         <input type="email" id="downloadEmail" name="email" required>
                     </div>
+                    <!-- Cloudflare Turnstile -->
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAACWlRzcZjl9XKepF" data-theme="dark"></div>
                     <button type="submit" class="btn-submit" id="submitBtn">
                         <i class="fas fa-file-pdf"></i>
                         Download PDF
@@ -1525,10 +1528,12 @@
             var firstName = document.getElementById('firstName').value;
             var lastName = document.getElementById('lastName').value;
 
+            var turnstileInput = document.querySelector('#downloadForm [name="cf-turnstile-response"]');
             var data = {
                 name: firstName + ' ' + lastName,
                 email: document.getElementById('downloadEmail').value,
-                request_type: 'dictionary-pdf'
+                request_type: 'dictionary-pdf',
+                cf_turnstile_response: turnstileInput ? turnstileInput.value : null
             };
 
             fetch('https://tools.cortivus.com/api/contact', {

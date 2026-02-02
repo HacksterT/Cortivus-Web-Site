@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" href="images/logo.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
 <body>
@@ -245,6 +246,8 @@
                         </div>
                         <!-- Honeypot — hidden from humans, bots auto-fill -->
                         <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                        <!-- Cloudflare Turnstile -->
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAACWlRzcZjl9XKepF" data-theme="dark"></div>
                         <button type="submit" class="btn" id="contactSubmitBtn">Start the Conversation</button>
                         <div class="form-status" id="contactFormStatus" style="display:none; margin-top:1rem; text-align:center;"></div>
                     </form>
@@ -313,7 +316,8 @@
                     organization: form.querySelector('[name="organization"]').value || null,
                     request_type: form.querySelector('[name="request_type"]:checked').value,
                     message: form.querySelector('[name="message"]').value || null,
-                    website: form.querySelector('[name="website"]').value
+                    website: form.querySelector('[name="website"]').value,
+                    cf_turnstile_response: form.querySelector('[name="cf-turnstile-response"]') ? form.querySelector('[name="cf-turnstile-response"]').value : null
                 };
 
                 fetch(CONTACT_API, {
