@@ -304,6 +304,16 @@
                 });
             });
 
+            // Auto-select PDF radio if coming from dictionary page
+            if (sessionStorage.getItem('requestType') === 'dictionary-pdf') {
+                sessionStorage.removeItem('requestType');
+                var pdfRadio = form.querySelector('input[name="request_type"][value="dictionary-pdf"]');
+                if (pdfRadio) {
+                    pdfRadio.checked = true;
+                    pdfRadio.dispatchEvent(new Event('change'));
+                }
+            }
+
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 btn.disabled = true;

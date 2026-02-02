@@ -14,8 +14,6 @@
     <link rel="apple-touch-icon" href="/images/logo.png">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
-
     <style>
         /* ============================================
            DICTIONARY PAGE STYLES
@@ -382,201 +380,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Download Modal */
-        .download-modal-overlay {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(8px);
-            z-index: 9999;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .download-modal-overlay.active {
-            display: flex;
-        }
-
-        .download-modal {
-            background: var(--card-bg);
-            border: 1px solid rgba(0, 245, 255, 0.2);
-            border-radius: 20px;
-            padding: 2.5rem;
-            max-width: 480px;
-            width: 100%;
-            position: relative;
-            box-shadow: 0 25px 80px rgba(0, 245, 255, 0.15);
-        }
-
-        .download-modal-close {
-            position: absolute;
-            top: 1.25rem;
-            right: 1.25rem;
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-secondary);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .download-modal-close:hover {
-            background: var(--primary-color);
-            color: #000;
-            border-color: var(--primary-color);
-        }
-
-        .download-modal h2 {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            padding-right: 2rem;
-        }
-
-        .download-modal .modal-desc {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .download-form .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .download-form .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .download-form label {
-            display: block;
-            color: var(--text-primary);
-            font-weight: 500;
-            margin-bottom: 0.4rem;
-            font-size: 0.9rem;
-        }
-
-        .download-form input {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .download-form input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
-        }
-
-        .download-form .btn-submit {
-            width: 100%;
-            padding: 1rem 2rem;
-            background: var(--gradient-2);
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .download-form .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(255, 0, 110, 0.3);
-        }
-
-        .download-form .btn-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Modal States */
-        .modal-state { display: none; }
-        .modal-state.active { display: block; }
-
-        .modal-success {
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        .modal-success i {
-            font-size: 3rem;
-            color: #10b981;
-            margin-bottom: 1rem;
-        }
-
-        .modal-success h3 {
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .modal-success p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .modal-error {
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        .modal-error i {
-            font-size: 3rem;
-            color: #ef4444;
-            margin-bottom: 1rem;
-        }
-
-        .modal-error h3 {
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .modal-error p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .btn-retry {
-            background: transparent;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-            padding: 0.6rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-retry:hover {
-            background: var(--primary-color);
-            color: #000;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .howto-grid {
@@ -599,10 +402,6 @@
             .floating-cta-btn {
                 padding: 0.85rem 1.25rem;
                 font-size: 0.9rem;
-            }
-
-            .download-form .form-row {
-                grid-template-columns: 1fr;
             }
 
             .category-header {
@@ -630,9 +429,9 @@
                 that boards, CEOs, and search committees value.
             </p>
             <div class="hero-cta">
-                <button class="btn-primary-glow" onclick="openDownloadModal()">
+                <a href="/index.html#contact" class="btn-primary-glow" onclick="sessionStorage.setItem('requestType','dictionary-pdf')">
                     <i class="fas fa-file-pdf"></i>&nbsp; Download as PDF
-                </button>
+                </a>
                 <a href="#entries" class="btn-secondary-outline">Browse the Dictionary</a>
             </div>
         </div>
@@ -1353,10 +1152,10 @@
 
     <!-- FLOATING CTA -->
     <div class="floating-cta" id="floatingCta">
-        <button class="floating-cta-btn" onclick="openDownloadModal()">
+        <a class="floating-cta-btn" href="/index.html#contact" onclick="sessionStorage.setItem('requestType','dictionary-pdf')">
             <i class="fas fa-file-pdf"></i>
             Download as PDF
-        </button>
+        </a>
     </div>
 
     <!-- KEY TAKEAWAYS -->
@@ -1402,62 +1201,6 @@
         </div>
     </section>
 
-    <!-- DOWNLOAD MODAL -->
-    <div class="download-modal-overlay" id="downloadModal">
-        <div class="download-modal">
-            <button class="download-modal-close" id="downloadModalClose" aria-label="Close modal">
-                <i class="fas fa-times"></i>
-            </button>
-
-            <!-- Form State -->
-            <div class="modal-state active" id="modalFormState">
-                <h2>Download the Dictionary</h2>
-                <p class="modal-desc">Get all 34 translations as a beautifully formatted PDF you can reference anytime.</p>
-                <form class="download-form" id="downloadForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="downloadEmail">Email</label>
-                        <input type="email" id="downloadEmail" name="email" required>
-                    </div>
-                    <!-- Cloudflare Turnstile (rendered explicitly on modal open) -->
-                    <div id="turnstile-container"></div>
-                    <button type="submit" class="btn-submit" id="submitBtn">
-                        <i class="fas fa-file-pdf"></i>
-                        Download PDF
-                    </button>
-                </form>
-            </div>
-
-            <!-- Success State -->
-            <div class="modal-state" id="modalSuccessState">
-                <div class="modal-success">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Your PDF is on its way!</h3>
-                    <p>Check your email for the Clinical-to-Boardroom Dictionary PDF.</p>
-                </div>
-            </div>
-
-            <!-- Error State -->
-            <div class="modal-state" id="modalErrorState">
-                <div class="modal-error">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <h3>Something went wrong</h3>
-                    <p>We couldn't process your request. Please try again.</p>
-                    <button class="btn-retry" onclick="resetModal()">Try Again</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
@@ -1486,88 +1229,6 @@
             checkScroll();
         })();
 
-        // Download Modal
-        var turnstileWidgetId = null;
-
-        function openDownloadModal() {
-            document.getElementById('downloadModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-
-            // Render Turnstile explicitly — it can't render while the modal is hidden
-            var container = document.getElementById('turnstile-container');
-            if (turnstileWidgetId !== null) {
-                turnstile.reset(turnstileWidgetId);
-            } else if (typeof turnstile !== 'undefined') {
-                turnstileWidgetId = turnstile.render(container, {
-                    sitekey: '0x4AAAAAACWlRzcZjl9XKepF',
-                    theme: 'dark'
-                });
-            }
-        }
-
-        function closeDownloadModal() {
-            document.getElementById('downloadModal').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function resetModal() {
-            document.getElementById('modalFormState').classList.add('active');
-            document.getElementById('modalSuccessState').classList.remove('active');
-            document.getElementById('modalErrorState').classList.remove('active');
-            document.getElementById('submitBtn').disabled = false;
-            document.getElementById('downloadForm').reset();
-            // Re-render Turnstile for fresh token
-            if (turnstileWidgetId !== null && typeof turnstile !== 'undefined') {
-                turnstile.reset(turnstileWidgetId);
-            }
-        }
-
-        // Close modal: X button
-        document.getElementById('downloadModalClose').addEventListener('click', closeDownloadModal);
-
-        // Close modal: overlay click
-        document.getElementById('downloadModal').addEventListener('click', function (e) {
-            if (e.target === this) closeDownloadModal();
-        });
-
-        // Close modal: Escape key
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') closeDownloadModal();
-        });
-
-        // Form submission — unified contact microservice
-        document.getElementById('downloadForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            var btn = document.getElementById('submitBtn');
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-            var firstName = document.getElementById('firstName').value;
-            var lastName = document.getElementById('lastName').value;
-
-            var turnstileInput = document.querySelector('#downloadForm [name="cf-turnstile-response"]');
-            var data = {
-                name: firstName + ' ' + lastName,
-                email: document.getElementById('downloadEmail').value,
-                request_type: 'dictionary-pdf',
-                cf_turnstile_response: turnstileInput ? turnstileInput.value : null
-            };
-
-            fetch('https://tools.cortivus.com/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-            .then(function (res) {
-                if (!res.ok) throw new Error('Request failed');
-                document.getElementById('modalFormState').classList.remove('active');
-                document.getElementById('modalSuccessState').classList.add('active');
-            })
-            .catch(function () {
-                document.getElementById('modalFormState').classList.remove('active');
-                document.getElementById('modalErrorState').classList.add('active');
-            });
-        });
     </script>
 </body>
 
