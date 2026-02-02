@@ -213,24 +213,40 @@
                 </div>
 
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" action="https://formspree.io/f/xwpbrabj" method="POST">
+                    <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <label>I'd like to:</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="request_type" value="information" checked>
+                                    <span>Request Information</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="request_type" value="dictionary-pdf">
+                                    <span>Request Dictionary PDF</span>
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="company">Organization</label>
-                            <input type="text" id="company" name="company">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">How can we help?</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your current challenges or interest in the platform..." required></textarea>
+                            <label for="contact-org">Organization</label>
+                            <input type="text" id="contact-org" name="organization">
                         </div>
-                        <button type="submit" class="btn">Start the Conversation</button>
+                        <div class="form-group" id="messageGroup">
+                            <label for="contact-message">How can we help?</label>
+                            <textarea id="contact-message" name="message" rows="5" placeholder="Tell us about your current challenges or interest in the platform..."></textarea>
+                        </div>
+                        <!-- Honeypot — hidden from humans, bots auto-fill -->
+                        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                        <button type="submit" class="btn" id="contactSubmitBtn">Start the Conversation</button>
+                        <div class="form-status" id="contactFormStatus" style="display:none; margin-top:1rem; text-align:center;"></div>
                     </form>
                 </div>
             </div>
@@ -263,6 +279,70 @@
     </script>
 
     <script src="js/main.js"></script>
+
+    <script>
+        // Contact form — unified microservice
+        (function () {
+            var CONTACT_API = 'https://tools.cortivus.com/api/contact';
+            var form = document.getElementById('contactForm');
+            var btn = document.getElementById('contactSubmitBtn');
+            var status = document.getElementById('contactFormStatus');
+            var messageGroup = document.getElementById('messageGroup');
+            var radios = form.querySelectorAll('input[name="request_type"]');
+
+            // Show/hide message field based on request type
+            radios.forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                    if (this.value === 'dictionary-pdf') {
+                        messageGroup.style.display = 'none';
+                    } else {
+                        messageGroup.style.display = '';
+                    }
+                });
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
+                status.style.display = 'none';
+
+                var data = {
+                    name: form.querySelector('[name="name"]').value,
+                    email: form.querySelector('[name="email"]').value,
+                    organization: form.querySelector('[name="organization"]').value || null,
+                    request_type: form.querySelector('[name="request_type"]:checked').value,
+                    message: form.querySelector('[name="message"]').value || null,
+                    website: form.querySelector('[name="website"]').value
+                };
+
+                fetch(CONTACT_API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+                .then(function (res) {
+                    if (!res.ok) throw new Error('Request failed');
+                    return res.json();
+                })
+                .then(function (result) {
+                    status.style.display = 'block';
+                    status.style.color = '#10b981';
+                    status.innerHTML = '<i class="fas fa-check-circle"></i> ' + result.message;
+                    form.reset();
+                })
+                .catch(function () {
+                    status.style.display = 'block';
+                    status.style.color = '#ef4444';
+                    status.innerHTML = '<i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again.';
+                })
+                .finally(function () {
+                    btn.disabled = false;
+                    btn.textContent = 'Start the Conversation';
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>

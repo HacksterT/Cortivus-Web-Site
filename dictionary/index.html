@@ -1515,20 +1515,23 @@
             if (e.key === 'Escape') closeDownloadModal();
         });
 
-        // Form submission
+        // Form submission — unified contact microservice
         document.getElementById('downloadForm').addEventListener('submit', function (e) {
             e.preventDefault();
             var btn = document.getElementById('submitBtn');
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+
             var data = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('downloadEmail').value
+                name: firstName + ' ' + lastName,
+                email: document.getElementById('downloadEmail').value,
+                request_type: 'dictionary-pdf'
             };
 
-            fetch('https://tools.cortivus.com/dictionary/api/download', {
+            fetch('https://tools.cortivus.com/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
