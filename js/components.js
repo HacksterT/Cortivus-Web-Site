@@ -84,7 +84,16 @@ const CortivusComponents = {
                             <a href="/index.html#contact">Contact</a>
                         </nav>
                     </div>
-                    
+
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <nav class="footer-nav">
+                            <a href="/legal/terms.html">Terms of Service</a>
+                            <a href="/legal/privacy.html">Privacy Policy</a>
+                            <a href="/legal/refund.html">Refund Policy</a>
+                        </nav>
+                    </div>
+
                     <div class="footer-section">
                         <h4>Credentials</h4>
                         <div class="footer-badges">

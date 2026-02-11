@@ -15,6 +15,7 @@
 @import url("css/platform-modules.css"); /* Individual module page styles */
 @import url("css/module-heroes.css");    /* Module hero sections & SVG backgrounds */
 @import url("css/pricing.css");          /* Pricing page styles */
+@import url("css/legal.css");            /* Legal page styles (terms, privacy, refund) */
 @import url("css/footer.css");        /* Footer styles */
 @import url("css/responsive.css");    /* Mobile & tablet breakpoints */
 @import url("css/homepage.css");      /* Homepage-specific styles */

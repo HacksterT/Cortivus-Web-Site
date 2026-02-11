@@ -1,0 +1,114 @@
+/* ============================================
+   LEGAL PAGE STYLES
+   Terms of Service, Privacy Policy, Refund Policy
+   ============================================ */
+
+.legal-hero {
+    background: linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(0, 245, 255, 0.05) 100%);
+}
+
+.legal-section {
+    padding: 80px 0 100px;
+    background: var(--darker-bg);
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-content .legal-updated {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.legal-content h2 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.legal-content h2:first-of-type {
+    margin-top: 0;
+}
+
+.legal-content h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.legal-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.legal-content ul,
+.legal-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.legal-content li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.legal-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.legal-content a:hover {
+    color: #fff;
+}
+
+.legal-content strong {
+    color: var(--text-primary);
+}
+
+.legal-content .legal-contact {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(0, 245, 255, 0.03);
+    border: 1px solid rgba(0, 245, 255, 0.15);
+    border-radius: 15px;
+}
+
+.legal-content .legal-contact h2 {
+    margin-top: 0;
+}
+
+/* Legal links bar (used on pricing page) */
+.legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.legal-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: var(--primary-color);
+}
+
+.legal-links a i {
+    margin-right: 0.4rem;
+    font-size: 0.8rem;
+}
