@@ -11,7 +11,12 @@
       "Bash(git commit:*)",
       "Bash(git checkout:*)",
       "Bash(git merge:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(git -C \"C:\\\\Projects\\\\Cortivus-Web-Site\" push origin main)",
+      "Bash(git -C \"C:\\\\Projects\\\\Cortivus-Web-Site\" checkout dev)",
+      "Bash(git -C \"C:\\\\Projects\\\\Cortivus-Web-Site\" merge main)",
+      "Bash(git -C \"C:\\\\Projects\\\\Cortivus-Web-Site\" push origin dev)",
+      "Bash(git -C \"C:\\\\Projects\\\\Cortivus-Web-Site\" checkout main)"
     ]
   }
 }
