@@ -113,6 +113,12 @@
         padding-left: 3rem;
     }
 
+    /* Sign In Button - Mobile */
+    nav.mobile-active a.nav-signin {
+        display: inline-block;
+        margin: 0.5rem auto;
+    }
+
     /* Sections */
     .about-grid,
     .contact-grid {
