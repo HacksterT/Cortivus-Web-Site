@@ -161,6 +161,27 @@ nav a.active::after {
     padding-left: 2rem;
 }
 
+/* Sign In Nav Button */
+nav a.nav-signin {
+    background: rgba(0, 245, 255, 0.1);
+    border: 1px solid rgba(0, 245, 255, 0.4);
+    padding: 0.4rem 1.2rem;
+    border-radius: 6px;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+nav a.nav-signin:hover {
+    background: rgba(0, 245, 255, 0.2);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.3);
+}
+
+nav a.nav-signin::after {
+    display: none;
+}
+
 /* Mobile Navigation Toggle */
 .mobile-nav-toggle {
     display: none;

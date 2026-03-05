@@ -20,7 +20,8 @@ const CortivusComponents = {
         },
         { text: 'Pricing', href: '/pricing/' },
         { text: 'About', href: '/company/team.html' },
-        { text: 'Contact', href: '/index.html#contact' }
+        { text: 'Contact', href: '/index.html#contact' },
+        { text: 'Sign In', href: 'https://app.cortivus.com/login', className: 'nav-signin' }
     ],
 
     /**
@@ -149,7 +150,11 @@ const CortivusComponents = {
                     </ul>
                 </li>`;
             }
-            return `<li><a href="${link.href}"${activeClass} ${link.style ? `style="${link.style}"` : ''}>${link.text}</a></li>`;
+            const classes = [];
+            if (isActive) classes.push('active');
+            if (link.className) classes.push(link.className);
+            const classAttr = classes.length ? ` class="${classes.join(' ')}"` : '';
+            return `<li><a href="${link.href}"${classAttr}>${link.text}</a></li>`;
         }).join('');
     }
 };
