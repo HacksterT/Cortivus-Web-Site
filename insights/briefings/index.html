@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefings | Cortivus AI Safety Hub</title>
+    <meta name="description" content="Clinical AI safety, governance, and deployment risk briefings for hospital CIOs, CMOs, and Chief Quality Officers. Every briefing grounded in the Cortivus SAFE AI framework.">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero -->
+    <section class="briefings-hero">
+        <div class="briefings-hero-grid-bg"></div>
+        <div class="container">
+            <div class="briefings-hero-content">
+                <div class="briefings-hero-eyebrow">
+                    <span class="briefings-pulse"></span>
+                    <span>Briefings · SAFE AI Framework</span>
+                </div>
+                <h1 class="briefings-hero-title">Briefings.</h1>
+                <p>Clinical AI safety, governance, and deployment risk briefings for hospital CIOs, CMOs, and Chief Quality Officers. Every briefing is grounded in the <a href="/safe-ai/" class="briefings-inline-link">SAFE AI framework</a> and written for the decision-makers responsible for the deployment.</p>
+            </div>
+            <div class="hero-return-wrapper">
+                <a href="/insights/" class="hero-return-link">
+                    <i class="fas fa-arrow-left"></i> Return to Insights
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Papers grid -->
+    <section class="module-features-section">
+        <div class="container container-wide">
+            <div class="section-header">
+                <div class="section-eyebrow">All Briefings</div>
+                <h2 class="section-title">Published briefings.</h2>
+                <p class="section-subtitle">Newest first. Each briefing is also available as a PDF on request.</p>
+            </div>
+
+            <div class="papers-grid">
+                <a href="/insights/same-machine-same-failures/" class="paper-card">
+                    <div class="paper-card-image">
+                        <img src="/images/insights/same-machine-card.jpg" alt="A vintage analog circuit board beside a modern dark glass tablet, expressing continuity between 1958 perceptron hardware and 2026 clinical AI" loading="lazy">
+                    </div>
+                    <div class="paper-card-content">
+                        <div class="paper-card-meta">June 2026 · 16 min read</div>
+                        <h3>Same Machine. Same Failures.</h3>
+                        <p>Why clinical AI governance has run past internal IT, and what hospital leadership needs to do about it. Adapted from a briefing at the 9th Annual inPHYnity Conference of the Collin-Fannin County Medical Society.</p>
+                        <span class="paper-card-cta">Read the briefing <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="/insights/inside-cure8/" class="paper-card">
+                    <div class="paper-card-image" style="display:flex;align-items:center;justify-content:center;">
+                        <i class="fas fa-layer-group" style="font-size:4.5rem;color:var(--primary-color);opacity:0.55;"></i>
+                    </div>
+                    <div class="paper-card-content">
+                        <div class="paper-card-meta">June 2026 · 9 min read</div>
+                        <h3>Inside Cure8: Curation-First Knowledge for AI Agents</h3>
+                        <p>How an origin-aware curation engine turns research into knowledge an agent can use, and why spending intelligence at write time makes it different from conventional memory systems.</p>
+                        <span class="paper-card-cta">Read the briefing <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="/insights/five-failure-modes-clinical-ai/" class="paper-card">
+                    <div class="paper-card-image">
+                        <img src="/images/insights/failure-modes-card.jpg" alt="A glass tablet on a charcoal medical clipboard displaying an RPN-scored failure-mode worksheet" loading="lazy">
+                    </div>
+                    <div class="paper-card-content">
+                        <div class="paper-card-meta">June 2026 · 12 min read</div>
+                        <h3>Why Clinical AI Fails: Five Failure Modes Your Quality Department Should Already Recognize</h3>
+                        <p>A SAFE AI reading of Gartner's GenAI failure framework, with each failure mode translated into clinical safety vocabulary your quality committee already speaks.</p>
+                        <span class="paper-card-cta">Read the briefing <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="module-cta-section">
+        <div class="container">
+            <div class="module-cta-content">
+                <h2>Be the first to read the next one.</h2>
+                <p>The Cortivus AI Safety Hub mailing list goes out roughly monthly. New briefings, tracker highlights, and regulatory updates. No promotional noise.</p>
+                <a href="/index.html#contact" class="btn-primary-glow">Get on the List</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <style>
+        .container-wide {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ── Hero ─────────────────────────────────────────────────────── */
+        .briefings-hero {
+            position: relative;
+            background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            padding: 100px 0 50px;
+            border-bottom: 1px solid #1a1a1a;
+            overflow: hidden;
+        }
+        .briefings-hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,245,255,0.04)" stroke-width="1"/></pattern></defs><rect width="40" height="40" fill="url(%23g)"/></svg>');
+            pointer-events: none;
+        }
+        .briefings-hero-grid-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0,102,255,0.1) 0%, transparent 70%);
+        }
+        .briefings-hero-content { position: relative; z-index: 2; max-width: 900px; }
+        .briefings-hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+        .briefings-pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            box-shadow: 0 0 0 0 rgba(0,245,255,0.5);
+            animation: briefingsPulse 1.8s infinite;
+        }
+        @keyframes briefingsPulse {
+            0%   { box-shadow: 0 0 0 0 rgba(0,245,255,0.5); }
+            70%  { box-shadow: 0 0 0 8px rgba(0,245,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(0,245,255,0); }
+        }
+        .briefings-hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin: 0 0 1rem;
+            background: linear-gradient(135deg, #ffffff 30%, rgba(0,245,255,0.85) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.15;
+        }
+        .briefings-hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 720px;
+            margin: 0;
+        }
+        .briefings-inline-link { color: var(--primary-color); text-decoration: underline; }
+
+        .hero-return-wrapper {
+            margin-top: 2.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-return-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            opacity: 0.85;
+            transition: opacity 0.2s, color 0.2s;
+        }
+        .hero-return-link:hover { opacity: 1; color: var(--text-primary); }
+        .hero-return-link i { font-size: 0.85rem; transition: transform 0.2s; }
+        .hero-return-link:hover i { transform: translateX(-4px); }
+
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .paper-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #222;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+        .paper-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--glow);
+            border-color: rgba(0, 245, 255, 0.3);
+        }
+        .paper-card-image {
+            height: 220px;
+            background: linear-gradient(135deg, #001a2c 0%, #0a0a0a 100%);
+            overflow: hidden;
+            position: relative;
+        }
+        .paper-card-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .paper-card-content {
+            padding: 1.5rem 1.75rem 2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .paper-card-meta {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 0.85rem;
+        }
+        .paper-card-content h3 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            line-height: 1.35;
+            margin: 0 0 1rem;
+            font-weight: 700;
+        }
+        .paper-card-content p {
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+        .paper-card-cta {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.92rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        .paper-card-cta i {
+            margin-left: 0.4rem;
+            transition: transform 0.2s;
+            font-size: 0.85rem;
+        }
+        .paper-card:hover .paper-card-cta i { transform: translateX(4px); }
+
+        @media (max-width: 768px) {
+            .papers-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <script src="/js/components.js"></script>
+    <script>
+        CortivusComponents.renderHeader('header-placeholder');
+        CortivusComponents.renderFooter('footer-placeholder');
+    </script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

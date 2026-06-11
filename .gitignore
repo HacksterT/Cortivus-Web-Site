@@ -32,6 +32,8 @@ node_modules/
 .env
 .env.local
 data/
+.claude/
+tasks/
 
 # Azure Functions
 local.settings.json

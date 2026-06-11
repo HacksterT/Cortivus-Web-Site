@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Tracker | Cortivus AI Safety Hub</title>
+    <meta name="description" content="Live tracker of clinical AI case law, failure mode literature, regulatory developments, and vendor activity. Curated and live-scanned by Cortivus AI Safety.">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero (compact) -->
+    <section class="tracker-hero">
+        <div class="tracker-hero-grid-bg"></div>
+        <div class="container">
+            <div class="tracker-hero-content">
+                <div class="tracker-hero-eyebrow">
+                    <span class="tracker-pulse"></span>
+                    <span>Live Tracker · Daily Automated Research</span>
+                </div>
+                <h1 class="tracker-hero-title">The Tracker.</h1>
+                <p>An automated research agent scans live-tracked topics daily. Cortivus reviews every finding. Every item carries a brief clinical-safety read.</p>
+            </div>
+            <div class="hero-return-wrapper">
+                <a href="/insights/" class="hero-return-link">
+                    <i class="fas fa-arrow-left"></i> Return to Insights
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Signal promo -->
+    <section class="tracker-signal-promo">
+        <div class="container">
+            <a href="/insights/tracker/signal/" class="signal-promo-card">
+                <div class="signal-promo-icon">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="13" width="2.5" height="10" rx="1.25" fill="#00f5ff" opacity="0.9"/>
+                        <rect x="14" y="10" width="2.5" height="16" rx="1.25" fill="#00f5ff"/>
+                        <rect x="18" y="12" width="2.5" height="12" rx="1.25" fill="#00f5ff" opacity="0.9"/>
+                        <rect x="22" y="15" width="2.5" height="6" rx="1.25" fill="#00f5ff" opacity="0.6"/>
+                        <path d="M6 18 C6 10 10 5 18 5 C26 5 30 10 30 18" stroke="rgba(0,245,255,0.25)" stroke-width="1.2" fill="none" stroke-dasharray="3 2.5"/>
+                        <path d="M2 18 C2 7 8 2 18 2 C28 2 34 7 34 18" stroke="rgba(0,245,255,0.1)" stroke-width="1" fill="none" stroke-dasharray="2 3"/>
+                    </svg>
+                </div>
+                <div class="signal-promo-body">
+                    <span class="signal-promo-kicker">Evidence Intelligence</span>
+                    <span class="signal-promo-title">The Signal</span>
+                    <span class="signal-promo-desc">Peer-reviewed literature synthesized into structured failure and success patterns — organized by clinical AI system.</span>
+                </div>
+                <div class="signal-promo-arrow">
+                    <span>Explore</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Tabs + content -->
+    <section class="tracker-tabbed-section">
+        <div class="container container-wide">
+            <div id="tracker-tabs" class="tracker-tabs" role="tablist">
+                <div class="tracker-loading-inline"><i class="fas fa-spinner fa-spin"></i> Loading topics...</div>
+            </div>
+
+            <div id="tracker-panel" class="tracker-panel">
+                <div class="tracker-loading"><i class="fas fa-spinner fa-spin"></i><p>Loading tracker feed...</p></div>
+            </div>
+
+            <div id="tracker-error" class="tracker-error" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Unable to load tracker feed. Refresh to retry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tip + CTA combined -->
+    <section class="tracker-foot-section">
+        <div class="container">
+            <div class="tracker-foot-grid">
+                <div class="tracker-tip-card">
+                    <i class="fas fa-lightbulb tracker-tip-icon"></i>
+                    <h3>Spot something we should be tracking?</h3>
+                    <p>If you have a tip, a citation, or a primary source we should consider, send it through. We attribute on request.</p>
+                    <a href="/index.html#contact" class="btn-secondary-outline">Send a Tip</a>
+                </div>
+                <div class="tracker-list-card">
+                    <i class="fas fa-envelope tracker-tip-icon"></i>
+                    <h3>Get tracker updates in your inbox.</h3>
+                    <p>Briefings, tracker highlights, and regulatory updates, roughly monthly. No promotional noise.</p>
+                    <a href="/index.html#contact" class="btn-primary-glow">Get on the List</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <style>
+        /* Wider container for tracker */
+        .container-wide {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Compact hero */
+        .tracker-hero {
+            position: relative;
+            background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            padding: 100px 0 50px;
+            border-bottom: 1px solid #1a1a1a;
+            overflow: hidden;
+        }
+        .tracker-hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,245,255,0.04)" stroke-width="1"/></pattern></defs><rect width="40" height="40" fill="url(%23g)"/></svg>');
+            pointer-events: none;
+        }
+        .tracker-hero-grid-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0,102,255,0.1) 0%, transparent 70%);
+        }
+        .tracker-hero-content { position: relative; z-index: 2; max-width: 900px; }
+        .tracker-hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+        .tracker-pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            box-shadow: 0 0 0 0 rgba(0,245,255,0.5);
+            animation: trackerPulse 1.8s infinite;
+        }
+        @keyframes trackerPulse {
+            0%   { box-shadow: 0 0 0 0 rgba(0,245,255,0.5); }
+            70%  { box-shadow: 0 0 0 8px rgba(0,245,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(0,245,255,0); }
+        }
+        .tracker-hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin: 0 0 1rem;
+            background: linear-gradient(135deg, #ffffff 30%, rgba(0,245,255,0.85) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.15;
+        }
+        .tracker-hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 720px;
+            margin: 0;
+        }
+
+        /* Signal promo banner */
+        .tracker-signal-promo {
+            background: var(--darker-bg);
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .signal-promo-card {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            background: linear-gradient(135deg, rgba(0,245,255,0.04) 0%, rgba(0,102,255,0.04) 100%);
+            border: 1px solid rgba(0,245,255,0.12);
+            border-radius: 12px;
+            padding: 1.1rem 1.5rem;
+            text-decoration: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .signal-promo-card:hover {
+            border-color: rgba(0,245,255,0.35);
+            box-shadow: 0 0 24px rgba(0,245,255,0.07);
+        }
+        .signal-promo-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: rgba(0,245,255,0.06);
+            border: 1px solid rgba(0,245,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .signal-promo-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        .signal-promo-kicker {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--primary-color);
+        }
+        .signal-promo-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        .signal-promo-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+        .signal-promo-arrow {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-size: 0.88rem;
+            font-weight: 700;
+            white-space: nowrap;
+            transition: gap 0.2s;
+        }
+        .signal-promo-card:hover .signal-promo-arrow { gap: 0.75rem; }
+
+        /* Return to Insights CTA centered at bottom of hero */
+        .hero-return-wrapper {
+            margin-top: 2.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-return-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            opacity: 0.85;
+            transition: opacity 0.2s, color 0.2s;
+        }
+        .hero-return-link:hover { opacity: 1; color: var(--text-primary); }
+        .hero-return-link i {
+            font-size: 0.85rem;
+            transition: transform 0.2s;
+        }
+        .hero-return-link:hover i { transform: translateX(-4px); }
+        /* Tabbed section */
+        .tracker-tabbed-section { padding: 3rem 0 4rem; }
+
+        /* Tab bar */
+        .tracker-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 0;
+        }
+        .tracker-tab {
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: var(--text-secondary);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+            border-radius: 8px 8px 0 0;
+        }
+        .tracker-tab:hover {
+            color: var(--text-primary);
+            background: rgba(0, 245, 255, 0.03);
+        }
+        .tracker-tab.active {
+            color: var(--text-primary);
+            border-bottom-color: var(--primary-color);
+            background: rgba(0, 245, 255, 0.05);
+        }
+        .tracker-tab-name {
+            font-weight: 700;
+        }
+        .tracker-tab-count {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+        }
+        .tracker-tab.active .tracker-tab-count { color: var(--primary-color); }
+        .tracker-tab-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .tab-dot-active { background: #00f5aa; }
+        .tab-dot-monitoring { background: #ffc800; }
+        .tab-dot-cooling { background: #909090; }
+
+        /* Tab panel */
+        .tracker-panel {
+            min-height: 400px;
+        }
+        .tracker-topic-header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .tracker-topic-title-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+        .tracker-topic-title {
+            color: var(--text-primary);
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+        .tracker-topic-status {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+        .tracker-topic-status::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+        .status-active { background: rgba(0,245,170,0.1); color: #00f5aa; }
+        .status-monitoring { background: rgba(255,200,0,0.1); color: #ffc800; }
+        .status-cooling { background: rgba(160,160,160,0.1); color: #909090; }
+        .tracker-topic-description {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.65;
+            margin: 0 0 1rem;
+            max-width: 800px;
+        }
+        .tracker-topic-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        .tracker-topic-live, .tracker-topic-curated {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .tracker-topic-live { background: rgba(0, 245, 170, 0.1); color: #00f5aa; }
+        .tracker-topic-curated { background: rgba(180, 180, 180, 0.08); color: var(--text-secondary); }
+
+        /* Item card - clean hierarchy */
+        .tracker-items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .tracker-item {
+            background: var(--card-bg);
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 1.75rem 2rem;
+            transition: border-color 0.2s;
+        }
+        .tracker-item:hover { border-color: rgba(0, 245, 255, 0.2); }
+        .tracker-item-date {
+            color: var(--primary-color);
+            font-size: 0.82rem;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .tracker-item-headline {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.35;
+            margin: 0 0 1rem;
+        }
+        .tracker-item-summary {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0 0 1rem;
+        }
+        .tracker-item-take {
+            color: var(--primary-color);
+            font-size: 0.96rem;
+            line-height: 1.6;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1rem;
+            font-style: italic;
+            margin: 0;
+        }
+        .tracker-item-take strong {
+            color: var(--primary-color);
+            font-style: normal;
+            font-weight: 700;
+            margin-right: 0.4rem;
+            letter-spacing: 0.06em;
+        }
+
+        /* Compact footer with metadata */
+        .tracker-item-footer {
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid #1a1a1a;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .tracker-item-type {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.22rem 0.55rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .type-litigation { background: rgba(255,0,110,0.12); color: #ff4d8d; }
+        .type-regulatory { background: rgba(255,140,0,0.12); color: #ffa040; }
+        .type-research { background: rgba(0,102,255,0.18); color: #5ea0ff; }
+        .type-industry { background: rgba(0,245,255,0.12); color: #00f5ff; }
+        .type-failure-case { background: rgba(180,0,255,0.12); color: #c87aff; }
+
+        .tracker-item-badge {
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            padding: 0.2rem 0.45rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        .tracker-badge-new { background: rgba(0, 245, 170, 0.2); color: #00f5aa; }
+        .tracker-badge-updated { background: rgba(0, 245, 255, 0.2); color: #00f5ff; }
+        .tracker-badge-unverified { background: rgba(255, 200, 0, 0.18); color: #ffc800; }
+
+        .tracker-item-sources {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-left: auto;
+            align-items: center;
+        }
+        .tracker-source-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(0, 245, 255, 0.06);
+            color: var(--primary-color);
+            font-size: 0.78rem;
+            padding: 0.3rem 0.65rem;
+            border-radius: 6px;
+            text-decoration: none;
+            border: 1px solid rgba(0, 245, 255, 0.15);
+            line-height: 1.3;
+        }
+        .tracker-source-pill:hover {
+            background: rgba(0, 245, 255, 0.12);
+            border-color: rgba(0, 245, 255, 0.3);
+        }
+        .tracker-source-pill-nourl {
+            background: rgba(160, 160, 160, 0.06);
+            color: var(--text-secondary);
+            border-color: rgba(160, 160, 160, 0.15);
+            cursor: help;
+        }
+        .tracker-source-pill i { font-size: 0.62rem; }
+
+        /* Update log inside item card */
+        .tracker-update-log {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #222;
+        }
+        .tracker-update-log-label {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .tracker-update-log ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .tracker-update-log li {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+            padding: 0.4rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: baseline;
+        }
+        .tracker-update-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.76rem;
+            white-space: nowrap;
+        }
+        .tracker-update-note { flex: 1; min-width: 200px; }
+        .tracker-update-source {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-style: italic;
+            font-size: 0.8rem;
+        }
+
+        /* Foot section */
+        .tracker-foot-section {
+            background: var(--darker-bg);
+            padding: 4rem 0 5rem;
+            border-top: 1px solid #1a1a1a;
+        }
+        .tracker-foot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .tracker-tip-card, .tracker-list-card {
+            background: var(--card-bg);
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .tracker-tip-icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .tracker-tip-card h3, .tracker-list-card h3 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin: 0 0 0.75rem;
+        }
+        .tracker-tip-card p, .tracker-list-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0 0 1.25rem;
+        }
+
+        /* Loading / error / inline */
+        .tracker-loading-inline {
+            color: var(--text-secondary);
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        .tracker-loading-inline i { color: var(--primary-color); margin-right: 0.5rem; }
+        .tracker-loading, .tracker-error {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+        .tracker-loading i, .tracker-error i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--primary-color);
+        }
+        .tracker-error i { color: var(--accent-color); }
+
+        @media (max-width: 900px) {
+            .tracker-foot-grid { grid-template-columns: 1fr; }
+            .tracker-topic-title { font-size: 1.5rem; }
+            .tracker-hero h1 { font-size: 1.9rem; }
+            .tracker-tab { padding: 0.75rem 1rem; font-size: 0.9rem; }
+            .tracker-item { padding: 1.25rem 1.25rem; }
+            .tracker-item-sources { margin-left: 0; width: 100%; }
+        }
+
+    </style>
+
+    <script src="/js/components.js"></script>
+    <script>
+        CortivusComponents.renderHeader('header-placeholder');
+        CortivusComponents.renderFooter('footer-placeholder');
+    </script>
+    <script src="/js/main.js"></script>
+    <script src="/insights/tracker/renderer.js"></script>
+
+    <!-- Tracker page (tabbed) renderer -->
+    <script>
+    (function() {
+        const MANIFEST_URL = '/insights/tracker/data/index.json';
+        const R = TrackerRenderer;
+        let loadedTopics = [];
+        let activeTopicId = null;
+
+        function renderItem(item) {
+            const badges = R.computeItemBadges(item)
+                .filter(function(b) { return b !== 'unverified' || !item.verified; });
+            const badgeHtml = badges.map(function(b) {
+                return '<span class="tracker-item-badge tracker-badge-' + b + '">' + b + '</span>';
+            }).join('');
+
+            const typeClass = 'type-' + (item.type || 'industry');
+            const typeLabel = R.typeLabels[item.type] || 'Industry';
+
+            const sourceHtml = renderSources(item.sources);
+
+            return '<div class="tracker-item" id="item-' + R.escapeHtml(item.id) + '">' +
+                '<div class="tracker-item-date">' + R.escapeHtml(R.formatDate(item.date)) + '</div>' +
+                '<h3 class="tracker-item-headline">' + R.escapeHtml(item.headline) + '</h3>' +
+                '<p class="tracker-item-summary">' + R.escapeHtml(item.summary) + '</p>' +
+                (item.take ? '<p class="tracker-item-take"><strong>Take.</strong>' + R.escapeHtml(item.take) + '</p>' : '') +
+                '<div class="tracker-item-footer">' +
+                    '<span class="tracker-item-type ' + typeClass + '">' + R.escapeHtml(typeLabel) + '</span>' +
+                    badgeHtml +
+                    sourceHtml +
+                '</div>' +
+                R.renderUpdateLog(item.update_log) +
+            '</div>';
+        }
+
+        function renderSources(sources) {
+            if (!sources || sources.length === 0) return '';
+            const pills = sources.map(function(s) {
+                const label = R.escapeHtml(s.name);
+                if (s.url) {
+                    return '<a href="' + R.escapeHtml(s.url) + '" target="_blank" rel="noopener" class="tracker-source-pill">' +
+                        '<i class="fas fa-external-link-alt"></i> ' + label + '</a>';
+                }
+                return '<span class="tracker-source-pill tracker-source-pill-nourl" title="No direct URL on file">' +
+                    '<i class="fas fa-bookmark"></i> ' + label + '</span>';
+            });
+            return '<span class="tracker-item-sources">' + pills.join('') + '</span>';
+        }
+
+        function renderTabs() {
+            const tabs = loadedTopics.map(function(topic) {
+                const status = R.computeTopicStatus(topic);
+                const itemCount = (topic.items || []).length;
+                const isActive = topic.id === activeTopicId;
+                return '<button class="tracker-tab' + (isActive ? ' active' : '') +
+                    '" data-topic-id="' + R.escapeHtml(topic.id) + '" role="tab"' +
+                    ' aria-selected="' + (isActive ? 'true' : 'false') + '">' +
+                    '<span class="tracker-tab-dot tab-dot-' + status + '"></span>' +
+                    '<span class="tracker-tab-name">' + R.escapeHtml(topic.name) + '</span>' +
+                    '<span class="tracker-tab-count">(' + itemCount + ')</span>' +
+                '</button>';
+            }).join('');
+            document.getElementById('tracker-tabs').innerHTML = tabs;
+
+            document.querySelectorAll('.tracker-tab').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    switchTo(btn.getAttribute('data-topic-id'));
+                });
+            });
+        }
+
+        function renderPanel(topic) {
+            const items = (topic.items || []).slice().sort(function(a, b) {
+                return R.dateForSort(b.date) - R.dateForSort(a.date);
+            });
+            const status = R.computeTopicStatus(topic);
+            const statusClass = 'status-' + status;
+            const statusLabel = (R.statusLabels[status] || 'Monitoring').toUpperCase();
+
+            const liveBadge = topic.auto_managed
+                ? '<span class="tracker-topic-live"><i class="fas fa-broadcast-tower"></i> Live tracked</span>'
+                : '<span class="tracker-topic-curated"><i class="fas fa-user-edit"></i> Curated</span>';
+
+            const lastScanned = topic.auto_managed && topic.last_run
+                ? 'Last scanned ' + R.formatRelativeTime(topic.last_run)
+                : '';
+
+            const headerHtml = '<div class="tracker-topic-header">' +
+                '<div class="tracker-topic-title-row">' +
+                    '<h2 class="tracker-topic-title">' + R.escapeHtml(topic.name) + '</h2>' +
+                    '<span class="tracker-topic-status ' + statusClass + '">' + R.escapeHtml(statusLabel) + '</span>' +
+                '</div>' +
+                '<p class="tracker-topic-description">' + R.escapeHtml(topic.description) + '</p>' +
+                '<div class="tracker-topic-meta">' +
+                    liveBadge +
+                    '<span>' + items.length + ' item' + (items.length === 1 ? '' : 's') + '</span>' +
+                    (lastScanned ? '<span>' + R.escapeHtml(lastScanned) + '</span>' : '') +
+                '</div>' +
+            '</div>';
+
+            const itemsHtml = items.length
+                ? '<div class="tracker-items-list">' + items.map(renderItem).join('') + '</div>'
+                : '<div class="tracker-loading"><p>No items in this topic yet.</p></div>';
+
+            document.getElementById('tracker-panel').innerHTML = headerHtml + itemsHtml;
+        }
+
+        function switchTo(topicId, scrollToItem) {
+            activeTopicId = topicId;
+            const topic = loadedTopics.find(function(t) { return t.id === topicId; });
+            if (!topic) return;
+
+            document.querySelectorAll('.tracker-tab').forEach(function(btn) {
+                const isActive = btn.getAttribute('data-topic-id') === topicId;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            renderPanel(topic);
+
+            if (scrollToItem) {
+                setTimeout(function() {
+                    const el = document.getElementById('item-' + scrollToItem);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        el.style.transition = 'box-shadow 1.5s';
+                        el.style.boxShadow = '0 0 0 2px rgba(0,245,255,0.4)';
+                        setTimeout(function() { el.style.boxShadow = ''; }, 2200);
+                    }
+                }, 100);
+            } else {
+                // Update hash without re-triggering
+                if (history.replaceState) {
+                    history.replaceState(null, '', '#topic-' + topicId);
+                }
+            }
+        }
+
+        function findTopicForItemId(itemId) {
+            for (let i = 0; i < loadedTopics.length; i++) {
+                const t = loadedTopics[i];
+                if ((t.items || []).some(function(it) { return it.id === itemId; })) {
+                    return t.id;
+                }
+            }
+            return null;
+        }
+
+        function handleInitialHash() {
+            const hash = window.location.hash.replace(/^#/, '');
+            if (hash.indexOf('item-') === 0) {
+                const itemId = hash.substring(5);
+                const topicId = findTopicForItemId(itemId);
+                if (topicId) {
+                    switchTo(topicId, itemId);
+                    return;
+                }
+            }
+            if (hash.indexOf('topic-') === 0) {
+                const topicId = hash.substring(6);
+                if (loadedTopics.some(function(t) { return t.id === topicId; })) {
+                    switchTo(topicId);
+                    return;
+                }
+            }
+            // Default: pick the topic with most recent activity, or first
+            const sorted = loadedTopics.slice().sort(function(a, b) {
+                const aLatest = (a.items || []).reduce(function(m, i) { return Math.max(m, R.dateForSort(i.date)); }, 0);
+                const bLatest = (b.items || []).reduce(function(m, i) { return Math.max(m, R.dateForSort(i.date)); }, 0);
+                return bLatest - aLatest;
+            });
+            if (sorted.length) switchTo(sorted[0].id);
+        }
+
+        R.loadAllTopics(MANIFEST_URL)
+            .then(function(data) {
+                loadedTopics = data.topics.slice();
+
+                renderTabs();
+                handleInitialHash();
+            })
+            .catch(function(err) {
+                console.error('Tracker load error:', err);
+                document.getElementById('tracker-tabs').style.display = 'none';
+                document.getElementById('tracker-panel').style.display = 'none';
+                document.getElementById('tracker-error').style.display = 'block';
+            });
+    })();
+    </script>
+
+
+</body>
+
+</html>

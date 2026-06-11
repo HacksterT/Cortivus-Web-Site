@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFE AI | Cortivus Safety Assessment Framework for AI</title>
+    <meta name="description" content="Cortivus SAFE AI: Safety Assessment Framework for AI. Root cause analysis and failure mode and effects analysis adapted from twenty years of patient safety practice to the AI systems entering clinical care.">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero -->
+    <section class="module-hero">
+        <div class="module-hero-content">
+            <div class="module-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>The Methodology</span>
+            </div>
+            <h1>SAFE AI</h1>
+            <p class="module-tagline">
+                <strong>Safety Assessment Framework for AI.</strong> Twenty years of patient safety discipline, root cause analysis and failure mode analysis, applied to the AI systems entering clinical care.
+            </p>
+            <div class="hero-cta">
+                <a href="/practice/" class="btn-primary-glow">See How It's Applied</a>
+                <a href="#framework" class="btn-secondary-outline">Read the Framework</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Exists -->
+    <section class="module-features-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Why This Exists</div>
+                <h2 class="section-title">A clinical framework for an unclinical conversation.</h2>
+            </div>
+            <div style="max-width: 820px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+                <p style="margin-bottom: 1.5rem;">AI vendors test their models in development. They do not assess how those models will fail in your hospital. The AI safety conversation, as it is currently being held, lives in technical vocabulary that does not translate into the discipline your quality department already runs on.</p>
+                <p style="margin-bottom: 1.5rem;">SAFE AI brings the two methodologies your quality, risk, and patient safety teams already use, root cause analysis and failure mode and effects analysis, to the AI systems being deployed into clinical workflows. The output is an inventory of identified failure modes, scored on severity, occurrence, and detection, tied to mitigation actions your existing governance structure can execute.</p>
+                <p>The discipline is not new. The application is.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Framework -->
+    <section id="framework" class="module-features-section" style="background: var(--darker-bg);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">The Framework</div>
+                <h2 class="section-title">Two methodologies, adapted.</h2>
+                <p class="section-subtitle">SAFE AI runs two parallel analyses on every in-scope AI system.</p>
+            </div>
+
+            <div class="framework-horizontal-grid">
+                <div class="module-card framework-card-horizontal">
+                    <div class="module-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="framework-card-horizontal-content">
+                        <h3>RCA for AI Failures</h3>
+                        <p style="margin-bottom: 1rem;">When a model degrades in production, the failure rarely originates in the model itself. SAFE AI applies the same root cause discipline used after a sentinel event to AI failures.</p>
+                        <p style="margin-bottom: 1rem;">We map the model's training data lineage, feature pipeline, deployment context, and update history, then trace observed degradation back to a contributing or causal factor.</p>
+                        <p><strong style="color: var(--primary-color);">AI-specific causal categories:</strong> training data drift, feature drift, deployment context mismatch, silent retraining, prompt injection, unmonitored vendor updates.</p>
+                    </div>
+                </div>
+
+                <div class="module-card framework-card-horizontal">
+                    <div class="module-icon">
+                        <i class="fas fa-list-check"></i>
+                    </div>
+                    <div class="framework-card-horizontal-content">
+                        <h3>FMEA for AI Failure Modes</h3>
+                        <p style="margin-bottom: 1rem;">Before failure happens, SAFE AI catalogs how it could. We adapt healthcare FMEA to AI failure modes and score each on severity, occurrence, and detection to produce a Risk Priority Number.</p>
+                        <p style="margin-bottom: 1rem;">Modes are then ranked, and mitigation actions are assigned based on a threshold your team sets.</p>
+                        <p><strong style="color: var(--primary-color);">Failure modes we score:</strong> hallucination, bias amplification, training-serving skew, drift, prompt injection, credentialed misuse, hidden retraining.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample FMEA -->
+    <section class="module-features-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">What It Looks Like</div>
+                <h2 class="section-title">Sample SAFE AI FMEA worksheet.</h2>
+                <p class="section-subtitle">Illustrative excerpt from an ambient scribe assessment. Severity, occurrence, and detection scored 1 to 10. RPN equals S times O times D.</p>
+            </div>
+
+            <div style="overflow-x: auto; max-width: 1100px; margin: 0 auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card-bg); border-radius: 12px; overflow: hidden;">
+                    <thead style="background: var(--gradient-1);">
+                        <tr>
+                            <th style="padding: 1rem; text-align: left; color: #000; font-weight: 700;">Failure Mode</th>
+                            <th style="padding: 1rem; text-align: left; color: #000; font-weight: 700;">Clinical Effect</th>
+                            <th style="padding: 1rem; text-align: center; color: #000; font-weight: 700;">S</th>
+                            <th style="padding: 1rem; text-align: center; color: #000; font-weight: 700;">O</th>
+                            <th style="padding: 1rem; text-align: center; color: #000; font-weight: 700;">D</th>
+                            <th style="padding: 1rem; text-align: center; color: #000; font-weight: 700;">RPN</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--text-secondary);">
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 1rem;">Hallucinated medication or dose in note</td>
+                            <td style="padding: 1rem;">Wrong medication signed into clinical record</td>
+                            <td style="padding: 1rem; text-align: center;">9</td>
+                            <td style="padding: 1rem; text-align: center;">4</td>
+                            <td style="padding: 1rem; text-align: center;">7</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-color); font-weight: 700;">252</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 1rem;">Omission of relevant history element</td>
+                            <td style="padding: 1rem;">Incomplete note misses clinical context</td>
+                            <td style="padding: 1rem; text-align: center;">6</td>
+                            <td style="padding: 1rem; text-align: center;">7</td>
+                            <td style="padding: 1rem; text-align: center;">8</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-color); font-weight: 700;">336</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 1rem;">Bias drift across patient demographics</td>
+                            <td style="padding: 1rem;">Documentation quality varies by patient group</td>
+                            <td style="padding: 1rem; text-align: center;">7</td>
+                            <td style="padding: 1rem; text-align: center;">5</td>
+                            <td style="padding: 1rem; text-align: center;">9</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-color); font-weight: 700;">315</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #222;">
+                            <td style="padding: 1rem;">Silent model update by vendor</td>
+                            <td style="padding: 1rem;">Behavior change without notification or revalidation</td>
+                            <td style="padding: 1rem; text-align: center;">7</td>
+                            <td style="padding: 1rem; text-align: center;">8</td>
+                            <td style="padding: 1rem; text-align: center;">9</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--accent-color); font-weight: 700;">504</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem;">Inference log loss or unreadability</td>
+                            <td style="padding: 1rem;">No reconstructable record for post-event audit</td>
+                            <td style="padding: 1rem; text-align: center;">5</td>
+                            <td style="padding: 1rem; text-align: center;">6</td>
+                            <td style="padding: 1rem; text-align: center;">8</td>
+                            <td style="padding: 1rem; text-align: center; color: var(--primary-color); font-weight: 700;">240</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary); text-align: center; font-style: italic;">Sample only. Actual SAFE AI assessments score each failure mode against your specific deployment context, current controls, and monitoring infrastructure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="module-features-section" style="background: var(--darker-bg);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">Deliverables</div>
+                <h2 class="section-title">What a SAFE AI engagement produces.</h2>
+            </div>
+
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-file-medical-alt"></i>
+                    </div>
+                    <h3>RPN-Scored Inventory</h3>
+                    <p>A complete catalog of identified failure modes for each in-scope AI system, scored on severity, occurrence, and detection.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Mitigation Roadmap</h3>
+                    <p>Actions tied to your existing quality, risk, and IT governance structures. No new vocabulary, no new committee.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Monitoring Controls</h3>
+                    <p>Recommended monitoring scoped to the failure modes most likely to occur and least likely to be caught by current controls.</p>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Board-Ready Briefing</h3>
+                    <p>An executive deck written for your AI governance committee or board, with the methodology, the findings, and the recommended posture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Discipline -->
+    <section class="module-features-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">The Discipline Behind It</div>
+                <h2 class="section-title">Why patient safety frameworks work on AI.</h2>
+            </div>
+            <div style="max-width: 820px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+                <p style="margin-bottom: 1.5rem;">The methodology used to investigate medication errors, surgical complications, and diagnostic delays applies directly to model failures. The failure-and-recovery dynamics are structurally similar: a system performs as expected most of the time, fails under conditions that were not anticipated, and the question is whether the organization can detect, contain, and learn from the failure.</p>
+                <p style="margin-bottom: 1.5rem;">The vocabulary your quality department already speaks (root cause, contributing factor, severity, detection, RPN, mitigation, escalation) is the vocabulary SAFE AI uses. The framework slots into the governance structures you already have, not new ones you have to build.</p>
+                <p>That is the point. Clinical AI does not need a new safety language. It needs the existing one applied with discipline.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="module-cta-section">
+        <div class="container">
+            <div class="module-cta-content">
+                <h2>Start with a Quick Read.</h2>
+                <p>Two-week SAFE AI assessment of your ambient documentation deployment. The fastest way to see the framework applied to a system already in your environment.</p>
+                <a href="/practice/" class="btn-primary-glow">See the Practice</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scoped styles for the Framework section horizontal cards -->
+    <style>
+        .framework-horizontal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .framework-card-horizontal {
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            align-items: flex-start;
+            text-align: left;
+        }
+        .framework-card-horizontal .module-icon {
+            flex-shrink: 0;
+            margin-bottom: 0;
+        }
+        .framework-card-horizontal-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .framework-card-horizontal-content h3 {
+            margin-top: 0;
+        }
+        @media (max-width: 768px) {
+            .framework-horizontal-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .framework-card-horizontal {
+                flex-direction: column;
+                text-align: center;
+            }
+            .framework-card-horizontal .module-icon {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+
+    <script src="/js/components.js"></script>
+    <script>
+        CortivusComponents.renderHeader('header-placeholder');
+        CortivusComponents.renderFooter('footer-placeholder');
+    </script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

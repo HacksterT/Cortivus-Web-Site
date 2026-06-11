@@ -1,0 +1,19 @@
+# Cloudflare Pages redirects for the Cortivus AI Safety relaunch.
+# Old Career Intelligence Platform URLs map to the new structure.
+
+/pricing                 /practice/        301
+/pricing/                /practice/        301
+/platform                /                 301
+/platform/               /                 301
+/platform/career-profile /                 301
+/platform/career-profile/ /                301
+/platform/tutor          /                 301
+/platform/tutor/         /                 301
+/platform/recruiter      /                 301
+/platform/recruiter/     /                 301
+/platform/mentor         /                 301
+/platform/mentor/        /                 301
+
+# Cure8 explainer moved into the Insights briefings section.
+/cure8                    /insights/inside-cure8/   301
+/cure8/                   /insights/inside-cure8/   301

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | Cortivus AI Safety Hub</title>
+    <meta name="description" content="Cortivus Insights. Live clinical AI regulatory and litigation tracking, synthesized evidence patterns from peer-reviewed literature, and practice briefings for hospital leaders.">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero -->
+    <section class="module-hero">
+        <div class="module-hero-content">
+            <div class="module-badge">
+                <i class="fas fa-lightbulb"></i>
+                <span>Intelligence Hub</span>
+            </div>
+            <h1>Insights</h1>
+            <p class="module-tagline">
+                Three intelligence streams for hospital leaders deploying clinical AI into care: live monitoring of case law, regulatory filings, and vendor activity; evidence patterns synthesized from the peer-reviewed literature; and practice briefings anchored to the <a href="/safe-ai/" style="color: var(--primary-color); text-decoration: underline;">SAFE AI framework</a>.
+            </p>
+            <div class="hero-cta">
+                <a href="/insights/tracker/" class="btn-secondary-outline"><i class="fas fa-broadcast-tower"></i> The Tracker</a>
+                <a href="/insights/tracker/signal/" class="btn-secondary-outline"><i class="fas fa-wave-square"></i> The Signal</a>
+                <a href="/insights/briefings/" class="btn-secondary-outline"><i class="fas fa-file-medical-alt"></i> Briefings</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Briefing -->
+    <section id="briefings" class="module-features-section">
+        <div class="container">
+            <div class="section-header section-header-split">
+                <div>
+                    <div class="section-eyebrow">Featured</div>
+                    <h2 class="section-title">Latest briefing.</h2>
+                </div>
+                <a href="/insights/briefings/" class="hub-section-link">Browse all briefings <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <a href="/insights/same-machine-same-failures/" class="featured-article-card">
+                <div class="featured-article-image">
+                    <img src="/images/insights/same-machine-card.jpg" alt="A vintage analog circuit board beside a modern dark glass tablet, expressing continuity between 1958 perceptron hardware and 2026 clinical AI" loading="lazy">
+                </div>
+                <div class="featured-article-content">
+                    <div class="article-meta-eyebrow">White Paper / June 2026</div>
+                    <h3>Same Machine. Same Failures.</h3>
+                    <p>Why clinical AI governance has run past internal IT, and what hospital leadership needs to do about it. Adapted from a briefing at the 9th Annual inPHYnity Conference of the Collin-Fannin County Medical Society.</p>
+                    <div class="article-meta-row">
+                        <span><i class="fas fa-clock"></i> 16 min read</span>
+                        <span><i class="fas fa-user"></i> Troy Sybert, MD, MPH</span>
+                    </div>
+                    <span class="featured-article-cta">Read the briefing <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- From the Tracker -->
+    <section class="module-features-section" style="background: var(--darker-bg);">
+        <div class="container">
+            <div class="section-header section-header-split">
+                <div>
+                    <div class="section-eyebrow" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <span class="hub-tracker-pulse"></span>
+                        Live Tracker · Daily Automated Research
+                    </div>
+                    <h2 class="section-title">From the tracker.</h2>
+                    <p class="section-subtitle">An automated research agent scans clinical AI case law, regulatory filings, peer-reviewed literature, and vendor activity every day. Cortivus reviews every finding before it goes live and publishes it with a brief clinical-safety read. The four most recent items, one per topic.</p>
+                </div>
+                <a href="/insights/tracker/" class="hub-section-link">Open the live tracker <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div id="hub-tracker-items" class="hub-tracker-grid">
+                <div class="hub-tracker-loading"><i class="fas fa-spinner fa-spin"></i> Loading the latest items...</div>
+            </div>
+
+            <!-- How the tracker stays fresh -->
+            <div class="hub-tracker-process">
+                <div class="hub-tracker-process-item">
+                    <div class="hub-tracker-process-num">01</div>
+                    <i class="fas fa-broadcast-tower"></i>
+                    <h4>Daily Scan</h4>
+                    <p>An automated research agent scans court records, state legislatures, FDA filings, peer-reviewed journals, and the legal and consulting analyses that interpret them, every day across all live-tracked topics.</p>
+                </div>
+                <div class="hub-tracker-process-item">
+                    <div class="hub-tracker-process-num">02</div>
+                    <i class="fas fa-stethoscope"></i>
+                    <h4>Clinician Review</h4>
+                    <p>Every finding is reviewed by Cortivus before it goes live. Items get verified status only after a clinical-informatics check on the source, the date, and the framing.</p>
+                </div>
+                <div class="hub-tracker-process-item">
+                    <div class="hub-tracker-process-num">03</div>
+                    <i class="fas fa-rss"></i>
+                    <h4>Cortivus Take</h4>
+                    <p>Each item is published with a brief read on the clinical-safety implications, in the vocabulary your quality committee already speaks. New developments get appended to the item's update log so context never gets lost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="module-cta-section">
+        <div class="container">
+            <div class="module-cta-content">
+                <h2>Want the briefings and tracker updates in your inbox?</h2>
+                <p>The Cortivus AI Safety Hub mailing list goes out roughly monthly. New briefings, tracker highlights, regulatory updates. No promotional noise.</p>
+                <a href="/index.html#contact" class="btn-primary-glow">Get on the List</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <style>
+        /* Split section header (title block left, link right) */
+        .section-header-split {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1rem;
+            text-align: left;
+        }
+        .hub-section-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            font-size: 0.95rem;
+        }
+        .hub-section-link i { margin-left: 0.4rem; transition: transform 0.2s; }
+        .hub-section-link:hover i { transform: translateX(4px); }
+
+        /* Featured article card */
+        .featured-article-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 1100px;
+            margin: 0 auto;
+            border: 1px solid #222;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .featured-article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--glow);
+        }
+        .featured-article-image {
+            background: linear-gradient(135deg, #001a2c 0%, #0a0a0a 100%);
+            min-height: 360px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .featured-article-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .featured-article-content {
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-meta-eyebrow {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .featured-article-content h3 {
+            font-size: 1.6rem;
+            line-height: 1.3;
+            margin: 0 0 1rem;
+            color: var(--text-primary);
+        }
+        .featured-article-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+        .article-meta-row {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #222;
+        }
+        .article-meta-row i { color: var(--primary-color); margin-right: 0.5rem; }
+        .featured-article-cta {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-block;
+        }
+        .featured-article-cta i { margin-left: 0.5rem; transition: transform 0.2s; }
+        .featured-article-card:hover .featured-article-cta i { transform: translateX(4px); }
+
+        /* Tracker band */
+        .hub-tracker-pulse {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #00f5aa;
+            box-shadow: 0 0 0 0 rgba(0, 245, 170, 0.5);
+            animation: trackerPulse 1.8s infinite;
+        }
+        @keyframes trackerPulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 245, 170, 0.5); }
+            70% { box-shadow: 0 0 0 8px rgba(0, 245, 170, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 245, 170, 0); }
+        }
+        .hub-tracker-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 1100px;
+            margin: 2rem auto 0;
+        }
+        .hub-tracker-card {
+            background: var(--card-bg);
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
+            padding: 1.4rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            transition: border-color 0.2s, transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .hub-tracker-card:hover {
+            border-color: rgba(0,245,255,0.3);
+            transform: translateY(-2px);
+        }
+        .hub-tracker-card-topic {
+            color: var(--primary-color);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin: 0;
+        }
+        .hub-tracker-card-headline {
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin: 0;
+        }
+        .hub-tracker-card-take {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.55;
+            font-style: italic;
+            border-left: 2px solid var(--primary-color);
+            padding-left: 0.7rem;
+            margin: 0;
+        }
+        .hub-tracker-card-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            align-items: center;
+            padding-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            margin-top: 0.25rem;
+        }
+        .hub-tracker-card-date {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+        }
+        .hub-tracker-card-type {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        .hub-tracker-card-badges {
+            display: flex;
+            gap: 0.3rem;
+            margin-left: auto;
+        }
+        .hub-tracker-badge {
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            padding: 0.12rem 0.35rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        .hub-tracker-badge.tracker-badge-new { background: rgba(0,245,170,0.18); color: #00f5aa; }
+        .hub-tracker-badge.tracker-badge-updated { background: rgba(0,245,255,0.18); color: #00f5ff; }
+
+        .hub-tracker-loading {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+        .hub-tracker-loading i { color: var(--primary-color); margin-right: 0.5rem; }
+
+        /* How the tracker stays fresh - 3-step process strip */
+        .hub-tracker-process {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 3rem auto 0;
+            padding-top: 2.5rem;
+            border-top: 1px dashed #222;
+            position: relative;
+        }
+        .hub-tracker-process::before {
+            content: "How the tracker stays fresh";
+            position: absolute;
+            top: -0.7rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--darker-bg);
+            padding: 0 1rem;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+        }
+        .hub-tracker-process-item {
+            padding: 1.25rem 1rem 0.5rem;
+            position: relative;
+        }
+        .hub-tracker-process-num {
+            position: absolute;
+            top: 0;
+            right: 0.5rem;
+            color: var(--primary-color);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            opacity: 0.5;
+            font-variant-numeric: tabular-nums;
+        }
+        .hub-tracker-process-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .hub-tracker-process-item h4 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            margin: 0 0 0.6rem;
+        }
+        .hub-tracker-process-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Type pill colors shared with tracker */
+        .type-litigation { background: rgba(255,0,110,0.12); color: #ff4d8d; }
+        .type-regulatory { background: rgba(255,140,0,0.12); color: #ffa040; }
+        .type-research { background: rgba(0,102,255,0.18); color: #5ea0ff; }
+        .type-industry { background: rgba(0,245,255,0.12); color: #00f5ff; }
+        .type-failure-case { background: rgba(180,0,255,0.12); color: #c87aff; }
+
+        @media (max-width: 768px) {
+            .featured-article-card { grid-template-columns: 1fr; }
+            .featured-article-image { min-height: 240px; }
+            .hub-tracker-grid { grid-template-columns: 1fr; }
+            .hub-tracker-process { grid-template-columns: 1fr; gap: 1rem; padding-top: 2rem; }
+            .section-header-split { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+
+    <script src="/js/components.js"></script>
+    <script>
+        CortivusComponents.renderHeader('header-placeholder');
+        CortivusComponents.renderFooter('footer-placeholder');
+    </script>
+    <script src="/js/main.js"></script>
+    <script src="/insights/tracker/renderer.js"></script>
+
+    <!-- Hub tracker preview: 4 cards, one per topic, all link to tracker anchors -->
+    <script>
+    (function() {
+        const MANIFEST_URL = '/insights/tracker/data/index.json';
+        const R = TrackerRenderer;
+
+        function activityScore(item) {
+            return Math.max(
+                R.dateForSort(item.date),
+                item.last_updated ? new Date(item.last_updated).getTime() : 0,
+                (item.update_log || []).reduce(function(m, u) {
+                    return Math.max(m, new Date(u.timestamp).getTime());
+                }, 0)
+            );
+        }
+
+        R.loadAllTopics(MANIFEST_URL)
+            .then(function(data) {
+                const cards = data.topics.map(function(topic) {
+                    const items = (topic.items || []).slice().sort(function(a, b) {
+                        return activityScore(b) - activityScore(a);
+                    });
+                    return items.length ? { topic: topic.name, item: items[0] } : null;
+                }).filter(Boolean);
+
+                if (cards.length === 0) {
+                    document.getElementById('hub-tracker-items').innerHTML =
+                        '<div class="hub-tracker-loading">No tracker items yet.</div>';
+                    return;
+                }
+
+                const html = cards.map(function(entry) {
+                    const i = entry.item;
+                    const tClass = 'type-' + (i.type || 'industry');
+                    const tLabel = R.typeLabels[i.type] || 'Industry';
+                    const badges = R.computeItemBadges(i)
+                        .filter(function(b) { return b === 'new' || b === 'updated'; });
+                    const badgeHtml = badges.length
+                        ? '<span class="hub-tracker-card-badges">' +
+                            badges.map(function(b) {
+                                return '<span class="hub-tracker-badge tracker-badge-' + b + '">' + b + '</span>';
+                            }).join('') +
+                          '</span>'
+                        : '';
+                    const cardHref = '/insights/tracker/#item-' + encodeURIComponent(i.id);
+
+                    return '<a href="' + R.escapeHtml(cardHref) + '" class="hub-tracker-card">' +
+                        '<div class="hub-tracker-card-topic">' + R.escapeHtml(entry.topic) + '</div>' +
+                        '<div class="hub-tracker-card-headline">' + R.escapeHtml(i.headline) + '</div>' +
+                        (i.take ? '<div class="hub-tracker-card-take">' + R.escapeHtml(i.take) + '</div>' : '') +
+                        '<div class="hub-tracker-card-footer">' +
+                            '<span class="hub-tracker-card-date">' + R.escapeHtml(R.formatDate(i.date)) + '</span>' +
+                            '<span class="hub-tracker-card-type ' + tClass + '">' + R.escapeHtml(tLabel) + '</span>' +
+                            badgeHtml +
+                        '</div>' +
+                    '</a>';
+                }).join('');
+
+                document.getElementById('hub-tracker-items').innerHTML = html;
+            })
+            .catch(function(err) {
+                console.error('Hub tracker:', err);
+                document.getElementById('hub-tracker-items').innerHTML =
+                    '<div class="hub-tracker-loading">Tracker feed unavailable. <a href="/insights/tracker/" style="color: var(--primary-color);">Visit the tracker directly</a>.</div>';
+            });
+    })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambient Listening — The Signal | Cortivus AI Safety Hub</title>
+    <meta name="description" content="Evidence effects analysis for ambient listening AI systems. Failure modes and success patterns from peer-reviewed literature, synthesized by the Cure8 evidence registry.">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+    <script src="/insights/tracker/effects-renderer.js" defer></script>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Hero -->
+    <section class="al-hero">
+        <div class="al-hero-bg"></div>
+        <div class="container">
+            <div class="al-hero-nav">
+                <a href="/insights/tracker/signal/" class="al-back-link">
+                    <i class="fas fa-arrow-left"></i> The Signal
+                </a>
+                <span class="al-breadcrumb-sep">/</span>
+                <span class="al-breadcrumb-current">Ambient Listening</span>
+            </div>
+            <div class="al-hero-body">
+                <div class="al-hero-content">
+                    <div class="al-hero-eyebrow">
+                        <span class="al-domain-badge">Clinical Documentation</span>
+                        <span class="al-signal-tag"><span class="al-signal-dot"></span>The Signal</span>
+
+                    </div>
+                    <h1 class="al-hero-title">Ambient Listening</h1>
+                    <p class="al-hero-subtitle">AI systems that capture and transcribe clinical encounters, generating structured notes from ambient audio.</p>
+                </div>
+
+                <div class="al-hero-guide">
+                    <div class="al-guide-header">Reading the chart</div>
+                    <div id="effects-demo" class="al-guide-chart"></div>
+                    <ul class="al-guide-list">
+                        <li><strong>Wedge</strong> = one effect mode</li>
+                        <li><strong>Taller wedge</strong> = more evidence</li>
+                        <li><strong>Color</strong> = study design</li>
+                    </ul>
+                    <div class="al-guide-interactions">
+                        <span>Hover any band <i class="fas fa-long-arrow-alt-right"></i> source paper</span>
+                        <span>Hover <span class="al-guide-icon">ⓘ</span> by a label <i class="fas fa-long-arrow-alt-right"></i> definition</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Effects visualization -->
+    <section class="al-viz-section">
+        <div class="container al-viz-container">
+            <p class="al-viz-question">What does the peer-reviewed literature say about how these systems fail — and where they succeed?</p>
+            <div class="al-charts-row">
+                <div class="al-chart-col" id="effects-failure"></div>
+                <div class="al-chart-col" id="effects-success"></div>
+            </div>
+            <div class="al-viz-footer">
+                <div id="effects-legend"></div>
+                <div class="al-attribution">
+                    <div id="effects-meta" class="al-meta-text"></div>
+                    <div class="al-cure8-attr">
+                        Powered by <strong>Cure8</strong>
+                        <span class="al-cure8-tip" title="Cure8 is Cortivus's structured evidence registry — a systematic review of clinical AI literature organized by failure mode and workflow.">?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <style>
+        /* ── Hero ─────────────────────────────────────────────────────── */
+        .al-hero {
+            position: relative;
+            background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            padding: 80px 0 40px;
+            border-bottom: 1px solid #1a1a1a;
+            overflow: hidden;
+        }
+        .al-hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,245,255,0.035)" stroke-width="0.5"/></svg>'),
+                radial-gradient(ellipse 60% 55% at 60% 0%, rgba(0,245,255,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .al-hero-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        .al-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+        .al-back-link:hover { opacity: 1; }
+        .al-back-link i { font-size: 0.78rem; transition: transform 0.2s; }
+        .al-back-link:hover i { transform: translateX(-4px); }
+        .al-breadcrumb-sep { color: #333; font-size: 0.85rem; }
+        .al-breadcrumb-current { color: #555; font-size: 0.85rem; }
+
+        /* ── Hero two-column layout ──────────────────────────────────── */
+        .al-hero-body {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            position: relative;
+            z-index: 2;
+        }
+        .al-hero-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .al-hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .al-domain-badge {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            background: rgba(0,245,255,0.1);
+            color: var(--primary-color);
+        }
+        .al-signal-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #555;
+        }
+        .al-signal-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            box-shadow: 0 0 0 0 rgba(0,245,255,0.5);
+            animation: signalPulse 1.8s infinite;
+        }
+        @keyframes signalPulse {
+            0%   { box-shadow: 0 0 0 0 rgba(0,245,255,0.5); }
+            70%  { box-shadow: 0 0 0 8px rgba(0,245,255,0); }
+            100% { box-shadow: 0 0 0 0 rgba(0,245,255,0); }
+        }
+        .al-hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin: 0 0 1rem;
+            line-height: 1.1;
+            color: var(--text-primary);
+        }
+.al-hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin: 0 0 0.5rem;
+            max-width: 660px;
+        }
+
+        /* ── Chart guide panel ────────────────────────────────────────── */
+        .al-hero-guide {
+            flex-shrink: 0;
+            width: 280px;
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 0.6rem 1.1rem 0.9rem;
+        }
+        .al-guide-header {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #666;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+        .al-guide-chart {
+            width: 100%;
+            margin-bottom: 1.4rem;
+        }
+        .al-guide-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 0.75rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 0.65rem;
+        }
+        .al-guide-list li {
+            font-size: 0.8rem;
+            color: #aaa;
+            line-height: 1.4;
+            padding: 0.2rem 0 0.2rem 0.9rem;
+            position: relative;
+            white-space: nowrap;
+        }
+        .al-guide-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.52rem;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(0,245,255,0.4);
+        }
+        .al-guide-list li strong { color: #ddd; font-weight: 600; }
+        .al-guide-interactions {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 0.65rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .al-guide-interactions span {
+            font-size: 0.76rem;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .al-guide-interactions i { font-size: 0.62rem; color: #555; }
+        .al-guide-icon { color: rgba(0,245,255,0.6); font-size: 0.78rem; }
+
+        /* ── Visualization section ────────────────────────────────────── */
+        .al-viz-section {
+            padding: 3.5rem 0 5rem;
+            background: var(--dark-bg);
+        }
+        .al-viz-container {
+            max-width: 1100px;
+        }
+        .al-viz-question {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-align: center;
+            margin: 0 auto 2.5rem;
+            max-width: 680px;
+        }
+        .al-charts-row {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .al-chart-col {
+            flex: 1;
+            min-width: 0;
+            max-width: 500px;
+        }
+        .al-viz-footer {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 1rem;
+        }
+        .al-attribution {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.35rem;
+        }
+        .al-meta-text { font-size: 0.78rem; color: #555; }
+        .al-cure8-attr {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            color: #444;
+        }
+        .al-cure8-attr strong { color: var(--primary-color); font-weight: 600; }
+        .al-cure8-tip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(0,245,255,0.08);
+            color: var(--primary-color);
+            font-size: 0.58rem;
+            font-weight: 800;
+            cursor: help;
+        }
+
+        /* .effects-card* styles injected by effects-renderer.js */
+
+        /* ── Responsive ───────────────────────────────────────────────── */
+        @media (max-width: 768px) {
+            .al-hero { padding: 72px 0 32px; }
+            .al-hero-body { flex-direction: column; }
+            .al-hero-guide { width: 100%; }
+            .al-guide-list li { white-space: normal; }
+            .al-guide-chart { max-width: 200px; }
+            .al-hero-title { font-size: 2rem; }
+            .al-hero-subtitle { font-size: 0.95rem; }
+            .al-charts-row { flex-direction: column; gap: 1.5rem; }
+            .al-chart-col { max-width: 100%; }
+            .al-attribution { align-items: flex-start; }
+        }
+    </style>
+
+    <script src="/js/components.js"></script>
+    <script>
+        CortivusComponents.renderHeader('header-placeholder');
+        CortivusComponents.renderFooter('footer-placeholder');
+    </script>
+    <script src="/js/main.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        EffectsRenderer.renderDemo(document.getElementById('effects-demo'));
+
+        EffectsRenderer.load(EffectsRenderer.EFFECTS_DATA_URL)
+            .then(function(data) {
+                EffectsRenderer.render(
+                    document.getElementById('effects-failure'),
+                    document.getElementById('effects-success'),
+                    data
+                );
+                EffectsRenderer.renderMeta(document.getElementById('effects-meta'), data);
+                EffectsRenderer.renderLegend(document.getElementById('effects-legend'));
+            })
+            .catch(function(err) {
+                console.warn('Effects renderer error:', err);
+                document.getElementById('effects-failure').innerHTML = '<p style="color:#555;font-size:0.9rem;padding:2rem 0">Unable to load evidence data.</p>';
+            });
+    });
+    </script>
+
+</body>
+
+</html>

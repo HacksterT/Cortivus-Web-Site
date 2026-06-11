@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside Cure8 | Cortivus AI Safety Hub</title>
+    <meta name="description" content="How Cure8, an origin-aware knowledge curation engine for AI agents, spends intelligence once at write time and keeps runtime retrieval dumb, fast, and deterministic. And why that makes it different from conventional memory systems.">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <meta property="og:title" content="Inside Cure8">
+    <meta property="og:description" content="An origin-aware knowledge curation engine for AI agents, and why it is different from conventional memory systems.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cortivus.com/insights/inside-cure8/">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- Article Hero -->
+    <section class="article-hero">
+        <div class="container article-hero-container">
+            <div class="article-eyebrow"><i class="fas fa-layer-group"></i> Technical Brief / Cortivus AI Safety Hub</div>
+            <h1 class="article-title">Inside Cure8</h1>
+            <h2 class="article-subtitle">How an origin-aware curation engine turns research into knowledge an agent can actually use.</h2>
+            <p class="article-tagline">A walk through the information flow underneath our agent infrastructure, and why it is built the opposite way from most memory systems.</p>
+            <div class="article-meta">
+                <span><i class="fas fa-user"></i> Troy Sybert, MD, MPH</span>
+                <span><i class="fas fa-calendar"></i> June 2026</span>
+                <span><i class="fas fa-clock"></i> 9 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Body -->
+    <article class="article-body">
+
+        <p class="article-lede">Cure8 is the knowledge layer underneath our agent work. Its job is narrow and unglamorous: take what an agent or a person has learned and turn it into something a future agent can load cheaply, on demand, without re-deriving it. This brief walks through how information moves through the system, from three ingestion sources to a curated book an agent can read, and then explains why the design runs against the grain of how most memory systems are built.</p>
+
+        <p>The constraint that shapes everything is not how large a model's context window is. It is how many tokens the system can afford to load at the moment of a call, and how much of that load is signal rather than noise. Larger windows have not fixed this. They have raised the ceiling for waste. The cost curve still punishes loading more than the call needs, and irrelevant context still degrades the answer.</p>
+
+        <p>Most memory systems respond to that constraint by dumping everything into a vector store and doing the hard work at retrieval time: chunking, embedding, scoring, reranking, fusion. Cure8 inverts it. The intelligence is spent <strong style="color: var(--primary-color);">once, when knowledge is written</strong>, distilling each source into a small, high-signal unit. At runtime the agent simply loads the unit it needs. There is no reranking gauntlet on the critical path of every request.</p>
+
+        <!-- FIGURE: hub-and-spoke flow -->
+        <figure class="article-figure c8-figure">
+            <svg class="c8-flow-svg" viewBox="0 0 1000 470" role="img" aria-label="Cure8 information flow: three ingestion sources converge on the Cure8 engine in a hub-and-spoke pattern, producing a knowledge book that agents consume at runtime.">
+                <defs>
+                    <linearGradient id="c8grad" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="#00f5ff"/>
+                        <stop offset="1" stop-color="#0066ff"/>
+                    </linearGradient>
+                    <marker id="ah-muted" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                        <path d="M0,0 L10,5 L0,10 z" fill="#8a8a8a"/>
+                    </marker>
+                    <marker id="ah-cyan" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                        <path d="M0,0 L10,5 L0,10 z" fill="#00f5ff"/>
+                    </marker>
+                    <marker id="ah-pink" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                        <path d="M0,0 L10,5 L0,10 z" fill="#ff006e"/>
+                    </marker>
+                </defs>
+
+                <!-- grouping: ingestion sources -->
+                <rect x="60" y="44" width="150" height="384" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.12)" stroke-width="1.2" stroke-dasharray="5 6"/>
+                <text x="135" y="34" text-anchor="middle" class="c8-group-cap" font-size="11.5">Ingestion Sources</text>
+
+                <!-- engine box (the hub) -->
+                <rect x="330" y="150" width="312" height="162" rx="16" fill="rgba(0,245,255,0.04)" stroke="rgba(0,245,255,0.35)" stroke-width="1.5" stroke-dasharray="6 6"/>
+                <text x="486" y="142" text-anchor="middle" class="c8-engine-cap" font-size="12">Cure8 Engine</text>
+
+                <!-- spokes (sources -> hub) -->
+                <line class="c8-link flowing" style="animation-delay:0s"  x1="178" y1="120" x2="322" y2="226" stroke="#8a8a8a" marker-end="url(#ah-muted)"/>
+                <line class="c8-link flowing" style="animation-delay:.25s" x1="186" y1="230" x2="322" y2="230" stroke="#8a8a8a" marker-end="url(#ah-muted)"/>
+                <line class="c8-link flowing" style="animation-delay:.5s"  x1="178" y1="340" x2="322" y2="234" stroke="#8a8a8a" marker-end="url(#ah-muted)"/>
+
+                <!-- engine internal + spine -->
+                <line class="c8-link flowing" style="animation-delay:.7s"  x1="466" y1="230" x2="510" y2="230" stroke="#00f5ff" marker-end="url(#ah-cyan)"/>
+                <line class="c8-link flowing" style="animation-delay:.9s"  x1="608" y1="230" x2="695" y2="230" stroke="#ff006e" marker-end="url(#ah-pink)"/>
+                <line class="c8-link flowing" style="animation-delay:1.1s" x1="795" y1="230" x2="853" y2="230" stroke="#8a8a8a" marker-end="url(#ah-muted)"/>
+
+                <!-- Source nodes -->
+                <!-- S1 Agent Research -->
+                <g class="c8-node pulsing" style="animation-delay:0s">
+                    <circle class="c8-node-ring" cx="135" cy="90" r="46" fill="none" stroke="#8a8a8a" stroke-width="2"/>
+                    <circle cx="135" cy="90" r="34" fill="#6f6f6f"/>
+                    <text x="135" y="96" text-anchor="middle" class="c8-ico">&#xf002;</text>
+                </g>
+                <text x="135" y="150" text-anchor="middle" class="c8-node-label" font-size="13.5">Agent Research</text>
+                <text x="135" y="167" text-anchor="middle" class="c8-node-sub" font-size="10.5">automated fan-out + verify</text>
+
+                <!-- S2 Repo CONTEXT.md -->
+                <g class="c8-node pulsing" style="animation-delay:.4s">
+                    <circle class="c8-node-ring" cx="135" cy="230" r="46" fill="none" stroke="#8a8a8a" stroke-width="2"/>
+                    <circle cx="135" cy="230" r="34" fill="#6f6f6f"/>
+                    <text x="135" y="236" text-anchor="middle" class="c8-ico">&#xf1c0;</text>
+                </g>
+                <text x="135" y="292" text-anchor="middle" class="c8-node-label" font-size="13.5">Repo CONTEXT.md</text>
+                <text x="135" y="309" text-anchor="middle" class="c8-node-sub" font-size="10.5">per-repo snapshot</text>
+
+                <!-- S3 User Research -->
+                <g class="c8-node pulsing" style="animation-delay:.8s">
+                    <circle class="c8-node-ring" cx="135" cy="370" r="46" fill="none" stroke="#8a8a8a" stroke-width="2"/>
+                    <circle cx="135" cy="370" r="34" fill="#6f6f6f"/>
+                    <text x="135" y="376" text-anchor="middle" class="c8-ico">&#xf007;</text>
+                </g>
+                <text x="135" y="432" text-anchor="middle" class="c8-node-label" font-size="13.5">User Research</text>
+                <text x="135" y="449" text-anchor="middle" class="c8-node-sub" font-size="10.5">human-contributed</text>
+
+                <!-- Engine: Gap Detect (deterministic) -->
+                <g class="c8-node pulsing" style="animation-delay:1.1s">
+                    <circle class="c8-node-ring" cx="420" cy="230" r="42" fill="none" stroke="#00f5ff" stroke-width="2"/>
+                    <circle cx="420" cy="230" r="32" fill="#00b8cc"/>
+                    <text x="420" y="236" text-anchor="middle" class="c8-ico dark">&#xf00c;</text>
+                </g>
+                <text x="420" y="288" text-anchor="middle" class="c8-node-label" font-size="12.5">Gap Detect</text>
+                <text x="420" y="303" text-anchor="middle" class="c8-node-sub" font-size="10">deterministic</text>
+
+                <!-- Engine: Curation (LLM / judgment) -->
+                <g class="c8-node pulsing" style="animation-delay:1.4s">
+                    <circle class="c8-node-ring" cx="560" cy="230" r="44" fill="none" stroke="#ff006e" stroke-width="2.5"/>
+                    <circle cx="560" cy="230" r="34" fill="#ff006e"/>
+                    <text x="560" y="237" text-anchor="middle" class="c8-ico">&#xf0eb;</text>
+                </g>
+                <text x="560" y="288" text-anchor="middle" class="c8-node-label" font-size="12.5">Curation</text>
+                <text x="560" y="303" text-anchor="middle" class="c8-node-sub" font-size="10">one LLM call</text>
+
+                <!-- Book -->
+                <g class="c8-node pulsing" style="animation-delay:1.7s">
+                    <circle class="c8-node-ring" cx="745" cy="230" r="46" fill="none" stroke="url(#c8grad)" stroke-width="2"/>
+                    <circle cx="745" cy="230" r="34" fill="url(#c8grad)"/>
+                    <text x="745" y="237" text-anchor="middle" class="c8-ico dark">&#xf02d;</text>
+                </g>
+                <text x="745" y="166" text-anchor="middle" class="c8-node-label" font-size="13.5">Knowledge Book</text>
+                <text x="745" y="183" text-anchor="middle" class="c8-node-sub" font-size="10.5">isolated, high-signal</text>
+                <!-- materialization tick + chips -->
+                <line x1="745" y1="276" x2="745" y2="296" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
+                <rect x="697" y="296" width="96" height="24" rx="12" fill="rgba(0,245,255,0.10)" stroke="rgba(0,245,255,0.4)" stroke-width="1"/>
+                <text x="745" y="312" text-anchor="middle" class="c8-chip" font-size="11">as Wiki</text>
+                <rect x="690" y="328" width="110" height="24" rx="12" fill="rgba(0,245,255,0.10)" stroke="rgba(0,245,255,0.4)" stroke-width="1"/>
+                <text x="745" y="344" text-anchor="middle" class="c8-chip" font-size="11">as Cure8 DB</text>
+
+                <!-- Agents -->
+                <g class="c8-node pulsing" style="animation-delay:2s">
+                    <circle class="c8-node-ring" cx="905" cy="230" r="46" fill="none" stroke="#8a8a8a" stroke-width="2"/>
+                    <circle cx="905" cy="230" r="34" fill="#6f6f6f"/>
+                    <text x="905" y="237" text-anchor="middle" class="c8-ico">&#xf544;</text>
+                </g>
+                <text x="905" y="292" text-anchor="middle" class="c8-node-label" font-size="13.5">Agents</text>
+                <text x="905" y="309" text-anchor="middle" class="c8-node-sub" font-size="10.5">load at runtime</text>
+            </svg>
+
+            <div class="c8-legend">
+                <span><i class="c8-dot ext"></i> Source &amp; consumer (outside Cure8)</span>
+                <span><i class="c8-dot det"></i> Deterministic machinery</span>
+                <span><i class="c8-dot jud"></i> The single judgment step</span>
+            </div>
+            <figcaption>Information moves left to right. Three independent sources feed one hub. Everything inside the dashed engine box is Cure8; the source nodes and the consuming agents are not.</figcaption>
+        </figure>
+
+        <blockquote class="article-pullquote">Spend intelligence at write time, once. Keep runtime dumb, fast, and deterministic.</blockquote>
+
+        <h2>Three sources, one hub</h2>
+
+        <p>Knowledge does not enter Cure8 through a single pipe. Three independent sources feed the same engine in a hub-and-spoke arrangement. They are not stages in a sequence and none of them passes through the others. Each fires on its own cadence and lands at the same hub.</p>
+
+        <div class="c8-stages c8-three">
+            <div class="c8-stage c8-reveal">
+                <div class="c8-stage-num"><i class="fas fa-magnifying-glass"></i> Source A</div>
+                <h3>Agent research</h3>
+                <p>An agent does upstream work autonomously: fans out across sources, fetches and adversarially verifies claims, and synthesizes findings into working material. This is the automated ingestion path.</p>
+            </div>
+            <div class="c8-stage c8-reveal">
+                <div class="c8-stage-num"><i class="fas fa-folder-tree"></i> Source B</div>
+                <h3>Repo CONTEXT.md</h3>
+                <p>This path is specific to code repositories. Each repo maintains a lightly compressed <code>CONTEXT.md</code> describing its current state. It is a repo-local convention, not a step the other two sources travel through.</p>
+            </div>
+            <div class="c8-stage c8-reveal">
+                <div class="c8-stage-num"><i class="fas fa-user-pen"></i> Source C</div>
+                <h3>User research</h3>
+                <p>A human contributes material directly: notes, articles, transcripts, decisions worth keeping. The operator owns intent, so human-authored sources enter the same hub on equal footing.</p>
+            </div>
+        </div>
+
+        <p>The reason to draw it as a hub and not a chain matters. A chain implies that a failure or a delay in one source stalls the others, and that every piece of knowledge carries the same provenance. Neither is true. The repo snapshot can be stale while agent research is fresh. A human note can land between automated runs. Cure8 is origin-aware precisely because it does not flatten these three into one undifferentiated stream.</p>
+
+        <h2>The engine: one intelligent step in a deterministic pipeline</h2>
+
+        <p>Inside the hub, the work splits cleanly into two kinds. The first is bookkeeping, and it is done deterministically. The curator scans its source list, compares file modification times, and hashes source content. Anything whose hash is unchanged is skipped entirely. No model is consulted about what is stale or what has changed; that decision is timestamp and hash arithmetic, and it is reproducible to the bit.</p>
+
+        <p>The second kind is genuine compression under judgment, and it is the only place a model is used. For each changed source, exactly one LLM call distills the material into an aggressively compressed entity, tagged with high-specificity triggers and keywords so it can be found later. One call per changed source, never a swarm. The test the system applies everywhere is simple: does this work involve judgment under uncertainty? If yes, a model does it. If no, a script does it. Most infrastructure work that looks intelligent is really bookkeeping, and Cure8 treats it accordingly.</p>
+
+        <h2>The output: a book, materialized as a wiki or a database</h2>
+
+        <p>The curated entity lands in a <em>book</em>: an isolated collection scoped by token volume rather than by topic. Books never reference each other. Cross-book relationships, when they matter, are resolved at runtime by the model and the human, not encoded as a synthetic graph that has to be maintained.</p>
+
+        <p>How a book is physically materialized depends on how it will be consumed. A book meant for human reading can be rendered as a browsable wiki. A book meant for agent retrieval is better held as structured records in Cure8's store and served entity-by-entity, so an agent browses a terse index and pulls only the one or two entries it needs. The same curated content, two materializations, chosen by consumer and by size rather than by default.</p>
+
+        <h2>Two update contracts</h2>
+
+        <p>A book's <em>contract</em> determines how new information enters it and how it ages. Two contracts cover the cases that matter.</p>
+
+        <div class="c8-contracts">
+            <div class="c8-contract c8-reveal">
+                <span class="c8-status live">Implemented</span>
+                <h3>Snapshot</h3>
+                <div class="c8-formula">1 source &rarr; 1 entity</div>
+                <ul>
+                    <li>When a source changes, its entity is replaced in full.</li>
+                    <li>Gap detection is fully deterministic via content hashing.</li>
+                    <li>One LLM call per changed source, never more.</li>
+                    <li>Triggers are strict, unique exact-string discriminators.</li>
+                </ul>
+            </div>
+            <div class="c8-contract synth c8-reveal">
+                <span class="c8-status road">Roadmap</span>
+                <h3>Synthesis</h3>
+                <div class="c8-formula">N sources &rarr; N concepts</div>
+                <ul>
+                    <li>Many sources inform many concepts, additively over time.</li>
+                    <li>New material is merged into the concepts it touches.</li>
+                    <li>Oversized concepts split; new ones are proposed for review.</li>
+                    <li>Triggers are semantically anchored phrases, not bare terms.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Why this is different from other memory systems</h2>
+
+        <p>Most agent memory systems in circulation, whether vector-store RAG, Mem0, Honcho, or the long-context "just stuff it in the window" approach, share a posture: capture broadly, then spend effort at read time deciding what was relevant. They are retrieval-first. Their sophistication lives in chunking strategy, embedding models, rerankers, and decay heuristics, all of which run on the hot path of every query. Cure8 is curation-first, and the difference is not cosmetic. It changes where cost, error, and determinism live.</p>
+
+        <div class="c8-compare">
+            <div class="c8-compare-row c8-compare-head">
+                <div>Dimension</div>
+                <div>Conventional memory (RAG / Mem0 / long-context)</div>
+                <div>Cure8</div>
+            </div>
+            <div class="c8-compare-row c8-reveal">
+                <div class="c8-dim">Where intelligence is spent</div>
+                <div>At read time, on every query: embed, score, rerank, fuse.</div>
+                <div class="c8-good">Once, at write time. Read time is a cheap lookup.</div>
+            </div>
+            <div class="c8-compare-row c8-reveal">
+                <div class="c8-dim">What enters the store</div>
+                <div>Almost everything, chunked. Curation is deferred or skipped.</div>
+                <div class="c8-good">Only distilled, human-intent-curated units.</div>
+            </div>
+            <div class="c8-compare-row c8-reveal">
+                <div class="c8-dim">Determinism</div>
+                <div>Probabilistic retrieval on the critical path of every call.</div>
+                <div class="c8-good">Probabilistic work confined to one write-time step; retrieval is deterministic.</div>
+            </div>
+            <div class="c8-compare-row c8-reveal">
+                <div class="c8-dim">Relationships between units</div>
+                <div>Implicit in vector space, or a graph that must be maintained.</div>
+                <div class="c8-good">Books are isolated. Cross-links resolved at runtime by human and model.</div>
+            </div>
+            <div class="c8-compare-row c8-reveal">
+                <div class="c8-dim">Origin awareness</div>
+                <div>Provenance flattened into undifferentiated chunks.</div>
+                <div class="c8-good">Each source keeps its origin and its own curation discipline.</div>
+            </div>
+            <div class="c8-compare-row c8-reveal">
+                <div class="c8-dim">Failure mode</div>
+                <div>Confidently wrong retrieval, hard to audit after the fact.</div>
+                <div class="c8-good">A miss is a deterministic gap you can see and fix at the source.</div>
+            </div>
+        </div>
+
+        <p>The honest tradeoff: Cure8 asks for discipline at write time that retrieval-first systems let you skip. You cannot dump a folder and walk away. In exchange, the runtime is cheap and predictable, the store stays small and high-signal, and when something is missing it is missing in a way you can locate, because gap detection is deterministic rather than a confidence score. For an operator who would rather pay once, up front, than pay a little on every single call, that is the right side of the trade. For a throwaway corpus nobody will curate, a conventional vector store is the lower-effort choice. Naming the tradeoff is the point; an unnamed one becomes invisible debt.</p>
+
+        <div class="article-cta-box">
+            <h3>Where this fits</h3>
+            <p style="margin-bottom: 0;">Cure8 is the curation layer that keeps our agents grounded in current, project-specific knowledge instead of stale training data or noisy retrieval. It is part of the same discipline behind the <a href="/safe-ai/">SAFE AI framework</a>: spend the rigor up front, keep the system you have to trust at runtime simple enough to actually trust.</p>
+        </div>
+
+        <p style="text-align:center; margin-top: 2.5rem;">
+            <a href="/insights/briefings/" class="btn-secondary-outline">More briefings</a>
+        </p>
+
+    </article>
+
+    <div id="footer-placeholder"></div>
+
+    <style>
+        /* ---- shared article styles (from the white-paper template) ---- */
+        .article-hero {
+            background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            padding: 120px 0 60px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .article-hero-container { max-width: 900px; }
+        .article-eyebrow {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .article-eyebrow i { margin-right: 0.5rem; }
+        .article-title {
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin: 0 0 0.75rem;
+            color: var(--text-primary);
+            font-weight: 800;
+        }
+        .article-subtitle {
+            font-size: 1.6rem;
+            line-height: 1.3;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin: 0 0 1.5rem;
+            opacity: 0.9;
+        }
+        .article-tagline {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #222;
+        }
+        .article-meta i { color: var(--primary-color); margin-right: 0.5rem; }
+
+        .article-figure {
+            margin: 2.5rem auto;
+            max-width: 900px;
+        }
+        .article-figure figcaption {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+            text-align: center;
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+
+        .article-body {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 20px 5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.85;
+        }
+        .article-body p { margin-bottom: 1.5rem; }
+        .article-body a { color: var(--primary-color); text-decoration: underline; }
+        .article-body a:hover { color: var(--secondary-color); }
+        .article-body h2 {
+            color: var(--text-primary);
+            font-size: 1.75rem;
+            line-height: 1.3;
+            margin: 3.5rem 0 1.25rem;
+            font-weight: 700;
+        }
+        .article-body h3 { color: var(--text-primary); font-size: 1.35rem; margin: 1rem 0 0.75rem; }
+        .article-body code {
+            background: rgba(0,245,255,0.08);
+            color: var(--primary-color);
+            padding: 0.1rem 0.4rem;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        .article-lede {
+            font-size: 1.3rem !important;
+            color: var(--text-primary) !important;
+            line-height: 1.6 !important;
+            margin-bottom: 2rem !important;
+            font-weight: 500;
+        }
+        .article-pullquote {
+            border: none;
+            border-left: 4px solid var(--accent-color);
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            margin: 2.5rem 0;
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            font-style: italic;
+            line-height: 1.5;
+        }
+        .article-cta-box {
+            background: linear-gradient(135deg, rgba(0,245,255,0.08), rgba(255,0,110,0.04));
+            border-left: 4px solid var(--primary-color);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+        .article-cta-box h3 { margin-top: 0; color: var(--text-primary); font-size: 1.4rem; }
+
+        /* ---- Cure8 figure ---- */
+        .c8-flow-svg { width: 100%; height: auto; display: block; }
+        .c8-link {
+            stroke-width: 2.2;
+            stroke-linecap: round;
+            stroke-dasharray: 9 7;
+            opacity: 0.9;
+        }
+        .c8-link.flowing { animation: c8-dash 1.6s linear infinite; }
+        @keyframes c8-dash { to { stroke-dashoffset: -32; } }
+        .c8-node-ring { transform-box: fill-box; transform-origin: center; }
+        .c8-node.pulsing .c8-node-ring { animation: c8-pulse 3.2s ease-in-out infinite; }
+        @keyframes c8-pulse {
+            0%, 100% { opacity: 0.35; transform: scale(1); }
+            50%      { opacity: 0.9;  transform: scale(1.12); }
+        }
+        .c8-node-label { font-family: 'Segoe UI', Tahoma, sans-serif; font-weight: 700; fill: var(--text-primary); }
+        .c8-node-sub   { font-family: 'Segoe UI', Tahoma, sans-serif; fill: var(--text-secondary); }
+        .c8-ico {
+            font-family: "Font Awesome 6 Free"; font-weight: 900;
+            font-size: 20px; fill: #ffffff;
+        }
+        .c8-ico.dark { fill: #06222a; }
+        .c8-chip { font-family: 'Segoe UI', Tahoma, sans-serif; fill: var(--primary-color); font-weight: 600; }
+        .c8-engine-cap { font-family: 'Segoe UI', Tahoma, sans-serif; font-weight: 700; letter-spacing: 2px; fill: var(--primary-color); text-transform: uppercase; }
+        .c8-group-cap  { font-family: 'Segoe UI', Tahoma, sans-serif; font-weight: 700; letter-spacing: 1.5px; fill: var(--text-secondary); text-transform: uppercase; }
+
+        .c8-legend {
+            display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;
+            margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-secondary);
+        }
+        .c8-legend span { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .c8-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+        .c8-dot.det { background: var(--primary-color); }
+        .c8-dot.jud { background: var(--accent-color); }
+        .c8-dot.ext { background: #8a8a8a; }
+
+        /* ---- stage cards ---- */
+        .c8-stages { display: grid; gap: 1.1rem; margin: 1.75rem 0 0.5rem; }
+        .c8-three { grid-template-columns: repeat(3, 1fr); }
+        .c8-stage {
+            background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px; padding: 1.5rem; position: relative; overflow: hidden;
+        }
+        .c8-stage::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--gradient-1); opacity: 0.8;
+        }
+        .c8-stage-num { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.5px; color: var(--primary-color); text-transform: uppercase; }
+        .c8-stage-num i { margin-right: 0.35rem; }
+        .c8-stage h3 { margin: 0.45rem 0 0.5rem; font-size: 1.12rem; color: var(--text-primary); }
+        .c8-stage p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.65; margin: 0; }
+
+        /* ---- contracts ---- */
+        .c8-contracts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin: 1.75rem 0; }
+        .c8-contract { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 1.75rem; }
+        .c8-contract h3 { margin: 0 0 0.25rem; font-size: 1.3rem; color: var(--text-primary); }
+        .c8-contract .c8-formula { font-family: 'SF Mono', Consolas, monospace; color: var(--primary-color); font-size: 0.88rem; margin-bottom: 1rem; }
+        .c8-contract.synth .c8-formula { color: var(--accent-color); }
+        .c8-contract ul { list-style: none; padding: 0; margin: 0; }
+        .c8-contract li {
+            padding: 0.5rem 0 0.5rem 1.4rem; position: relative; color: var(--text-secondary);
+            font-size: 0.92rem; border-top: 1px solid rgba(255,255,255,0.08); line-height: 1.5;
+        }
+        .c8-contract li::before { content: "\f0da"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: var(--primary-color); }
+        .c8-contract.synth li::before { color: var(--accent-color); }
+        .c8-status { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px; margin-bottom: 0.9rem; }
+        .c8-status.live { background: rgba(0,245,255,0.12); color: var(--primary-color); }
+        .c8-status.road { background: rgba(255,0,110,0.12); color: var(--accent-color); }
+
+        /* ---- comparison table ---- */
+        .c8-compare { margin: 1.75rem 0; border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; overflow: hidden; }
+        .c8-compare-row { display: grid; grid-template-columns: 0.8fr 1.4fr 1.4fr; }
+        .c8-compare-row > div { padding: 0.95rem 1.1rem; font-size: 0.9rem; line-height: 1.5; border-top: 1px solid rgba(255,255,255,0.08); }
+        .c8-compare-row.c8-compare-head > div { background: var(--gradient-1); color: #04222a; font-weight: 700; border-top: none; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+        .c8-compare .c8-dim { color: var(--text-primary); font-weight: 600; background: rgba(255,255,255,0.02); }
+        .c8-compare .c8-good { color: var(--text-primary); }
+        .c8-compare-row > div:nth-child(2) { color: var(--text-secondary); }
+
+        /* ---- reveal on scroll ---- */
+        .js-on .c8-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .js-on .c8-reveal.shown { opacity: 1; transform: none; }
+
+        @media (max-width: 768px) {
+            .article-title { font-size: 2.2rem; }
+            .article-subtitle { font-size: 1.25rem; }
+            .article-tagline { font-size: 1.05rem; }
+            .article-meta { gap: 1rem; font-size: 0.85rem; }
+            .article-body { font-size: 1.05rem; padding: 2rem 16px 3rem; }
+            .article-body h2 { font-size: 1.4rem; }
+            .article-lede { font-size: 1.15rem !important; }
+            .article-pullquote { font-size: 1.1rem; }
+            .c8-three, .c8-contracts { grid-template-columns: 1fr; }
+            .c8-compare-row { grid-template-columns: 1fr; }
+            .c8-compare-row > div { border-top: 1px solid rgba(255,255,255,0.08); }
+            .c8-compare-row.c8-compare-head { display: none; }
+            .c8-compare .c8-dim::after { content: ""; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .c8-node.pulsing .c8-node-ring, .c8-link.flowing { animation: none; }
+        }
+    </style>
+
+    <script src="/js/components.js"></script>
+    <script>
+        CortivusComponents.renderHeader('header-placeholder');
+        CortivusComponents.renderFooter('footer-placeholder');
+    </script>
+    <script>
+        document.body.classList.add('js-on');
+        (function () {
+            var items = document.querySelectorAll('.c8-reveal');
+            if (!('IntersectionObserver' in window)) {
+                items.forEach(function (el) { el.classList.add('shown'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) { e.target.classList.add('shown'); io.unobserve(e.target); }
+                });
+            }, { threshold: 0.15 });
+            items.forEach(function (el) { io.observe(el); });
+        })();
+    </script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
