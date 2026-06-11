@@ -72,9 +72,8 @@
                 <text x="486" y="142" text-anchor="middle" class="c8-engine-cap" font-size="12">Cure8 Engine</text>
 
                 <!-- spokes (sources -> hub) -->
-                <line class="c8-link flowing" style="animation-delay:0s"  x1="178" y1="120" x2="322" y2="226" stroke="#8a8a8a" marker-end="url(#ah-muted)"/>
-                <line class="c8-link flowing" style="animation-delay:.25s" x1="186" y1="230" x2="322" y2="230" stroke="#8a8a8a" marker-end="url(#ah-muted)"/>
-                <line class="c8-link flowing" style="animation-delay:.5s"  x1="178" y1="340" x2="322" y2="234" stroke="#8a8a8a" marker-end="url(#ah-muted)"/>
+                <line class="c8-link flowing" style="animation-delay:0s"  x1="181" y1="155" x2="322" y2="226" stroke="#8a8a8a" marker-end="url(#ah-muted)"/>
+                <line class="c8-link flowing" style="animation-delay:.25s" x1="181" y1="315" x2="322" y2="234" stroke="#8a8a8a" marker-end="url(#ah-muted)"/>
 
                 <!-- engine internal + spine -->
                 <line class="c8-link flowing" style="animation-delay:.7s"  x1="466" y1="230" x2="510" y2="230" stroke="#00f5ff" marker-end="url(#ah-cyan)"/>
@@ -84,30 +83,21 @@
                 <!-- Source nodes -->
                 <!-- S1 Agent Research -->
                 <g class="c8-node pulsing" style="animation-delay:0s">
-                    <circle class="c8-node-ring" cx="135" cy="90" r="46" fill="none" stroke="#8a8a8a" stroke-width="2"/>
-                    <circle cx="135" cy="90" r="34" fill="#6f6f6f"/>
-                    <text x="135" y="96" text-anchor="middle" class="c8-ico">&#xf002;</text>
+                    <circle class="c8-node-ring" cx="135" cy="155" r="46" fill="none" stroke="#8a8a8a" stroke-width="2"/>
+                    <circle cx="135" cy="155" r="34" fill="#6f6f6f"/>
+                    <text x="135" y="161" text-anchor="middle" class="c8-ico">&#xf002;</text>
                 </g>
-                <text x="135" y="150" text-anchor="middle" class="c8-node-label" font-size="13.5">Agent Research</text>
-                <text x="135" y="167" text-anchor="middle" class="c8-node-sub" font-size="10.5">automated fan-out + verify</text>
+                <text x="135" y="215" text-anchor="middle" class="c8-node-label" font-size="13.5">Agent Research</text>
+                <text x="135" y="232" text-anchor="middle" class="c8-node-sub" font-size="10.5">scanner + automated review</text>
 
-                <!-- S2 Repo CONTEXT.md -->
+                <!-- S2 User Research -->
                 <g class="c8-node pulsing" style="animation-delay:.4s">
-                    <circle class="c8-node-ring" cx="135" cy="230" r="46" fill="none" stroke="#8a8a8a" stroke-width="2"/>
-                    <circle cx="135" cy="230" r="34" fill="#6f6f6f"/>
-                    <text x="135" y="236" text-anchor="middle" class="c8-ico">&#xf1c0;</text>
+                    <circle class="c8-node-ring" cx="135" cy="315" r="46" fill="none" stroke="#8a8a8a" stroke-width="2"/>
+                    <circle cx="135" cy="315" r="34" fill="#6f6f6f"/>
+                    <text x="135" y="321" text-anchor="middle" class="c8-ico">&#xf007;</text>
                 </g>
-                <text x="135" y="292" text-anchor="middle" class="c8-node-label" font-size="13.5">Repo CONTEXT.md</text>
-                <text x="135" y="309" text-anchor="middle" class="c8-node-sub" font-size="10.5">per-repo snapshot</text>
-
-                <!-- S3 User Research -->
-                <g class="c8-node pulsing" style="animation-delay:.8s">
-                    <circle class="c8-node-ring" cx="135" cy="370" r="46" fill="none" stroke="#8a8a8a" stroke-width="2"/>
-                    <circle cx="135" cy="370" r="34" fill="#6f6f6f"/>
-                    <text x="135" y="376" text-anchor="middle" class="c8-ico">&#xf007;</text>
-                </g>
-                <text x="135" y="432" text-anchor="middle" class="c8-node-label" font-size="13.5">User Research</text>
-                <text x="135" y="449" text-anchor="middle" class="c8-node-sub" font-size="10.5">human-contributed</text>
+                <text x="135" y="375" text-anchor="middle" class="c8-node-label" font-size="13.5">User Research</text>
+                <text x="135" y="392" text-anchor="middle" class="c8-node-sub" font-size="10.5">human-contributed</text>
 
                 <!-- Engine: Gap Detect (deterministic) -->
                 <g class="c8-node pulsing" style="animation-delay:1.1s">
@@ -157,34 +147,29 @@
                 <span><i class="c8-dot det"></i> Deterministic machinery</span>
                 <span><i class="c8-dot jud"></i> The single judgment step</span>
             </div>
-            <figcaption>Information moves left to right. Three independent sources feed one hub. Everything inside the dashed engine box is Cure8; the source nodes and the consuming agents are not.</figcaption>
+            <figcaption>Information moves left to right. Two independent sources feed one hub. Everything inside the dashed engine box is Cure8; the source nodes and the consuming agents are not.</figcaption>
         </figure>
 
         <blockquote class="article-pullquote">Spend intelligence at write time, once. Keep runtime dumb, fast, and deterministic.</blockquote>
 
-        <h2>Three sources, one hub</h2>
+        <h2>Two sources, one hub</h2>
 
-        <p>Knowledge does not enter Cure8 through a single pipe. Three independent sources feed the same engine in a hub-and-spoke arrangement. They are not stages in a sequence and none of them passes through the others. Each fires on its own cadence and lands at the same hub.</p>
+        <p>Knowledge does not enter Cure8 through a single pipe. Two independent sources feed the same engine in a hub-and-spoke arrangement. They are not stages in a sequence and neither passes through the other. Each fires on its own cadence and lands at the same hub.</p>
 
-        <div class="c8-stages c8-three">
+        <div class="c8-stages" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin: 1.75rem 0 0.5rem;">
             <div class="c8-stage c8-reveal">
                 <div class="c8-stage-num"><i class="fas fa-magnifying-glass"></i> Source A</div>
                 <h3>Agent research</h3>
                 <p>An agent does upstream work autonomously: fans out across sources, fetches and evaluates claims, and delivers scored, summarized findings. In practice this includes the intelligence scanner that monitors clinical AI litigation filings, published research, industry news, and regulatory guidance -- scoring each item and forwarding it to Cure8 for human review.</p>
             </div>
             <div class="c8-stage c8-reveal">
-                <div class="c8-stage-num"><i class="fas fa-folder-tree"></i> Source B</div>
-                <h3>Repo CONTEXT.md</h3>
-                <p>This path is specific to code repositories. Each repo maintains a lightly compressed <code>CONTEXT.md</code> describing its current state. It is a repo-local convention, not a step the other two sources travel through.</p>
-            </div>
-            <div class="c8-stage c8-reveal">
-                <div class="c8-stage-num"><i class="fas fa-user-pen"></i> Source C</div>
+                <div class="c8-stage-num"><i class="fas fa-user-pen"></i> Source B</div>
                 <h3>User research</h3>
-                <p>A human contributes material directly: notes, articles, transcripts, decisions worth keeping. The operator owns intent, so human-authored sources enter the same hub on equal footing.</p>
+                <p>A human contributes material directly: notes, articles, transcripts, decisions worth keeping. The operator owns intent, so human-authored sources enter the same hub on equal footing with the automated path.</p>
             </div>
         </div>
 
-        <p>The reason to draw it as a hub and not a chain matters. A chain implies that a failure or a delay in one source stalls the others, and that every piece of knowledge carries the same provenance. Neither is true. The repo snapshot can be stale while agent research is fresh. A human note can land between automated runs. Cure8 is origin-aware precisely because it does not flatten these three into one undifferentiated stream.</p>
+        <p>The reason to draw it as a hub and not a chain matters. A chain implies that a failure or a delay in one source stalls the other, and that every piece of knowledge carries the same provenance. Neither is true. Agent research can surface new findings while the human-contributed queue is empty. A human note can land between automated scans. Cure8 is origin-aware precisely because it does not flatten these two into one undifferentiated stream.</p>
 
         <h2>The engine: one intelligent step in a deterministic pipeline</h2>
 
