@@ -214,19 +214,6 @@
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <label>I'd like to:</label>
-                            <div class="radio-group">
-                                <label class="radio-option">
-                                    <input type="radio" name="request_type" value="information" checked>
-                                    <span>Request Information</span>
-                                </label>
-                                <label class="radio-option">
-                                    <input type="radio" name="request_type" value="quick-read">
-                                    <span>Discuss a Quick Read</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="contact-name">Name</label>
                             <input type="text" id="contact-name" name="name" required>
                         </div>
@@ -296,7 +283,6 @@
                     name: form.querySelector('[name="name"]').value,
                     email: form.querySelector('[name="email"]').value,
                     organization: form.querySelector('[name="organization"]').value || null,
-                    request_type: form.querySelector('[name="request_type"]:checked').value,
                     message: form.querySelector('[name="message"]').value || null,
                     website: form.querySelector('[name="website"]').value,
                     cf_turnstile_response: form.querySelector('[name="cf-turnstile-response"]') ? form.querySelector('[name="cf-turnstile-response"]').value : null
