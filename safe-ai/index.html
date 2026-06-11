@@ -59,28 +59,36 @@
             </div>
 
             <div class="framework-horizontal-grid">
-                <div class="module-card framework-card-horizontal">
-                    <div class="module-icon">
-                        <i class="fas fa-search"></i>
+                <div class="module-card framework-card-vertical">
+                    <div class="framework-card-header">
+                        <div class="module-icon framework-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Root Cause Analysis</h3>
                     </div>
-                    <div class="framework-card-horizontal-content">
-                        <h3>RCA for AI Failures</h3>
-                        <p style="margin-bottom: 1rem;">When a model degrades in production, the failure rarely originates in the model itself. SAFE AI applies sentinel event-level root cause discipline to AI system failures.</p>
-                        <p style="margin-bottom: 1rem;">We map the model's training data lineage, feature pipeline, deployment context, and update history, then trace observed degradation back to a contributing or causal factor.</p>
-                        <p><strong style="color: var(--primary-color);">AI-specific causal categories:</strong> training data drift, feature drift, deployment context mismatch, silent retraining, prompt injection, unmonitored vendor updates.</p>
-                    </div>
+                    <p class="framework-card-lead">Applied when a model degrades or produces an unexpected outcome in production. The failure rarely originates in the model itself.</p>
+                    <ul class="framework-list">
+                        <li>Maps training data lineage, feature pipeline, deployment context, and update history</li>
+                        <li>Traces observed degradation to a contributing or causal factor</li>
+                        <li>Uses established patient safety taxonomy — contributing cause vs. root cause</li>
+                        <li><strong>Causal categories:</strong> data drift, deployment context mismatch, silent retraining, prompt injection, unmonitored vendor updates</li>
+                    </ul>
                 </div>
 
-                <div class="module-card framework-card-horizontal">
-                    <div class="module-icon">
-                        <i class="fas fa-list-check"></i>
+                <div class="module-card framework-card-vertical">
+                    <div class="framework-card-header">
+                        <div class="module-icon framework-icon">
+                            <i class="fas fa-list-check"></i>
+                        </div>
+                        <h3>Failure Mode &amp; Effects Analysis</h3>
                     </div>
-                    <div class="framework-card-horizontal-content">
-                        <h3>FMEA for AI Failure Modes</h3>
-                        <p style="margin-bottom: 1rem;">Before failure occurs, SAFE AI catalogs prospective failure modes — drawing from an evidence foundation already in place rather than constructed from scratch. The <a href="/insights/tracker/signal/" style="color: var(--primary-color);">Cure8 Signal Registry</a> provides that foundation: a continuously curated body of peer-reviewed clinical AI literature, maintained by research agents that actively scan publications, extract emerging patterns of failure and success, and surface what the evidence shows about how these systems fail and where they perform reliably.</p>
-                        <p style="margin-bottom: 1rem;">When we engage with your environment, that literature baseline is already established. We incorporate your specific deployment context — the system, your patient population, existing controls, and monitoring infrastructure — and produce a failure mode catalog shaped to what is running in your care setting, not a generic checklist built from first principles.</p>
-                        <p><strong style="color: var(--primary-color);">Each mode is then scored</strong> on severity, occurrence, and detection to produce a Risk Priority Number. Modes are ranked and mitigation actions are assigned against a threshold your team sets.</p>
-                    </div>
+                    <p class="framework-card-lead">A prospective catalog of how failure could occur — conducted before it does, grounded in evidence rather than assumption.</p>
+                    <ul class="framework-list">
+                        <li>Begins from the <a href="/insights/tracker/signal/" style="color: var(--primary-color);">Cure8 Signal Registry</a> — peer-reviewed literature, not a blank sheet</li>
+                        <li>Layered with your deployment context: system, patient population, existing controls</li>
+                        <li>Each mode scored on severity, occurrence, and detection (S &times; O &times; D = RPN)</li>
+                        <li>Modes ranked by RPN; mitigation actions assigned at a threshold your team defines</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -225,7 +233,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <!-- Scoped styles for the Framework section horizontal cards -->
+    <!-- Scoped styles for the Framework section cards -->
     <style>
         .framework-horizontal-grid {
             display: grid;
@@ -234,35 +242,68 @@
             max-width: 1100px;
             margin: 0 auto;
         }
-        .framework-card-horizontal {
+        .framework-card-vertical {
             display: flex;
-            flex-direction: row;
-            gap: 1.5rem;
-            align-items: flex-start;
+            flex-direction: column;
             text-align: left;
         }
-        .framework-card-horizontal .module-icon {
+        .framework-card-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .framework-icon {
             flex-shrink: 0;
-            margin-bottom: 0;
+            margin: 0 !important;
+            width: 52px !important;
+            height: 52px !important;
+            border-radius: 14px !important;
         }
-        .framework-card-horizontal-content {
-            flex: 1;
-            min-width: 0;
+        .framework-card-header h3 {
+            margin: 0;
+            font-size: 1.15rem;
         }
-        .framework-card-horizontal-content h3 {
-            margin-top: 0;
+        .framework-card-lead {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+        }
+        .framework-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        .framework-list li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding: 0.55rem 0 0.55rem 1.25rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+        .framework-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            opacity: 0.6;
+        }
+        .framework-list li:last-child {
+            border-bottom: none;
         }
         @media (max-width: 768px) {
             .framework-horizontal-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
-            }
-            .framework-card-horizontal {
-                flex-direction: column;
-                text-align: center;
-            }
-            .framework-card-horizontal .module-icon {
-                margin-bottom: 1rem;
             }
         }
     </style>
