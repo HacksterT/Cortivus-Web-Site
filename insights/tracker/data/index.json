@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.1",
+  "last_updated": "2026-06-01T12:00:00Z",
+  "note": "Manifest for the Cortivus AI Safety Hub tracker. See AGENT_CONTRACT.md for the data contract. Adding or removing a topic requires editing this file. Editing a topic's items happens in the per-topic file.",
+  "topics": [
+    { "id": "ambient-listening", "file": "topics/ambient-listening.json" },
+    { "id": "algorithmic-prior-auth", "file": "topics/algorithmic-prior-auth.json" },
+    { "id": "ai-radiology", "file": "topics/ai-radiology.json" },
+    { "id": "dr-ai", "file": "topics/dr-ai.json" }
+  ]
+}

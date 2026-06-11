@@ -1,0 +1,409 @@
+{
+  "id": "algorithmic-prior-auth",
+  "name": "Algorithmic Prior Authorization",
+  "description": "Coverage denial algorithms, payer review systems, and target-misalignment failure cases.",
+  "auto_managed": true,
+  "last_run": "2026-06-11T11:08:03Z",
+  "source_list": [
+    {
+      "name": "STAT News",
+      "url": "https://www.statnews.com/",
+      "category": "reporting"
+    },
+    {
+      "name": "ProPublica",
+      "url": "https://www.propublica.org/",
+      "category": "reporting"
+    },
+    {
+      "name": "CMS Medicare Advantage Guidance",
+      "url": "https://www.cms.gov/",
+      "category": "primary"
+    },
+    {
+      "name": "PACER federal court records",
+      "url": "https://pacer.uscourts.gov/",
+      "category": "primary"
+    },
+    {
+      "name": "AMA Prior Authorization Resources",
+      "url": "https://www.ama-assn.org/practice-management/prior-authorization",
+      "category": "analysis"
+    }
+  ],
+  "items": [
+    {
+      "id": "pa-2023-11-14-nh-predict-stat",
+      "date": "2023-11-14",
+      "type": "research",
+      "headline": "STAT News exposes nH Predict denial pattern at UnitedHealth",
+      "summary": "UnitedHealth's nH Predict model (acquired with NaviHealth in 2020) was used to predict and deny post-acute care for Medicare Advantage patients. When clinicians disagreed and recommended continued care, the model's recommendation prevailed in the denial. Patient appeals reversed denials at approximately 90%.",
+      "take": "The 90% reversal rate is the model's report card. The system is telling the institution the model is wrong, in detail, every time a denial is overturned.",
+      "sources": [
+        {
+          "name": "Ross & Herman, STAT News",
+          "url": null,
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-01T12:00:00Z",
+      "last_updated": "2026-06-01T12:00:00Z",
+      "last_checked": "2026-06-03T11:09:30Z",
+      "verified": false,
+      "verification_note": "Locate direct STAT News article URL.",
+      "human_curated": true,
+      "update_log": [],
+      "tags": [
+        "nh-predict",
+        "unitedhealth",
+        "medicare-advantage",
+        "post-acute"
+      ]
+    },
+    {
+      "id": "pa-2023-11-barrows-v-united",
+      "date": "2023-11",
+      "type": "litigation",
+      "headline": "Barrows v. UnitedHealth Group filed in D. Minnesota",
+      "summary": "Alleges the nH Predict model was knowingly used to override clinician judgment and deny care that beneficiaries were entitled to under Medicare Advantage.",
+      "take": "Target-misalignment as a legal theory: the model was trained to a target reflecting denial patterns rather than clinical recovery, and the use of that model in coverage decisions is at the center of the case.",
+      "sources": [
+        {
+          "name": "Class action complaint, D. Minn.",
+          "url": null,
+          "type": "primary"
+        },
+        {
+          "name": "Estate of Lokken v. UnitedHealth Group, D. Minn. No. 0:23-cv-03514",
+          "url": null,
+          "type": "primary"
+        },
+        {
+          "name": "Sabin Center, Georgetown Climate/AI Litigation Tracker",
+          "url": null,
+          "type": "analysis"
+        },
+        {
+          "name": "Healthcare Finance News - Class action against UnitedHealth's AI claim denials advances",
+          "url": "https://www.healthcarefinancenews.com/news/class-action-lawsuit-against-unitedhealths-ai-claim-denials-advances",
+          "type": "reporting"
+        },
+        {
+          "name": "LegalHIE - Judge decides class action can proceed against UnitedHealth for AI",
+          "url": "https://www.legalhie.com/judge-decides-class-action-lawsuit-can-proceed-against-unitedhealth-for-use-of-ai/",
+          "type": "reporting"
+        },
+        {
+          "name": "ArentFox Schiff - Federal court orders broad discovery against UHC in AI coverage denial lawsuit",
+          "url": "https://www.afslaw.com/perspectives/alerts/federal-court-orders-broad-discovery-against-uhc-ai-coverage-denial-lawsuit",
+          "type": "analysis"
+        },
+        {
+          "name": "Georgetown Climate/AI Litigation Tracker - Lokken v. UnitedHealth Group",
+          "url": "https://litigationtracker.law.georgetown.edu/litigation/estate-of-gene-b-lokken-the-et-al-v-unitedhealth-group-inc-et-al/",
+          "type": "analysis"
+        },
+        {
+          "name": "JAMA Health Forum / PubMed Central - MA and AI denials analysis citing Lokken ruling",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12979811/",
+          "type": "research"
+        },
+        {
+          "name": "Barrows et al. v. Humana, Inc., W.D. Ky. No. 3:23-cv-00654-CHB",
+          "url": null,
+          "type": "primary"
+        }
+      ],
+      "first_added": "2026-06-01T12:00:00Z",
+      "last_updated": "2026-06-07T11:07:13Z",
+      "last_checked": "2026-06-07T11:07:13Z",
+      "verified": false,
+      "verification_note": "Locate PACER docket link and confirm exact filing date.",
+      "human_curated": true,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:35:42Z",
+          "type": "correction",
+          "note": "Open-source litigation trackers identify the lead D. Minn. nH Predict class action as Estate of Gene B. Lokken et al. v. UnitedHealth Group Inc. (No. 0:23-cv-03514). 'Barrows' is not found as the lead plaintiff caption; flag for human review to confirm whether this item should be re-captioned or whether a separate Barrows action exists.",
+          "source": {
+            "name": "Sabin Center, Georgetown Climate/AI Litigation Tracker",
+            "url": null
+          },
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "timestamp": "2026-06-02T03:35:42Z",
+          "type": "development",
+          "note": "Feb 13, 2025: Judge John Tunheim (D. Minn.) granted in part and denied in part UnitedHealth's motion to dismiss in Estate of Lokken. Breach-of-contract and breach-of-implied-covenant claims allowed to proceed; several state-law and statutory consumer-protection claims dismissed as preempted by the Medicare Act. Court waived the exhaustion-of-Medicare-administrative-remedies requirement, finding the appeal process could be futile and produce irreparable injury.",
+          "source": {
+            "name": "Estate of Lokken v. UnitedHealth Group, D. Minn.",
+            "url": null
+          },
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "timestamp": "2026-06-02T03:35:42Z",
+          "type": "development",
+          "note": "Mar 9, 2025: Discovery order in Estate of Lokken required UnitedHealth to produce broad records on the nH Predict algorithm, the naviHealth acquisition and projected cost savings, internal AI review board materials, government-investigation correspondence, and performance/compensation files for care coordinators and medical directors handling post-acute claims.",
+          "source": {
+            "name": "Estate of Lokken v. UnitedHealth Group, D. Minn.",
+            "url": null
+          },
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "timestamp": "2026-06-03T11:09:30Z",
+          "type": "source_added",
+          "note": "Verifying URLs located for the Feb 13, 2025 partial-MTD ruling and Mar 9, 2025 discovery order: Healthcare Finance News and LegalHIE for the MTD, ArentFox Schiff alert for the discovery order, Georgetown Litigation Tracker docket entry, and PMC-indexed JAMA Health Forum analysis. No new substantive docket events surfaced in the past 48 hours.",
+          "source": {
+            "name": "Perplexity sonar-pro multi-source synthesis",
+            "url": null
+          },
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "correction",
+          "note": "Resolves the open caption question flagged on 2026-06-02. 'Barrows' refers to a distinct action: Barrows et al. v. Humana, Inc. (W.D. Ky. No. 3:23-cv-00654-CHB), filed Dec 12, 2023 by plaintiffs Joanne Barrows and Susan Hagood, alleging Humana used the nH Predict model to prematurely terminate post-acute care for Medicare Advantage members (breach of contract, breach of implied covenant of good faith and fair dealing, unjust enrichment, insurance bad faith). Humana's motion to dismiss remains pending with no reported merits ruling. This is separate from the UnitedHealth matter that this item's summary and sources actually describe (Estate of Gene B. Lokken v. UnitedHealth Group, Inc., D. Minn.). Recommend a human curator split this into two items or re-caption: the UnitedHealth/Lokken case and the Humana/Barrows case are parallel nH Predict suits but distinct defendants, courts, and dockets. No new docket activity in either case in the past 48 hours.",
+          "source": {
+            "name": "Perplexity sonar-pro multi-source synthesis (docket summaries for W.D. Ky. No. 3:23-cv-00654-CHB and D. Minn. Lokken)",
+            "url": null
+          },
+          "timestamp": "2026-06-07T11:07:13Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "barrows",
+        "unitedhealth",
+        "class-action",
+        "minnesota",
+        "humana",
+        "nh-predict"
+      ]
+    },
+    {
+      "id": "pa-2023-03-25-pxdx-propublica",
+      "date": "2023-03-25",
+      "type": "research",
+      "headline": "ProPublica and STAT expose Cigna PXDX claim review system",
+      "summary": "In a two-month window in 2022, PXDX processed over 300,000 claim denials. The average physician review time per denial was 1.2 seconds. Physicians were batch-signing what the algorithm flagged rather than reading claims.",
+      "take": "The human-in-the-loop check, if it cannot reasonably be performed at the cadence the system requires, is a check on paper only. Workflow design matters as much as model design.",
+      "sources": [
+        {
+          "name": "Rucker, Miller & Armstrong, ProPublica / STAT News",
+          "url": null,
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-01T12:00:00Z",
+      "last_updated": "2026-06-01T12:00:00Z",
+      "last_checked": "2026-06-03T11:09:30Z",
+      "verified": false,
+      "verification_note": "Locate direct ProPublica and STAT News article URLs.",
+      "human_curated": true,
+      "update_log": [],
+      "tags": [
+        "pxdx",
+        "cigna",
+        "claim-denial",
+        "human-in-the-loop"
+      ]
+    },
+    {
+      "id": "pa-2026-01-wiser-cms-pilot",
+      "date": "2026-01-01",
+      "type": "regulatory",
+      "headline": "CMS launches WISeR Model: AI-enabled prior authorization for Original Medicare in six states",
+      "summary": "The CMS Innovation Center's Wasteful and Inappropriate Service Reduction (WISeR) Model began Jan 1, 2026 in Arizona, New Jersey, Ohio, Oklahoma, Texas, and Washington, running through Dec 31, 2031. It is the first AI-enabled prior authorization program in Original (fee-for-service) Medicare, applying to procedures CMS considers vulnerable to fraud, waste, or low-value use, with an initial scope focused on spine and pain-management services (electrical nerve stimulator implants, epidural steroid injections, percutaneous vertebral augmentation, image-guided lumbar decompression). CMS pairs each participating MAC jurisdiction with a 'technology-enabled medical review entity' and states that AI handles intake and triage while human clinicians must be involved in any denial. Center for Medicare Advocacy reports early experience in the six states shows delays, more complex workflows for physicians, and patients waiting in pain for procedures.",
+      "take": "WISeR ports the Medicare Advantage utilization-management architecture into fee-for-service Medicare. The same target-misalignment risk that produced the nH Predict reversal-rate pattern now sits inside Original Medicare, with appeal rights, RCA capacity, and beneficiary-level access metrics still being worked out under a six-year demonstration timeline.",
+      "sources": [
+        {
+          "name": "CMS Innovation Center, WISeR Model",
+          "url": "https://www.cms.gov/",
+          "type": "primary"
+        },
+        {
+          "name": "Federal Register, Medicare Program; Implementation of Prior Authorization for Select Services for WISeR",
+          "url": null,
+          "type": "primary"
+        },
+        {
+          "name": "Center for Medicare Advocacy",
+          "url": null,
+          "type": "analysis"
+        },
+        {
+          "name": "KFF policy brief on WISeR",
+          "url": null,
+          "type": "analysis"
+        },
+        {
+          "name": "Alliance for Retired Americans (@ActiveRetirees)",
+          "url": "https://x.com/ActiveRetirees/status/2062898053728632840",
+          "type": "reporting"
+        },
+        {
+          "name": "Sen. Patty Murray (@PattyMurray)",
+          "url": "https://x.com/PattyMurray/status/2064822117367972046",
+          "type": "primary"
+        },
+        {
+          "name": "Rep. Lois Frankel (@RepLoisFrankel)",
+          "url": "https://x.com/RepLoisFrankel/status/2064741159885279695",
+          "type": "primary"
+        }
+      ],
+      "first_added": "2026-06-02T03:35:42Z",
+      "last_updated": "2026-06-11T11:08:03Z",
+      "last_checked": "2026-06-11T11:08:03Z",
+      "verified": false,
+      "verification_note": "Locate Federal Register citation and direct CMS WISeR program page URL; confirm full list of initial WISeR technology participants per MAC jurisdiction.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:35:42Z",
+          "type": "added",
+          "note": "Initial entry. Surfaced by CMS/CMMI primary sources and reinforced by X-platform commentary on 2026-06-01 noting early beneficiary impact in the six WISeR states.",
+          "source": {
+            "name": "CMS Innovation Center, WISeR Model",
+            "url": null
+          },
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "Advocacy groups and local outlets began surfacing patient-impact concerns from the WISeR AI prior-authorization demonstration across the six states. The Alliance for Retired Americans highlighted seniors facing AI-driven denials or delays for physician-ordered Medicare care and linked KUOW reporting on Washington enrollees under the program.",
+          "source": {
+            "name": "Alliance for Retired Americans (@ActiveRetirees)",
+            "url": "https://x.com/ActiveRetirees/status/2062898053728632840"
+          },
+          "timestamp": "2026-06-06T11:06:45Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "Congressional opposition to the WISeR AI prior-authorization demonstration escalated (June 10, 2026). Sen. Patty Murray announced she is leading a Democratic effort to shut down WISeR, and Rep. Lois Frankel publicized an amendment in the FY27 Labor-HHS appropriations bill to halt further program funding. Framing centers on AI second-guessing physician-ordered care in Original Medicare.",
+          "source": {
+            "name": "Sen. Patty Murray (@PattyMurray)",
+            "url": "https://x.com/PattyMurray/status/2064822117367972046"
+          },
+          "timestamp": "2026-06-11T11:08:03Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "wiser",
+        "cms",
+        "cmmi",
+        "medicare-fee-for-service",
+        "prior-authorization",
+        "demonstration",
+        "patient-impact",
+        "advocacy",
+        "congressional-oversight",
+        "defund-effort",
+        "fy27-labor-hhs"
+      ]
+    },
+    {
+      "id": "pa-2026-06-01-az-mayes-multiplan",
+      "date": "2026-06-01",
+      "type": "litigation",
+      "headline": "Arizona AG sues MultiPlan and major insurers over shared out-of-network pricing algorithm",
+      "summary": "Arizona Attorney General Kris Mayes announced an antitrust lawsuit against MultiPlan and a group of major health insurers, including Aetna, Cigna, and UnitedHealthcare, alleging the defendants used a shared MultiPlan algorithmic pricing tool to coordinate reimbursement rates for out-of-network claims rather than setting rates independently. The complaint frames the alleged conduct as 'old-fashioned price-fixing using new technology,' claims it slashed payments to Arizona doctors and hospitals and shifted costs to patients, and seeks injunctive relief, civil penalties, and restitution. MultiPlan publicly stated the allegations are without merit and that it complies with antitrust laws.",
+      "take": "First state-AG antitrust action squarely targeting a payer-side algorithm operating across competing insurers. Extends the algorithmic-denial conversation from individual coverage decisions to shared payment-setting infrastructure, opening a second regulatory front (antitrust) alongside the contract and ERISA theories already in motion.",
+      "sources": [
+        {
+          "name": "Arizona Attorney General press release",
+          "url": "https://www.azag.gov/",
+          "type": "primary"
+        },
+        {
+          "name": "Courthouse News Service",
+          "url": null,
+          "type": "reporting"
+        },
+        {
+          "name": "Yellow Sheet Report (@TheYellowSheet)",
+          "url": "https://x.com/TheYellowSheet/status/2061571798995796468",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-02T03:35:42Z",
+      "last_updated": "2026-06-02T03:35:42Z",
+      "last_checked": "2026-06-03T11:09:30Z",
+      "verified": false,
+      "verification_note": "Confirm court (state vs federal), full defendant list including remaining insurers beyond Aetna/Cigna/UHC, and docket number.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:35:42Z",
+          "type": "added",
+          "note": "Initial entry. Lawsuit filed 2026-06-01 per Arizona AG press release; surfaced by Perplexity confirmation and an X-platform post from Yellow Sheet Report citing state-affairs coverage.",
+          "source": {
+            "name": "Arizona Attorney General press release",
+            "url": null
+          },
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "arizona",
+        "multiplan",
+        "antitrust",
+        "price-fixing",
+        "out-of-network",
+        "kris-mayes",
+        "aetna",
+        "cigna",
+        "unitedhealth"
+      ]
+    },
+    {
+      "id": "pa-2026-06-11-oig-ma-rehab-denials",
+      "date": "2026-06-11",
+      "type": "regulatory",
+      "headline": "Federal investigators find Medicare Advantage plans block rehab care, then reverse denials on appeal",
+      "summary": "STAT News reporters Casey Ross and Bob Herman reported on June 11, 2026 that a federal investigation found Medicare Advantage insurers erect barriers to post-acute rehabilitation care for older adults and frequently reverse those denials once a beneficiary or provider appeals. The deny-then-reverse pattern documented in the federal findings mirrors the allegations at the center of the nH Predict / naviHealth litigation against UnitedHealth. The reporting situates the findings within longstanding OIG scrutiny of inappropriate MA prior-authorization denials for services such as post-acute facility stays and advanced imaging. The underlying federal report and its precise scope were not retrieved in this scan.",
+      "take": "Deny-then-reverse-on-appeal is the operational signature of target-misaligned utilization review: a system optimized to cut spend produces denials it cannot defend on individualized review. Federal findings strengthen the evidentiary base linking Medicare Advantage automated review to access harms, but a curator should confirm whether the report names algorithmic tools specifically.",
+      "sources": [
+        {
+          "name": "Casey Ross and Bob Herman, STAT News",
+          "url": "https://www.statnews.com/2026/06/11/medicare-advantage-oig-report-rehab-care-deny-appeal-reverse/",
+          "type": "reporting"
+        },
+        {
+          "name": "HHS Office of Inspector General (report referenced by STAT; citation unconfirmed)",
+          "url": null,
+          "type": "primary"
+        }
+      ],
+      "first_added": "2026-06-11T11:08:03Z",
+      "last_updated": "2026-06-11T11:08:03Z",
+      "last_checked": "2026-06-11T11:08:03Z",
+      "verified": false,
+      "verification_note": "Confirm the specific HHS OIG report (report number and publication date) underlying STAT's June 11, 2026 article, and whether the findings specifically address algorithmic/AI-driven utilization review or Medicare Advantage denial practices generally. STAT article is behind the STAT+ paywall.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via STAT News health-tech RSS feed.",
+          "source": {
+            "name": "Casey Ross and Bob Herman, STAT News",
+            "url": "https://www.statnews.com/2026/06/11/medicare-advantage-oig-report-rehab-care-deny-appeal-reverse/"
+          },
+          "timestamp": "2026-06-11T11:08:03Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "medicare-advantage",
+        "oig",
+        "rehab-care",
+        "post-acute-care",
+        "appeal-reversal",
+        "prior-authorization"
+      ]
+    }
+  ]
+}

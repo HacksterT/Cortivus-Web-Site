@@ -1,0 +1,6 @@
+{
+  "retired": true,
+  "retired_at": "2026-06-01",
+  "message": "This topic file has been renamed to algorithmic-prior-auth.json. The manifest no longer references this file. Kept on disk for git history continuity.",
+  "moved_to": "topics/algorithmic-prior-auth.json"
+}

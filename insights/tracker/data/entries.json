@@ -1,0 +1,6 @@
+{
+  "deprecated": true,
+  "deprecated_at": "2026-06-01",
+  "message": "This file has been superseded by the manifest at /insights/tracker/data/index.json and per-topic files under /insights/tracker/data/topics/. See AGENT_CONTRACT.md for the data contract. The renderer no longer reads this file.",
+  "replacement": "/insights/tracker/data/index.json"
+}

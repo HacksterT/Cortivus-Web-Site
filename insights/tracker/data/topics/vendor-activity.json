@@ -1,0 +1,6 @@
+{
+  "retired": true,
+  "retired_at": "2026-06-01",
+  "message": "Topic retired during scope narrowing. Vendor activity was a cross-cutting category whose items belonged inside their related system topic anyway (e.g., Nabla → Ambient Listening, NaviHealth → Algorithmic Prior Authorization). The manifest no longer references this file.",
+  "successor_topic": null
+}

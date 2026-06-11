@@ -1,0 +1,496 @@
+{
+  "id": "ambient-listening",
+  "name": "Ambient Listening",
+  "description": "Vendor activity, litigation, consent law, and failure modes in ambient documentation deployments.",
+  "auto_managed": true,
+  "last_run": "2026-06-11T10:06:30Z",
+  "source_list": [
+    {
+      "name": "Holland & Knight Client Alerts",
+      "url": "https://www.hklaw.com/en/insights/publications",
+      "category": "analysis"
+    },
+    {
+      "name": "Becker's Hospital Review - Health IT",
+      "url": "https://www.beckershospitalreview.com/healthcare-information-technology.html",
+      "category": "reporting"
+    },
+    {
+      "name": "STAT News - AI",
+      "url": "https://www.statnews.com/category/artificial-intelligence/",
+      "category": "reporting"
+    },
+    {
+      "name": "Reuters Legal",
+      "url": "https://www.reuters.com/legal/",
+      "category": "reporting"
+    },
+    {
+      "name": "Fisher Phillips Healthcare",
+      "url": "https://www.fisherphillips.com/",
+      "category": "analysis"
+    },
+    {
+      "name": "ABA Health Law Section",
+      "url": "https://www.americanbar.org/groups/health_law/",
+      "category": "analysis"
+    },
+    {
+      "name": "California Legislative Information",
+      "url": "https://leginfo.legislature.ca.gov/",
+      "category": "primary"
+    },
+    {
+      "name": "PACER federal court records",
+      "url": "https://pacer.uscourts.gov/",
+      "category": "primary"
+    }
+  ],
+  "items": [
+    {
+      "id": "amb-2024-10-26-whisper-ap",
+      "date": "2024-10-26",
+      "type": "research",
+      "headline": "AP/ABC News investigation documents Whisper hallucinations in clinical settings",
+      "summary": "Researchers at Cornell, University of Michigan, University of Washington, and Carnegie Mellon documented hallucination rates ranging from roughly 1% of audio snippets to at least one hallucination in 80% of transcripts inspected. Nabla, an ambient product built on Whisper, had over 30,000 clinicians on the platform at the time.",
+      "take": "OpenAI's own documentation warns against Whisper in high-stakes domains. Deployments proceeded anyway. Nabla deletes the source audio after note generation, eliminating the audit trail.",
+      "sources": [
+        {
+          "name": "Burke & Schellmann, Associated Press / ABC News",
+          "url": null,
+          "type": "reporting"
+        },
+        {
+          "name": "Koenecke et al., 'Careless Whisper: Speech-to-Text Hallucination Harms' (arXiv)",
+          "url": "https://arxiv.org/html/2402.08021v2",
+          "type": "research",
+          "date_accessed": "2026-06-02"
+        },
+        {
+          "name": "Cornell News - AI Speech-to-Text Can Hallucinate Violent Language",
+          "url": "https://news.cornell.edu/stories/2024/06/ai-speech-text-can-hallucinate-violent-language",
+          "type": "reporting",
+          "date_accessed": "2026-06-02"
+        },
+        {
+          "name": "ACM FAccT 2024 - Careless Whisper (Koenecke et al.)",
+          "url": "https://dl.acm.org/doi/10.1145/3630106.3658996",
+          "type": "research",
+          "date_accessed": "2026-06-02"
+        }
+      ],
+      "first_added": "2026-06-01T12:00:00Z",
+      "last_updated": "2026-06-02T03:24:53Z",
+      "last_checked": "2026-06-02T03:24:53Z",
+      "verified": false,
+      "verification_note": "Locate primary AP article URL and any peer-reviewed companion publications.",
+      "human_curated": true,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:24:53Z",
+          "type": "source_added",
+          "note": "Located the underlying primary research: Koenecke et al., 'Careless Whisper: Speech-to-Text Hallucination Harms,' published at ACM FAccT 2024 (also on arXiv). The paper analyzed 13,140 English audio clips and found ~1.4% of transcriptions contained hallucinations; 38% of hallucinated outputs included explicit harms (violence, false authority, inaccurate associations). Hallucinations were more frequent for speakers with aphasia and were associated with longer non-vocal durations (pauses, silence). Cornell's press summary explicitly cites the patient-notes/misdiagnosis risk.",
+          "source": {
+            "name": "ACM FAccT 2024 - Careless Whisper (Koenecke et al.)",
+            "url": "https://dl.acm.org/doi/10.1145/3630106.3658996"
+          },
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "whisper",
+        "nabla",
+        "hallucination",
+        "openai"
+      ]
+    },
+    {
+      "id": "amb-2025-sutter-health-filing",
+      "date": "2025",
+      "type": "litigation",
+      "headline": "Washington v. Sutter Health filed in N.D. California",
+      "summary": "Patients allege sensitive medical conversations were captured and transmitted to the Abridge ambient documentation platform without clear prior patient consent. The pleaded theory is state wiretapping, not HIPAA violation.",
+      "take": "HIPAA has no private right of action; state wiretapping statutes do, with statutory damages and class certification potential. This is the door the plaintiffs' bar has chosen.",
+      "sources": [
+        {
+          "name": "Class action complaint, N.D. Cal",
+          "url": null,
+          "type": "primary"
+        },
+        {
+          "name": "Fisher Phillips - New Class Action Targets Healthcare AI Recordings",
+          "url": "https://www.fisherphillips.com/en/insights/insights/new-class-action-targets-healthcare-ai-recordings",
+          "type": "analysis",
+          "date_accessed": "2026-06-02"
+        },
+        {
+          "name": "Alston & Bird Privacy Blog - Your AI Scribe May Be Taking Notes (and Plaintiffs Are Too)",
+          "url": "https://www.alstonprivacy.com/your-ai-scribe-may-be-taking-notes-and-plaintiffs-are-too/",
+          "type": "analysis",
+          "date_accessed": "2026-06-02"
+        },
+        {
+          "name": "HIPAA Journal - Lawsuit: AI Platform Illegally Recorded Patient-Clinician Conversations",
+          "url": "https://www.hipaajournal.com/lawsuit-ai-platform-illegally-recorded-patient-clinician-conversations/",
+          "type": "reporting",
+          "date_accessed": "2026-06-02"
+        }
+      ],
+      "first_added": "2026-06-01T12:00:00Z",
+      "last_updated": "2026-06-09T10:06:00Z",
+      "last_checked": "2026-06-09T10:06:00Z",
+      "verified": false,
+      "verification_note": "Confirm exact filing date, case number, and obtain PACER docket link.",
+      "human_curated": true,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:24:53Z",
+          "type": "development",
+          "note": "Tracked filing date now reported as April 7, 2026 (N.D. Cal.). Coverage describes defendants as Sutter Health, Memorial Health Services Inc., and MemorialCare Medical Foundation, and asserts three statutory theories: CIPA (state all-party consent), the Federal Wiretap Act, and the California Confidentiality of Medical Information Act (CMIA). Case at early stage with no merits rulings. Possible same case as the existing tracker item or a parallel suit; reconciliation pending docket confirmation.",
+          "source": {
+            "name": "Fisher Phillips - New Class Action Targets Healthcare AI Recordings",
+            "url": "https://www.fisherphillips.com/en/insights/insights/new-class-action-targets-healthcare-ai-recordings"
+          },
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "correction",
+          "note": "Source attribution fix: the Fisher Phillips alert cited in the 2026-06-02 entry covers the Sharp HealthCare San Diego case (amb-2024-sharp-class-action), not this filing. The April 7, 2026 N.D. Cal. details (defendants Sutter Health, Memorial Health Services Inc., MemorialCare Medical Foundation; CIPA, Federal Wiretap Act, and CMIA theories) trace to the Alston & Bird privacy blog post already listed in sources. Docket confirmation still pending.",
+          "source": {
+            "name": "Alston & Bird Privacy Blog - Your AI Scribe May Be Taking Notes (and Plaintiffs Are Too)",
+            "url": "https://www.alstonprivacy.com/your-ai-scribe-may-be-taking-notes-and-plaintiffs-are-too/"
+          },
+          "timestamp": "2026-06-04T10:06:54Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "source_added",
+          "note": "Plaintiffs' bar and defense-side analysis continue to treat the N.D. Cal. complaint (Sutter Health, Memorial Health Services, MemorialCare Medical Foundation; Abridge AI Scribe) as a bellwether for CIPA/Federal Wiretap Act/CMIA theories against ambient scribes. Case remains at an early stage with no ruling on the merits; new coverage is secondary analysis, not a docket development.",
+          "source": {
+            "name": "Alston & Bird Privacy Blog",
+            "url": "https://www.alstonprivacy.com/your-ai-scribe-may-be-taking-notes-and-plaintiffs-are-too/"
+          },
+          "timestamp": "2026-06-09T10:06:00Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "sutter",
+        "abridge",
+        "wiretapping",
+        "consent"
+      ]
+    },
+    {
+      "id": "amb-2024-sharp-class-action",
+      "date": "2024-2025",
+      "type": "litigation",
+      "headline": "Sharp HealthCare class action surfaces hallucinated-consent fact pattern",
+      "summary": "The ambient-generated note stated the patient had been informed about the scribe and verbally consented when no such conversation occurred. The model inserted a boilerplate consent script into the chart, signed by a physician.",
+      "take": "Not a transcription error. A falsified record under the physician's signature. The precedent value is high.",
+      "sources": [
+        {
+          "name": "Class action complaint",
+          "url": null,
+          "type": "primary"
+        },
+        {
+          "name": "Fisher Phillips - New Class Action Targets Healthcare AI Recordings",
+          "url": "https://www.fisherphillips.com/en/insights/insights/new-class-action-targets-healthcare-ai-recordings",
+          "type": "analysis"
+        },
+        {
+          "name": "MobiHealthNews - Patient files lawsuit against Sharp HealthCare over ambient AI use",
+          "url": "https://www.mobihealthnews.com/news/patient-files-lawsuit-against-sharp-healthcare-ambient-ai-use",
+          "type": "reporting"
+        },
+        {
+          "name": "Medscape",
+          "url": "https://www.medscape.com/viewarticle/health-system-sued-over-ai-scribe-technology-patient-consent-2026a10001k7",
+          "type": "reporting"
+        },
+        {
+          "name": "HealthExec",
+          "url": "https://healthexec.com/topics/healthcare-management/legal-news/ambient-ai-class-action-ai-implicated-patient-harms",
+          "type": "reporting"
+        },
+        {
+          "name": "HIPAA Journal",
+          "url": "https://www.hipaajournal.com/lawsuit-ai-platform-illegally-recorded-patient-clinician-conversations/",
+          "type": "analysis"
+        }
+      ],
+      "first_added": "2026-06-01T12:00:00Z",
+      "last_updated": "2026-06-11T10:06:30Z",
+      "last_checked": "2026-06-11T10:06:30Z",
+      "verified": false,
+      "verification_note": "Confirm filing jurisdiction, docket number, and obtain primary court link.",
+      "human_curated": true,
+      "update_log": [
+        {
+          "type": "development",
+          "note": "Defense-counsel analysis fills in procedural detail: complaint filed November 26, 2025 in San Diego. Sharp allegedly deployed the ambient vendor in April 2025; claims rest on CIPA all-party consent and CMIA. Complaint alleges vendor retained audio ~30 days and Sharp could not immediately delete on request; putative class may exceed 100,000 patients. Relief sought includes statutory penalties and correction of allegedly inaccurate records. Sharp has not yet responded.",
+          "source": {
+            "name": "Fisher Phillips - New Class Action Targets Healthcare AI Recordings",
+            "url": "https://www.fisherphillips.com/en/insights/insights/new-class-action-targets-healthcare-ai-recordings"
+          },
+          "timestamp": "2026-06-04T10:06:54Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "source_added",
+          "note": "Added direct news coverage (MobiHealthNews) of the Sharp HealthCare San Diego filing. Item previously carried only the unlinked complaint and a defense-firm client alert; this adds an independent reporting source for the same fact pattern (undisclosed ambient recording starting April 2025, CIPA and CMIA theories).",
+          "source": {
+            "name": "MobiHealthNews - Patient files lawsuit against Sharp HealthCare over ambient AI use",
+            "url": "https://www.mobihealthnews.com/news/patient-files-lawsuit-against-sharp-healthcare-ambient-ai-use"
+          },
+          "timestamp": "2026-06-05T10:08:57Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "June 2026 reporting details the filed complaint: a proposed class action in San Diego Superior Court naming Sharp HealthCare and affiliated groups (Sharp Rees-Stealy, SharpCare, Sharp Community Medical Group) over use of Abridge's ambient AI scribe. Core claims are CIPA all-party-consent/wiretapping and CMIA medical-privacy violations for recording clinician-patient conversations and transmitting audio to Abridge's cloud without consent, plus allegations that boilerplate EHR language falsely documented patient consent. Class period covers California patients recorded on or after April 1, 2025; plaintiffs cite a possible class exceeding 100,000 and seek statutory penalties, punitive damages, and injunctive relief. Vendor confirmed as Abridge; audio reportedly retained ~30 days.",
+          "source": {
+            "name": "Fisher Phillips",
+            "url": "https://www.fisherphillips.com/en/insights/insights/new-class-action-targets-healthcare-ai-recordings"
+          },
+          "timestamp": "2026-06-11T10:06:30Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "sharp",
+        "hallucinated-consent",
+        "falsified-record",
+        "california",
+        "cipa",
+        "cmia",
+        "audio-retention",
+        "abridge",
+        "wiretapping"
+      ]
+    },
+    {
+      "id": "amb-2024-heartland-dental-class-action",
+      "date": "2024-2025",
+      "type": "litigation",
+      "headline": "Heartland Dental class action extends consent-capture theory beyond acute care",
+      "summary": "Same wiretapping and consent theory applied to dental practice. Unauthorized recording of patient-clinician interactions alleged to violate two-party and all-party consent statutes.",
+      "take": "The plaintiffs' bar is treating consent-capture as the through-line for ambient AI litigation across care settings, not as an acute-care-only theory.",
+      "sources": [
+        {
+          "name": "Class action complaint",
+          "url": null,
+          "type": "primary"
+        },
+        {
+          "name": "Health Law Attorney Blog - Your AI Scribe Is Listening: Is Your Compliance Program?",
+          "url": "https://www.healthlawattorneyblog.com/your-ai-scribe-is-listening-is-your-compliance-program/",
+          "type": "analysis"
+        }
+      ],
+      "first_added": "2026-06-01T12:00:00Z",
+      "last_updated": "2026-06-08T10:05:32Z",
+      "last_checked": "2026-06-08T10:05:32Z",
+      "verified": false,
+      "verification_note": "Confirm jurisdiction, docket number, and obtain primary court link.",
+      "human_curated": true,
+      "update_log": [
+        {
+          "type": "status_change",
+          "note": "First ruling in the ambient-scribe wiretapping line: a federal court in Illinois dismissed the wiretapping claims in January 2026 under the 'ordinary course of business' exception. The court acknowledged plaintiffs had standing on other grounds and permitted refiling on some claims, leaving non-wiretapping theories alive. This is the first reported judicial test of the consent-capture theory and shows wiretapping counts are vulnerable to the ordinary-course defense even where other privacy claims survive.",
+          "source": {
+            "name": "Health Law Attorney Blog - Your AI Scribe Is Listening: Is Your Compliance Program?",
+            "url": "https://www.healthlawattorneyblog.com/your-ai-scribe-is-listening-is-your-compliance-program/"
+          },
+          "timestamp": "2026-06-08T10:05:32Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "heartland",
+        "dental",
+        "all-party-consent",
+        "ordinary-course-exception",
+        "illinois",
+        "dismissal",
+        "wiretapping"
+      ]
+    },
+    {
+      "id": "amb-2025-jmir-scribe-accuracy",
+      "date": "2025",
+      "type": "research",
+      "headline": "JMIR study finds documentation errors in 70% of notes from two commercial ambient AI scribes",
+      "summary": "Peer-reviewed evaluation (Journal of Medical Internet Research, 2025, e64993) of two commercially available ambient digital scribe products in a simulated clinical setting identified 127 documentation errors across 44 draft notes, with errors present in 31 of 44 notes (70%). Omission was the most common error type, and the authors flag omissions as harder for clinicians to detect on review. The two products differed significantly in error-type distribution (Fisher exact, P = .002).",
+      "take": "Omissions are the failure mode that breaks the 'clinician-in-the-loop' safety story: a reviewer cannot catch a clinically relevant fact that was never written to the chart. A 70% error rate in a simulated environment is the floor, not the ceiling, of what site-specific validation will find.",
+      "sources": [
+        {
+          "name": "JMIR 2025 - Accuracy and Safety of AI-Enabled Scribe Technology",
+          "url": "https://www.jmir.org/2025/1/e64993/",
+          "type": "research",
+          "date_accessed": "2026-06-02"
+        }
+      ],
+      "first_added": "2026-06-02T03:24:53Z",
+      "last_updated": "2026-06-02T03:24:53Z",
+      "last_checked": "2026-06-02T03:24:53Z",
+      "verified": false,
+      "verification_note": "Confirm full author list, study design (number of products, simulated case set composition), and check for any companion editorial.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:24:53Z",
+          "type": "added",
+          "note": "Identified via Perplexity scan on clinical AI scribe accuracy. Primary source is the JMIR 2025 paper.",
+          "source": {
+            "name": "JMIR 2025 - Accuracy and Safety of AI-Enabled Scribe Technology",
+            "url": "https://www.jmir.org/2025/1/e64993/"
+          },
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "accuracy-study",
+        "ambient-scribe",
+        "omission",
+        "jmir",
+        "simulation"
+      ]
+    },
+    {
+      "id": "amb-2024-jmir-dax-no-risk",
+      "date": "2024",
+      "type": "research",
+      "headline": "JMIR single-center evaluation of Nuance DAX reports no measurable risk to patient safety or documentation quality",
+      "summary": "Peer-reviewed single-center observational study of clinicians using Nuance DAX ambient AI documentation reported no detected risk to patient safety, patient experience, or clinical documentation versus baseline, with modest positive trends in provider engagement. Safety was evaluated via high-level proxies rather than incident-level failure analysis, and the study did not characterize hallucination, omission, or rare-event rates.",
+      "take": "'No risk detected' in a single institution with high-level proxies is the floor of what site-specific validation can claim, not the ceiling. Absence of evidence at the population level does not address the deployment-context failure modes that drive harm in individual encounters.",
+      "sources": [
+        {
+          "name": "JMIR (2024) - The Impact of Nuance DAX Ambient Listening AI Documentation (PMC10990544)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10990544/",
+          "type": "research",
+          "date_accessed": "2026-06-02"
+        }
+      ],
+      "first_added": "2026-06-02T10:35:00Z",
+      "last_updated": "2026-06-02T10:35:00Z",
+      "last_checked": "2026-06-02T10:35:00Z",
+      "verified": false,
+      "verification_note": "Confirm full citation (authors, title, JMIR sub-journal, exact DOI), sample size, follow-up duration, and outcome definitions. Source-of-discovery is PMC; locate the primary JMIR record.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T10:35:00Z",
+          "type": "added",
+          "note": "Identified via Perplexity scan on Nuance DAX patient-safety evaluations. Single-center observational evaluation indexed via PMC10990544.",
+          "source": {
+            "name": "JMIR (2024) - The Impact of Nuance DAX Ambient Listening AI Documentation",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10990544/"
+          },
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "dax",
+        "nuance",
+        "deployment-evaluation",
+        "jmir",
+        "no-harm-detected"
+      ]
+    },
+    {
+      "id": "amb-2025-atrium-dax-efficiency",
+      "date": "2025",
+      "type": "research",
+      "headline": "Atrium Health evaluation of DAX Copilot finds no broad efficiency gain; only highest-use group sees ~7% documentation-time reduction",
+      "summary": "Adjusted analysis at Atrium Health found few statistically significant efficiency differences between DAX Copilot users and matched controls beyond note time. High-use clinicians showed approximately a 7% decrease in documentation hours; the system-wide productivity claims did not survive matched-cohort analysis.",
+      "take": "Vendor headlines of '3-5 more patients per day' compress into a ~7% documentation-time reduction confined to the most-engaged users. Aggregate productivity benefits disappear once usage distributes unevenly across a real cohort, which is the deployment-context reality boards should plan for.",
+      "sources": [
+        {
+          "name": "Healthcare IT News - Ambient AI doesn't improve efficiency across the board, study finds",
+          "url": "https://www.healthcareitnews.com/news/ambient-ai-doesnt-improve-efficiency-across-board-study-finds",
+          "type": "reporting",
+          "date_accessed": "2026-06-02"
+        }
+      ],
+      "first_added": "2026-06-02T10:35:00Z",
+      "last_updated": "2026-06-08T10:05:32Z",
+      "last_checked": "2026-06-08T10:05:32Z",
+      "verified": false,
+      "verification_note": "Healthcare IT News is reporting, not primary source. Locate the underlying peer-reviewed publication, confirm authors, cohort sizes, statistical methods, and effect sizes.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T10:35:00Z",
+          "type": "added",
+          "note": "Identified via Perplexity scan summarizing real-world DAX Copilot deployment evaluations. Reporting-tier source; primary peer-reviewed publication still needs to be located.",
+          "source": {
+            "name": "Healthcare IT News - Ambient AI doesn't improve efficiency across the board, study finds",
+            "url": "https://www.healthcareitnews.com/news/ambient-ai-doesnt-improve-efficiency-across-board-study-finds"
+          },
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "Coverage identifies the underlying study's publication venue as NEJM AI (New England Journal of Medicine AI), partially resolving the open verification note on the primary publication. Researchers concluded that 'widespread implementation of DAX in its current form is unlikely to generate appreciable gains' in productivity, with benefits concentrated among high-use clinicians (~7% documentation-hour reduction vs controls).",
+          "source": {
+            "name": "Healthcare IT News - Ambient AI doesn't improve efficiency across the board, study finds",
+            "url": "https://www.healthcareitnews.com/news/ambient-ai-doesnt-improve-efficiency-across-board-study-finds"
+          },
+          "timestamp": "2026-06-08T10:05:32Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "dax-copilot",
+        "atrium",
+        "deployment-evaluation",
+        "efficiency",
+        "productivity",
+        "nejm-ai"
+      ]
+    },
+    {
+      "id": "amb-2026-06-abridge-nurses-rollout",
+      "date": "2026-06-02",
+      "type": "industry",
+      "headline": "Abridge extends ambient documentation to nurses at all health-system clients nationwide",
+      "summary": "Abridge announced that its ambient AI clinical documentation product, previously deployed to physicians, is now generally available for nurses across every existing U.S. health-system customer. The release expands the audio-capture footprint from physician-led visits into nursing workflows on the same vendor stack.",
+      "take": "Extending the capture surface to nursing pushes ambient recording into encounters that are more frequent, more informal, and more likely to involve family or surrogate decision-makers. Health systems that validated consent, audio-retention, and content-quality controls for physician encounters need to re-run that validation for the nursing context before assuming the existing safeguards carry over.",
+      "sources": [
+        {
+          "name": "Healthcare IT News - Abridge releases ambient AI tech for nurses",
+          "url": "https://www.healthcareitnews.com/news/abridge-releases-ambient-ai-tech-nurses",
+          "type": "reporting",
+          "date_accessed": "2026-06-03"
+        }
+      ],
+      "first_added": "2026-06-03T10:06:00Z",
+      "last_updated": "2026-06-03T10:06:00Z",
+      "last_checked": "2026-06-03T10:06:00Z",
+      "verified": false,
+      "verification_note": "Confirm exact announcement date, identify whether all enterprise SKUs are included, and verify scope statement (\"all\" client sites).",
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-03T10:06:00Z",
+          "type": "added",
+          "note": "Initial entry from scan. Source reports nationwide availability of Abridge ambient documentation for nurses at existing health-system clients.",
+          "source": {
+            "name": "Healthcare IT News - Abridge releases ambient AI tech for nurses",
+            "url": "https://www.healthcareitnews.com/news/abridge-releases-ambient-ai-tech-nurses"
+          },
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "abridge",
+        "nurse-documentation",
+        "product-expansion",
+        "consent-surface",
+        "vendor-rollout"
+      ]
+    }
+  ]
+}

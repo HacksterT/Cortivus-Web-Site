@@ -1,0 +1,6 @@
+{
+  "retired": true,
+  "retired_at": "2026-06-01",
+  "message": "Topic retired during scope narrowing to four pilot topics. CDS spans too many disparate failure modes and adoption patterns to track as a single feed. Specific CDS failure cases (e.g., Epic Sepsis Model) may be re-surfaced under Ambient Listening, AI Radiology Second Read, or Dr. AI as appropriate. The manifest no longer references this file.",
+  "successor_topic": null
+}

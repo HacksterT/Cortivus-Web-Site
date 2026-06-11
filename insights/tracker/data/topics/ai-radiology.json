@@ -1,0 +1,630 @@
+{
+  "id": "ai-radiology",
+  "name": "AI Radiology Second Read",
+  "description": "FDA clearances, accuracy challenges, deployment evidence, and adoption trends for AI second-read tools in diagnostic imaging.",
+  "auto_managed": true,
+  "last_run": "2026-06-11T12:09:00Z",
+  "source_list": [
+    {
+      "name": "FDA AI/ML SaMD List",
+      "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices",
+      "category": "primary"
+    },
+    {
+      "name": "Radiology Business",
+      "url": "https://radiologybusiness.com/",
+      "category": "reporting"
+    },
+    {
+      "name": "AuntMinnie",
+      "url": "https://www.auntminnie.com/",
+      "category": "reporting"
+    },
+    {
+      "name": "American College of Radiology AI Resources",
+      "url": "https://www.acr.org/Clinical-Resources/Informatics-and-Big-Data/AI",
+      "category": "analysis"
+    },
+    {
+      "name": "Radiology (RSNA journal)",
+      "url": "https://pubs.rsna.org/journal/radiology",
+      "category": "research"
+    }
+  ],
+  "items": [
+    {
+      "id": "rad-2026-fda-aiml-saamd-growth",
+      "date": "2026",
+      "type": "industry",
+      "headline": "FDA AI/ML SaMD list continues to grow across imaging categories",
+      "summary": "The FDA's AI/ML SaMD list of authorized devices has continued to expand, with imaging applications representing the largest category. Adoption at academic medical centers is increasingly treated as routine for select use cases (intracranial hemorrhage detection, pulmonary embolism flagging, mammography second read).",
+      "take": "FDA clearance is not a substitute for site-specific validation. Clearance covers the device under its labeled use. The institution still owns the question of whether the device performs at expected accuracy in its own patient population.",
+      "sources": [
+        {
+          "name": "FDA AI/ML SaMD List",
+          "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices",
+          "type": "primary"
+        }
+      ],
+      "first_added": "2026-06-01T12:00:00Z",
+      "last_updated": "2026-06-01T12:00:00Z",
+      "last_checked": "2026-06-01T12:00:00Z",
+      "verified": true,
+      "human_curated": true,
+      "update_log": [],
+      "tags": [
+        "fda",
+        "samd",
+        "radiology",
+        "second-read"
+      ]
+    },
+    {
+      "id": "rad-2026-acr-siim-practice-parameter-imaging-ai",
+      "date": "2026",
+      "type": "regulatory",
+      "headline": "ACR Council approves first ACR-SIIM Practice Parameter for Imaging AI; Assess-AI registry framework formalized",
+      "summary": "At the ACR 2026 annual meeting in Washington, DC, the ACR Council approved the first ACR-SIIM Practice Parameter for Imaging Artificial Intelligence, jointly developed with the Society for Imaging Informatics in Medicine. The parameter provides stepwise guidance for AI selection, pre-deployment evaluation, real-world performance monitoring, and continuous quality improvement, and applies across physicians, technologists, medical physicists, informatics/IT, data scientists, and administrators. A companion Journal of the American College of Radiology article details the technical framework for Assess-AI, ACR's AI quality registry for post-deployment surveillance, drift detection, and quality improvement across multiple imaging AI algorithms.",
+      "take": "A practice parameter is the closest thing imaging has to a clinical standard of care. Hospitals running imaging AI without an Assess-AI-equivalent monitoring loop are now operating below an articulated professional standard, and that has medico-legal weight when a missed or wrong call is litigated.",
+      "sources": [
+        {
+          "name": "American College of Radiology (press release)",
+          "url": "https://www.acr.org/News-and-Publications/Media-Center/2026/first-practice-parameter-for-imaging-ai",
+          "type": "primary"
+        },
+        {
+          "name": "ACR Data Science Institute - AI in Your Practice",
+          "url": "https://www.acr.org/Data-Science-and-Informatics/AI-in-Your-Practice",
+          "type": "primary"
+        },
+        {
+          "name": "Radiology Business",
+          "url": "https://radiologybusiness.com/topics/artificial-intelligence/acr-expands-programs-help-radiology-practices-integrate-and-trust-ai",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-02T03:30:00Z",
+      "last_updated": "2026-06-02T03:30:00Z",
+      "last_checked": "2026-06-02T03:30:00Z",
+      "verified": false,
+      "verification_note": null,
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:30:00Z",
+          "type": "added",
+          "note": "Surfaced via Perplexity scan on ACR AI guidance.",
+          "source": {
+            "name": "American College of Radiology (press release)",
+            "url": "https://www.acr.org/News-and-Publications/Media-Center/2026/first-practice-parameter-for-imaging-ai"
+          },
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "acr",
+        "siim",
+        "assess-ai",
+        "practice-parameter",
+        "governance",
+        "monitoring"
+      ]
+    },
+    {
+      "id": "rad-2026-ucla-mammography-external-validation-subgroup",
+      "date": "2026",
+      "type": "research",
+      "headline": "UCLA external validation of ensemble mammography AI: lower AUROC and significant subgroup disparities in Hispanic women and women with prior breast cancer",
+      "summary": "A JAMA Network Open study externally validated an ensemble deep-learning mammography model derived from the DREAM Mammography Challenge on 37,317 exams from 26,817 women in a diverse UCLA screening cohort (2010-2020). Overall AUROC was 0.85 (95% CI 0.84-0.87), materially lower than prior external sites (Kaiser Permanente Washington AUROC 0.90; Karolinska Institute 0.92). When combined with radiologists, sensitivity dropped to 0.596 versus radiologists' 0.850 in women with prior breast cancer, and specificity fell in Hispanic women (0.894 vs 0.926). The authors attribute the gap to model underspecification and argue for population-specific fine-tuning and transparency before clinical adoption.",
+      "take": "An AI tool with a respectable headline AUROC can still systematically harm specific subgroups inside its deployment population. The deployment site, not the developer, is the only party positioned to detect this, and only if it stratifies its own validation by the demographics that match its panel.",
+      "sources": [
+        {
+          "name": "JAMA Network Open (UCLA Medical Imaging Informatics)",
+          "url": "https://mii.ucla.edu/external-validation-of-an-ensemble-model-for-automated",
+          "type": "research"
+        }
+      ],
+      "first_added": "2026-06-02T03:30:00Z",
+      "last_updated": "2026-06-02T03:30:00Z",
+      "last_checked": "2026-06-02T03:30:00Z",
+      "verified": false,
+      "verification_note": "Confirm primary JAMA Network Open citation and publication date before marking verified.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:30:00Z",
+          "type": "added",
+          "note": "Surfaced via Perplexity scan on radiology AI external validation.",
+          "source": {
+            "name": "JAMA Network Open (UCLA Medical Imaging Informatics)",
+            "url": "https://mii.ucla.edu/external-validation-of-an-ensemble-model-for-automated"
+          },
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "mammography",
+        "external-validation",
+        "ucla",
+        "subgroup-bias",
+        "hispanic-women",
+        "prior-cancer"
+      ]
+    },
+    {
+      "id": "rad-2026-aidoc-nvidia-bridge-validation-framework",
+      "date": "2026",
+      "type": "industry",
+      "headline": "Aidoc and NVIDIA launch BRIDGE framework for standardized clinical AI validation, deployment, and monitoring",
+      "summary": "Aidoc and NVIDIA announced the BRIDGE framework as an evidence-driven approach for standardized validation, interoperability, scalable deployment, and continuous monitoring of clinical AI tools across health systems, aligned with NVIDIA's MONAI ecosystem. Aidoc reports its CARE foundation model and aiOS platform are deployed across more than 150 U.S. health systems and 1,600 hospitals worldwide, supporting both Aidoc and third-party models with pre-deployment validation, a model registry with guardrails and rollback, and real-time drift detection.",
+      "take": "Vendor-led standardization frameworks are useful infrastructure but not a substitute for institutional governance. Hospitals should ask which BRIDGE outputs are auditable by the deployment site, which are held inside the vendor, and what the contractual remedy is when site-level monitoring flags drift the vendor disputes.",
+      "sources": [
+        {
+          "name": "Healthcare IT News",
+          "url": "https://www.healthcareitnews.com/news/aidoc-nvidia-intro-new-plan-speed-ai-adoption-healthcare",
+          "type": "reporting"
+        },
+        {
+          "name": "Aidoc",
+          "url": "https://www.aidoc.com/learn/blog/11-things-a-clinical-ai-platform-must-deliver/",
+          "type": "primary"
+        },
+        {
+          "name": "PRNewswire (Aidoc release)",
+          "url": "https://www.prnewswire.com/news-releases/aidoc-releases-bridge-a-new-industry-framework-to-guide-safe-scalable-clinical-ai-deployment-302483550.html",
+          "type": "primary"
+        },
+        {
+          "name": "AuntMinnie (Aidoc releases framework for clinical AI deployment)",
+          "url": "https://www.auntminnie.com/imaging-informatics/artificial-intelligence/news/15748709/aidoc-aidoc-releases-framework-for-clinical-ai-deployment",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-02T03:30:00Z",
+      "last_updated": "2026-06-11T12:09:00Z",
+      "last_checked": "2026-06-11T12:09:00Z",
+      "verified": false,
+      "verification_note": null,
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:30:00Z",
+          "type": "added",
+          "note": "Surfaced via Perplexity scan on Aidoc/Annalise/iCAD/Heuron deployment and validation activity.",
+          "source": {
+            "name": "Healthcare IT News",
+            "url": "https://www.healthcareitnews.com/news/aidoc-nvidia-intro-new-plan-speed-ai-adoption-healthcare"
+          },
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "timestamp": "2026-06-03T12:10:00Z",
+          "type": "development",
+          "note": "Aidoc released BRIDGE publicly as a free, open-source framework at HLTH Europe in Amsterdam. Aidoc now describes BRIDGE as the Blueprint for Resilient Integration and Deployment of Guided Excellence and frames it as an industry-wide guide to safe, scalable clinical AI deployment, codifying validation, integration, monitoring, and operational-readiness criteria from deployments across 1,500+ hospitals.",
+          "source": {
+            "name": "PRNewswire (Aidoc release)",
+            "url": "https://www.prnewswire.com/news-releases/aidoc-releases-bridge-a-new-industry-framework-to-guide-safe-scalable-clinical-ai-deployment-302483550.html"
+          },
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "BRIDGE released as a free, open-source, downloadable framework. Defines 'healthcare-ready' criteria and minimum viable production environment (MVPE) requirements spanning validation protocols, regulatory checkpoints, cost benchmarks, and post-deployment performance monitoring before clinical deployment.",
+          "source": {
+            "name": "PR Newswire - Aidoc",
+            "url": "https://www.prnewswire.com/news-releases/aidoc-releases-bridge-a-new-industry-framework-to-guide-safe-scalable-clinical-ai-deployment-302483550.html"
+          },
+          "timestamp": "2026-06-11T12:09:00Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "aidoc",
+        "nvidia",
+        "bridge",
+        "monai",
+        "validation",
+        "monitoring"
+      ]
+    },
+    {
+      "id": "rad-2026-04-mayo-redmod-pancreatic-cancer-ct",
+      "date": "2026-04",
+      "type": "research",
+      "headline": "Mayo Clinic REDMOD AI detects pancreatic cancer on routine CT a median of ~16 months before clinical diagnosis",
+      "summary": "A multi-institutional validation of Mayo Clinic's REDMOD model, published in Gut in April 2026, reported 73% detection of pancreatic cancer on pre-diagnosis routine CT at a median of approximately 16 months before clinical diagnosis, nearly double radiologists' 39%. Performance was roughly three times better than radiologists on scans more than two years prior to diagnosis. The team is moving toward prospective trials.",
+      "take": "Longitudinal look-back AI is a different deployment context from same-session second read, with a different harm profile: incidental findings on years-old scans, anxiety, downstream work-up cost, and patient consent questions about retrospective re-analysis of prior imaging. Pilots need consent language and a defined work-up pathway in place before the model is allowed to flag historical exams.",
+      "sources": [
+        {
+          "name": "Gut (BMJ journal)",
+          "url": null,
+          "type": "research"
+        },
+        {
+          "name": "Grok summary on X",
+          "url": "https://x.com/grok/status/2061237995001307399",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-02T03:30:00Z",
+      "last_updated": "2026-06-02T03:30:00Z",
+      "last_checked": "2026-06-02T03:30:00Z",
+      "verified": false,
+      "verification_note": "Confirm exact Gut citation (volume/issue/DOI) before marking verified.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:30:00Z",
+          "type": "added",
+          "note": "Surfaced via Grok-X scan on radiology AI second-read validation.",
+          "source": {
+            "name": "Grok summary on X",
+            "url": "https://x.com/grok/status/2061237995001307399"
+          },
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "pancreatic-cancer",
+        "mayo-clinic",
+        "redmod",
+        "ct",
+        "longitudinal",
+        "second-read"
+      ]
+    },
+    {
+      "id": "rad-2025-johns-hopkins-external-validation-degradation",
+      "date": "2025",
+      "type": "research",
+      "headline": "Johns Hopkins review: 81% of deep learning radiology algorithms degrade on external validation",
+      "summary": "A Johns Hopkins review of 86 deep learning radiology algorithms found that 81% showed reduced diagnostic accuracy on external datasets compared to internal data, with 49% showing at least a modest decline and 24% a substantial decline. The authors note that external datasets may over- or under-represent key features and may not reflect the realistic target patient population, contributing to performance shifts.",
+      "take": "Internal-test AUC is a sales document. The procurement question is the gap between internal-test and external-validation performance and whether the vendor will share both. If they will not, assume the worst end of the distribution and price the risk into the contract or pass on the tool.",
+      "sources": [
+        {
+          "name": "Radiology Business (Johns Hopkins review coverage)",
+          "url": "https://radiologybusiness.com/topics/artificial-intelligence/most-imaging-ai-algorithms-perform-unimpressively-external",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-02T03:30:00Z",
+      "last_updated": "2026-06-02T03:30:00Z",
+      "last_checked": "2026-06-02T03:30:00Z",
+      "verified": false,
+      "verification_note": "Confirm primary Johns Hopkins citation and publication year before marking verified.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-02T03:30:00Z",
+          "type": "added",
+          "note": "Surfaced via Perplexity scan on radiology AI external validation across patient populations.",
+          "source": {
+            "name": "Radiology Business (Johns Hopkins review coverage)",
+            "url": "https://radiologybusiness.com/topics/artificial-intelligence/most-imaging-ai-algorithms-perform-unimpressively-external"
+          },
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "external-validation",
+        "generalizability",
+        "johns-hopkins",
+        "performance-drop",
+        "site-validation"
+      ]
+    },
+    {
+      "id": "rad-2026-06-02-philips-elevate-plus-510k",
+      "date": "2026-06-02",
+      "type": "regulatory",
+      "headline": "FDA 510(k) clears Philips Elevate Plus AI upgrade for EPIQ Elite and Affiniti ultrasound, including Koios AI for Bi-RADS/Ti-RADS lesion classification",
+      "summary": "Philips received FDA 510(k) clearance for its Elevate Plus AI upgrade on the EPIQ Elite and Affiniti general-imaging ultrasound platforms. The release bundles multiple AI components under a single clearance: Auto Measure Abdomen (vendor-reported >93% accuracy), claimed up to 30% faster scanning, Koios AI for Bi-RADS and Ti-RADS classification of breast and thyroid lesions, and advanced visualization (XRes Pro+, Super Res MVI Pro). Surfaced via trade-press coverage on X dated June 2, 2026.",
+      "take": "Bundled-vendor clearances ship measurement automation and classification decision support under one 510(k) wrapper, with site-level validation typically deferred to operators. Hospitals should ask Philips for per-component validation data (especially Koios Bi-RADS/Ti-RADS performance on the institution's patient panel), the labeled-indication boundaries, and the Predetermined Change Control plan governing post-market modifications to any AI component.",
+      "sources": [
+        {
+          "name": "X / @MarcJacksonLA",
+          "url": "https://x.com/MarcJacksonLA/status/2061819203775275170",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-03T12:10:00Z",
+      "last_updated": "2026-06-03T12:10:00Z",
+      "last_checked": "2026-06-03T12:10:00Z",
+      "verified": false,
+      "verification_note": "Confirm via FDA 510(k) database K-number and Philips press release before marking verified; current source is a single X post.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "timestamp": "2026-06-03T12:10:00Z",
+          "type": "added",
+          "note": "Surfaced via Grok-X scan on FDA AI imaging clearance in the past 48 hours.",
+          "source": {
+            "name": "X / @MarcJacksonLA",
+            "url": "https://x.com/MarcJacksonLA/status/2061819203775275170"
+          },
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "philips",
+        "elevate-plus",
+        "fda-510k",
+        "ultrasound",
+        "koios-ai",
+        "bi-rads",
+        "ti-rads",
+        "second-read"
+      ]
+    },
+    {
+      "id": "rad-2026-05-13-northwell-aidoc-pe-concordance",
+      "date": "2026-05-13",
+      "type": "research",
+      "headline": "Northwell study of 32,501 real-world CTPAs: Aidoc PE tool 97.8% concordant with radiologists but missed 15% of confirmed PEs",
+      "summary": "A Radiology: Artificial Intelligence study from Northwell Health evaluated a commercial Aidoc pulmonary embolism algorithm on 32,501 CT pulmonary angiograms performed across the health system over 18 months. Overall AI-radiologist agreement was 97.8%, higher for negative exams (98.18%) than positive ones (93.75%). In adjudicated disagreements radiologists were correct in 88.7% of cases, and 15% of confirmed PEs were missed by the AI but caught by radiologists. With AI output available to radiologists, combined sensitivity for PE reached 99.2%.",
+      "take": "This is the deployment-evidence pattern that matters: headline concordance looks excellent, but the discordant cases break heavily toward the radiologist, and a 15% AI miss rate on confirmed PEs rules out autonomous triage-out. The data support AI as a second read with mandatory human overread, and any governance program should be auditing exactly this disagreement structure.",
+      "sources": [
+        {
+          "name": "Harvey L. Neiman Health Policy Institute press release",
+          "url": "https://www.neimanhpi.org/press-releases/ai-for-pulmonary-embolism-detection-matches-radiologists-in-97-8-of-32000-real%E2%80%91world-ct-angiograms/",
+          "type": "reporting",
+          "date_accessed": "2026-06-04"
+        },
+        {
+          "name": "Radiology: Artificial Intelligence (Northwell Health CTPA concordance study)",
+          "url": null,
+          "type": "primary"
+        }
+      ],
+      "first_added": "2026-06-04T12:09:20Z",
+      "last_updated": "2026-06-04T12:09:20Z",
+      "last_checked": "2026-06-04T12:09:20Z",
+      "verified": false,
+      "verification_note": "Confirm the Radiology: Artificial Intelligence citation/DOI and exact publication date; figures here are from the Neiman HPI press release dated 2026-05-13.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity scan (PE/stroke/ICH accuracy query); date and figures verified against Neiman HPI press release.",
+          "source": {
+            "name": "Harvey L. Neiman Health Policy Institute",
+            "url": "https://www.neimanhpi.org/press-releases/ai-for-pulmonary-embolism-detection-matches-radiologists-in-97-8-of-32000-real%E2%80%91world-ct-angiograms/"
+          },
+          "timestamp": "2026-06-04T12:09:20Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "pulmonary-embolism",
+        "aidoc",
+        "external-validation",
+        "real-world-performance",
+        "ctpa",
+        "second-read"
+      ]
+    },
+    {
+      "id": "rad-2026-05-21-jacr-external-validation-five-factors",
+      "date": "2026-05-21",
+      "type": "research",
+      "headline": "JACR review lays out five factors radiology departments must weigh when externally validating AI before clinical deployment",
+      "summary": "A review published online in the Journal of the American College of Radiology (May 21, 2026) outlines five factors radiology departments should evaluate before deploying AI: onsite versus cloud validation, patient privacy, data collection, computational requirements, and scoring protocol. It stresses that validation datasets must reflect the real-world target population with adequate sample sizes and statistical plans to assess subpopulation performance. The authors warn that many FDA-cleared tools show limited generalizability outside their development setting, making local external validation essential before routine clinical use.",
+      "take": "FDA clearance certifies a device, not its behavior in your scanner fleet and case mix. This review turns 'validate locally' into a concrete pre-deployment checklist that maps onto an FMEA-style review.",
+      "sources": [
+        {
+          "name": "AuntMinnie",
+          "url": "https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15671429/5-factors-to-consider-when-validating-radiology-ai",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-08T12:10:32Z",
+      "last_updated": "2026-06-08T12:10:32Z",
+      "last_checked": "2026-06-08T12:10:32Z",
+      "verified": false,
+      "verification_note": "Confirm the primary JACR citation/DOI and exact publication date (reported online May 21, 2026). Summary derived from AuntMinnie reporting; the primary review was not directly retrieved in this scan.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity scan of radiology AI external-validation coverage.",
+          "source": {
+            "name": "AuntMinnie",
+            "url": "https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15671429/5-factors-to-consider-when-validating-radiology-ai"
+          },
+          "timestamp": "2026-06-08T12:10:32Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "external-validation",
+        "jacr",
+        "generalizability",
+        "pre-deployment",
+        "governance",
+        "subgroup-performance"
+      ]
+    },
+    {
+      "id": "rad-2026-06-08-esr-ct-lung-screening-16-tools",
+      "date": "2026-06-08",
+      "type": "research",
+      "headline": "ESR systematic review of 16 CE-marked CT lung-screening AI tools: nodule detection covered, endobronchial and cystic lesions unassessed, evidence mostly retrospective",
+      "summary": "The European Society of Radiology highlighted a systematic evaluation of 16 CE-marked AI tools for CT lung cancer screening, benchmarked against Lung-RADS 2022, BTS, EUPS, and ESTI guidelines. Most tools support solid and subsolid nodule detection, measurement, and growth assessment, but none evaluate endobronchial or cystic lesions. The available evidence base is predominantly retrospective diagnostic-accuracy data rather than prospective clinical-outcome studies. The authors caution that commercial availability does not equal clinical readiness.",
+      "take": "A CE mark certifies a narrow task, not coverage of the full differential; the unassessed endobronchial and cystic categories are exactly where silent misses accumulate. Departments should map each tool's validated scope against their guideline of record before trusting it as a second read.",
+      "sources": [
+        {
+          "name": "ESR Journals (@ESRJournals)",
+          "url": "https://x.com/ESRJournals/status/2063894019575353706",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-09T12:08:35Z",
+      "last_updated": "2026-06-09T12:08:35Z",
+      "last_checked": "2026-06-09T12:08:35Z",
+      "verified": false,
+      "verification_note": "Confirm the underlying ESR journal publication (likely European Radiology or Insights into Imaging), authors, and exact publication date. The X post from the official journal account is the discovery source, not the primary article.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via ESR Journals X post during daily Grok scan.",
+          "source": {
+            "name": "ESR Journals (@ESRJournals)",
+            "url": "https://x.com/ESRJournals/status/2063894019575353706"
+          },
+          "timestamp": "2026-06-09T12:08:35Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "lung-cancer-screening",
+        "ct",
+        "ce-marked",
+        "lung-rads",
+        "systematic-review",
+        "clinical-readiness"
+      ]
+    },
+    {
+      "id": "rad-2026-06-10-subtle-medical-subtlehd-ct-510k",
+      "date": "2026-06-10",
+      "type": "regulatory",
+      "headline": "FDA clears Subtle Medical SubtleHD (CT), extending its AI image-enhancement platform from MRI into low-contrast CT detection",
+      "summary": "Subtle Medical received FDA clearance for SubtleHD (CT) on or around June 10, 2026, expanding its AI-powered image-enhancement technology from MRI into CT. Trade coverage frames the clearance as AI software for improving low-contrast CT detection. The clearance is for image enhancement and reconstruction rather than a diagnostic second-read or detection claim.",
+      "take": "An enhancement-class clearance, not a diagnostic claim. Denoising and low-contrast reconstruction alter the images radiologists actually read, so site validation should confirm the model neither suppresses true findings nor fabricates structure at the operating dose.",
+      "sources": [
+        {
+          "name": "L2P Research Labs (@l2presearch)",
+          "url": "https://x.com/l2presearch/status/2064659239269011491",
+          "type": "reporting"
+        },
+        {
+          "name": "Diagnostic Imaging (@Dx_imaging)",
+          "url": "https://x.com/Dx_imaging/status/2064752415719457143",
+          "type": "reporting"
+        },
+        {
+          "name": "CardiacVascularNews (@CardiacVascNews)",
+          "url": "https://x.com/CardiacVascNews/status/2064737062205464814",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-11T12:09:00Z",
+      "last_updated": "2026-06-11T12:09:00Z",
+      "last_checked": "2026-06-11T12:09:00Z",
+      "verified": false,
+      "verification_note": "Confirm against the official PR Newswire release and the FDA AI-Enabled Medical Device List / 510(k) database. Primary source was referenced via X posts but the direct PR Newswire URL and 510(k) number were not captured in this scan.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Grok/X scan of FDA AI imaging clearances in the past 2 days.",
+          "source": {
+            "name": "L2P Research Labs (@l2presearch)",
+            "url": "https://x.com/l2presearch/status/2064659239269011491"
+          },
+          "timestamp": "2026-06-11T12:09:00Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "subtle-medical",
+        "subtlehd",
+        "fda-clearance",
+        "ct",
+        "image-enhancement"
+      ]
+    },
+    {
+      "id": "rad-2026-06-mammography-ai-second-reader-lancet-dh",
+      "date": "2026-06",
+      "type": "research",
+      "headline": "Lancet Digital Health: AI as independent second reader in population-based mammography screening matches double human reading",
+      "summary": "A population-based study reported in The Lancet Digital Health evaluated AI (Transpara) as an independent second reader within double-reading breast cancer screening across more than 42,000 mammograms in the Netherlands. The authors conclude AI used as the second reader detects clinically relevant cancers comparable to two human readers, with potential to replace the second human reader and reduce workload. A one-human-reader-plus-AI configuration detected more cancers than conventional double reading, including additional interval and future-detected cancers, but raised the recall rate from 2.9% to 5.0%. The benefit appeared consistent across breast density categories.",
+      "take": "Replacing the second human reader is the workload prize health systems want, but the recall jump from 2.9 to 5.0 percent is the cost line leaders must price in. The detection gain is real; the added false-positive and downstream-workup burden is the deployment risk.",
+      "sources": [
+        {
+          "name": "The Lancet Digital Health",
+          "url": "https://www.thelancet.com/journals/landig/article/PIIS2589-7500(25)00064-0/fulltext",
+          "type": "research"
+        },
+        {
+          "name": "AuntMinnie - Women's Imaging",
+          "url": "https://www.auntminnie.com/clinical-news/womens-imaging/article/15752941/ai-shows-promise-as-second-reader-in-breast-cancer-screening",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-11T12:09:00Z",
+      "last_updated": "2026-06-11T12:09:00Z",
+      "last_checked": "2026-06-11T12:09:00Z",
+      "verified": false,
+      "verification_note": "AuntMinnie coverage is dated June 2026, but the Lancet Digital Health DOI prefix (S2589-7500(25)) suggests a 2025 publication. Confirm the actual publication date before promotion; this may be recent coverage of an earlier study rather than a new in-window publication.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity scan of AI mammography second-read studies in the past 2 days.",
+          "source": {
+            "name": "AuntMinnie - Women's Imaging",
+            "url": "https://www.auntminnie.com/clinical-news/womens-imaging/article/15752941/ai-shows-promise-as-second-reader-in-breast-cancer-screening"
+          },
+          "timestamp": "2026-06-11T12:09:00Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "mammography",
+        "transpara",
+        "second-reader",
+        "screening",
+        "breast-cancer",
+        "workload"
+      ]
+    },
+    {
+      "id": "rad-2026-mit-radiology-ai-demographic-fairness-gaps",
+      "date": "2026-06",
+      "type": "research",
+      "headline": "Coverage resurfaces MIT work: high-accuracy radiology AI shows demographic fairness gaps that debiasing fails to fix on external data",
+      "summary": "Trade coverage summarized MIT-led work showing that radiology AI models with high overall diagnostic accuracy can have substantial performance gaps across demographic groups (race, sex) when applied outside their development environment. Models most accurate at predicting demographic attributes (e.g., race from chest X-rays) had the largest fairness gaps, implying reliance on demographic shortcuts. Debiasing methods improved fairness only within the same dataset; gaps reappeared in external hospital populations, underscoring the need for site-specific evaluation on the local patient population.",
+      "take": "High aggregate AUROC hides who the model fails. That debiasing held only in-distribution and collapsed on external populations is the core argument for local, subgroup-stratified validation before deployment.",
+      "sources": [
+        {
+          "name": "Axis Imaging News",
+          "url": "https://axisimagingnews.com/market-trends/cloud-computing/machine-learning-ai/radiology-ai-models-show-diagnostic-discrepancies-across-groups",
+          "type": "reporting"
+        },
+        {
+          "name": "AllScience - Five Minute Paper",
+          "url": "https://allscience.substack.com/p/five-minute-paper-validating-radiology",
+          "type": "analysis"
+        }
+      ],
+      "first_added": "2026-06-11T12:09:00Z",
+      "last_updated": "2026-06-11T12:09:00Z",
+      "last_checked": "2026-06-11T12:09:00Z",
+      "verified": false,
+      "verification_note": "Appears to be trade-press re-coverage of prior MIT demographic-shortcuts work rather than a new in-window primary study. Confirm whether a new publication underlies this coverage before promotion; thematically overlaps the existing UCLA subgroup-disparity item.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity scan of radiology AI bias / subpopulation underperformance in the past 2 days.",
+          "source": {
+            "name": "Axis Imaging News",
+            "url": "https://axisimagingnews.com/market-trends/cloud-computing/machine-learning-ai/radiology-ai-models-show-diagnostic-discrepancies-across-groups"
+          },
+          "timestamp": "2026-06-11T12:09:00Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "fairness",
+        "demographic-bias",
+        "mit",
+        "external-validation",
+        "demographic-shortcuts"
+      ]
+    }
+  ]
+}

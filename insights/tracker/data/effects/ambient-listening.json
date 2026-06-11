@@ -1,0 +1,344 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "source": "cure8/ambient-listening-db",
+    "scope": "book",
+    "book_id": "ambient-listening-db",
+    "book_name": "Ambient Listening",
+    "generated": "2026-06-10T23:15:41.204722+00:00",
+    "workflow_count": 2,
+    "source_count": 2
+  },
+  "concepts": [
+    {
+      "concept_id": 1,
+      "slug": "hallucination-in-ai-output",
+      "name": "Hallucination in AI output",
+      "description": "AI-generated content not supported by the underlying source signal.",
+      "polarity": "negative",
+      "parent_concept_id": null,
+      "workflow_count": 1,
+      "evidence_count": 1,
+      "evidence_by_direction": {
+        "supports": 1,
+        "refutes": 0,
+        "mixed": 0
+      },
+      "magnitude_distribution": {
+        "low": 1,
+        "moderate": 0,
+        "high": 0,
+        "unquantified": 0
+      },
+      "risk_scores": [],
+      "enablers": [
+        "LLM summarization without grounding constraints introduces fabrication risk, particularly when the source transcript is ambiguous or sparse."
+      ],
+      "interventions": [
+        "Require human review and editing of all AI-generated notes before delivery to recipients; build review step into the workflow as mandatory, not optional."
+      ],
+      "discussion_prompts": [],
+      "evidence_refs": [
+        {
+          "ref_id": 8,
+          "source_title": "Ambient AI Scribes to Create Educational Feedback Notes for Medical Students: Randomized Trial",
+          "source_date": "2026-05",
+          "study_design": "rct",
+          "magnitude_ordinal": "low",
+          "direction": "supports",
+          "claim_strength": "demonstrated",
+          "extracted_quote": "Review of 117 AI-generated feedback elements showed a 1.7% (n=2) hallucination rate, with most errors corrected during editing."
+        }
+      ]
+    },
+    {
+      "concept_id": 2,
+      "slug": "mischaracterization-in-ai-output",
+      "name": "Mischaracterization in AI output",
+      "description": "AI-generated content that misrepresents the source.",
+      "polarity": "negative",
+      "parent_concept_id": null,
+      "workflow_count": 1,
+      "evidence_count": 1,
+      "evidence_by_direction": {
+        "supports": 1,
+        "refutes": 0,
+        "mixed": 0
+      },
+      "magnitude_distribution": {
+        "low": 1,
+        "moderate": 0,
+        "high": 0,
+        "unquantified": 0
+      },
+      "risk_scores": [],
+      "enablers": [
+        "LLM tendency to smooth or generalize specific clinical observations into plausible-sounding but imprecise language."
+      ],
+      "interventions": [
+        "Train users to critically read AI-generated summaries against source material rather than accepting plausible-sounding content at face value."
+      ],
+      "discussion_prompts": [],
+      "evidence_refs": [
+        {
+          "ref_id": 9,
+          "source_title": "Ambient AI Scribes to Create Educational Feedback Notes for Medical Students: Randomized Trial",
+          "source_date": "2026-05",
+          "study_design": "rct",
+          "magnitude_ordinal": "low",
+          "direction": "supports",
+          "claim_strength": "demonstrated",
+          "extracted_quote": "Review of 117 AI-generated feedback elements showed a 6.8% (n=8) mischaracterization rate."
+        }
+      ]
+    },
+    {
+      "concept_id": 3,
+      "slug": "reduced-documentation-burden",
+      "name": "Reduced documentation burden",
+      "description": "Net reduction in clinician/educator effort to produce required documentation.",
+      "polarity": "positive",
+      "parent_concept_id": null,
+      "workflow_count": 2,
+      "evidence_count": 2,
+      "evidence_by_direction": {
+        "supports": 2,
+        "refutes": 0,
+        "mixed": 0
+      },
+      "magnitude_distribution": {
+        "low": 0,
+        "moderate": 2,
+        "high": 0,
+        "unquantified": 0
+      },
+      "risk_scores": [],
+      "enablers": [],
+      "interventions": [],
+      "discussion_prompts": [],
+      "evidence_refs": [
+        {
+          "ref_id": 1,
+          "source_title": "The Regional Implementation of an Electronic Health Record-Integrated Ambient Scribe in Primary and Secondary Care in England",
+          "source_date": "2026-05",
+          "study_design": "qualitative",
+          "magnitude_ordinal": "moderate",
+          "direction": "supports",
+          "claim_strength": "observed",
+          "extracted_quote": "Strong organizational drivers to improve efficiency, coupled with the technology's potential to help address clinician burnout, are accelerating interest and adoption."
+        },
+        {
+          "ref_id": 6,
+          "source_title": "Ambient AI Scribes to Create Educational Feedback Notes for Medical Students: Randomized Trial",
+          "source_date": "2026-05",
+          "study_design": "rct",
+          "magnitude_ordinal": "moderate",
+          "direction": "supports",
+          "claim_strength": "demonstrated",
+          "extracted_quote": "An ambient AI scribe-assisted workflow improved the quality of written narrative feedback with no observed increase in instructor effort compared to human-only documentation."
+        }
+      ]
+    },
+    {
+      "concept_id": 4,
+      "slug": "improved-attention-to-counterparty",
+      "name": "Improved attention to counterparty",
+      "description": "Improved engagement with patient, learner, or other party during the encounter.",
+      "polarity": "positive",
+      "parent_concept_id": null,
+      "workflow_count": 1,
+      "evidence_count": 1,
+      "evidence_by_direction": {
+        "supports": 1,
+        "refutes": 0,
+        "mixed": 0
+      },
+      "magnitude_distribution": {
+        "low": 0,
+        "moderate": 1,
+        "high": 0,
+        "unquantified": 0
+      },
+      "risk_scores": [],
+      "enablers": [],
+      "interventions": [],
+      "discussion_prompts": [],
+      "evidence_refs": [
+        {
+          "ref_id": 2,
+          "source_title": "The Regional Implementation of an Electronic Health Record-Integrated Ambient Scribe in Primary and Secondary Care in England",
+          "source_date": "2026-05",
+          "study_design": "qualitative",
+          "magnitude_ordinal": "moderate",
+          "direction": "supports",
+          "claim_strength": "observed",
+          "extracted_quote": "Automated note-taking often improved patient interaction."
+        }
+      ]
+    },
+    {
+      "concept_id": 5,
+      "slug": "shift-in-communication-style",
+      "name": "Shift in communication style",
+      "description": "Change in how participants speak during the encounter to accommodate or exploit the technology.",
+      "polarity": "bidirectional",
+      "parent_concept_id": null,
+      "workflow_count": 1,
+      "evidence_count": 1,
+      "evidence_by_direction": {
+        "supports": 1,
+        "refutes": 0,
+        "mixed": 0
+      },
+      "magnitude_distribution": {
+        "low": 0,
+        "moderate": 1,
+        "high": 0,
+        "unquantified": 0
+      },
+      "risk_scores": [],
+      "enablers": [],
+      "interventions": [],
+      "discussion_prompts": [],
+      "evidence_refs": [
+        {
+          "ref_id": 5,
+          "source_title": "The Regional Implementation of an Electronic Health Record-Integrated Ambient Scribe in Primary and Secondary Care in England",
+          "source_date": "2026-05",
+          "study_design": "qualitative",
+          "magnitude_ordinal": "moderate",
+          "direction": "supports",
+          "claim_strength": "observed",
+          "extracted_quote": "Automated note-taking often improved patient interaction but required clinicians to adjust how they spoke to ensure the technology captured their reasoning."
+        }
+      ]
+    },
+    {
+      "concept_id": 6,
+      "slug": "integration-burden",
+      "name": "Integration burden",
+      "description": "Effort and cost incurred to fit the technology into existing systems and workflows.",
+      "polarity": "negative",
+      "parent_concept_id": null,
+      "workflow_count": 2,
+      "evidence_count": 2,
+      "evidence_by_direction": {
+        "supports": 2,
+        "refutes": 0,
+        "mixed": 0
+      },
+      "magnitude_distribution": {
+        "low": 0,
+        "moderate": 1,
+        "high": 1,
+        "unquantified": 0
+      },
+      "risk_scores": [],
+      "enablers": [
+        "Proprietary vendor systems with limited EHR integration APIs force organizations to choose between ease of adoption (stand-alone) and long-term efficiency (integrated)."
+      ],
+      "interventions": [
+        "Carefully evaluate stand-alone vs. EHR-integrated deployment paths before procurement, weighting long-term efficiency and safety against adoption ease."
+      ],
+      "discussion_prompts": [],
+      "evidence_refs": [
+        {
+          "ref_id": 3,
+          "source_title": "The Regional Implementation of an Electronic Health Record-Integrated Ambient Scribe in Primary and Secondary Care in England",
+          "source_date": "2026-05",
+          "study_design": "qualitative",
+          "magnitude_ordinal": "high",
+          "direction": "supports",
+          "claim_strength": "observed",
+          "extracted_quote": "Stand-alone systems were easier to adopt but offered limited long-term benefits, while integrated systems required greater effort and standardization, yet promised improved efficiency and safety."
+        },
+        {
+          "ref_id": 10,
+          "source_title": "Ambient AI Scribes to Create Educational Feedback Notes for Medical Students: Randomized Trial",
+          "source_date": "2026-05",
+          "study_design": "rct",
+          "magnitude_ordinal": "moderate",
+          "direction": "supports",
+          "claim_strength": "demonstrated",
+          "extracted_quote": "Task load was high, and usability was marginal in both the control and intervention groups, with no significant differences (P=.31 and P=.40, respectively)."
+        }
+      ]
+    },
+    {
+      "concept_id": 7,
+      "slug": "template-rigidity",
+      "name": "Template rigidity",
+      "description": "Restrictiveness imposed by standardized or vendor-controlled templates.",
+      "polarity": "negative",
+      "parent_concept_id": null,
+      "workflow_count": 1,
+      "evidence_count": 1,
+      "evidence_by_direction": {
+        "supports": 1,
+        "refutes": 0,
+        "mixed": 0
+      },
+      "magnitude_distribution": {
+        "low": 0,
+        "moderate": 1,
+        "high": 0,
+        "unquantified": 0
+      },
+      "risk_scores": [],
+      "enablers": [
+        "Differences in documentation format and workflow between general practice and secondary care complicate template design, defaulting to conservative generic output."
+      ],
+      "interventions": [],
+      "discussion_prompts": [],
+      "evidence_refs": [
+        {
+          "ref_id": 4,
+          "source_title": "The Regional Implementation of an Electronic Health Record-Integrated Ambient Scribe in Primary and Secondary Care in England",
+          "source_date": "2026-05",
+          "study_design": "qualitative",
+          "magnitude_ordinal": "moderate",
+          "direction": "supports",
+          "claim_strength": "observed",
+          "extracted_quote": "Outputs were sometimes generic, reinforcing defensive documentation and reducing personal tone or contextual recall."
+        }
+      ]
+    },
+    {
+      "concept_id": 8,
+      "slug": "improved-output-quality",
+      "name": "Improved Output Quality",
+      "description": "AI-assisted workflows produce written artifacts of measurably higher quality than human-only approaches, as assessed by structured scoring instruments or expert review. Applies across clinical documentation, educational feedback, and other AI-mediated writing tasks.",
+      "polarity": "positive",
+      "parent_concept_id": null,
+      "workflow_count": 1,
+      "evidence_count": 1,
+      "evidence_by_direction": {
+        "supports": 1,
+        "refutes": 0,
+        "mixed": 0
+      },
+      "magnitude_distribution": {
+        "low": 0,
+        "moderate": 0,
+        "high": 1,
+        "unquantified": 0
+      },
+      "risk_scores": [],
+      "enablers": [],
+      "interventions": [],
+      "discussion_prompts": [],
+      "evidence_refs": [
+        {
+          "ref_id": 7,
+          "source_title": "Ambient AI Scribes to Create Educational Feedback Notes for Medical Students: Randomized Trial",
+          "source_date": "2026-05",
+          "study_design": "rct",
+          "magnitude_ordinal": "high",
+          "direction": "supports",
+          "claim_strength": "demonstrated",
+          "extracted_quote": "EFeCT scores on the scale from 0 to 5 were higher for human-edited AI narratives (median 3.00, IQR 2.00-4.00) than for human-only narratives (median 2.00, IQR 1.75-3.00; P<.001)."
+        }
+      ]
+    }
+  ]
+}
