@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inside Cure8 | Cortivus AI Safety Hub</title>
-    <meta name="description" content="How Cure8, an origin-aware knowledge curation engine for AI agents, spends intelligence once at write time and keeps runtime retrieval dumb, fast, and deterministic. And why that makes it different from conventional memory systems.">
+    <meta name="description" content="How Cure8, an origin-aware knowledge curation engine, powers the Cortivus clinical AI News Feed and Signal -- from scanner ingestion through human review to structured evidence. And why it is built the opposite way from conventional memory systems.">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" href="/images/logo.png">
     <link rel="stylesheet" href="/styles.css">
@@ -25,8 +25,8 @@
         <div class="container article-hero-container">
             <div class="article-eyebrow"><i class="fas fa-layer-group"></i> Technical Brief / Cortivus AI Safety Hub</div>
             <h1 class="article-title">Inside Cure8</h1>
-            <h2 class="article-subtitle">How an origin-aware curation engine turns research into knowledge an agent can actually use.</h2>
-            <p class="article-tagline">A walk through the information flow underneath our agent infrastructure, and why it is built the opposite way from most memory systems.</p>
+            <h2 class="article-subtitle">How an origin-aware curation engine turns research, current intelligence, and clinical evidence into knowledge an agent -- or a clinician -- can actually use.</h2>
+            <p class="article-tagline">A walk through the information flow underneath our agent infrastructure: from automated scanning and human review to structured evidence and published feeds -- and why the design runs against the grain of most memory systems.</p>
             <div class="article-meta">
                 <span><i class="fas fa-user"></i> Troy Sybert, MD, MPH</span>
                 <span><i class="fas fa-calendar"></i> June 2026</span>
@@ -38,7 +38,7 @@
     <!-- Article Body -->
     <article class="article-body">
 
-        <p class="article-lede">Cure8 is the knowledge layer underneath our agent work. Its job is narrow and unglamorous: take what an agent or a person has learned and turn it into something a future agent can load cheaply, on demand, without re-deriving it. This brief walks through how information moves through the system, from three ingestion sources to a curated book an agent can read, and then explains why the design runs against the grain of how most memory systems are built.</p>
+        <p class="article-lede">Cure8 is the knowledge layer underneath our agent work. It takes what an agent or a person has learned and turns it into something a future agent can load cheaply, on demand, without re-deriving it. It also maintains a structured intelligence registry -- a curated feed of current research, litigation, and regulatory developments, and an evidence graph that powers the clinical AI signal monitoring at the core of the Cortivus platform. This brief walks through how information moves through the system, from three ingestion sources to a curated book or a published feed, and explains why the design runs against the grain of how most memory systems are built.</p>
 
         <p>The constraint that shapes everything is not how large a model's context window is. It is how many tokens the system can afford to load at the moment of a call, and how much of that load is signal rather than noise. Larger windows have not fixed this. They have raised the ceiling for waste. The cost curve still punishes loading more than the call needs, and irrelevant context still degrades the answer.</p>
 
@@ -170,7 +170,7 @@
             <div class="c8-stage c8-reveal">
                 <div class="c8-stage-num"><i class="fas fa-magnifying-glass"></i> Source A</div>
                 <h3>Agent research</h3>
-                <p>An agent does upstream work autonomously: fans out across sources, fetches and adversarially verifies claims, and synthesizes findings into working material. This is the automated ingestion path.</p>
+                <p>An agent does upstream work autonomously: fans out across sources, fetches and evaluates claims, and delivers scored, summarized findings. In practice this includes the intelligence scanner that monitors clinical AI litigation filings, published research, industry news, and regulatory guidance -- scoring each item and forwarding it to Cure8 for human review.</p>
             </div>
             <div class="c8-stage c8-reveal">
                 <div class="c8-stage-num"><i class="fas fa-folder-tree"></i> Source B</div>
@@ -197,6 +197,37 @@
         <p>The curated entity lands in a <em>book</em>: an isolated collection scoped by token volume rather than by topic. Books never reference each other. Cross-book relationships, when they matter, are resolved at runtime by the model and the human, not encoded as a synthetic graph that has to be maintained.</p>
 
         <p>How a book is physically materialized depends on how it will be consumed. A book meant for human reading can be rendered as a browsable wiki. A book meant for agent retrieval is better held as structured records in Cure8's store and served entity-by-entity, so an agent browses a terse index and pulls only the one or two entries it needs. The same curated content, two materializations, chosen by consumer and by size rather than by default.</p>
+
+        <h2>Curation in practice: two lanes, one reviewer</h2>
+
+        <p>The abstract principle of spending intelligence at write time becomes concrete when tracking a fast-moving domain like clinical AI. A scanner agent monitors relevant sources continuously -- litigation filings, published research, industry news, regulatory guidance -- scores each item for relevance, and delivers it to Cure8 as a <em>proposed</em> item. Nothing is published automatically. A relevance score is a starting point for human judgment, not a substitute for it.</p>
+
+        <p>A human reviewer opens the Work tab, sees the proposed queue sorted by score, and routes each item to exactly one lane:</p>
+
+        <div class="c8-stages c8-reveal" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; margin: 1.75rem 0 0.5rem;">
+            <div class="c8-stage">
+                <div class="c8-stage-num"><i class="fas fa-rss"></i> Lane 1</div>
+                <h3>News Feed</h3>
+                <p>General-audience intelligence: a curated stream of what is happening in the clinical AI space. The reviewer can edit editorial commentary before approving, and approved items sit queued until an explicit publish step pushes them to the feed endpoint.</p>
+            </div>
+            <div class="c8-stage">
+                <div class="c8-stage-num"><i class="fas fa-chart-line"></i> Lane 2</div>
+                <h3>The Signal</h3>
+                <p>Structured evidence that updates an effect mode graph for a clinical AI topic. Routing an item here triggers a second LLM call and an evidence promotion form before anything is committed. See the section below.</p>
+            </div>
+        </div>
+
+        <p>The two lanes are mutually exclusive by design. An item approved for the News Feed is a current-events entry. An item approved for The Signal becomes a structured evidence record that updates the effect graph. Conflating the two would mean losing the structure that makes The Signal useful for tracking how clinical evidence around a topic accumulates and shifts over time.</p>
+
+        <h2>The AI assist in the evidence lane</h2>
+
+        <p>When a reviewer routes an item to The Signal, Cure8 fires a second LLM call before showing the promotion form. The model reads the item's headline, summary, key findings, and signal concept hints extracted during scanning, then scans the existing effect mode graph for the topic and proposes connections: which modes this item provides evidence for, what direction and magnitude the evidence suggests, and what the most relevant quote is. Where no existing mode matches semantically, it proposes a new one with a draft name and polarity.</p>
+
+        <p>The result lands in a pre-filled promotion form. Each proposed connection is labeled MATCHED (the model found an existing mode in the graph) or NEW (a proposed addition). The reviewer edits name, polarity, contribution type, and evidence strength for each connection, removes any that do not hold up, and confirms. The model does first-pass pattern matching at scale; the human decides what the evidence actually says and whether it is strong enough to stand in the graph.</p>
+
+        <blockquote class="article-pullquote">The model finds the patterns. The human decides what is true.</blockquote>
+
+        <p>Publishing is a separate, explicit step for both lanes. Approved items sit in their respective queues until the reviewer triggers a publish. The News Feed JSON and the Signal effects JSON are written to Cortivus platform endpoints on demand. Separating approval from publication gives the reviewer time to batch, review, and adjust before anything reaches consumers.</p>
 
         <h2>Two update contracts</h2>
 
@@ -273,7 +304,7 @@
 
         <div class="article-cta-box">
             <h3>Where this fits</h3>
-            <p style="margin-bottom: 0;">Cure8 is the curation layer that keeps our agents grounded in current, project-specific knowledge instead of stale training data or noisy retrieval. It is part of the same discipline behind the <a href="/safe-ai/">SAFE AI framework</a>: spend the rigor up front, keep the system you have to trust at runtime simple enough to actually trust.</p>
+            <p style="margin-bottom: 0;">Cure8 is the curation layer that keeps our agents grounded in current, project-specific knowledge -- and the engine behind the clinical AI News Feed and Signal monitoring on the Cortivus platform. A scanner surfaces the intelligence; a human reviewer routes and approves it; AI assists at the evidence promotion step; explicit publish triggers control what reaches consumers. It is part of the same discipline behind the <a href="/safe-ai/">SAFE AI framework</a>: spend the rigor up front, keep the system you have to trust at runtime simple enough to actually trust.</p>
         </div>
 
         <p style="text-align:center; margin-top: 2.5rem;">
