@@ -38,15 +38,15 @@
     <!-- Article Body -->
     <article class="article-body">
 
-        <p class="article-lede">Cure8 is the knowledge layer underneath our agent work. It takes what an agent or a person has learned and turns it into something a future agent can load cheaply, on demand, without re-deriving it. It also maintains a structured intelligence registry -- a curated feed of current research, litigation, and regulatory developments, and an evidence graph that powers the clinical AI signal monitoring at the core of the Cortivus platform. This brief walks through how information moves through the system, from three ingestion sources to a curated book or a published feed, and explains why the design runs against the grain of how most memory systems are built.</p>
+        <p class="article-lede">Cure8 is the knowledge layer underneath our agent work. It takes what an agent or a person has learned and turns it into something a future agent can load cheaply, on demand, without re-deriving it. It also maintains a structured intelligence registry -- a curated feed of current research, litigation, and regulatory developments, and an evidence graph that powers the clinical AI signal monitoring at the core of the Cortivus platform. This brief walks through how information moves through the system, from two independent sources to a curated book or a published feed, and explains why the design runs against the grain of how most memory systems are built.</p>
 
-        <p>The constraint that shapes everything is not how large a model's context window is. It is how many tokens the system can afford to load at the moment of a call, and how much of that load is signal rather than noise. Larger windows have not fixed this. They have raised the ceiling for waste. The cost curve still punishes loading more than the call needs, and irrelevant context still degrades the answer.</p>
+        <p>The defining constraint is not the size of a model's context window. The binding question is how many tokens the system can afford to load at the moment of a call, and how much of that load is signal rather than noise. Larger windows have not resolved this. They have raised the ceiling for waste. The cost curve still punishes loading more than the call needs, and irrelevant context still degrades the answer.</p>
 
         <p>Most memory systems respond to that constraint by dumping everything into a vector store and doing the hard work at retrieval time: chunking, embedding, scoring, reranking, fusion. Cure8 inverts it. The intelligence is spent <strong style="color: var(--primary-color);">once, when knowledge is written</strong>, distilling each source into a small, high-signal unit. At runtime the agent simply loads the unit it needs. There is no reranking gauntlet on the critical path of every request.</p>
 
         <!-- FIGURE: hub-and-spoke flow -->
         <figure class="article-figure c8-figure">
-            <svg class="c8-flow-svg" viewBox="0 0 1000 470" role="img" aria-label="Cure8 information flow: three ingestion sources converge on the Cure8 engine in a hub-and-spoke pattern, producing a knowledge book that agents consume at runtime.">
+            <svg class="c8-flow-svg" viewBox="0 0 1000 470" role="img" aria-label="Cure8 information flow: two independent sources converge on the Cure8 engine in a hub-and-spoke pattern, producing a knowledge book that agents consume at runtime.">
                 <defs>
                     <linearGradient id="c8grad" x1="0" y1="0" x2="1" y2="0">
                         <stop offset="0" stop-color="#00f5ff"/>
@@ -160,7 +160,7 @@
             <div class="c8-stage c8-reveal">
                 <div class="c8-stage-num"><i class="fas fa-magnifying-glass"></i> Source A</div>
                 <h3>Agent research</h3>
-                <p>An agent does upstream work autonomously: fans out across sources, fetches and evaluates claims, and delivers scored, summarized findings. In practice this includes the intelligence scanner that monitors clinical AI litigation filings, published research, industry news, and regulatory guidance -- scoring each item and forwarding it to Cure8 for human review.</p>
+                <p>An agent does upstream work autonomously: fans out across sources, fetches and evaluates claims, and delivers scored, summarized findings. In practice, this includes the intelligence scanner that monitors clinical AI litigation filings, published research, industry news, and regulatory guidance -- scoring each item and forwarding it to Cure8 for human review.</p>
             </div>
             <div class="c8-stage c8-reveal">
                 <div class="c8-stage-num"><i class="fas fa-user-pen"></i> Source B</div>
@@ -173,15 +173,15 @@
 
         <h2>The engine: one intelligent step in a deterministic pipeline</h2>
 
-        <p>Inside the hub, the work splits cleanly into two kinds. The first is bookkeeping, and it is done deterministically. The curator scans its source list, compares file modification times, and hashes source content. Anything whose hash is unchanged is skipped entirely. No model is consulted about what is stale or what has changed; that decision is timestamp and hash arithmetic, and it is reproducible to the bit.</p>
+        <p>Inside the hub, the work splits cleanly into two kinds. The first is bookkeeping, and it is done deterministically. The curator scans its source list, compares modification timestamps, and hashes source content. Anything whose hash is unchanged is skipped entirely. No model is consulted about what is stale or what has changed; that decision reduces to timestamp comparison and hash arithmetic -- reproducible to the bit.</p>
 
-        <p>The second kind is genuine compression under judgment, and it is the only place a model is used. For each changed source, exactly one LLM call distills the material into an aggressively compressed entity, tagged with high-specificity triggers and keywords so it can be found later. One call per changed source, never a swarm. The test the system applies everywhere is simple: does this work involve judgment under uncertainty? If yes, a model does it. If no, a script does it. Most infrastructure work that looks intelligent is really bookkeeping, and Cure8 treats it accordingly.</p>
+        <p>The second kind is genuine compression under judgment, and it is the only place a model is used. For each changed source, exactly one LLM call distills the material into a compressed, high-signal entity tagged with specific triggers and keywords so it can be found later. One call per changed source, never a swarm. The test is simple: does this step require judgment under uncertainty? If yes, a model handles it. If no, a script does. Most infrastructure work that looks intelligent is really bookkeeping, and Cure8 treats it accordingly.</p>
 
         <h2>The output: a book, materialized as a wiki or a database</h2>
 
         <p>The curated entity lands in a <em>book</em>: an isolated collection scoped by token volume rather than by topic. Books never reference each other. Cross-book relationships, when they matter, are resolved at runtime by the model and the human, not encoded as a synthetic graph that has to be maintained.</p>
 
-        <p>How a book is physically materialized depends on how it will be consumed. A book meant for human reading can be rendered as a browsable wiki. A book meant for agent retrieval is better held as structured records in Cure8's store and served entity-by-entity, so an agent browses a terse index and pulls only the one or two entries it needs. The same curated content, two materializations, chosen by consumer and by size rather than by default.</p>
+        <p>How a book is physically materialized depends on how it will be consumed. A book meant for human reading can be rendered as a browsable wiki. A book meant for agent retrieval is better held as structured records in Cure8's store and served entity-by-entity, so an agent browses a terse index and pulls only the one or two entries it needs. The same curated content supports both materializations -- the choice is driven by consumer need and collection size, not by convention.</p>
 
         <h2>Curation in practice: two lanes, one reviewer</h2>
 
@@ -193,12 +193,12 @@
             <div class="c8-stage">
                 <div class="c8-stage-num"><i class="fas fa-rss"></i> Lane 1</div>
                 <h3>News Feed</h3>
-                <p>General-audience intelligence: a curated stream of what is happening in the clinical AI space. The reviewer can edit editorial commentary before approving, and approved items sit queued until an explicit publish step pushes them to the feed endpoint.</p>
+                <p>A curated stream of current developments in the clinical AI space. The reviewer can edit editorial commentary before approving, and approved items remain queued until an explicit publish step delivers them to the News Feed.</p>
             </div>
             <div class="c8-stage">
                 <div class="c8-stage-num"><i class="fas fa-chart-line"></i> Lane 2</div>
                 <h3>The Signal</h3>
-                <p>Structured evidence that updates an effect mode graph for a clinical AI topic. Routing an item here triggers a second LLM call and an evidence promotion form before anything is committed. See the section below.</p>
+                <p>Structured evidence that updates the effect graph for a clinical AI topic. Routing an item here triggers a second LLM call and a guided evidence promotion workflow before any record is committed to the graph.</p>
             </div>
         </div>
 
@@ -208,7 +208,7 @@
 
         <p>When a reviewer routes an item to The Signal, Cure8 fires a second LLM call before showing the promotion form. The model reads the item's headline, summary, key findings, and signal concept hints extracted during scanning, then scans the existing effect mode graph for the topic and proposes connections: which modes this item provides evidence for, what direction and magnitude the evidence suggests, and what the most relevant quote is. Where no existing mode matches semantically, it proposes a new one with a draft name and polarity.</p>
 
-        <p>The result lands in a pre-filled promotion form. Each proposed connection is labeled MATCHED (the model found an existing mode in the graph) or NEW (a proposed addition). The reviewer edits name, polarity, contribution type, and evidence strength for each connection, removes any that do not hold up, and confirms. The model does first-pass pattern matching at scale; the human decides what the evidence actually says and whether it is strong enough to stand in the graph.</p>
+        <p>The result lands in a pre-filled promotion form. Each proposed connection is labeled MATCHED (the model found an existing mode in the graph) or NEW (a proposed addition to it). The reviewer edits name, polarity, contribution type, and evidence strength for each connection, removes connections that do not hold up under review, and confirms. The model does first-pass pattern matching at scale; the human decides what the evidence actually says and whether it is strong enough to stand in the graph.</p>
 
         <blockquote class="article-pullquote">The model finds the patterns. The human decides what is true.</blockquote>
 
@@ -245,7 +245,7 @@
 
         <h2>Why this is different from other memory systems</h2>
 
-        <p>Most agent memory systems in circulation, whether vector-store RAG, Mem0, Honcho, or the long-context "just stuff it in the window" approach, share a posture: capture broadly, then spend effort at read time deciding what was relevant. They are retrieval-first. Their sophistication lives in chunking strategy, embedding models, rerankers, and decay heuristics, all of which run on the hot path of every query. Cure8 is curation-first, and the difference is not cosmetic. It changes where cost, error, and determinism live.</p>
+        <p>Most agent memory systems in circulation, whether vector-store RAG, Mem0, Honcho, or the long-context "just stuff it in the window" approach, share a posture: capture broadly, then spend effort at read time deciding what is relevant. They are retrieval-first. Their sophistication lives in chunking strategy, embedding models, rerankers, and decay heuristics, all of which run on the hot path of every query. Cure8 is curation-first, and the difference is not cosmetic. It changes where cost, error, and determinism live.</p>
 
         <div class="c8-compare">
             <div class="c8-compare-row c8-compare-head">
@@ -285,7 +285,7 @@
             </div>
         </div>
 
-        <p>The honest tradeoff: Cure8 asks for discipline at write time that retrieval-first systems let you skip. You cannot dump a folder and walk away. In exchange, the runtime is cheap and predictable, the store stays small and high-signal, and when something is missing it is missing in a way you can locate, because gap detection is deterministic rather than a confidence score. For an operator who would rather pay once, up front, than pay a little on every single call, that is the right side of the trade. For a throwaway corpus nobody will curate, a conventional vector store is the lower-effort choice. Naming the tradeoff is the point; an unnamed one becomes invisible debt.</p>
+        <p>The honest tradeoff: Cure8 asks for discipline at write time that retrieval-first systems let you skip. You cannot dump a folder and walk away. In exchange, the runtime is cheap and predictable, the store stays small and high-signal, and when something is missing, it is missing in a way you can locate -- because gap detection is deterministic rather than a confidence score. For an operator who would rather invest the effort once, up front, than absorb a small cost on every call, that is the right side of the trade. For a throwaway corpus that no one will curate, a conventional vector store is the lower-effort choice. Naming the tradeoff is the point; an unnamed one becomes invisible debt.</p>
 
         <div class="article-cta-box">
             <h3>Where this fits</h3>
