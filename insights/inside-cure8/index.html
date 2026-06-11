@@ -40,9 +40,9 @@
 
         <p class="article-lede">Cure8 is the knowledge layer underneath our agent work. It takes what an agent or a person has learned and turns it into something a future agent can load cheaply, on demand, without re-deriving it. It also maintains a structured intelligence registry -- a curated feed of current research, litigation, and regulatory developments, and an evidence graph that powers the clinical AI signal monitoring at the core of the Cortivus platform. This brief walks through how information moves through the system, from two independent sources to a curated book or a published feed, and explains why the design runs against the grain of how most memory systems are built.</p>
 
-        <p>The defining constraint is not the size of a model's context window. The binding question is how many tokens the system can afford to load at the moment of a call, and how much of that load is signal rather than noise. Larger windows have not resolved this. They have raised the ceiling for waste. The cost curve still punishes loading more than the call needs, and irrelevant context still degrades the answer.</p>
+        <p>The defining constraint is not the size of a model's context window. The binding question is how many tokens the system can afford to load at the moment of a call, and how much of that load is signal rather than noise. Larger windows have not resolved this. <strong style="color: var(--primary-color);">They have raised the ceiling for waste.</strong> The cost curve still punishes loading more than the call needs, and irrelevant context still degrades the answer.</p>
 
-        <p>Most memory systems respond to that constraint by dumping everything into a vector store and doing the hard work at retrieval time: chunking, embedding, scoring, reranking, fusion. Cure8 inverts it. The intelligence is spent <strong style="color: var(--primary-color);">once, when knowledge is written</strong>, distilling each source into a small, high-signal unit. At runtime the agent simply loads the unit it needs. There is no reranking gauntlet on the critical path of every request.</p>
+        <p>Most memory systems respond to that constraint by dumping everything into a vector store and doing the hard work at retrieval time: chunking, embedding, scoring, reranking, fusion. Cure8 inverts it. The intelligence is spent once, when knowledge is written, distilling each source into a small, high-signal unit. At runtime the agent simply loads the unit it needs. There is no reranking gauntlet on the critical path of every request.</p>
 
         <!-- FIGURE: hub-and-spoke flow -->
         <figure class="article-figure c8-figure">
@@ -68,8 +68,8 @@
                 <text x="135" y="34" text-anchor="middle" class="c8-group-cap" font-size="11.5">Ingestion Sources</text>
 
                 <!-- engine box (the hub) -->
-                <rect x="330" y="150" width="312" height="162" rx="16" fill="rgba(0,245,255,0.04)" stroke="rgba(0,245,255,0.35)" stroke-width="1.5" stroke-dasharray="6 6"/>
-                <text x="486" y="142" text-anchor="middle" class="c8-engine-cap" font-size="12">Cure8 Engine</text>
+                <rect x="330" y="150" width="500" height="230" rx="16" fill="rgba(0,245,255,0.04)" stroke="rgba(0,245,255,0.35)" stroke-width="1.5" stroke-dasharray="6 6"/>
+                <text x="580" y="142" text-anchor="middle" class="c8-engine-cap" font-size="12">Cure8 Engine</text>
 
                 <!-- spokes (sources -> hub) -->
                 <line class="c8-link flowing" style="animation-delay:0s"  x1="181" y1="155" x2="322" y2="226" stroke="#8a8a8a" marker-end="url(#ah-muted)"/>
@@ -129,8 +129,8 @@
                 <line x1="745" y1="276" x2="745" y2="296" stroke="rgba(255,255,255,0.25)" stroke-width="1.2"/>
                 <rect x="697" y="296" width="96" height="24" rx="12" fill="rgba(0,245,255,0.10)" stroke="rgba(0,245,255,0.4)" stroke-width="1"/>
                 <text x="745" y="312" text-anchor="middle" class="c8-chip" font-size="11">as Wiki</text>
-                <rect x="690" y="328" width="110" height="24" rx="12" fill="rgba(0,245,255,0.10)" stroke="rgba(0,245,255,0.4)" stroke-width="1"/>
-                <text x="745" y="344" text-anchor="middle" class="c8-chip" font-size="11">as Cure8 DB</text>
+                <rect x="683" y="328" width="124" height="24" rx="12" fill="rgba(0,245,255,0.10)" stroke="rgba(0,245,255,0.4)" stroke-width="1"/>
+                <text x="745" y="344" text-anchor="middle" class="c8-chip" font-size="11">as Database</text>
 
                 <!-- Agents -->
                 <g class="c8-node pulsing" style="animation-delay:2s">
