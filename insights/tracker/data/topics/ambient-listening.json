@@ -3,7 +3,7 @@
   "name": "Ambient Listening",
   "description": "Vendor activity, litigation, consent law, and failure modes in ambient documentation deployments.",
   "auto_managed": true,
-  "last_run": "2026-06-11T10:06:30Z",
+  "last_run": "2026-06-12T10:06:24Z",
   "source_list": [
     {
       "name": "Holland & Knight Client Alerts",
@@ -490,6 +490,143 @@
         "product-expansion",
         "consent-surface",
         "vendor-rollout"
+      ]
+    },
+    {
+      "id": "amb-2026-06-11-abridge-nvidia-lilly",
+      "date": "2026-06-11",
+      "type": "industry",
+      "headline": "Abridge announces Nvidia and Eli Lilly deals, extends ambient platform into billing, trials, and real-time claims",
+      "summary": "On June 11, 2026, STAT and Fortune reported that ambient-AI documentation vendor Abridge (valued around $5.3B) announced new partnerships with Nvidia and Eli Lilly. Coverage describes Abridge extending beyond clinical note generation into medical billing, drug-trial documentation, and real-time insurance-claim workflows under a new 'clinician intelligence' platform tied to a Series E raise. The move pushes ambient-captured audio further downstream into coding, payer, and research systems. Abridge is the vendor named in the active Sutter Health/MemorialCare wiretapping litigation already tracked here.",
+      "take": "Every new downstream destination for ambient-captured audio widens the consent and data-governance surface the Sutter and Sharp complaints already target. Billing, trials, and payer feeds are precisely the third-party data flows plaintiffs frame as undisclosed interception.",
+      "sources": [
+        {
+          "name": "STAT (Health Tech)",
+          "url": "https://www.statnews.com/2026/06/11/abridge-inks-deals-with-nvidia-and-lilly/",
+          "type": "reporting"
+        },
+        {
+          "name": "@scooperpr (X, citing Fortune)",
+          "url": "https://x.com/scooperpr/status/2065151751586824372",
+          "type": "reporting"
+        },
+        {
+          "name": "@HeedlessHorizon (X)",
+          "url": "https://x.com/HeedlessHorizon/status/2065177253718237203",
+          "type": "analysis"
+        }
+      ],
+      "first_added": "2026-06-12T10:06:24Z",
+      "last_updated": "2026-06-12T10:06:24Z",
+      "last_checked": "2026-06-12T10:06:24Z",
+      "verified": false,
+      "verification_note": "Confirm the scope of the Nvidia and Eli Lilly deals and the Series E against Abridge's official announcement; STAT item is paywalled and Fortune coverage was read via X summaries.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via STAT health-tech RSS and Grok X scan, 2026-06-12.",
+          "source": {
+            "name": "STAT (Health Tech)",
+            "url": "https://www.statnews.com/2026/06/11/abridge-inks-deals-with-nvidia-and-lilly/"
+          },
+          "timestamp": "2026-06-12T10:06:24Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "abridge",
+        "nvidia",
+        "eli-lilly",
+        "series-e",
+        "billing",
+        "consent-surface"
+      ]
+    },
+    {
+      "id": "amb-2026-composo-mayo-scribe-errors",
+      "date": "2026",
+      "type": "research",
+      "headline": "Vendor analysis cites Mayo Clinic Proceedings study reporting errors in 26% of ambient-scribe encounters",
+      "summary": "A June 2026 analysis by evaluation vendor Composo synthesizes a study it attributes to Mayo Clinic Proceedings examining ambient AI scribes across major US vendors in production use. The reported figures: errors in a mean 26.3% of encounters, 13.9 errors per transcript, and 3.0 errors per case carrying moderate-to-severe harm potential. The write-up enumerates a failure taxonomy spanning hallucinated medications, omitted red-flag symptoms, diagnostic leaps, fabricated consent statements, and dosage/route errors, and ties the fabricated-consent pattern to the Sharp HealthCare and Sutter/MemorialCare suits. The primary Mayo Clinic Proceedings article was not retrieved in this scan.",
+      "take": "If the 26% encounter-error and 3-per-case harm-potential figures survive against the primary source, they reframe ambient-scribe risk from anecdote to base rate and argue for an FMEA-style failure taxonomy plus mandatory clinician attestation before note sign-off.",
+      "sources": [
+        {
+          "name": "Composo (analysis)",
+          "url": null,
+          "type": "analysis"
+        },
+        {
+          "name": "Mayo Clinic Proceedings (cited, unverified)",
+          "url": null,
+          "type": "research"
+        }
+      ],
+      "first_added": "2026-06-12T10:06:24Z",
+      "last_updated": "2026-06-12T10:06:24Z",
+      "last_checked": "2026-06-12T10:06:24Z",
+      "verified": false,
+      "verification_note": "High priority: confirm the Mayo Clinic Proceedings study exists, retrieve its DOI, and verify the 26.3% / 13.9 / 3.0 figures. The only surfaced source is a single evaluation-vendor write-up (Composo) that may be aggregating or misattributing. Do not promote to The Signal until the primary is in hand.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity scan of clinical AI scribe failure-mode coverage, 2026-06-12.",
+          "source": {
+            "name": "Composo (analysis)",
+            "url": null
+          },
+          "timestamp": "2026-06-12T10:06:24Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "accuracy-study",
+        "ambient-scribe",
+        "mayo-clinic-proceedings",
+        "failure-taxonomy",
+        "hallucinated-medications",
+        "fabricated-consent"
+      ]
+    },
+    {
+      "id": "amb-2026-06-11-ho-consent-commentary",
+      "date": "2026-06-11",
+      "type": "industry",
+      "headline": "Physician commentary (Amy Faith Ho, MD) frames ambient-scribe suits as consent-process failures, not tech failures",
+      "summary": "On June 11, 2026, emergency physician and health-policy writer Amy Faith Ho, MD MPH, posted a thread (linking a Medscape piece) on the emerging ambient AI scribe lawsuits. She argues the core defect is inadequate informed consent rather than the technology: allegations that platforms auto-populated or hard-coded consent attestations, and that physicians receive inadequate education on consent elements such as data retention, identifiability, third-party voices, and one- versus two-party state recording law. The post is expert commentary on the existing Sutter/MemorialCare and Sharp fact patterns, not a new legal development.",
+      "take": "Reinforces that the litigable defect sits in the consent workflow, not the model. Hospital governance, not vendor selection, is where the exposure is actually managed.",
+      "sources": [
+        {
+          "name": "Amy Faith Ho, MD MPH (@amyfaithho, X)",
+          "url": "https://x.com/amyfaithho/status/2065077235296473507",
+          "type": "analysis"
+        }
+      ],
+      "first_added": "2026-06-12T10:06:24Z",
+      "last_updated": "2026-06-12T10:06:24Z",
+      "last_checked": "2026-06-12T10:06:24Z",
+      "verified": false,
+      "verification_note": "Commentary, not a discrete event; included as a signal of expert attention. Confirm the linked Medscape article and quotations before any promotion.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Grok X scan, 2026-06-12.",
+          "source": {
+            "name": "Amy Faith Ho, MD MPH (@amyfaithho, X)",
+            "url": "https://x.com/amyfaithho/status/2065077235296473507"
+          },
+          "timestamp": "2026-06-12T10:06:24Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "consent",
+        "commentary",
+        "medscape",
+        "wiretapping",
+        "clinician-education"
       ]
     }
   ]
