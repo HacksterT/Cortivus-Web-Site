@@ -92,3 +92,7 @@
     color: var(--primary-color);
     padding-left: 2rem;
 }
+
+/* Contact form: off-screen honeypot (harder for bots than display:none) + privacy notice */
+.hp-field { position: absolute; left: -9999px; top: -9999px; }
+.form-privacy { font-size: 0.8rem; opacity: 0.7; margin-top: 0.75rem; }

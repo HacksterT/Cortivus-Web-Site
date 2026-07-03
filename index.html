@@ -230,11 +230,11 @@
                             <textarea id="contact-message" name="message" rows="5" placeholder="Tell us about the AI systems in your environment and what you'd like to understand better..."></textarea>
                         </div>
                         <!-- Honeypot -->
-                        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                        <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <!-- Cloudflare Turnstile -->
                         <div class="cf-turnstile" data-sitekey="0x4AAAAAACWlRzcZjl9XKepF" data-theme="dark"></div>
                         <button type="submit" class="btn" id="contactSubmitBtn">Start the Conversation</button>
-                        <p style="font-size:0.8rem;opacity:0.7;margin-top:0.75rem;">We use your details only to respond to you — never shared or sold.</p>
+                        <p class="form-privacy">We use your details only to respond to you — never shared or sold.</p>
                         <div class="form-status" id="contactFormStatus" style="display:none; margin-top:1rem; text-align:center;"></div>
                     </form>
                 </div>
