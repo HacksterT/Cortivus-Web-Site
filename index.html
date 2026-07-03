@@ -268,7 +268,7 @@
     <script>
         // Contact form
         (function () {
-            var CONTACT_API = 'https://tools.cortivus.com/api/contact';
+            var CONTACT_API = 'https://forms-worker.troysybert.workers.dev/submit';
             var form = document.getElementById('contactForm');
             var btn = document.getElementById('contactSubmitBtn');
             var status = document.getElementById('contactFormStatus');
@@ -284,6 +284,7 @@
                     email: form.querySelector('[name="email"]').value,
                     organization: form.querySelector('[name="organization"]').value || null,
                     message: form.querySelector('[name="message"]').value || null,
+                    source: 'contact',
                     website: form.querySelector('[name="website"]').value,
                     cf_turnstile_response: form.querySelector('[name="cf-turnstile-response"]') ? form.querySelector('[name="cf-turnstile-response"]').value : null
                 };
