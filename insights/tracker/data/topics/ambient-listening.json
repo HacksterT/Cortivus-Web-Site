@@ -3,7 +3,7 @@
   "name": "Ambient Listening",
   "description": "Vendor activity, litigation, consent law, and failure modes in ambient documentation deployments.",
   "auto_managed": true,
-  "last_run": "2026-06-12T10:06:24Z",
+  "last_run": "2026-07-18T06:07:03Z",
   "source_list": [
     {
       "name": "Holland & Knight Client Alerts",
@@ -118,12 +118,6 @@
           "type": "primary"
         },
         {
-          "name": "Fisher Phillips - New Class Action Targets Healthcare AI Recordings",
-          "url": "https://www.fisherphillips.com/en/insights/insights/new-class-action-targets-healthcare-ai-recordings",
-          "type": "analysis",
-          "date_accessed": "2026-06-02"
-        },
-        {
           "name": "Alston & Bird Privacy Blog - Your AI Scribe May Be Taking Notes (and Plaintiffs Are Too)",
           "url": "https://www.alstonprivacy.com/your-ai-scribe-may-be-taking-notes-and-plaintiffs-are-too/",
           "type": "analysis",
@@ -134,11 +128,21 @@
           "url": "https://www.hipaajournal.com/lawsuit-ai-platform-illegally-recorded-patient-clinician-conversations/",
           "type": "reporting",
           "date_accessed": "2026-06-02"
+        },
+        {
+          "name": "Medscape, Health System Sued Over AI Scribe Technology, Patient Consent",
+          "url": "https://www.medscape.com/viewarticle/health-system-sued-over-ai-scribe-technology-patient-consent-2026a10001k7",
+          "type": "reporting"
+        },
+        {
+          "name": "Elevare Law (analysis)",
+          "url": "https://www.elevarelaw.com/blog-articles/using-ambient-ai-scribes-in-healthcare-consent-privacy-and-compliance-lessons-from-the-sharp-healthcare-sutter-health-and-memorialcare-lawsuits",
+          "type": "analysis"
         }
       ],
       "first_added": "2026-06-01T12:00:00Z",
-      "last_updated": "2026-06-09T10:06:00Z",
-      "last_checked": "2026-06-09T10:06:00Z",
+      "last_updated": "2026-06-23T00:33:56Z",
+      "last_checked": "2026-06-23T00:33:56Z",
       "verified": false,
       "verification_note": "Confirm exact filing date, case number, and obtain PACER docket link.",
       "human_curated": true,
@@ -172,13 +176,49 @@
           },
           "timestamp": "2026-06-09T10:06:00Z",
           "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "June 2026 legal analyses detail the N.D. Cal. complaint as filed April 7, 2026 naming Sutter Health, Memorial Health Services Inc., and MemorialCare Medical Foundation as defendants, asserting California Invasion of Privacy Act (CIPA), Federal Wiretap Act, and California Confidentiality of Medical Information Act (CMIA) claims over Abridge AI Scribe ambient capture without all-party consent. Abridge AI, Inc. is identified in the complaint but not named as a defendant.",
+          "source": {
+            "name": "Fisher Phillips, New Class Action Targets Healthcare AI Recordings",
+            "url": "https://www.fisherphillips.com/en/insights/insights/new-class-action-targets-healthcare-ai-recordings"
+          },
+          "timestamp": "2026-06-16T10:06:21Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "source_added",
+          "note": "Added law-firm analysis synthesizing consent, privacy, and compliance lessons across the Sharp, Sutter, and MemorialCare ambient-scribe suits.",
+          "source": {
+            "name": "Elevare Law",
+            "url": "https://www.elevarelaw.com/blog-articles/using-ambient-ai-scribes-in-healthcare-consent-privacy-and-compliance-lessons-from-the-sharp-healthcare-sutter-health-and-memorialcare-lawsuits"
+          },
+          "timestamp": "2026-06-18T10:06:32Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "correction",
+          "note": "Removed the Fisher Phillips source; per the 2026-06-04 correction it covers the Sharp HealthCare case, not this Sutter/MemorialCare filing. Sutter attribution rests on the Alston & Bird post already in sources.",
+          "source": {
+            "name": "Alston & Bird Privacy Blog - Your AI Scribe May Be Taking Notes (and Plaintiffs Are Too)",
+            "url": "https://www.alstonprivacy.com/your-ai-scribe-may-be-taking-notes-and-plaintiffs-are-too/"
+          },
+          "timestamp": "2026-06-23T00:33:56Z",
+          "added_by": "cortivus-tracker-scan"
         }
       ],
       "tags": [
         "sutter",
         "abridge",
         "wiretapping",
-        "consent"
+        "consent",
+        "memorialcare",
+        "memorial-health",
+        "cipa",
+        "cmia",
+        "federal-wiretap-act",
+        "ndcal"
       ]
     },
     {
@@ -514,11 +554,21 @@
           "name": "@HeedlessHorizon (X)",
           "url": "https://x.com/HeedlessHorizon/status/2065177253718237203",
           "type": "analysis"
+        },
+        {
+          "name": "@healthapiguy (Brendan Keeler, X)",
+          "url": "https://x.com/healthapiguy/status/2065419745499779533",
+          "type": "reporting"
+        },
+        {
+          "name": "@LumidaWealth (X)",
+          "url": "https://x.com/LumidaWealth/status/2065404564098945282",
+          "type": "reporting"
         }
       ],
       "first_added": "2026-06-12T10:06:24Z",
-      "last_updated": "2026-06-12T10:06:24Z",
-      "last_checked": "2026-06-12T10:06:24Z",
+      "last_updated": "2026-06-14T10:05:20Z",
+      "last_checked": "2026-06-14T10:05:20Z",
       "verified": false,
       "verification_note": "Confirm the scope of the Nvidia and Eli Lilly deals and the Series E against Abridge's official announcement; STAT item is paywalled and Fortune coverage was read via X summaries.",
       "human_curated": false,
@@ -532,6 +582,16 @@
           },
           "timestamp": "2026-06-12T10:06:24Z",
           "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "X corroboration (June 12-13, 2026) of the Nvidia/Eli Lilly platform announcement. Interoperability analyst Brendan Keeler framed it as an 'AI-native clinician intelligence platform' connecting care delivery, payment, and evidence-based treatment with a strategic Eli Lilly investment; a separate post cited the Nvidia collaboration to build a clinical-dialogue-tuned model and put Abridge's ambient platform at >3,000 physicians.",
+          "source": {
+            "name": "@LumidaWealth (X)",
+            "url": "https://x.com/LumidaWealth/status/2065404564098945282"
+          },
+          "timestamp": "2026-06-14T10:05:20Z",
+          "added_by": "cortivus-tracker-scan"
         }
       ],
       "tags": [
@@ -540,7 +600,8 @@
         "eli-lilly",
         "series-e",
         "billing",
-        "consent-surface"
+        "consent-surface",
+        "deployment-scale"
       ]
     },
     {
@@ -560,11 +621,16 @@
           "name": "Mayo Clinic Proceedings (cited, unverified)",
           "url": null,
           "type": "research"
+        },
+        {
+          "name": "Composo — AI Scribe Failures 2026 (failure-pattern analysis)",
+          "url": "https://www.composo.ai/post/ai-scribe-failures-2026",
+          "type": "analysis"
         }
       ],
       "first_added": "2026-06-12T10:06:24Z",
-      "last_updated": "2026-06-12T10:06:24Z",
-      "last_checked": "2026-06-12T10:06:24Z",
+      "last_updated": "2026-06-21T10:05:58Z",
+      "last_checked": "2026-06-21T10:05:58Z",
       "verified": false,
       "verification_note": "High priority: confirm the Mayo Clinic Proceedings study exists, retrieve its DOI, and verify the 26.3% / 13.9 / 3.0 figures. The only surfaced source is a single evaluation-vendor write-up (Composo) that may be aggregating or misattributing. Do not promote to The Signal until the primary is in hand.",
       "human_curated": false,
@@ -577,6 +643,16 @@
             "url": null
           },
           "timestamp": "2026-06-12T10:06:24Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "source_added",
+          "note": "Added the direct URL for the Composo June 2026 analysis that operationalizes the Mayo Clinic Proceedings error profile (26.3% of encounters with >=1 error; mean 13.9 errors per transcript; ~3.0 errors per case with moderate-to-severe harm potential). Item previously carried named sources without URLs.",
+          "source": {
+            "name": "Composo",
+            "url": "https://www.composo.ai/post/ai-scribe-failures-2026"
+          },
+          "timestamp": "2026-06-21T10:05:58Z",
           "added_by": "cortivus-tracker-scan"
         }
       ],
@@ -627,6 +703,158 @@
         "medscape",
         "wiretapping",
         "clinician-education"
+      ]
+    },
+    {
+      "id": "amb-2025-ucla-nejm-ai-scribe-rct",
+      "date": "2025",
+      "type": "research",
+      "headline": "UCLA RCT of DAX and Nabla ambient scribes finds occasional clinically significant inaccuracies and one mild patient-safety event",
+      "summary": "A pragmatic randomized trial conducted across UCLA Health enrolled 238 physicians spanning 14 specialties and covered roughly 72,000 encounters, comparing two commercial ambient AI scribes (Microsoft DAX and Nabla) against usual documentation. Nabla use was associated with about a 10% reduction in documentation time. Physicians reported that AI-generated notes occasionally contained clinically significant inaccuracies, most commonly omissions of information and pronoun errors, and investigators recorded one mild patient-safety event during the trial. The authors concluded that ambient documentation requires active physician oversight rather than passive acceptance.",
+      "take": "The value here is a named failure taxonomy at scale: omissions and attribution errors, plus one documented safety event across 72,000 encounters. The control that matters is enforced clinician review and sign-off, not the vendor's word-error-rate claim.",
+      "sources": [
+        {
+          "name": "UCLA Health (news release)",
+          "url": "https://www.uclahealth.org/news/release/ucla-study-finds-ai-scribes-may-reduce-documentation-time",
+          "type": "reporting"
+        },
+        {
+          "name": "NEJM AI - Ambient AI Scribes in Clinical Practice: A Randomized Controlled Trial",
+          "url": "https://ai.nejm.org/doi/10.1056/AIoa2501000",
+          "type": "research"
+        },
+        {
+          "name": "@Pub2Post (X)",
+          "url": "https://x.com/Pub2Post/status/2069846838908170628",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-18T10:06:32Z",
+      "last_updated": "2026-06-27T06:06:30Z",
+      "last_checked": "2026-06-27T06:06:30Z",
+      "verified": false,
+      "verification_note": "Confirm publication venue (NEJM AI) and exact publication date; confirm this UCLA Health trial is distinct from the Atrium Health DAX Copilot evaluation already tracked (amb-2025-atrium-dax-efficiency). Retrieve the primary article DOI to verify n=238 / ~72,000-encounter figures and the single patient-safety event.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity scan of recent ambient-scribe accuracy literature.",
+          "source": {
+            "name": "UCLA Health (news release)",
+            "url": "https://www.uclahealth.org/news/release/ucla-study-finds-ai-scribes-may-reduce-documentation-time"
+          },
+          "timestamp": "2026-06-18T10:06:32Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "NEJM AI publication of the DAX/Nabla ambient-scribe RCT surfaced June 24, 2026 via X (@Pub2Post), DOI 10.1056/AIoa2501000. Reported outcomes: Nabla reduced time-in-note by ~9.5%; both DAX and Nabla improved Mini-Z clinician-wellbeing scores; DAX showed a significant reduction in personal time on the EHR (after-hours documentation). Confirms the NEJM AI venue flagged in the verification note; exact publication date and the n=238 / ~72,000-encounter figures still require primary retrieval from the article.",
+          "source": {
+            "name": "@Pub2Post (X)",
+            "url": "https://x.com/Pub2Post/status/2069846838908170628"
+          },
+          "timestamp": "2026-06-27T06:06:30Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "accuracy-study",
+        "ambient-scribe",
+        "dax",
+        "nabla",
+        "rct",
+        "omission",
+        "patient-safety-event",
+        "ucla",
+        "nejm-ai",
+        "mini-z",
+        "time-in-note"
+      ]
+    },
+    {
+      "id": "amb-2026-beyond-human-ears-scribe-risks",
+      "date": "2026",
+      "type": "research",
+      "headline": "Perspective review catalogs ambient AI scribe failure modes and flags racial disparities in speech recognition",
+      "summary": "A perspective article, 'Beyond human ears: navigating the uncharted risks of AI scribes in clinical practice' (PMC12460601), synthesizes current empirical work on ambient LLM-based clinical scribes and identifies distinct failure modes that differ from human-scribe or dictation errors: AI hallucinations (plausible but baseless content, reported at roughly 1-3% but with definitions that vary widely across studies), critical omissions of clinically relevant detail, speaker-attribution errors that wrongly assign patient statements to the clinician, and contextual misinterpretations that alter documented medications or care plans. The authors also flag systematic performance disparities in the underlying speech-recognition systems, citing significantly higher transcription error rates for African American speakers than for White speakers. They argue this constitutes an equity-specific failure mode when scribes are deployed across heterogeneous patient populations and that ambient-scribe accuracy should be governed as a patient-safety concern, not merely an efficiency feature.",
+      "take": "The equity axis is the part most hospital AI committees are not auditing: a scribe that transcribes some patients less accurately encodes bias straight into the legal record and into any model later trained on those notes, an FMEA-relevant failure mode distinct from aggregate accuracy claims.",
+      "sources": [
+        {
+          "name": "Beyond human ears: navigating the uncharted risks of AI scribes in clinical practice (PMC)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12460601/",
+          "type": "research"
+        }
+      ],
+      "first_added": "2026-06-21T10:05:58Z",
+      "last_updated": "2026-06-21T10:05:58Z",
+      "last_checked": "2026-06-21T10:05:58Z",
+      "verified": false,
+      "verification_note": "Confirm exact journal, authors, and publication date for PMC12460601 and verify the racial-disparity transcription statistic traces to a primary study rather than a secondary summary. Date set to 2026 at year precision pending confirmation.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity scan of AI scribe failure-mode literature; not previously tracked. Distinct from JMIR e64993 and the Composo/Mayo item.",
+          "source": {
+            "name": "Beyond human ears (PMC)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12460601/"
+          },
+          "timestamp": "2026-06-21T10:05:58Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "ambient-scribe",
+        "failure-modes",
+        "equity",
+        "speech-recognition",
+        "hallucination"
+      ]
+    },
+    {
+      "id": "amb-2025-12-aiscribe-patient-safety-feedback",
+      "date": "2025-12",
+      "type": "research",
+      "headline": "Preprint: clinician end-user feedback signals patient-safety risks in ambient AI scribes, chiefly medication and treatment",
+      "summary": "An arXiv preprint, 'Patient Safety Risks from AI Scribes: Signals from End-User Feedback' (2512.04118, posted December 2025), analyzes clinician end-user feedback on deployed ambient AI scribes. The authors conclude that AI scribes 'may induce various patient safety risks due to errors in transcription, most significantly regarding medication and treatment.' The analysis is qualitative, drawing on real-world user reports rather than a controlled accuracy audit or chart review. The authors explicitly state that further study is needed to quantify the absolute magnitude of risk. It is circulated in 2026 risk briefings as an early primary signal of real-world safety concerns.",
+      "take": "End-user feedback is a leading indicator, not a denominator: it flags where medication and treatment errors concentrate but cannot size the risk. The operational response is site-specific FMEA and post-deployment monitoring, not reassurance in either direction.",
+      "sources": [
+        {
+          "name": "Patient Safety Risks from AI Scribes: Signals from End-User Feedback (arXiv 2512.04118)",
+          "url": "https://arxiv.org/html/2512.04118v1",
+          "type": "research"
+        },
+        {
+          "name": "The Leveraged Years - AI scribe accuracy review protocol",
+          "url": "https://www.theleveragedyears.com/briefing-ai-scribe-accuracy-review-protocol",
+          "type": "analysis"
+        }
+      ],
+      "first_added": "2026-07-18T06:07:03Z",
+      "last_updated": "2026-07-18T06:07:03Z",
+      "last_checked": "2026-07-18T06:07:03Z",
+      "verified": false,
+      "verification_note": "Preprint (arXiv 2512.04118v1), not peer-reviewed. Confirm authorship and institutional affiliation (reported as UCSF-affiliated in secondary briefings, unverified) and the December 2025 posting date. Qualitative end-user feedback analysis; no absolute risk rate reported.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity scan of clinical AI scribe failure-mode reporting (scan 2026-07-18).",
+          "source": {
+            "name": "arXiv 2512.04118",
+            "url": "https://arxiv.org/html/2512.04118v1"
+          },
+          "timestamp": "2026-07-18T06:07:03Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "ai-scribe",
+        "patient-safety",
+        "medication-error",
+        "preprint",
+        "end-user-feedback",
+        "hallucination"
       ]
     }
   ]

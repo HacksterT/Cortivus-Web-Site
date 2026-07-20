@@ -3,7 +3,7 @@
   "name": "AI Radiology Second Read",
   "description": "FDA clearances, accuracy challenges, deployment evidence, and adoption trends for AI second-read tools in diagnostic imaging.",
   "auto_managed": true,
-  "last_run": "2026-06-11T12:09:00Z",
+  "last_run": "2026-07-18T08:09:27Z",
   "source_list": [
     {
       "name": "FDA AI/ML SaMD List",
@@ -44,19 +44,52 @@
           "name": "FDA AI/ML SaMD List",
           "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices",
           "type": "primary"
+        },
+        {
+          "name": "Bertalan Mesko (@Berci) on X",
+          "url": "https://x.com/Berci/status/2067184083570979072",
+          "type": "reporting"
+        },
+        {
+          "name": "FDA AI-Enabled Medical Device List",
+          "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-enabled-medical-devices",
+          "type": "primary"
         }
       ],
       "first_added": "2026-06-01T12:00:00Z",
-      "last_updated": "2026-06-01T12:00:00Z",
-      "last_checked": "2026-06-01T12:00:00Z",
+      "last_updated": "2026-07-11T08:08:41Z",
+      "last_checked": "2026-07-11T08:08:41Z",
       "verified": true,
       "human_curated": true,
-      "update_log": [],
+      "update_log": [
+        {
+          "type": "development",
+          "note": "FDA's curated AI-enabled medical device list refreshed June 17, 2026: 1,524 total authorized devices, with 92 cleared so far in 2026; radiology remains the dominant specialty.",
+          "source": {
+            "name": "Bertalan Mesko (@Berci) on X",
+            "url": "https://x.com/Berci/status/2067184083570979072"
+          },
+          "timestamp": "2026-06-18T12:08:25Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "FDA updated its AI-enabled medical device list on 2026-07-10, adding 211 newly listed authorizations since the prior cutoff. Roughly 81% were radiology products, with automated radiological image processing (product code QIH) the single largest category at 58 clearances. The update included one de novo radiology authorization, Clairity's Allix5 (dated 2025-05-30). Confirms the continued radiology dominance this item tracks.",
+          "source": {
+            "name": "FDA AI-Enabled Medical Device List",
+            "url": "https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-enabled-medical-devices"
+          },
+          "timestamp": "2026-07-11T08:08:41Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
       "tags": [
         "fda",
         "samd",
         "radiology",
-        "second-read"
+        "second-read",
+        "qih",
+        "clairity-allix5"
       ]
     },
     {
@@ -81,11 +114,21 @@
           "name": "Radiology Business",
           "url": "https://radiologybusiness.com/topics/artificial-intelligence/acr-expands-programs-help-radiology-practices-integrate-and-trust-ai",
           "type": "reporting"
+        },
+        {
+          "name": "Journal of the American College of Radiology (JACR) - Assess-AI technical framework",
+          "url": null,
+          "type": "research"
+        },
+        {
+          "name": "American College of Radiology - ARCH-AI facility recognition program",
+          "url": null,
+          "type": "primary"
         }
       ],
       "first_added": "2026-06-02T03:30:00Z",
-      "last_updated": "2026-06-02T03:30:00Z",
-      "last_checked": "2026-06-02T03:30:00Z",
+      "last_updated": "2026-07-11T08:08:41Z",
+      "last_checked": "2026-07-11T08:08:41Z",
       "verified": false,
       "verification_note": null,
       "human_curated": false,
@@ -99,6 +142,16 @@
             "url": "https://www.acr.org/News-and-Publications/Media-Center/2026/first-practice-parameter-for-imaging-ai"
           },
           "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "ACR Data Science Institute published the technical framework for Assess-AI in JACR, described as a national AI quality registry and data service for clinical imaging AI intended to monitor real-world performance and detect drift or safety issues over time. The newly approved practice parameter and Assess-AI are positioned as core requirements for facilities seeking ACR's ARCH-AI recognition, the first national AI quality-assurance designation for radiology facilities.",
+          "source": {
+            "name": "Journal of the American College of Radiology (JACR) - Assess-AI technical framework",
+            "url": null
+          },
+          "timestamp": "2026-07-11T08:08:41Z",
+          "added_by": "cortivus-tracker-scan"
         }
       ],
       "tags": [
@@ -107,7 +160,8 @@
         "assess-ai",
         "practice-parameter",
         "governance",
-        "monitoring"
+        "monitoring",
+        "arch-ai"
       ]
     },
     {
@@ -178,11 +232,16 @@
           "name": "AuntMinnie (Aidoc releases framework for clinical AI deployment)",
           "url": "https://www.auntminnie.com/imaging-informatics/artificial-intelligence/news/15748709/aidoc-aidoc-releases-framework-for-clinical-ai-deployment",
           "type": "reporting"
+        },
+        {
+          "name": "Aidoc (official announcement)",
+          "url": "https://www.aidoc.com/about/news/aidoc-releases-bridge-a-new-industry-framework-to-guide-safe-scalable-clinical-ai-deployment/",
+          "type": "primary"
         }
       ],
       "first_added": "2026-06-02T03:30:00Z",
-      "last_updated": "2026-06-11T12:09:00Z",
-      "last_checked": "2026-06-11T12:09:00Z",
+      "last_updated": "2026-06-14T12:08:27Z",
+      "last_checked": "2026-06-14T12:08:27Z",
       "verified": false,
       "verification_note": null,
       "human_curated": false,
@@ -216,6 +275,16 @@
           },
           "timestamp": "2026-06-11T12:09:00Z",
           "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "BRIDGE (Blueprint for Resilient Integration and Deployment of Guided Excellence) formally released as an open-source framework at HLTH Europe, authored by 17 experts. It specifies minimum-viable-production-environment (MVPE) preconditions, validation protocols, regulatory checkpoints, trust/explainability mechanisms, and continuous post-deployment monitoring criteria, and is now free to download.",
+          "source": {
+            "name": "Aidoc (official announcement)",
+            "url": "https://www.aidoc.com/about/news/aidoc-releases-bridge-a-new-industry-framework-to-guide-safe-scalable-clinical-ai-deployment/"
+          },
+          "timestamp": "2026-06-14T12:08:27Z",
+          "added_by": "cortivus-tracker-scan"
         }
       ],
       "tags": [
@@ -224,7 +293,10 @@
         "bridge",
         "monai",
         "validation",
-        "monitoring"
+        "monitoring",
+        "hlth-europe",
+        "mvpe",
+        "open-source"
       ]
     },
     {
@@ -552,11 +624,16 @@
           "name": "AuntMinnie - Women's Imaging",
           "url": "https://www.auntminnie.com/clinical-news/womens-imaging/article/15752941/ai-shows-promise-as-second-reader-in-breast-cancer-screening",
           "type": "reporting"
+        },
+        {
+          "name": "Radiology (full-population feasibility modeling, via Perplexity citation)",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11605135/",
+          "type": "research"
         }
       ],
       "first_added": "2026-06-11T12:09:00Z",
-      "last_updated": "2026-06-11T12:09:00Z",
-      "last_checked": "2026-06-11T12:09:00Z",
+      "last_updated": "2026-06-14T12:08:27Z",
+      "last_checked": "2026-06-14T12:08:27Z",
       "verified": false,
       "verification_note": "AuntMinnie coverage is dated June 2026, but the Lancet Digital Health DOI prefix (S2589-7500(25)) suggests a 2025 publication. Confirm the actual publication date before promotion; this may be recent coverage of an earlier study rather than a new in-window publication.",
       "human_curated": false,
@@ -570,6 +647,16 @@
           },
           "timestamp": "2026-06-11T12:09:00Z",
           "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "Companion full-population feasibility modeling quantifies the second-reader tradeoff: fully replacing the second human reader with AI cut human screening reads by 48.7% and recalls by 2.2% but lowered sensitivity by ~1.5 percentage points (statistically significant). Alternative configurations (AI triage of low/high-risk cases, or replacing the first reader) reduced workload ~49% without measurable loss in cancer detection.",
+          "source": {
+            "name": "Radiology (full-population feasibility modeling)",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11605135/"
+          },
+          "timestamp": "2026-06-14T12:08:27Z",
+          "added_by": "cortivus-tracker-scan"
         }
       ],
       "tags": [
@@ -578,7 +665,9 @@
         "second-reader",
         "screening",
         "breast-cancer",
-        "workload"
+        "workload",
+        "feasibility-modeling",
+        "sensitivity-tradeoff"
       ]
     },
     {
@@ -624,6 +713,450 @@
         "mit",
         "external-validation",
         "demographic-shortcuts"
+      ]
+    },
+    {
+      "id": "rad-2026-06-cxr-foundation-embeddings-small-lesion",
+      "date": "2026-06",
+      "type": "research",
+      "headline": "Preprint: frozen foundation-model embeddings discard small-lesion signal in chest radiography, exposing a pre-deployment evaluation gap",
+      "summary": "A preprint posted to arXiv (2606.11606) and circulated on X reports that frozen embeddings from foundation models discard information needed to detect small lesions on chest radiographs. The authors argue that strong aggregate benchmark performance can mask this loss, so models built on these embeddings may underperform specifically on small or subtle findings once deployed. They frame it as an implications-for-pre-deployment-evaluation problem: standard evaluation that relies on frozen foundation-model embeddings can overstate clinical readiness. The work was surfaced through a computer-vision paper aggregator account rather than radiology trade press and has not yet been peer reviewed.",
+      "take": "If pre-deployment evaluation rides on frozen foundation-model embeddings, the findings that matter most clinically, small and early lesions, are exactly where the benchmark is least trustworthy. Site validation should stratify accuracy by lesion size, not rest on a single aggregate AUROC.",
+      "sources": [
+        {
+          "name": "arXiv 2606.11606 (preprint)",
+          "url": "https://arxiv.org/abs/2606.11606",
+          "type": "research"
+        },
+        {
+          "name": "@CSVisionPapers (X)",
+          "url": "https://x.com/CSVisionPapers/status/2066276907864260633",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-15T12:08:35Z",
+      "last_updated": "2026-06-15T12:08:35Z",
+      "last_checked": "2026-06-15T12:08:35Z",
+      "verified": false,
+      "verification_note": "Confirm the arXiv preprint 2606.11606 exists with this title, that it specifically concerns chest radiography (diagnostic imaging, not generic computer vision), and extract the quantitative degradation in small-lesion detection. Discovered via a single X aggregator post; not peer reviewed.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via X (CV paper aggregator) during 48-hour scan; arXiv preprint on small-lesion signal loss from frozen foundation-model embeddings in chest radiography.",
+          "source": {
+            "name": "@CSVisionPapers (X)",
+            "url": "https://x.com/CSVisionPapers/status/2066276907864260633"
+          },
+          "timestamp": "2026-06-15T12:08:35Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "chest-radiography",
+        "foundation-models",
+        "small-lesion-detection",
+        "pre-deployment-evaluation",
+        "embeddings",
+        "preprint"
+      ]
+    },
+    {
+      "id": "rad-2026-06-acr-fda-ai-guidance-comment",
+      "date": "2026-06",
+      "type": "regulatory",
+      "headline": "ACR comments on FDA draft AI guidance, urging lifecycle risk management, site-level validation, and continuous monitoring of radiology AI",
+      "summary": "The American College of Radiology submitted formal comments to the FDA on its draft guidance addressing risk management across the lifecycle of AI-enabled medical devices, including radiology AI. ACR supports advancing safe and effective AI but urges more specificity in the product information manufacturers must provide to FDA, physicians, and practices so end users can evaluate and monitor AI safety and effectiveness. The letter emphasizes site-level validation before and during clinical use, ongoing performance monitoring, and tailored oversight for AI types with novel risk profiles. ACR frames radiology AI as requiring structured governance, local validation, and continuous monitoring rather than one-time approval alone.",
+      "take": "A specialty society pushing FDA toward lifecycle risk management, site-level validation, and continuous monitoring signals the exact compliance bar hospitals will be held to, which is the wedge for an AI audit and governance practice.",
+      "sources": [
+        {
+          "name": "American College of Radiology - Enhancements to FDA Draft AI Guidance",
+          "url": "https://www.acr.org/News-and-Publications/enhancements-to-fda-draft-ai-guidance",
+          "type": "primary"
+        }
+      ],
+      "first_added": "2026-06-17T12:08:47Z",
+      "last_updated": "2026-06-17T12:08:47Z",
+      "last_checked": "2026-06-17T12:08:47Z",
+      "verified": false,
+      "verification_note": "Confirm the exact submission date of the ACR comment letter and that it refers to FDA's current 2026 draft AI risk-management guidance. ACR has filed multiple AI-related comments, so verify this is the current-cycle letter and not earlier coverage resurfaced by the search.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity scan of ACR AI position/guidance in the scan window.",
+          "source": {
+            "name": "American College of Radiology - Enhancements to FDA Draft AI Guidance",
+            "url": "https://www.acr.org/News-and-Publications/enhancements-to-fda-draft-ai-guidance"
+          },
+          "timestamp": "2026-06-17T12:08:47Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "acr",
+        "fda",
+        "ai-governance",
+        "regulatory-oversight",
+        "lifecycle-risk-management",
+        "post-deployment-monitoring"
+      ]
+    },
+    {
+      "id": "rad-2026-06-radiology-demographic-bias-roadmap",
+      "date": "2026-06",
+      "type": "research",
+      "headline": "Radiology commentary publishes roadmap to measure and mitigate demographic bias in imaging AI",
+      "summary": "A multidisciplinary team of radiologists, informaticists, and computer scientists published a Radiology commentary outlining a roadmap to measure and address demographic bias in imaging AI. The authors note that many public radiology datasets lack basic demographic labels; in a prior analysis of 23 public chest x-ray datasets, only 17% reported race or ethnicity, hampering detection of subgroup underperformance. The roadmap targets three domains: imaging datasets (routine reporting of age, sex, race, ethnicity, and acquisition confounders such as scanner vendor, view, and site), demographic definitions (treating race and gender as self-identified and socially constructed to avoid distorted bias estimates), and statistical evaluation (standardized fairness frameworks and explicit documentation of operating thresholds). It recommends sharing raw images without site-specific post-processing to avoid shortcut learning and convening a consensus panel to standardize demographic reporting and fairness terminology. Coverage appeared in Physics World and AuntMinnie.",
+      "take": "Standardized bias measurement and mandatory subgroup reporting are precisely the controls an AI safety audit should verify, giving Cortivus a citable framework for stress-testing vendor fairness claims before deployment.",
+      "sources": [
+        {
+          "name": "AuntMinnie - Radiologists offer roadmap for measuring and addressing AI bias",
+          "url": "https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15746507/radiologists-offer-roadmap-for-measuring-and-addressing-ai-bias",
+          "type": "reporting"
+        },
+        {
+          "name": "Physics World - AI algorithms in radiology: how to identify and prevent inadvertent bias",
+          "url": "https://physicsworld.com/a/ai-algorithms-in-radiology-how-to-identify-and-prevent-inadvertent-bias/",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-17T12:08:47Z",
+      "last_updated": "2026-06-17T12:08:47Z",
+      "last_checked": "2026-06-17T12:08:47Z",
+      "verified": false,
+      "verification_note": "Confirm the underlying Radiology commentary citation (Yi et al.) and DOI, and verify the publication date falls within the scan window rather than earlier in 2026. This is a methodology roadmap commentary, not an empirical study, and is distinct from the existing MIT demographic-fairness-gaps item.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity scan of radiology AI bias/subpopulation underperformance in the scan window.",
+          "source": {
+            "name": "AuntMinnie - Radiologists offer roadmap for measuring and addressing AI bias",
+            "url": "https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15746507/radiologists-offer-roadmap-for-measuring-and-addressing-ai-bias"
+          },
+          "timestamp": "2026-06-17T12:08:47Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "demographic-bias",
+        "fairness",
+        "subgroup-underperformance",
+        "dataset-transparency",
+        "radiology-journal"
+      ]
+    },
+    {
+      "id": "rad-2026-06-pancreatic-ct-dl-second-reader-japan",
+      "date": "2026-06",
+      "type": "research",
+      "headline": "Multicenter Japanese study validates DL pancreatic-cancer CT second reader; non-contrast sensitivity rises 41% to 86%",
+      "summary": "A retrospective multicenter study across 18 Japanese institutions (2,251 patients) externally validated two modality-specific deep-learning pipelines (pancreas and main-pancreatic-duct segmentation, mass detection, and indirect-finding classification) for pancreatic cancer detection on contrast-enhanced and non-contrast CT, benchmarked against six radiologists of varying experience. On non-contrast CT the models reached AUC 0.93 versus a reader mean of 0.91, raising sensitivity from 41.1% (readers) to 86.0%; on contrast-enhanced CT, AUC was 0.99 versus 0.99 with sensitivity rising from 82.6% to 97.7%. Gains were largest for small tumors (<=20 mm) and, on non-contrast CT, were driven by indirect findings such as parenchymal atrophy and main-pancreatic-duct changes. The authors frame the system as a potential second-reader tool that increases sensitivity at the cost of lower specificity. Published in Radiology (RSNA).",
+      "take": "The sensitivity jump on non-contrast CT targets the highest-value failure mode, incidental pancreatic cancers missed on scans ordered for other reasons, but the lower specificity means false-positive workups are the deployment cost a site must model locally. External validation across 18 sites is stronger evidence than single-institution claims, though it remains retrospective and reader-benchmarked rather than a prospective workflow trial.",
+      "sources": [
+        {
+          "name": "Radiology (RSNA)",
+          "url": "https://pubs.rsna.org/doi/10.1148/radiol.253122",
+          "type": "research"
+        },
+        {
+          "name": "Enis C. Yilmaz, MD (@eniscy) #Tweetorial",
+          "url": "https://x.com/i/status/2067437471613243898",
+          "type": "analysis"
+        }
+      ],
+      "first_added": "2026-06-18T12:08:25Z",
+      "last_updated": "2026-06-18T12:08:25Z",
+      "last_checked": "2026-06-18T12:08:25Z",
+      "verified": false,
+      "verification_note": "Confirm the published metrics, study design, and publication date against the Radiology (RSNA) paper (DOI 10.1148/radiol.253122). The numbers here derive from an X tweetorial summary by a radiology resident, not a direct read of the paper.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Grok X scan; expert tweetorial summarizing a Radiology multicenter validation of deep-learning pancreatic-cancer CT second-reader models.",
+          "source": {
+            "name": "Enis C. Yilmaz, MD (@eniscy)",
+            "url": "https://x.com/i/status/2067437471613243898"
+          },
+          "timestamp": "2026-06-18T12:08:25Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "pancreatic-cancer",
+        "ct",
+        "second-read",
+        "external-validation",
+        "multicenter",
+        "sensitivity-tradeoff"
+      ]
+    },
+    {
+      "id": "rad-2026-nature-cancer-ai-second-reader-arbitration",
+      "date": "2026",
+      "type": "research",
+      "headline": "Nature Cancer prospective UK trial: AI replacing the second reader in mammography double-reading is non-inferior, cuts workload, no stage shift",
+      "summary": "A prospective UK breast-screening study reported in Nature Cancer evaluated replacing the second human reader with AI inside a full double-reading workflow that retained specialist arbitration. The AI arm (first human reader + AI second reader + arbitration) was compared against the standard arm (two radiologists + arbitration). After arbitration, sensitivity was 49.2% in the AI arm versus 48.0% with two human readers (non-inferior), and specificity was also non-inferior. Cancer detection rate was slightly higher and recall slightly lower in the AI arm, but neither difference was statistically significant, and replacing the second reader with AI did not shift cancers to earlier stages. Overall reading workload fell when AI replaced the second human reader.",
+      "take": "Adds prospective, arbitration-inclusive evidence that AI can stand in for the second human reader without measurable loss of detection accuracy, but the absent stage shift means the demonstrated payoff is workload reduction, not earlier diagnosis; safe deployment still hinges on local threshold calibration and ongoing performance monitoring.",
+      "sources": [
+        {
+          "name": "Nature Cancer (2026)",
+          "url": null,
+          "type": "research"
+        },
+        {
+          "name": "Nature Cancer (article s43018-026-01128-z)",
+          "url": "https://www.nature.com/articles/s43018-026-01128-z",
+          "type": "research"
+        }
+      ],
+      "first_added": "2026-06-19T12:08:14Z",
+      "last_updated": "2026-06-21T12:08:26Z",
+      "last_checked": "2026-06-21T12:08:26Z",
+      "verified": false,
+      "verification_note": "Primary source not retrieved: confirm exact title, authors, DOI, and publication date (cited as Nature Cancer, 2026) and confirm this is distinct from the Lancet Digital Health / Transpara second-reader item (rad-2026-06-mammography-ai-second-reader-lancet-dh, Netherlands, n=42,000). Verify the 48.0%/49.2% post-arbitration sensitivity figures, UK setting, and the no-stage-shift finding.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Perplexity sonar-pro mammography second-reader query during daily ai-radiology scan; flagged for primary-source verification.",
+          "source": {
+            "name": "Nature Cancer (2026)",
+            "url": null
+          },
+          "timestamp": "2026-06-19T12:08:14Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "source_added",
+          "note": "Located the primary journal DOI for the previously URL-less Nature Cancer citation. Full text confirms case-level sensitivity 49.2% in the AI arm vs 48.0% with two human readers (non-inferior), screen-detected-cancer sensitivity 92.3%, no shift to earlier-stage detection, and reduced reading workload.",
+          "source": {
+            "name": "Nature Cancer",
+            "url": "https://www.nature.com/articles/s43018-026-01128-z"
+          },
+          "timestamp": "2026-06-21T12:08:26Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "mammography",
+        "second-reader",
+        "arbitration",
+        "screening",
+        "workload",
+        "non-inferiority"
+      ]
+    },
+    {
+      "id": "rad-2026-06-ucsf-chung-mammo-second-reader-sensitivity",
+      "date": "2026-06",
+      "type": "research",
+      "headline": "UCSF study: AI as mammography second reader raises sensitivity 8.4%, catching more interval and future cancers",
+      "summary": "A study published in Radiology: Imaging Cancer and highlighted by the UCSF Center for Intelligent Imaging reports that using AI as a second reader in mammography screening improved sensitivity by 8.4% versus standard reading. The authors, including Maggie Chung MD, found the AI second-read configuration detected additional interval cancers and future-round cancers that would otherwise have been missed. This positive earlier-detection signal contrasts with concurrent prospective trials (e.g., the Nature Cancer UK arbitration study) that reported non-inferiority without a stage shift. Cohort size, specificity, recall-rate impact, and external-validation status were not available from the announcement.",
+      "take": "A positive second-reader signal that cuts against the no-stage-shift findings reported elsewhere; the discordance is the story, and the deciding variable is more likely cohort and workflow than the model. Treat as hypothesis-generating until the cohort and external validation are seen.",
+      "sources": [
+        {
+          "name": "Radiology: Imaging Cancer (Chung et al.)",
+          "url": "https://pubs.rsna.org/doi/10.1148/rycan.269009",
+          "type": "research"
+        },
+        {
+          "name": "UCSF Center for Intelligent Imaging (@UCSF_Ci2)",
+          "url": "https://x.com/UCSF_Ci2/status/2070264296919945459",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-27T08:09:11Z",
+      "last_updated": "2026-06-27T08:09:11Z",
+      "last_checked": "2026-06-27T08:09:11Z",
+      "verified": false,
+      "verification_note": "Confirm study design and cohort size, and whether the 8.4% sensitivity gain comes from a reader study or a retrospective cohort. Reconcile the positive earlier-detection signal against the Nature Cancer non-inferiority/no-stage-shift trial. DOI 10.1148/rycan.269009 to be retrieved.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Grok X scan from a UCSF Ci2 post linking the Radiology: Imaging Cancer paper.",
+          "source": {
+            "name": "UCSF Center for Intelligent Imaging (@UCSF_Ci2)",
+            "url": "https://x.com/UCSF_Ci2/status/2070264296919945459"
+          },
+          "timestamp": "2026-06-27T08:09:11Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "mammography",
+        "second-reader",
+        "ucsf",
+        "sensitivity",
+        "interval-cancer",
+        "breast-screening"
+      ]
+    },
+    {
+      "id": "rad-2026-06-25-fda-breakthrough-genai-cxr-cognita-aidoc",
+      "date": "2026-06-25",
+      "type": "regulatory",
+      "headline": "FDA grants breakthrough designation to two generative-AI devices (Cognita, Aidoc) that interpret chest X-rays and draft reports",
+      "summary": "STAT reported that the FDA granted breakthrough device designation to two devices using generative AI to interpret chest X-rays and draft radiology reports, attributed to Cognita and Aidoc. The designations are part of a broader influx of generative-AI devices into the FDA breakthrough pipeline reported the same week. Breakthrough designation accelerates review and signals unmet-need potential, but it is not a clearance or approval and the devices are not yet authorized for marketing. Generative report-drafting moves AI from flagging findings toward producing interpretive text, which introduces new oversight questions.",
+      "take": "Breakthrough designation is a regulatory on-ramp, not a safety verdict; generative report-drafting shifts the failure mode from missed-finding to fabricated or anchored narrative, which demands hallucination and automation-bias controls well before deployment.",
+      "sources": [
+        {
+          "name": "STAT (Katie Palmer)",
+          "url": "https://www.statnews.com/2026/06/25/radiology-generative-ai-cognita-aidoc-fda-breakthrough-designation/",
+          "type": "reporting"
+        },
+        {
+          "name": "STAT Health Tech (Mario Aguilar)",
+          "url": "https://www.statnews.com/2026/06/25/fda-breakthrough-generative-ai-devices-health-tech/",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-27T08:09:11Z",
+      "last_updated": "2026-06-27T08:09:11Z",
+      "last_checked": "2026-06-27T08:09:11Z",
+      "verified": false,
+      "verification_note": "Confirm both device/vendor names and that each is a generative-AI CXR report-drafting tool; confirm the action is breakthrough designation (not clearance). Primary FDA notice not yet retrieved.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via STAT health-tech RSS within the scan window.",
+          "source": {
+            "name": "STAT (Katie Palmer)",
+            "url": "https://www.statnews.com/2026/06/25/radiology-generative-ai-cognita-aidoc-fda-breakthrough-designation/"
+          },
+          "timestamp": "2026-06-27T08:09:11Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "fda",
+        "breakthrough-designation",
+        "generative-ai",
+        "chest-x-ray",
+        "aidoc",
+        "cognita"
+      ]
+    },
+    {
+      "id": "rad-2026-06-trade-press-fda-ai-imaging-clearances",
+      "date": "2026-06",
+      "type": "regulatory",
+      "headline": "Trade press reports three new FDA AI imaging clearances (DeepHealth, Cercare, vascular) not yet posted to FDA's AI device list",
+      "summary": "Radiology trade accounts on X (@Dx_imaging, @CardioBusiness) reported three FDA AI imaging clearances within the scan window: new functionalities for DeepHealth's AI breast (mammography) suite on June 26, a Cercare Medical brain-MRI AI segmentation module on June 25, and AI software for flagging vascular disease on June 24. As of June 27 none appear on the FDA's public AI-Enabled Medical Device List, which still ends at March 2026, reflecting the list's known posting lag. The DeepHealth mammography clearance is the most relevant to AI second-read imaging; the Cercare segmentation and vascular-flagging items are adjacent. All three are single-source social-media reports pending primary confirmation.",
+      "take": "A useful early signal of continued FDA throughput for imaging AI, but unverified trade-account posts are not a clearance record; confirm each against the 510(k) database before treating it as fact.",
+      "sources": [
+        {
+          "name": "Diagnostic Imaging (@Dx_imaging) - DeepHealth",
+          "url": "https://x.com/Dx_imaging/status/2070484759826846046",
+          "type": "reporting"
+        },
+        {
+          "name": "Diagnostic Imaging (@Dx_imaging) - Cercare",
+          "url": "https://x.com/Dx_imaging/status/2070160090993402361",
+          "type": "reporting"
+        },
+        {
+          "name": "Cardiovascular Business (@CardioBusiness) - vascular",
+          "url": "https://x.com/CardioBusiness/status/2069783635201266105",
+          "type": "reporting"
+        },
+        {
+          "name": "Cercare Medical (company announcement)",
+          "url": "https://cercare-medical.com/cercare-medical-receives-fda-510k-clearance-for-ai-powered-brain-tumor-segmentation/",
+          "type": "primary"
+        },
+        {
+          "name": "@Sid_Healthcare (X)",
+          "url": "https://x.com/Sid_Healthcare/status/2075626603942481975",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-27T08:09:11Z",
+      "last_updated": "2026-07-11T08:08:41Z",
+      "last_checked": "2026-07-11T08:08:41Z",
+      "verified": false,
+      "verification_note": "Confirm each clearance against the FDA 510(k) / AI-Enabled Medical Device List; the FDA list lagged (ended March 2026) at scan time. DeepHealth = mammography (on-topic); Cercare brain-MRI and vascular flagging are adjacent.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Grok X scan of radiology trade accounts; not yet on the FDA list.",
+          "source": {
+            "name": "Diagnostic Imaging (@Dx_imaging)",
+            "url": "https://x.com/Dx_imaging/status/2070484759826846046"
+          },
+          "timestamp": "2026-06-27T08:09:11Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "Cercare Medical's FDA 510(k) clearance, one of the three clearances this item flagged as not yet posted to FDA's list, is now confirmed by a company announcement (surfaced ~2026-07-10). The cleared product performs AI-powered brain tumor segmentation (semi-automated, on-premise tumor segmentation on MRI for neuro-oncology teams).",
+          "source": {
+            "name": "Cercare Medical (company announcement)",
+            "url": "https://cercare-medical.com/cercare-medical-receives-fda-510k-clearance-for-ai-powered-brain-tumor-segmentation/"
+          },
+          "timestamp": "2026-07-11T08:08:41Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "fda",
+        "510k",
+        "deephealth",
+        "cercare",
+        "mammography",
+        "brain-mri",
+        "vascular"
+      ]
+    },
+    {
+      "id": "rad-2026-07-bayerl-eyetracking-automation-bias-mammo",
+      "date": "2026-07",
+      "type": "research",
+      "headline": "Radiology eye-tracking study: false-negative AI prompts cut mammography reader sensitivity from 71% to 39%",
+      "summary": "A Radiology (RSNA) study used eye-tracking to measure automation bias when AI (Lunit INSIGHT MMG) is used as a second reader in screening mammography. Ten experienced NHS breast-screen readers each interpreted 60 mammograms twice, with and without AI prompts, on a test set deliberately enriched with AI errors including 14 false negatives. When the AI produced false-negative prompts on cancer cases, median reader sensitivity fell from 71% to 39% (P=0.002), and readers fixated less on the missed cancers, indicating the AI miss redirected their visual search. False-positive AI prompts were largely ignored and specificity rose. The authors conclude AI should be calibrated to minimize false negatives, because AI errors, not correct prompts, drive automation bias and missed detections.",
+      "take": "This is direct eye-tracking evidence that a second-read AI's misses propagate into the human reader rather than being caught by them, collapsing the safety assumption that the radiologist backstops the algorithm. Any second-read deployment should audit reader performance specifically on AI-false-negative cases, and the vendor's false-negative rate, not headline sensitivity, is the number that governs patient harm.",
+      "sources": [
+        {
+          "name": "Radiology (RSNA)",
+          "url": "https://pubs.rsna.org/doi/10.1148/radiol.252590",
+          "type": "research"
+        },
+        {
+          "name": "Nadine Bayerl, MD (@nadinebayerl) on X",
+          "url": "https://x.com/i/status/2077488572123217945",
+          "type": "analysis"
+        }
+      ],
+      "first_added": "2026-07-18T08:09:27Z",
+      "last_updated": "2026-07-18T08:09:27Z",
+      "last_checked": "2026-07-18T08:09:27Z",
+      "verified": false,
+      "verification_note": "Confirm the Radiology (RSNA) citation and publication date at DOI 10.1148/radiol.252590; the 71% to 39% sensitivity figures and study design derive from an X thread by radiology fellow Nadine Bayerl, not a direct read of the paper.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Grok X scan; thread by NHS-affiliated radiology fellow summarizing a Radiology (RSNA) eye-tracking automation-bias study using Lunit INSIGHT MMG as a mammography second reader.",
+          "source": {
+            "name": "Nadine Bayerl, MD (@nadinebayerl) on X",
+            "url": "https://x.com/i/status/2077488572123217945"
+          },
+          "timestamp": "2026-07-18T08:09:27Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "mammography",
+        "automation-bias",
+        "second-reader",
+        "eye-tracking",
+        "lunit-insight-mmg",
+        "reader-sensitivity"
       ]
     }
   ]

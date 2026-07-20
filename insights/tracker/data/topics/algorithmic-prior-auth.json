@@ -3,7 +3,7 @@
   "name": "Algorithmic Prior Authorization",
   "description": "Coverage denial algorithms, payer review systems, and target-misalignment failure cases.",
   "auto_managed": true,
-  "last_run": "2026-06-11T11:08:03Z",
+  "last_run": "2026-07-18T07:07:22Z",
   "source_list": [
     {
       "name": "STAT News",
@@ -251,11 +251,71 @@
           "name": "Rep. Lois Frankel (@RepLoisFrankel)",
           "url": "https://x.com/RepLoisFrankel/status/2064741159885279695",
           "type": "primary"
+        },
+        {
+          "name": "HealthExec (@HlthExec)",
+          "url": "https://x.com/HlthExec/status/2065428680042561732",
+          "type": "reporting"
+        },
+        {
+          "name": "STAT News, 'AMA and lawmakers push back on AI care denials'",
+          "url": "https://www.statnews.com/2026/06/11/ama-lawmakers-push-back-ai-care-denials-health-tech/",
+          "type": "reporting"
+        },
+        {
+          "name": "@MedicalQuack (The Medical Quack, health IT blog)",
+          "url": "https://x.com/MedicalQuack/status/2066162255205658712",
+          "type": "analysis"
+        },
+        {
+          "name": "HealthExec, 'House committee votes unanimously to block AI-enabled Medicare prior authorizations'",
+          "url": "https://healthexec.com/topics/artificial-intelligence/house-committee-votes-unanimously-block-ai-enabled-medicare-prior-authorizations",
+          "type": "reporting"
+        },
+        {
+          "name": "April Wilson (@aprilewilson), RCM analyst",
+          "url": "https://x.com/aprilewilson/status/2067701382652809363",
+          "type": "reporting"
+        },
+        {
+          "name": "Wendell Potter (@wendellpotter), former Cigna VP",
+          "url": "https://x.com/wendellpotter/status/2067637671476773356",
+          "type": "reporting"
+        },
+        {
+          "name": "24/7 Wall St., 'The RFK Jr. Medicare AI Program Already Denying Seniors Care in 6 States' (via @vinfrankl)",
+          "url": "https://x.com/vinfrankl/status/2068105353016074299",
+          "type": "reporting"
+        },
+        {
+          "name": "BBC Science Focus, 'AI is now approving (and denying) healthcare in 6 US states' (via @CandaceNiemeyer)",
+          "url": "https://x.com/CandaceNiemeyer/status/2068043269687128431",
+          "type": "reporting"
+        },
+        {
+          "name": "KFF Health News, 'Medicare's AI Preauthorization Push Snarls Patients and Doctors in Errors and Delays' (Darius Tahir)",
+          "url": "https://kffhealthnews.org/medicare/medicare-ai-prior-authorization-wiser-delays-errors/",
+          "type": "reporting"
+        },
+        {
+          "name": "V.L. Sorrell MD, CASE Journal editor, on American Society of Echocardiography opposition to WISeR (@VLSorrellImages)",
+          "url": "https://x.com/VLSorrellImages/status/2069430336522510426",
+          "type": "analysis"
+        },
+        {
+          "name": "STAT News, 'GOP blocks effort to end Medicare test of AI prior authorization'",
+          "url": "https://www.statnews.com/2026/07/16/medicare-ai-prior-authorization-pilot-wiser-senate-vote/",
+          "type": "reporting"
+        },
+        {
+          "name": "Christian Pean MD (@DrChristianPean), orthopedic trauma surgeon, Duke-Margolis",
+          "url": "https://x.com/DrChristianPean/status/2076648314594857413",
+          "type": "reporting"
         }
       ],
       "first_added": "2026-06-02T03:35:42Z",
-      "last_updated": "2026-06-11T11:08:03Z",
-      "last_checked": "2026-06-11T11:08:03Z",
+      "last_updated": "2026-07-18T07:07:22Z",
+      "last_checked": "2026-07-18T07:07:22Z",
       "verified": false,
       "verification_note": "Locate Federal Register citation and direct CMS WISeR program page URL; confirm full list of initial WISeR technology participants per MAC jurisdiction.",
       "human_curated": false,
@@ -289,6 +349,76 @@
           },
           "timestamp": "2026-06-11T11:08:03Z",
           "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "Congressional action against WISeR escalated from announced intent to a committee vote. On June 12, 2026, a House committee was reported (HealthExec) to have voted to block AI-enabled prior authorization in Original Medicare, directly targeting the WISeR demonstration and operationalizing the FY27 Labor-HHS amendment publicized June 10-11; coverage framed the move as bipartisan. The same week, STAT reported the AMA and lawmakers pushing back on AI-driven care denials. Primary committee markup/roll-call record not yet retrieved; sourcing is secondary trade and social reporting.",
+          "source": {
+            "name": "HealthExec (@HlthExec)",
+            "url": "https://x.com/HlthExec/status/2065428680042561732"
+          },
+          "timestamp": "2026-06-13T11:06:47Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "source_added",
+          "note": "Independent trade coverage (Healthcare Finance News, surfaced via @MedicalQuack on June 14, 2026) characterized the WISeR defunding action as a House Appropriations Committee vote to end program funding and emphasized private-equity involvement among the technology-enabled medical review entities. Corroborates the June 12 committee-vote development with an additional secondary outlet; primary committee markup/roll-call record still not retrieved.",
+          "source": {
+            "name": "@MedicalQuack (The Medical Quack, health IT blog)",
+            "url": "https://x.com/MedicalQuack/status/2066162255205658712"
+          },
+          "timestamp": "2026-06-15T11:07:48Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "source_added",
+          "note": "June 16, 2026 HealthExec trade coverage (surfaced via @MedicalQuack) confirms the House committee vote to block AI-enabled prior authorization in Original Medicare was unanimous, and directly targets the WISeR demonstration. This supplies the direct trade-article URL behind the June 12-15 social reposts and adds the 'unanimous' detail; primary committee markup/roll-call record still not retrieved.",
+          "source": {
+            "name": "HealthExec, 'House committee votes unanimously to block AI-enabled Medicare prior authorizations'",
+            "url": "https://healthexec.com/topics/artificial-intelligence/house-committee-votes-unanimously-block-ai-enabled-medicare-prior-authorizations"
+          },
+          "timestamp": "2026-06-17T11:07:39Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "source_added",
+          "note": "June 17-18, 2026: physician and health-policy commentary amplified the unanimous House Appropriations Committee vote to defund the WISeR AI prior-authorization pilot. Fierce Healthcare coverage circulated (via @aprilewilson), and Rep. Greg Landsman (D-OH) was shown (via @wendellpotter) pursuing repeal of the program, framing it as new AI-driven barriers to senior care. No new legislative action beyond the previously logged committee vote.",
+          "source": {
+            "name": "April Wilson (@aprilewilson), RCM analyst",
+            "url": "https://x.com/aprilewilson/status/2067701382652809363"
+          },
+          "timestamp": "2026-06-19T11:07:22Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "June 19, 2026: WISeR coverage crossed from trade and physician channels into general-audience consumer media and acquired a populist label. BBC Science Focus ran 'AI is now approving (and denying) healthcare in 6 US states. And it's already harming patients,' and 24/7 Wall St. framed the same six-state demonstration as 'The RFK Jr. Medicare AI Program Already Denying Seniors Care in 6 States,' both recirculated across X on June 19. No new substantive program or legislative event; the signal is escalating public salience and the attachment of the demonstration to HHS Secretary RFK Jr. in mass-market framing.",
+          "source": {
+            "name": "24/7 Wall St. (via @vinfrankl)",
+            "url": "https://x.com/vinfrankl/status/2068105353016074299"
+          },
+          "timestamp": "2026-06-20T11:07:14Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "June 23, 2026: KFF Health News published the first detailed operational investigation of the live WISeR demonstration (Darius Tahir), documenting months of patient delays, unpaid physicians, and AI hallucinations in the AI-assisted prior-authorization workflow. Amplified across X by KFF Health News, health journalist Harris Meyer, and senior/disability advocacy accounts (NCPSSM, ADAP Advocacy) citing longer approval times, payment backlogs, and access concerns. Separately, the American Society of Echocardiography (surfaced via CASE Journal editor V.L. Sorrell MD) publicly opposed WISeR's use of AI prior authorization for traditional Medicare fee-for-service claims. This shifts the evidence base from advocacy/congressional framing to documented operational failure modes; 'AI hallucination' is a new, specific failure mode attached to this program.",
+          "source": {
+            "name": "KFF Health News (Darius Tahir)",
+            "url": "https://kffhealthnews.org/medicare/medicare-ai-prior-authorization-wiser-delays-errors/"
+          },
+          "timestamp": "2026-06-27T07:07:24Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "July 16, 2026: the defund fight moved to the Senate. STAT reported that Senate Republicans blocked an effort to terminate the WISeR AI prior-authorization demonstration, keeping the six-state pilot (AZ, NJ, OH, OK, TX, WA) alive after the House Appropriations Committee had voted in June to block it. Physician commentary (Christian Pean MD, July 13) restated that WISeR pays participating review vendors based on savings generated from reduced or denied services, with CMS asserting a human clinician reviews before any denial.",
+          "source": {
+            "name": "STAT News",
+            "url": "https://www.statnews.com/2026/07/16/medicare-ai-prior-authorization-pilot-wiser-senate-vote/"
+          },
+          "timestamp": "2026-07-18T07:07:22Z",
+          "added_by": "cortivus-tracker-scan"
         }
       ],
       "tags": [
@@ -302,7 +432,23 @@
         "advocacy",
         "congressional-oversight",
         "defund-effort",
-        "fy27-labor-hhs"
+        "fy27-labor-hhs",
+        "house-committee",
+        "ama",
+        "wiser-defund",
+        "house-appropriations",
+        "private-equity",
+        "unanimous-vote",
+        "consumer-media",
+        "rfk-jr-framing",
+        "public-salience",
+        "kff",
+        "ai-hallucination",
+        "medical-society-opposition",
+        "echocardiography",
+        "senate-vote",
+        "wiser-defund-blocked",
+        "contingency-savings-model"
       ]
     },
     {
@@ -376,11 +522,31 @@
           "name": "HHS Office of Inspector General (report referenced by STAT; citation unconfirmed)",
           "url": null,
           "type": "primary"
+        },
+        {
+          "name": "MedPage Today (@medpagetoday)",
+          "url": "https://x.com/medpagetoday/status/2065902532598051276",
+          "type": "reporting"
+        },
+        {
+          "name": "American Hospital Association (@ahahospitals)",
+          "url": "https://x.com/ahahospitals/status/2066551544154132635",
+          "type": "reporting"
+        },
+        {
+          "name": "Marilyn Heine MD (@MarilynHeineMD)",
+          "url": "https://x.com/MarilynHeineMD/status/2066505766274510854",
+          "type": "reporting"
+        },
+        {
+          "name": "Physicians Grassroots Network (@PhysGrassroots)",
+          "url": "https://x.com/PhysGrassroots/status/2066650701623672991",
+          "type": "reporting"
         }
       ],
       "first_added": "2026-06-11T11:08:03Z",
-      "last_updated": "2026-06-11T11:08:03Z",
-      "last_checked": "2026-06-11T11:08:03Z",
+      "last_updated": "2026-06-16T11:07:47Z",
+      "last_checked": "2026-06-16T11:07:47Z",
       "verified": false,
       "verification_note": "Confirm the specific HHS OIG report (report number and publication date) underlying STAT's June 11, 2026 article, and whether the findings specifically address algorithmic/AI-driven utilization review or Medicare Advantage denial practices generally. STAT article is behind the STAT+ paywall.",
       "human_curated": false,
@@ -394,6 +560,26 @@
           },
           "timestamp": "2026-06-11T11:08:03Z",
           "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "Clinical and trade press amplified the OIG findings on June 13, 2026. MedPage Today reported the federal investigation found three large Medicare Advantage organizations denied prior-authorization requests for long-term care hospitals and inpatient rehabilitation facilities at higher rates than peer plans, with denials frequently overturned on appeal but low appeal uptake. This sharpens the scope the June 11 STAT-sourced entry left unconfirmed (specific care settings: LTCH and inpatient rehab).",
+          "source": {
+            "name": "MedPage Today (@medpagetoday)",
+            "url": "https://x.com/medpagetoday/status/2065902532598051276"
+          },
+          "timestamp": "2026-06-15T11:07:48Z",
+          "added_by": "cortivus-tracker-scan"
+        },
+        {
+          "type": "development",
+          "note": "Physician leaders and the American Hospital Association amplified the OIG findings on June 15, 2026 with sharper figures. Posts surfacing the OIG report state Medicare Advantage plans overturned roughly 95% of appealed prior-authorization denials for skilled nursing facility (SNF) admissions, and the AHA recap cites OIG findings of higher 2024 coverage-denial rates by UnitedHealth, Humana, and CVS Health Medicare Advantage plans for long-term care, rehab, and SNF. This extends the prior LTCH/inpatient-rehab scope to SNF and attaches a specific appeal-overturn figure and named plans; the 95% SNF figure and per-insurer 2024 rates should be confirmed against the underlying OIG report.",
+          "source": {
+            "name": "American Hospital Association (@ahahospitals)",
+            "url": "https://x.com/ahahospitals/status/2066551544154132635"
+          },
+          "timestamp": "2026-06-16T11:07:47Z",
+          "added_by": "cortivus-tracker-scan"
         }
       ],
       "tags": [
@@ -402,7 +588,106 @@
         "rehab-care",
         "post-acute-care",
         "appeal-reversal",
-        "prior-authorization"
+        "prior-authorization",
+        "ltch",
+        "inpatient-rehab",
+        "skilled-nursing",
+        "appeal-overturn-rate",
+        "unitedhealth",
+        "humana",
+        "cvs"
+      ]
+    },
+    {
+      "id": "pa-2026-state-ai-denial-laws",
+      "date": "2026",
+      "type": "regulatory",
+      "headline": "Six states enact 2026 laws requiring human clinician sign-off on AI-driven coverage denials",
+      "summary": "A June 15, 2026 healthcare-policy thread reports that six states (Indiana, Utah, Washington, Alabama, Maryland, and Georgia) passed laws in spring 2026 restricting insurers' use of AI and algorithms in coverage decisions, requiring that a qualified clinician, not an algorithm alone, make any final denial of medically necessary care. The thread cites NAIC data that roughly 84% of insurers now use AI/ML, voluntary human-review pledges by about 60 insurers, a May 2026 MACPAC recommendation for human oversight of Medicaid medical-necessity determinations, and a March 2026 White House AI framework that could preempt state rules. Separate state-lawmaker posts describe a state becoming the first to require insurers to report how often AI denies care and empowering the insurance commissioner to investigate denial spikes. Primary statute texts, the NAIC figure, the MACPAC recommendation, and the White House framework were not retrieved in this scan.",
+      "take": "State legislatures are converting 'human in the loop' from a voluntary insurer pledge into a statutory mandate aimed at the same target-misalignment failure mode the nH Predict and WISeR items document. The unresolved variable is preemption: a March 2026 federal AI framework could override these clinician-final-decision laws before they take effect.",
+      "sources": [
+        {
+          "name": "Breaking News ABA (@breakingnewsaba)",
+          "url": "https://x.com/breakingnewsaba/status/2066525412964937778",
+          "type": "reporting"
+        },
+        {
+          "name": "@TomZerega",
+          "url": "https://x.com/TomZerega/status/2066525673854779903",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-06-16T11:07:47Z",
+      "last_updated": "2026-06-16T11:07:47Z",
+      "last_checked": "2026-06-16T11:07:47Z",
+      "verified": false,
+      "verification_note": "Confirm each state statute by bill number and effective date (Indiana, Utah, Washington, Alabama, Maryland, Georgia); confirm the NAIC ~84% AI/ML adoption figure, the May 2026 MACPAC recommendation, and the March 2026 White House AI framework and its preemption scope. The consolidated claim rests primarily on a single X policy thread (@breakingnewsaba); no primary statute text was retrieved.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via Grok/X scan; multiple June 15, 2026 healthcare-policy posts describing a six-state wave of 2026 AI-denial restriction laws requiring human clinician sign-off on final coverage denials.",
+          "source": {
+            "name": "Breaking News ABA (@breakingnewsaba)",
+            "url": "https://x.com/breakingnewsaba/status/2066525412964937778"
+          },
+          "timestamp": "2026-06-16T11:07:47Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "state-legislation",
+        "human-in-the-loop",
+        "prior-authorization",
+        "ai-claim-denial",
+        "naic",
+        "preemption"
+      ]
+    },
+    {
+      "id": "pa-2026-07-15-ma-ai-denial-senate-probe",
+      "date": "2026-07-15",
+      "type": "regulatory",
+      "headline": "Senate opens bipartisan probe of Medicare Advantage insurers over AI-driven care denials",
+      "summary": "STAT News reported on July 15, 2026 that the largest Medicare Advantage insurers face a new bipartisan Senate inquiry into their use of artificial intelligence in coverage and care-denial decisions, led by Sens. Richard Blumenthal and Josh Hawley. The inquiry follows the June 2026 federal OIG findings on deny-then-reverse post-acute care denials and the ongoing nH Predict / naviHealth litigation against UnitedHealth. Contemporaneous X commentary framed UnitedHealth, Humana, and CVS as the principal targets of the scrutiny over AI-assisted rejection of Medicare Advantage claims. The senators' primary correspondence, the precise list of insurers contacted, and the specific documents requested were not retrieved in this scan.",
+      "take": "A bipartisan Senate inquiry raises the political cost of algorithmic utilization review at the same target-misalignment failure mode the nH Predict and WISeR items document: systems optimized to cut spend produce denials reversed on appeal. For a curator, the open question is whether this converts into subpoena-backed oversight or remains a letter-writing exercise.",
+      "sources": [
+        {
+          "name": "STAT News, 'Medicare Advantage insurers face new bipartisan scrutiny over AI and care denials'",
+          "url": "https://www.statnews.com/2026/07/15/medicare-advantage-ai-care-denials-probe-blumenthal-hawley/",
+          "type": "reporting"
+        },
+        {
+          "name": "AI Health Hub (@aihealth_hub)",
+          "url": "https://x.com/aihealth_hub/status/2077377997854654775",
+          "type": "reporting"
+        }
+      ],
+      "first_added": "2026-07-18T07:07:22Z",
+      "last_updated": "2026-07-18T07:07:22Z",
+      "last_checked": "2026-07-18T07:07:22Z",
+      "verified": false,
+      "verification_note": "Confirm the senators leading the inquiry (STAT URL cites Blumenthal and Hawley), the full list of insurers contacted, the committee of jurisdiction, and retrieve the primary letters. Confirm whether the probe cites the June 2026 OIG report and the nH Predict litigation directly.",
+      "human_curated": false,
+      "update_log": [
+        {
+          "type": "added",
+          "note": "Surfaced via STAT News health-tech RSS feed (July 15, 2026) and corroborated by X commentary naming UnitedHealth, Humana, and CVS as targets.",
+          "source": {
+            "name": "STAT News",
+            "url": "https://www.statnews.com/2026/07/15/medicare-advantage-ai-care-denials-probe-blumenthal-hawley/"
+          },
+          "timestamp": "2026-07-18T07:07:22Z",
+          "added_by": "cortivus-tracker-scan"
+        }
+      ],
+      "tags": [
+        "medicare-advantage",
+        "congressional-oversight",
+        "senate",
+        "blumenthal-hawley",
+        "ai-claim-denial",
+        "unitedhealth"
       ]
     }
   ]
