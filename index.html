@@ -30,6 +30,14 @@
                 <a href="/practice/" class="btn-secondary-outline">See the Practice</a>
                 <a href="#contact" class="btn-secondary-outline">Start a Conversation</a>
             </div>
+
+            <!-- Small cross-sell for The Strategist, styled in its own brand green
+                 so it reads as a different product, not another SAFE AI CTA. Kept
+                 deliberately compact (one pill + one line) so it doesn't grow the hero. -->
+            <div class="hero-strategist-ad">
+                <a href="/strategist/" class="hero-strategist-cta">Explore The Strategist</a>
+                <p>AI-assisted annual strategy for nonprofit leaders &mdash; map your ecosystem, find your next move, and keep the plan alive all year.</p>
+            </div>
         </div>
         <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
@@ -244,6 +252,43 @@
 
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
+
+    <!-- Minimal helper styles scoped to this page -->
+    <style>
+        .hero-strategist-ad {
+            margin-top: 1.75rem;
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.5s backwards;
+        }
+
+        .hero-strategist-cta {
+            display: inline-block;
+            background: #0e7568;
+            color: #ffffff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .hero-strategist-cta:hover {
+            background: #0b5d53;
+            transform: translateY(-2px);
+        }
+
+        .hero-strategist-ad p {
+            margin: 0.6rem auto 0;
+            max-width: 30rem;
+            font-size: 0.8rem;
+            color: #4cc7b0;
+        }
+
+        @media (max-width: 600px) {
+            .hero-strategist-ad { margin-top: 1.25rem; }
+        }
+    </style>
 
     <script src="js/components.js"></script>
     <script>

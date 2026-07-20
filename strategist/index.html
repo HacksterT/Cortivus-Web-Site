@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Strategist | AI-Assisted Annual Strategy for Nonprofits</title>
+    <meta name="description" content="AI-assisted annual strategy for nonprofit leaders. See the ecosystem you sit in, find out which relationship to build first, and keep the plan alive with quarterly check-ins.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e7568'/%3E%3Ctext x='32' y='44' font-family='Georgia, Times New Roman, serif' font-size='38' font-weight='600' fill='%23ffffff' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-ground: #faf9f7;
+            --color-surface: #ffffff;
+            --color-line: #e8e4de;
+            --color-ink: #211f1b;
+            --color-ink-secondary: #5d574d;
+            --color-ink-muted: #8a8378;
+            --color-brand: #0e7568;
+            --color-brand-hover: #0b5d53;
+            --color-brand-tint: #e4f0ee;
+            --color-org: #1f6272;
+            --color-org-tint: #e3f0f4;
+            --color-strategy: #2c6337;
+            --color-strategy-tint: #e5f0e4;
+            --color-warning: #b45309;
+            --color-warning-tint: #fdf3e3;
+            --font-sans: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+            --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            background: var(--color-ground);
+            color: var(--color-ink);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+        }
+
+        h1, h2 { font-family: var(--font-serif); margin: 0; }
+
+        p { margin: 0; }
+
+        a { color: inherit; }
+
+        .wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ---- Header ---- */
+        .strategist-header {
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-line);
+        }
+
+        .strategist-header .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 0.9rem;
+            padding-bottom: 0.9rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .brand-mark {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .brand-mark .name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-ink);
+        }
+
+        .brand-mark .tagline {
+            font-size: 0.875rem;
+            color: var(--color-ink-muted);
+        }
+
+        .back-link {
+            font-size: 0.8rem;
+            color: var(--color-ink-muted);
+            text-decoration: none;
+        }
+
+        .back-link:hover { color: var(--color-ink); }
+
+        /* ---- Buttons ---- */
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            font-family: var(--font-sans);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            padding: 0.85rem 2rem;
+            font-size: 1rem;
+            transition: background-color 0.15s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--color-brand);
+            color: #fff;
+        }
+
+        .btn-primary:hover { background: var(--color-brand-hover); }
+
+        .btn-sm {
+            padding: 0.5rem 1.1rem;
+            font-size: 0.875rem;
+        }
+
+        /* ---- Hero ---- */
+        .hero {
+            padding: 4.5rem 0 3rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--color-ink);
+            margin-bottom: 1.5rem;
+            text-wrap: balance;
+        }
+
+        .hero p {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: var(--color-ink-secondary);
+            max-width: 42rem;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* ---- Section headers ---- */
+        .eyebrow {
+            display: inline-block;
+            border-radius: 999px;
+            background: var(--color-brand-tint);
+            color: var(--color-brand);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.3rem 0.75rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 1.9rem);
+            font-weight: 700;
+            color: var(--color-ink);
+            margin-bottom: 0.75rem;
+            text-wrap: balance;
+        }
+
+        .section-body {
+            color: var(--color-ink-secondary);
+            max-width: 46rem;
+        }
+
+        /* ---- Worked example ---- */
+        .example-section { padding: 1rem 0 4rem; }
+
+        .example-intro { max-width: 42rem; margin-bottom: 1.5rem; }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 860px) {
+            .example-grid { grid-template-columns: 1fr; }
+        }
+
+        .graph-card {
+            position: relative;
+            border: 1px solid var(--color-line);
+            border-radius: 0.5rem;
+            background: var(--color-surface);
+            padding: 0.5rem;
+            overflow: hidden;
+        }
+
+        .graph-card svg { width: 100%; height: auto; display: block; }
+
+        .watermark {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .watermark span {
+            transform: rotate(-24deg);
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: rgba(33, 31, 27, 0.07);
+            user-select: none;
+        }
+
+        .legend-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.4rem 1.25rem;
+            padding: 0.5rem 0.75rem 0.6rem;
+            font-size: 0.75rem;
+            color: var(--color-ink-muted);
+        }
+
+        .legend-row .item { display: flex; align-items: center; gap: 0.4rem; }
+
+        .moves-panel {
+            border: 1px solid var(--color-line);
+            border-radius: 0.5rem;
+            background: var(--color-surface);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .moves-panel h3 {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 0.35rem;
+        }
+
+        .moves-panel > p.lead {
+            font-size: 0.9rem;
+            color: var(--color-ink-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .move-item {
+            border: 1px solid var(--color-line);
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .move-item .row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .move-item .title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-ink);
+        }
+
+        .chip {
+            flex-shrink: 0;
+            border-radius: 999px;
+            padding: 0.15rem 0.6rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            white-space: nowrap;
+            background: var(--color-warning-tint);
+            color: var(--color-warning);
+        }
+
+        .move-item .why {
+            margin-top: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--color-ink-secondary);
+        }
+
+        .moves-footnote {
+            margin-top: auto;
+            padding-top: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--color-ink-muted);
+        }
+
+        /* ---- Capability / step cards ---- */
+        .band { background: var(--color-surface); border-top: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line); }
+        .band-inner { padding: 3.5rem 0; }
+
+        .card-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 860px) {
+            .card-grid-3 { grid-template-columns: 1fr; }
+        }
+
+        .cap-card {
+            border: 1px solid var(--color-line);
+            border-radius: 0.75rem;
+            background: var(--color-ground);
+            padding: 1.5rem;
+        }
+
+        .icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 0.5rem;
+            background: var(--color-brand-tint);
+            margin-bottom: 1rem;
+        }
+
+        .icon-badge svg { width: 1.4rem; height: 1.4rem; stroke: var(--color-brand); }
+
+        .cap-card h3, .step-card h3 {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            margin-bottom: 0.5rem;
+        }
+
+        .cap-card p, .step-card p {
+            font-size: 0.9rem;
+            color: var(--color-ink-secondary);
+        }
+
+        .steps-section { padding: 3.5rem 0; }
+
+        .step-card {
+            border: 1px solid var(--color-line);
+            border-radius: 0.75rem;
+            background: var(--color-surface);
+            box-shadow: 0 1px 2px rgba(33, 31, 27, 0.04);
+            padding: 1.5rem;
+        }
+
+        .step-head {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 999px;
+            background: var(--color-brand);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-head svg { width: 1.15rem; height: 1.15rem; stroke: var(--color-ink-muted); }
+
+        /* ---- Module cards ---- */
+        .modules-section { padding: 3.5rem 0; }
+
+        .card-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 720px) {
+            .card-grid-2 { grid-template-columns: 1fr; }
+        }
+
+        .module-card {
+            border: 1px solid var(--color-line);
+            border-radius: 0.75rem;
+            background: var(--color-surface);
+            box-shadow: 0 1px 2px rgba(33, 31, 27, 0.04);
+            padding: 1.5rem;
+        }
+
+        .module-card.org .icon-badge { background: var(--color-org-tint); }
+        .module-card.org .icon-badge svg { stroke: var(--color-org); }
+        .module-card.strategy .icon-badge { background: var(--color-strategy-tint); }
+        .module-card.strategy .icon-badge svg { stroke: var(--color-strategy); }
+
+        .module-card h3 {
+            font-family: var(--font-sans);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            margin-bottom: 0.4rem;
+        }
+
+        .module-card p { color: var(--color-ink-secondary); }
+
+        /* ---- Closing CTA ---- */
+        .closing {
+            border-top: 1px solid var(--color-line);
+            background: var(--color-surface);
+            text-align: center;
+        }
+
+        .closing-inner { padding: 4rem 0; }
+
+        .closing h2 { margin-bottom: 1rem; }
+
+        .closing p {
+            color: var(--color-ink-secondary);
+            max-width: 34rem;
+            margin: 0 auto 2rem;
+        }
+
+        /* ---- Footer ---- */
+        .strategist-footer {
+            border-top: 1px solid var(--color-line);
+            padding: 1.5rem 0;
+        }
+
+        .strategist-footer .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .strategist-footer p {
+            font-size: 0.85rem;
+            color: var(--color-ink-muted);
+        }
+
+        .strategist-footer nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .strategist-footer nav a {
+            font-size: 0.85rem;
+            color: var(--color-ink-muted);
+            text-decoration: none;
+        }
+
+        .strategist-footer nav a:hover { color: var(--color-ink); }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="strategist-header">
+        <div class="wrap">
+            <a href="#top" class="brand-mark">
+                <span class="name">The Strategist</span>
+                <span class="tagline">Nonprofit strategy platform</span>
+            </a>
+            <a href="/" class="back-link">&larr; cortivus.com</a>
+        </div>
+    </header>
+
+    <main id="top">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="wrap">
+                <h1>A Strategy That Survives the Year</h1>
+                <p>
+                    AI-assisted annual strategy for nonprofit leaders. See the ecosystem you sit in, find
+                    out which relationship to build first, and keep the plan alive with quarterly check-ins.
+                </p>
+                <a href="/index.html#contact" class="btn btn-primary">Request Pilot Access</a>
+            </div>
+        </section>
+
+        <!-- Worked example: static ecosystem map -->
+        <section class="example-section">
+            <div class="wrap">
+                <div class="example-intro">
+                    <span class="eyebrow">Sample organization</span>
+                    <h2 class="section-title">Your whole world on one page</h2>
+                    <p class="section-body">
+                        This is the real map for a sample nonprofit, drawn by the same engine every pilot
+                        organization uses. Circles are organizations, grouped into the four relationships that
+                        matter. Bigger circles and shorter lines to the center mean a stronger tie or a higher
+                        priority. In the product, this map is interactive &mdash; here it is one frame from it.
+                    </p>
+                </div>
+
+                <div class="example-grid">
+                    <!-- Static graph -->
+                    <div class="graph-card">
+                        <svg viewBox="0 0 800 520" role="img" aria-label="Sample relationship map for Acme Nonprofit Collaborative: seven organizations across four groups">
+                            <!-- Sector labels -->
+                            <text x="400" y="22" text-anchor="middle" font-size="12" font-weight="600" fill="#0e7568">Who funds you</text>
+                            <text x="788" y="264" text-anchor="end" font-size="12" font-weight="600" fill="#1f6272">Who sends or receives your people</text>
+                            <text x="400" y="510" text-anchor="middle" font-size="12" font-weight="600" fill="#2c6337">Who does similar work</text>
+                            <text x="12" y="264" text-anchor="start" font-size="12" font-weight="600" fill="#b45309">Who sets your rules</text>
+
+                            <!-- Edges -->
+                            <line x1="400" y1="260" x2="351.36" y2="189.22" stroke="#0e7568" stroke-width="2.5" opacity="0.5" />
+                            <line x1="400" y1="260" x2="473.09" y2="153.65" stroke="#0e7568" stroke-width="1.8" opacity="0.41" />
+                            <line x1="400" y1="260" x2="577.4" y2="137.6" stroke="#1f6272" stroke-width="1" stroke-dasharray="4 4" opacity="0.25" />
+                            <line x1="400" y1="260" x2="572.38" y2="260" stroke="#1f6272" stroke-width="1.1" opacity="0.33" />
+                            <line x1="400" y1="260" x2="577.4" y2="382.4" stroke="#1f6272" stroke-width="1" stroke-dasharray="4 4" opacity="0.25" />
+                            <line x1="400" y1="260" x2="400" y2="432.38" stroke="#2c6337" stroke-width="1.1" opacity="0.33" />
+                            <line x1="400" y1="260" x2="184.52" y2="260" stroke="#b45309" stroke-width="1" stroke-dasharray="4 4" opacity="0.25" />
+
+                            <!-- Actor nodes -->
+                            <g>
+                                <circle cx="351.36" cy="189.22" r="15" fill="#0e7568" stroke="#ffffff" stroke-width="1.5" />
+                                <text x="351.36" y="217.22" text-anchor="middle" font-size="11" fill="#211f1b">East Tennessee Foun&#8230;</text>
+                            </g>
+                            <g>
+                                <circle cx="473.09" cy="153.65" r="15.05" fill="#0e7568" stroke="#ffffff" stroke-width="1.5" />
+                                <text x="473.09" y="181.7" text-anchor="middle" font-size="11" fill="#211f1b">United Way of Great&#8230;</text>
+                            </g>
+                            <g>
+                                <circle cx="577.4" cy="137.6" r="13.4" fill="#1f6272" stroke="#ffffff" stroke-width="1.5" />
+                                <text x="577.4" y="164" text-anchor="middle" font-size="11" fill="#211f1b">Ballad Health</text>
+                            </g>
+                            <g>
+                                <circle cx="572.38" cy="260" r="13.62" fill="#1f6272" stroke="#ffffff" stroke-width="1.5" />
+                                <text x="572.38" y="286.6" text-anchor="middle" font-size="11" fill="#211f1b">East Tennessee Stat&#8230;</text>
+                            </g>
+                            <g>
+                                <circle cx="577.4" cy="382.4" r="13.95" fill="#1f6272" stroke="#ffffff" stroke-width="1.5" />
+                                <text x="577.4" y="409.35" text-anchor="middle" font-size="11" fill="#211f1b">Highlands Consultin&#8230;</text>
+                            </g>
+                            <g>
+                                <circle cx="400" cy="432.38" r="15.05" fill="#2c6337" stroke="#ffffff" stroke-width="1.5" />
+                                <text x="400" y="460.43" text-anchor="middle" font-size="11" fill="#211f1b">Tennessee Nonprofit&#8230;</text>
+                            </g>
+                            <g>
+                                <circle cx="184.52" cy="260" r="13.4" fill="#b45309" stroke="#ffffff" stroke-width="1.5" />
+                                <text x="184.52" y="286.4" text-anchor="middle" font-size="11" fill="#211f1b">Washington County E&#8230;</text>
+                            </g>
+
+                            <!-- Center: the organization -->
+                            <g>
+                                <circle cx="400" cy="260" r="26" fill="#0e7568" stroke="#ffffff" stroke-width="3" />
+                                <text x="400" y="305" text-anchor="middle" font-size="13" font-weight="600" fill="#211f1b">Acme Nonprofit Collaborative</text>
+                            </g>
+                        </svg>
+
+                        <div class="watermark" aria-hidden="true"><span>SAMPLE</span></div>
+
+                        <div class="legend-row">
+                            <span class="item"><svg width="26" height="6" aria-hidden="true"><line x1="0" y1="3" x2="26" y2="3" stroke="currentColor" stroke-width="2.5"/></svg> formal agreement</span>
+                            <span class="item"><svg width="26" height="6" aria-hidden="true"><line x1="0" y1="3" x2="26" y2="3" stroke="currentColor" stroke-width="1.2"/></svg> informal</span>
+                            <span class="item"><svg width="26" height="6" aria-hidden="true"><line x1="0" y1="3" x2="26" y2="3" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/></svg> no relationship yet</span>
+                            <span>Bigger circles = higher priority. Closer to center = stronger tie.</span>
+                        </div>
+                    </div>
+
+                    <!-- Static top moves panel -->
+                    <div class="moves-panel">
+                        <h3>What to do about it</h3>
+                        <p class="lead">The same map, crossed with this organization&rsquo;s funding weak points, ranked into concrete moves.</p>
+
+                        <div class="move-item">
+                            <div class="row">
+                                <p class="title">Find and cultivate a second major funder</p>
+                                <span class="chip">High value</span>
+                            </div>
+                            <p class="why">Your biggest funding source is 44% of your budget. You have 2.5 months of reserve. No powerful funder on your map fits that role yet.</p>
+                        </div>
+
+                        <div class="move-item">
+                            <div class="row">
+                                <p class="title">Talk with Tennessee Nonprofit Network about handing off the work you both do</p>
+                                <span class="chip">High value</span>
+                            </div>
+                            <p class="why">You marked Tennessee Nonprofit Network as an overlap: you may be duplicating work they can carry, and they have real power over your future. Handing it off frees your time for what only you do.</p>
+                        </div>
+
+                        <div class="move-item">
+                            <div class="row">
+                                <p class="title">Talk with United Way of Greater Kingsport about handing off the work you both do</p>
+                                <span class="chip">High value</span>
+                            </div>
+                            <p class="why">You marked United Way of Greater Kingsport as an overlap: you may be duplicating work they can carry, and they have real power over your future. Handing it off frees your time for what only you do.</p>
+                        </div>
+
+                        <p class="moves-footnote">This is a real ranking from the product&rsquo;s priority engine, run on a sample profile. Your own map and numbers would rank differently.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What the AI does -->
+        <section class="band">
+            <div class="wrap band-inner">
+                <h2 class="section-title">A research partner, not a chatbot</h2>
+                <p class="section-body">
+                    The coach reads your organization&rsquo;s profile before it says anything, so the advice is
+                    about your budget, your county, and your mandates. It never proposes sharing information
+                    about the people you serve.
+                </p>
+                <div class="card-grid-3">
+                    <div class="cap-card">
+                        <div class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </div>
+                        <h3>It researches your ecosystem</h3>
+                        <p>Point it at your region and it searches the live web and X for the funders, agencies, health systems, and peer nonprofits around you. Every suggestion comes back as a draft card with its sources, and nothing joins your map until you keep it.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="6" x2="21" y2="6"/><line x1="10" y1="12" x2="21" y2="12"/><line x1="10" y1="18" x2="21" y2="18"/><path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+                        </div>
+                        <h3>It ranks what to do first</h3>
+                        <p>Your map crossed with your own numbers: funding concentration, unrestricted share, months of reserve. The result is a short list of relationship moves, each one naming the fact about your organization that drives it.</p>
+                    </div>
+                    <div class="cap-card">
+                        <div class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.9L19 9l-4.9 1.9L12 16l-1.9-5.1L5 9l5.1-1.1L12 3z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14z"/></svg>
+                        </div>
+                        <h3>It thinks it through with you</h3>
+                        <p>Ask why a move comes first and you get a plain-language case you can argue with, then carry straight into your annual cycle as a strategic issue. It coaches; you decide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="steps-section">
+            <div class="wrap">
+                <h2 class="section-title" style="margin-bottom: 2rem;">How a year runs</h2>
+                <div class="card-grid-3">
+                    <div class="step-card">
+                        <div class="step-head">
+                            <span class="step-num">1</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/></svg>
+                        </div>
+                        <h3>Describe your organization</h3>
+                        <p>Mandates, programs, capacity, funding, governance. This is the context every later answer is built on.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-head">
+                            <span class="step-num">2</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16 8 14 14 8 16 10 10 16 8"/></svg>
+                        </div>
+                        <h3>Map the world you sit in</h3>
+                        <p>Who funds you, who sends you people, who does similar work, who sets your rules. Research it with AI or add it yourself.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-head">
+                            <span class="step-num">3</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        </div>
+                        <h3>Commit to a year, then keep it alive</h3>
+                        <p>Name the few issues that matter, choose strategies, set goals, and hold quarterly check-ins that write your grant record as you go.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module cards -->
+        <section class="modules-section">
+            <div class="wrap">
+                <div class="card-grid-2">
+                    <div class="module-card org">
+                        <div class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v17"/><path d="M15 8h5a1 1 0 0 1 1 1v12"/><path d="M8 7h1"/><path d="M8 11h1"/><path d="M8 15h1"/></svg>
+                        </div>
+                        <h3>The Organization</h3>
+                        <p>Who you are, who you serve, and who funds it</p>
+                    </div>
+                    <div class="module-card strategy">
+                        <div class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+                        </div>
+                        <h3>The Strategy</h3>
+                        <p>Your annual cycle: explore, commit, check in</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing CTA -->
+        <section class="closing">
+            <div class="wrap closing-inner">
+                <h2 class="section-title">Start with the map</h2>
+                <p>
+                    Most leaders already know the organizations around them. Seeing them in one picture is
+                    what makes the year&rsquo;s decision obvious.
+                </p>
+                <a href="/index.html#contact" class="btn btn-primary">Request Pilot Access</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="strategist-footer">
+        <div class="wrap">
+            <p>The Strategist &middot; &copy; 2026 Cortivus. All rights reserved.</p>
+            <nav>
+                <a href="https://cortivus.com/legal/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+                <a href="https://cortivus.com/legal/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <a href="/">&larr; Back to cortivus.com</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+
+</html>
