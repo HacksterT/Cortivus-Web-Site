@@ -233,6 +233,19 @@
                             <label for="contact-org">Organization</label>
                             <input type="text" id="contact-org" name="organization">
                         </div>
+                        <div class="form-group">
+                            <label>What brings you here?</label>
+                            <div class="intent-radio-row" role="radiogroup" aria-label="What brings you here?">
+                                <label class="intent-radio">
+                                    <input type="radio" name="intent" value="contact" checked>
+                                    <span>Safety Intelligence</span>
+                                </label>
+                                <label class="intent-radio">
+                                    <input type="radio" name="intent" value="strategist">
+                                    <span>The Strategist</span>
+                                </label>
+                            </div>
+                        </div>
                         <div class="form-group" id="messageGroup">
                             <label for="contact-message">How can we help?</label>
                             <textarea id="contact-message" name="message" rows="5" placeholder="Tell us about the AI systems in your environment and what you'd like to understand better..."></textarea>
@@ -288,6 +301,27 @@
         @media (max-width: 600px) {
             .hero-strategist-ad { margin-top: 1.25rem; }
         }
+
+        .intent-radio-row {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .intent-radio {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .intent-radio input {
+            accent-color: #0e7568;
+            width: 1rem;
+            height: 1rem;
+            cursor: pointer;
+        }
     </style>
 
     <script src="js/components.js"></script>
@@ -319,6 +353,13 @@
             var btn = document.getElementById('contactSubmitBtn');
             var status = document.getElementById('contactFormStatus');
 
+            // Deep link from the Strategist page: ?intent=strategist#contact
+            // pre-selects The Strategist (submits source: 'strategist').
+            if (new URLSearchParams(window.location.search).get('intent') === 'strategist') {
+                var strategistRadio = form.querySelector('[name="intent"][value="strategist"]');
+                if (strategistRadio) strategistRadio.checked = true;
+            }
+
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 btn.disabled = true;
@@ -330,7 +371,7 @@
                     email: form.querySelector('[name="email"]').value,
                     organization: form.querySelector('[name="organization"]').value || null,
                     message: form.querySelector('[name="message"]').value || null,
-                    source: 'contact',
+                    source: form.querySelector('[name="intent"]:checked').value,
                     website: form.querySelector('[name="website"]').value,
                     cf_turnstile_response: form.querySelector('[name="cf-turnstile-response"]') ? form.querySelector('[name="cf-turnstile-response"]').value : null
                 };
